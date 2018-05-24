@@ -48,7 +48,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
         getContentPane().add(LoginRegisterBtn);
-        LoginRegisterBtn.setBounds(179, 217, 123, 25);
+        LoginRegisterBtn.setBounds(179, 217, 107, 23);
 
         LoginPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
@@ -63,6 +63,11 @@ public class Login extends javax.swing.JFrame {
         PasswordLabel.setText("Password:");
 
         PasswordField.setText("jPasswordField1");
+        PasswordField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PasswordFieldActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout LoginPanelLayout = new javax.swing.GroupLayout(LoginPanel);
         LoginPanel.setLayout(LoginPanelLayout);
@@ -92,11 +97,11 @@ public class Login extends javax.swing.JFrame {
         );
 
         getContentPane().add(LoginPanel);
-        LoginPanel.setBounds(12, 36, 290, 163);
+        LoginPanel.setBounds(12, 36, 288, 151);
 
         LoginLabel.setText("Login");
         getContentPane().add(LoginLabel);
-        LoginLabel.setBounds(12, 13, 30, 16);
+        LoginLabel.setBounds(12, 13, 25, 14);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -110,6 +115,10 @@ public class Login extends javax.swing.JFrame {
     private void UsernameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsernameTextFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_UsernameTextFieldActionPerformed
+
+    private void PasswordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PasswordFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_PasswordFieldActionPerformed
 
     /**
      * @param args the command line arguments
