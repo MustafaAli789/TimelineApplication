@@ -106,6 +106,9 @@
   <SubComponents>
     <Component class="javax.swing.JLabel" name="EventNameLabel">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tw Cen MT Condensed Extra Bold" size="15" style="1"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Event Name:"/>
       </Properties>
     </Component>
@@ -116,6 +119,9 @@
     </Component>
     <Component class="javax.swing.JLabel" name="TimeLabel">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tw Cen MT Condensed Extra Bold" size="15" style="1"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Time:"/>
       </Properties>
     </Component>
@@ -123,6 +129,9 @@
     </Component>
     <Component class="javax.swing.JLabel" name="DescriptionLabel">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tw Cen MT Condensed Extra Bold" size="15" style="1"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Description:"/>
       </Properties>
     </Component>
@@ -133,6 +142,9 @@
     </Component>
     <Component class="javax.swing.JLabel" name="ImageUrlLabel">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tw Cen MT Condensed Extra Bold" size="15" style="1"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Image URL:"/>
       </Properties>
     </Component>
@@ -164,7 +176,10 @@
     </Component>
     <Component class="javax.swing.JLabel" name="EventPositionLabel">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Event Positon:"/>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tw Cen MT Condensed Extra Bold" size="15" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Event Positon (Specify the Position, a Numerical Value):"/>
       </Properties>
     </Component>
   </SubComponents>
