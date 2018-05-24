@@ -7,6 +7,7 @@
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
+    <Property name="resizable" type="boolean" value="false"/>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -29,47 +30,45 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
+                  <Group type="102" attributes="0">
                       <EmptySpace min="457" pref="457" max="-2" attributes="0"/>
                       <Component id="TimelineTitleLabel" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="422" max="32767" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
                       <Component id="ScrollableAreaPane" min="-2" pref="1180" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="12" max="32767" attributes="0"/>
           </Group>
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-              <Component id="DeleteBtn" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="102" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="AddBtn" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="EditBtn" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="128" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="SaveBtn" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="DeleteBtn" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
-              <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace min="21" pref="21" max="-2" attributes="0"/>
               <Component id="TimelineTitleLabel" min="-2" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
-                      <Component id="ScrollableAreaPane" min="-2" pref="517" max="-2" attributes="0"/>
-                      <EmptySpace pref="69" max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="DeleteBtn" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="EditBtn" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                  </Group>
+              <EmptySpace min="39" pref="39" max="-2" attributes="0"/>
+              <Component id="ScrollableAreaPane" min="-2" pref="597" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                  <Component id="EditBtn" alignment="0" max="32767" attributes="0"/>
+                  <Component id="SaveBtn" alignment="0" max="32767" attributes="0"/>
+                  <Component id="DeleteBtn" alignment="0" max="32767" attributes="0"/>
+                  <Component id="AddBtn" max="32767" attributes="0"/>
               </Group>
+              <EmptySpace pref="24" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -83,14 +82,20 @@
         <Property name="text" type="java.lang.String" value="TIMELINE TITLE HERE"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="EditBtn">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="EDIT"/>
-      </Properties>
-    </Component>
     <Component class="javax.swing.JButton" name="DeleteBtn">
       <Properties>
-        <Property name="text" type="java.lang.String" value="DELETE"/>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/Graphics/DeleteIconNonHover.png"/>
+        </Property>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+            <LineBorder/>
+          </Border>
+        </Property>
+        <Property name="contentAreaFilled" type="boolean" value="false"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DeleteBtnActionPerformed"/>
@@ -152,7 +157,7 @@
                           <Group type="102" attributes="0">
                               <Component id="EventPane6" min="-2" pref="191" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
-                              <Component id="EventPaneFive" min="-2" pref="191" max="-2" attributes="0"/>
+                              <Component id="EventPane5" min="-2" pref="191" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
                               <Component id="EventPane2" min="-2" pref="191" max="-2" attributes="0"/>
@@ -160,7 +165,7 @@
                               <Component id="EventPane1" min="-2" pref="191" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="87" max="32767" attributes="0"/>
+                      <EmptySpace pref="73" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -176,7 +181,7 @@
                       </Group>
                       <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="EventPaneFive" min="-2" max="-2" attributes="0"/>
+                          <Component id="EventPane5" min="-2" max="-2" attributes="0"/>
                           <Component id="EventPane6" min="-2" max="-2" attributes="0"/>
                           <Component id="EventPane7" min="-2" max="-2" attributes="0"/>
                           <Component id="EventPane8" min="-2" max="-2" attributes="0"/>
@@ -265,9 +270,9 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="EventTitleLabel3" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="EventTitleLabelOne" alignment="0" max="32767" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="DateTextLabel3" min="-2" pref="253" max="-2" attributes="0"/>
+                                      <Component id="DateTextLabelOne" min="-2" pref="253" max="-2" attributes="0"/>
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
@@ -279,16 +284,16 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="EventTitleLabel3" min="-2" max="-2" attributes="0"/>
+                              <Component id="EventTitleLabelOne" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="DateTextLabel3" min="-2" max="-2" attributes="0"/>
+                              <Component id="DateTextLabelOne" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
                   </Layout>
                   <SubComponents>
-                    <Component class="javax.swing.JLabel" name="EventTitleLabel3">
+                    <Component class="javax.swing.JLabel" name="EventTitleLabelOne">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Tahoma" size="18" style="1"/>
@@ -299,7 +304,7 @@
                         <Property name="text" type="java.lang.String" value="jLabel1"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="DateTextLabel3">
+                    <Component class="javax.swing.JLabel" name="DateTextLabelOne">
                       <Properties>
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -415,9 +420,9 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="EventTitleLabel6" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="EventTitleLabelThree" alignment="0" max="32767" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="DateTextLabel6" min="-2" pref="253" max="-2" attributes="0"/>
+                                      <Component id="DateTextLabelThree" min="-2" pref="253" max="-2" attributes="0"/>
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
@@ -429,16 +434,16 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="EventTitleLabel6" min="-2" max="-2" attributes="0"/>
+                              <Component id="EventTitleLabelThree" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="DateTextLabel6" min="-2" max="-2" attributes="0"/>
+                              <Component id="DateTextLabelThree" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
                   </Layout>
                   <SubComponents>
-                    <Component class="javax.swing.JLabel" name="EventTitleLabel6">
+                    <Component class="javax.swing.JLabel" name="EventTitleLabelThree">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Tahoma" size="18" style="1"/>
@@ -449,7 +454,7 @@
                         <Property name="text" type="java.lang.String" value="jLabel1"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="DateTextLabel6">
+                    <Component class="javax.swing.JLabel" name="DateTextLabelThree">
                       <Properties>
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -715,9 +720,9 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="EventTitleLabel8" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="EventTitleLabelFour" alignment="0" max="32767" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="DateTextLabel8" min="-2" pref="253" max="-2" attributes="0"/>
+                                      <Component id="DateTextLabelFour" min="-2" pref="253" max="-2" attributes="0"/>
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
@@ -729,16 +734,16 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="EventTitleLabel8" min="-2" max="-2" attributes="0"/>
+                              <Component id="EventTitleLabelFour" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="DateTextLabel8" min="-2" max="-2" attributes="0"/>
+                              <Component id="DateTextLabelFour" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
                   </Layout>
                   <SubComponents>
-                    <Component class="javax.swing.JLabel" name="EventTitleLabel8">
+                    <Component class="javax.swing.JLabel" name="EventTitleLabelFour">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Tahoma" size="18" style="1"/>
@@ -749,7 +754,7 @@
                         <Property name="text" type="java.lang.String" value="jLabel1"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="DateTextLabel8">
+                    <Component class="javax.swing.JLabel" name="DateTextLabelFour">
                       <Properties>
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -801,7 +806,7 @@
                 </Container>
               </SubComponents>
             </Container>
-            <Container class="javax.swing.JPanel" name="EventPaneFive">
+            <Container class="javax.swing.JPanel" name="EventPane5">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="99" green="99" red="99" type="rgb"/>
@@ -865,9 +870,9 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="EventTitleLabel12" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="EventTitleLabelFive" alignment="0" max="32767" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="DateTextLabel12" min="-2" pref="253" max="-2" attributes="0"/>
+                                      <Component id="DateTextLabelFive" min="-2" pref="253" max="-2" attributes="0"/>
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
@@ -879,16 +884,16 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="EventTitleLabel12" min="-2" max="-2" attributes="0"/>
+                              <Component id="EventTitleLabelFive" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="DateTextLabel12" min="-2" max="-2" attributes="0"/>
+                              <Component id="DateTextLabelFive" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
                   </Layout>
                   <SubComponents>
-                    <Component class="javax.swing.JLabel" name="EventTitleLabel12">
+                    <Component class="javax.swing.JLabel" name="EventTitleLabelFive">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Tahoma" size="18" style="1"/>
@@ -899,7 +904,7 @@
                         <Property name="text" type="java.lang.String" value="jLabel1"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="DateTextLabel12">
+                    <Component class="javax.swing.JLabel" name="DateTextLabelFive">
                       <Properties>
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -1015,9 +1020,9 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="EventTitleLabel13" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="EventTitleLabelSix" alignment="0" max="32767" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="DateTextLabel13" min="-2" pref="253" max="-2" attributes="0"/>
+                                      <Component id="DateTextLabelSix" min="-2" pref="253" max="-2" attributes="0"/>
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
@@ -1029,16 +1034,16 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="EventTitleLabel13" min="-2" max="-2" attributes="0"/>
+                              <Component id="EventTitleLabelSix" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="DateTextLabel13" min="-2" max="-2" attributes="0"/>
+                              <Component id="DateTextLabelSix" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
                   </Layout>
                   <SubComponents>
-                    <Component class="javax.swing.JLabel" name="EventTitleLabel13">
+                    <Component class="javax.swing.JLabel" name="EventTitleLabelSix">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Tahoma" size="18" style="1"/>
@@ -1049,7 +1054,7 @@
                         <Property name="text" type="java.lang.String" value="jLabel1"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="DateTextLabel13">
+                    <Component class="javax.swing.JLabel" name="DateTextLabelSix">
                       <Properties>
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -1165,9 +1170,9 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="EventTitleLabel14" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="EventTitleLabelSeven" alignment="0" max="32767" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="DateTextLabel14" min="-2" pref="253" max="-2" attributes="0"/>
+                                      <Component id="DateTextLabelSeven" min="-2" pref="253" max="-2" attributes="0"/>
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
@@ -1179,16 +1184,16 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="EventTitleLabel14" min="-2" max="-2" attributes="0"/>
+                              <Component id="EventTitleLabelSeven" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="DateTextLabel14" min="-2" max="-2" attributes="0"/>
+                              <Component id="DateTextLabelSeven" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
                   </Layout>
                   <SubComponents>
-                    <Component class="javax.swing.JLabel" name="EventTitleLabel14">
+                    <Component class="javax.swing.JLabel" name="EventTitleLabelSeven">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Tahoma" size="18" style="1"/>
@@ -1199,7 +1204,7 @@
                         <Property name="text" type="java.lang.String" value="jLabel1"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="DateTextLabel14">
+                    <Component class="javax.swing.JLabel" name="DateTextLabelSeven">
                       <Properties>
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -1315,9 +1320,9 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="EventTitleLabel15" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="EventTitleLabelEight" alignment="0" max="32767" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="DateTextLabel15" min="-2" pref="253" max="-2" attributes="0"/>
+                                      <Component id="DateTextLabelEight" min="-2" pref="253" max="-2" attributes="0"/>
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
@@ -1329,16 +1334,16 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="EventTitleLabel15" min="-2" max="-2" attributes="0"/>
+                              <Component id="EventTitleLabelEight" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="DateTextLabel15" min="-2" max="-2" attributes="0"/>
+                              <Component id="DateTextLabelEight" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
                   </Layout>
                   <SubComponents>
-                    <Component class="javax.swing.JLabel" name="EventTitleLabel15">
+                    <Component class="javax.swing.JLabel" name="EventTitleLabelEight">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Tahoma" size="18" style="1"/>
@@ -1349,7 +1354,7 @@
                         <Property name="text" type="java.lang.String" value="jLabel1"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="DateTextLabel15">
+                    <Component class="javax.swing.JLabel" name="DateTextLabelEight">
                       <Properties>
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -1420,17 +1425,17 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
-                          <Component id="EventTitlePanel16" alignment="1" max="32767" attributes="0"/>
+                          <Component id="EventTitlePanelNine" alignment="1" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="SeperatorPane13" min="-2" pref="280" max="-2" attributes="0"/>
+                          <Component id="SeperatorPaneNine" min="-2" pref="280" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jScrollPane16" alignment="0" pref="176" max="32767" attributes="0"/>
-                              <Component id="ImageFrame13" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jScrollPaneNine" alignment="0" pref="176" max="32767" attributes="0"/>
+                              <Component id="ImageFrameNine" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
@@ -1439,20 +1444,20 @@
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="EventTitlePanel16" min="-2" max="-2" attributes="0"/>
+                          <Component id="EventTitlePanelNine" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
-                          <Component id="SeperatorPane13" min="-2" pref="12" max="-2" attributes="0"/>
+                          <Component id="SeperatorPaneNine" min="-2" pref="12" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="ImageFrame13" min="-2" max="-2" attributes="0"/>
+                          <Component id="ImageFrameNine" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jScrollPane16" pref="117" max="32767" attributes="0"/>
+                          <Component id="jScrollPaneNine" pref="117" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Container class="javax.swing.JPanel" name="EventTitlePanel16">
+                <Container class="javax.swing.JPanel" name="EventTitlePanelNine">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="0" green="0" red="0" type="rgb"/>
@@ -1465,9 +1470,9 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="EventTitleLabel16" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="EventTitleLabelNine" alignment="0" max="32767" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="DateTextLabel16" min="-2" pref="253" max="-2" attributes="0"/>
+                                      <Component id="DateTextLabelNine" min="-2" pref="253" max="-2" attributes="0"/>
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
@@ -1479,16 +1484,16 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="EventTitleLabel16" min="-2" max="-2" attributes="0"/>
+                              <Component id="EventTitleLabelNine" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="DateTextLabel16" min="-2" max="-2" attributes="0"/>
+                              <Component id="DateTextLabelNine" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
                   </Layout>
                   <SubComponents>
-                    <Component class="javax.swing.JLabel" name="EventTitleLabel16">
+                    <Component class="javax.swing.JLabel" name="EventTitleLabelNine">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Tahoma" size="18" style="1"/>
@@ -1499,7 +1504,7 @@
                         <Property name="text" type="java.lang.String" value="jLabel1"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="DateTextLabel16">
+                    <Component class="javax.swing.JLabel" name="DateTextLabelNine">
                       <Properties>
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -1509,7 +1514,7 @@
                     </Component>
                   </SubComponents>
                 </Container>
-                <Container class="javax.swing.JPanel" name="ImageFrame13">
+                <Container class="javax.swing.JPanel" name="ImageFrameNine">
                   <Properties>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -1532,20 +1537,20 @@
                     </DimensionLayout>
                   </Layout>
                 </Container>
-                <Container class="javax.swing.JPanel" name="SeperatorPane13">
+                <Container class="javax.swing.JPanel" name="SeperatorPaneNine">
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
                     <Property name="useNullLayout" type="boolean" value="true"/>
                   </Layout>
                 </Container>
-                <Container class="javax.swing.JScrollPane" name="jScrollPane16">
+                <Container class="javax.swing.JScrollPane" name="jScrollPaneNine">
                   <AuxValues>
                     <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
                   </AuxValues>
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                   <SubComponents>
-                    <Component class="javax.swing.JTextPane" name="DescriptionTextPanel13">
+                    <Component class="javax.swing.JTextPane" name="DescriptionTextPanelNine">
                     </Component>
                   </SubComponents>
                 </Container>
@@ -1570,17 +1575,17 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
-                          <Component id="EventTitlePanel17" alignment="1" max="32767" attributes="0"/>
+                          <Component id="EventTitlePanelTen" alignment="1" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="SeperatorPane14" min="-2" pref="280" max="-2" attributes="0"/>
+                          <Component id="SeperatorPaneTen" min="-2" pref="280" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jScrollPane17" alignment="0" pref="176" max="32767" attributes="0"/>
-                              <Component id="ImageFrame14" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jScrollPaneTen" alignment="0" pref="176" max="32767" attributes="0"/>
+                              <Component id="ImageFrameTen" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
@@ -1589,20 +1594,20 @@
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="EventTitlePanel17" min="-2" max="-2" attributes="0"/>
+                          <Component id="EventTitlePanelTen" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
-                          <Component id="SeperatorPane14" min="-2" pref="12" max="-2" attributes="0"/>
+                          <Component id="SeperatorPaneTen" min="-2" pref="12" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="ImageFrame14" min="-2" max="-2" attributes="0"/>
+                          <Component id="ImageFrameTen" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jScrollPane17" pref="117" max="32767" attributes="0"/>
+                          <Component id="jScrollPaneTen" pref="117" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Container class="javax.swing.JPanel" name="EventTitlePanel17">
+                <Container class="javax.swing.JPanel" name="EventTitlePanelTen">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="0" green="0" red="0" type="rgb"/>
@@ -1615,9 +1620,9 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="EventTitleLabel17" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="EventTitleLabelTen" alignment="0" max="32767" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="DateTextLabel17" min="-2" pref="253" max="-2" attributes="0"/>
+                                      <Component id="DateTextLabelTen" min="-2" pref="253" max="-2" attributes="0"/>
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
@@ -1629,16 +1634,16 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="EventTitleLabel17" min="-2" max="-2" attributes="0"/>
+                              <Component id="EventTitleLabelTen" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="DateTextLabel17" min="-2" max="-2" attributes="0"/>
+                              <Component id="DateTextLabelTen" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
                   </Layout>
                   <SubComponents>
-                    <Component class="javax.swing.JLabel" name="EventTitleLabel17">
+                    <Component class="javax.swing.JLabel" name="EventTitleLabelTen">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Tahoma" size="18" style="1"/>
@@ -1649,7 +1654,7 @@
                         <Property name="text" type="java.lang.String" value="jLabel1"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="DateTextLabel17">
+                    <Component class="javax.swing.JLabel" name="DateTextLabelTen">
                       <Properties>
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -1659,7 +1664,7 @@
                     </Component>
                   </SubComponents>
                 </Container>
-                <Container class="javax.swing.JPanel" name="ImageFrame14">
+                <Container class="javax.swing.JPanel" name="ImageFrameTen">
                   <Properties>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -1682,20 +1687,20 @@
                     </DimensionLayout>
                   </Layout>
                 </Container>
-                <Container class="javax.swing.JPanel" name="SeperatorPane14">
+                <Container class="javax.swing.JPanel" name="SeperatorPaneTen">
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
                     <Property name="useNullLayout" type="boolean" value="true"/>
                   </Layout>
                 </Container>
-                <Container class="javax.swing.JScrollPane" name="jScrollPane17">
+                <Container class="javax.swing.JScrollPane" name="jScrollPaneTen">
                   <AuxValues>
                     <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
                   </AuxValues>
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                   <SubComponents>
-                    <Component class="javax.swing.JTextPane" name="DescriptionTextPanel14">
+                    <Component class="javax.swing.JTextPane" name="DescriptionTextPanelTen">
                     </Component>
                   </SubComponents>
                 </Container>
@@ -1720,17 +1725,17 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
-                          <Component id="EventTitlePanel18" alignment="1" max="32767" attributes="0"/>
+                          <Component id="EventTitlePanelEleven" alignment="1" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="SeperatorPane15" min="-2" pref="280" max="-2" attributes="0"/>
+                          <Component id="SeperatorPaneEleven" min="-2" pref="280" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jScrollPane18" alignment="0" pref="176" max="32767" attributes="0"/>
-                              <Component id="ImageFrame15" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jScrollPaneEleven" alignment="0" pref="176" max="32767" attributes="0"/>
+                              <Component id="ImageFrameEleven" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
@@ -1739,20 +1744,20 @@
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="EventTitlePanel18" min="-2" max="-2" attributes="0"/>
+                          <Component id="EventTitlePanelEleven" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
-                          <Component id="SeperatorPane15" min="-2" pref="12" max="-2" attributes="0"/>
+                          <Component id="SeperatorPaneEleven" min="-2" pref="12" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="ImageFrame15" min="-2" max="-2" attributes="0"/>
+                          <Component id="ImageFrameEleven" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jScrollPane18" pref="117" max="32767" attributes="0"/>
+                          <Component id="jScrollPaneEleven" pref="117" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Container class="javax.swing.JPanel" name="EventTitlePanel18">
+                <Container class="javax.swing.JPanel" name="EventTitlePanelEleven">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="0" green="0" red="0" type="rgb"/>
@@ -1765,9 +1770,9 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="EventTitleLabel18" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="EventTitleLabelEleven" alignment="0" max="32767" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="DateTextLabel18" min="-2" pref="253" max="-2" attributes="0"/>
+                                      <Component id="DateTextLabelEleven" min="-2" pref="253" max="-2" attributes="0"/>
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
@@ -1779,16 +1784,16 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="EventTitleLabel18" min="-2" max="-2" attributes="0"/>
+                              <Component id="EventTitleLabelEleven" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="DateTextLabel18" min="-2" max="-2" attributes="0"/>
+                              <Component id="DateTextLabelEleven" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
                   </Layout>
                   <SubComponents>
-                    <Component class="javax.swing.JLabel" name="EventTitleLabel18">
+                    <Component class="javax.swing.JLabel" name="EventTitleLabelEleven">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Tahoma" size="18" style="1"/>
@@ -1799,7 +1804,7 @@
                         <Property name="text" type="java.lang.String" value="jLabel1"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="DateTextLabel18">
+                    <Component class="javax.swing.JLabel" name="DateTextLabelEleven">
                       <Properties>
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -1809,7 +1814,7 @@
                     </Component>
                   </SubComponents>
                 </Container>
-                <Container class="javax.swing.JPanel" name="ImageFrame15">
+                <Container class="javax.swing.JPanel" name="ImageFrameEleven">
                   <Properties>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -1832,20 +1837,20 @@
                     </DimensionLayout>
                   </Layout>
                 </Container>
-                <Container class="javax.swing.JPanel" name="SeperatorPane15">
+                <Container class="javax.swing.JPanel" name="SeperatorPaneEleven">
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
                     <Property name="useNullLayout" type="boolean" value="true"/>
                   </Layout>
                 </Container>
-                <Container class="javax.swing.JScrollPane" name="jScrollPane18">
+                <Container class="javax.swing.JScrollPane" name="jScrollPaneEleven">
                   <AuxValues>
                     <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
                   </AuxValues>
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                   <SubComponents>
-                    <Component class="javax.swing.JTextPane" name="DescriptionTextPanel15">
+                    <Component class="javax.swing.JTextPane" name="DescriptionTextPanelEleven">
                     </Component>
                   </SubComponents>
                 </Container>
@@ -1870,17 +1875,17 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
-                          <Component id="EventTitlePanel19" alignment="1" max="32767" attributes="0"/>
+                          <Component id="EventTitlePanelTwelve" alignment="1" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="SeperatorPane16" min="-2" pref="280" max="-2" attributes="0"/>
+                          <Component id="SeperatorPaneTwelve" min="-2" pref="280" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jScrollPane19" alignment="0" pref="176" max="32767" attributes="0"/>
-                              <Component id="ImageFrame16" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jScrollPaneTwelve" alignment="0" pref="176" max="32767" attributes="0"/>
+                              <Component id="ImageFrameTwelve" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
@@ -1889,20 +1894,20 @@
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="EventTitlePanel19" min="-2" max="-2" attributes="0"/>
+                          <Component id="EventTitlePanelTwelve" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
-                          <Component id="SeperatorPane16" min="-2" pref="12" max="-2" attributes="0"/>
+                          <Component id="SeperatorPaneTwelve" min="-2" pref="12" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="ImageFrame16" min="-2" max="-2" attributes="0"/>
+                          <Component id="ImageFrameTwelve" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jScrollPane19" pref="117" max="32767" attributes="0"/>
+                          <Component id="jScrollPaneTwelve" pref="117" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Container class="javax.swing.JPanel" name="EventTitlePanel19">
+                <Container class="javax.swing.JPanel" name="EventTitlePanelTwelve">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="0" green="0" red="0" type="rgb"/>
@@ -1915,9 +1920,9 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="EventTitleLabel19" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="EventTitleLabelTwelve" alignment="0" max="32767" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="DateTextLabel19" min="-2" pref="253" max="-2" attributes="0"/>
+                                      <Component id="DateTextLabelTwelve" min="-2" pref="253" max="-2" attributes="0"/>
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
@@ -1929,16 +1934,16 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="EventTitleLabel19" min="-2" max="-2" attributes="0"/>
+                              <Component id="EventTitleLabelTwelve" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="DateTextLabel19" min="-2" max="-2" attributes="0"/>
+                              <Component id="DateTextLabelTwelve" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
                   </Layout>
                   <SubComponents>
-                    <Component class="javax.swing.JLabel" name="EventTitleLabel19">
+                    <Component class="javax.swing.JLabel" name="EventTitleLabelTwelve">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Tahoma" size="18" style="1"/>
@@ -1949,7 +1954,7 @@
                         <Property name="text" type="java.lang.String" value="jLabel1"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="DateTextLabel19">
+                    <Component class="javax.swing.JLabel" name="DateTextLabelTwelve">
                       <Properties>
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -1959,7 +1964,7 @@
                     </Component>
                   </SubComponents>
                 </Container>
-                <Container class="javax.swing.JPanel" name="ImageFrame16">
+                <Container class="javax.swing.JPanel" name="ImageFrameTwelve">
                   <Properties>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -1982,20 +1987,20 @@
                     </DimensionLayout>
                   </Layout>
                 </Container>
-                <Container class="javax.swing.JPanel" name="SeperatorPane16">
+                <Container class="javax.swing.JPanel" name="SeperatorPaneTwelve">
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
                     <Property name="useNullLayout" type="boolean" value="true"/>
                   </Layout>
                 </Container>
-                <Container class="javax.swing.JScrollPane" name="jScrollPane19">
+                <Container class="javax.swing.JScrollPane" name="jScrollPaneTwelve">
                   <AuxValues>
                     <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
                   </AuxValues>
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                   <SubComponents>
-                    <Component class="javax.swing.JTextPane" name="DescriptionTextPanel16">
+                    <Component class="javax.swing.JTextPane" name="DescriptionTextPanelTwelve">
                     </Component>
                   </SubComponents>
                 </Container>
@@ -2020,17 +2025,17 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
-                          <Component id="EventTitlePanel20" alignment="1" max="32767" attributes="0"/>
+                          <Component id="EventTitlePanelThirteen" alignment="1" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="SeperatorPane17" min="-2" pref="280" max="-2" attributes="0"/>
+                          <Component id="SeperatorPaneThirteen" min="-2" pref="280" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jScrollPane20" alignment="0" pref="176" max="32767" attributes="0"/>
-                              <Component id="ImageFrame17" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jScrollPaneThirteen" alignment="0" pref="176" max="32767" attributes="0"/>
+                              <Component id="ImageFrameThirteen" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
@@ -2039,20 +2044,20 @@
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="EventTitlePanel20" min="-2" max="-2" attributes="0"/>
+                          <Component id="EventTitlePanelThirteen" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
-                          <Component id="SeperatorPane17" min="-2" pref="12" max="-2" attributes="0"/>
+                          <Component id="SeperatorPaneThirteen" min="-2" pref="12" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="ImageFrame17" min="-2" max="-2" attributes="0"/>
+                          <Component id="ImageFrameThirteen" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jScrollPane20" pref="117" max="32767" attributes="0"/>
+                          <Component id="jScrollPaneThirteen" pref="117" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Container class="javax.swing.JPanel" name="EventTitlePanel20">
+                <Container class="javax.swing.JPanel" name="EventTitlePanelThirteen">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="0" green="0" red="0" type="rgb"/>
@@ -2065,9 +2070,9 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="EventTitleLabel20" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="EventTitleLabelThirteen" alignment="0" max="32767" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="DateTextLabel20" min="-2" pref="253" max="-2" attributes="0"/>
+                                      <Component id="DateTextLabelThirteen" min="-2" pref="253" max="-2" attributes="0"/>
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
@@ -2079,16 +2084,16 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="EventTitleLabel20" min="-2" max="-2" attributes="0"/>
+                              <Component id="EventTitleLabelThirteen" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="DateTextLabel20" min="-2" max="-2" attributes="0"/>
+                              <Component id="DateTextLabelThirteen" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
                   </Layout>
                   <SubComponents>
-                    <Component class="javax.swing.JLabel" name="EventTitleLabel20">
+                    <Component class="javax.swing.JLabel" name="EventTitleLabelThirteen">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Tahoma" size="18" style="1"/>
@@ -2099,7 +2104,7 @@
                         <Property name="text" type="java.lang.String" value="jLabel1"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="DateTextLabel20">
+                    <Component class="javax.swing.JLabel" name="DateTextLabelThirteen">
                       <Properties>
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -2109,7 +2114,7 @@
                     </Component>
                   </SubComponents>
                 </Container>
-                <Container class="javax.swing.JPanel" name="ImageFrame17">
+                <Container class="javax.swing.JPanel" name="ImageFrameThirteen">
                   <Properties>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -2132,20 +2137,20 @@
                     </DimensionLayout>
                   </Layout>
                 </Container>
-                <Container class="javax.swing.JPanel" name="SeperatorPane17">
+                <Container class="javax.swing.JPanel" name="SeperatorPaneThirteen">
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
                     <Property name="useNullLayout" type="boolean" value="true"/>
                   </Layout>
                 </Container>
-                <Container class="javax.swing.JScrollPane" name="jScrollPane20">
+                <Container class="javax.swing.JScrollPane" name="jScrollPaneThirteen">
                   <AuxValues>
                     <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
                   </AuxValues>
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                   <SubComponents>
-                    <Component class="javax.swing.JTextPane" name="DescriptionTextPanel17">
+                    <Component class="javax.swing.JTextPane" name="DescriptionTextPanelThirteen">
                     </Component>
                   </SubComponents>
                 </Container>
@@ -2170,17 +2175,17 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
-                          <Component id="EventTitlePanel21" alignment="1" max="32767" attributes="0"/>
+                          <Component id="EventTitlePanelFourteen" alignment="1" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="SeperatorPane18" min="-2" pref="280" max="-2" attributes="0"/>
+                          <Component id="SeperatorPaneFourteen" min="-2" pref="280" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jScrollPane21" alignment="0" pref="176" max="32767" attributes="0"/>
-                              <Component id="ImageFrame18" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jScrollPaneFourteen" alignment="0" pref="176" max="32767" attributes="0"/>
+                              <Component id="ImageFrameFourteen" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
@@ -2189,20 +2194,20 @@
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="EventTitlePanel21" min="-2" max="-2" attributes="0"/>
+                          <Component id="EventTitlePanelFourteen" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
-                          <Component id="SeperatorPane18" min="-2" pref="12" max="-2" attributes="0"/>
+                          <Component id="SeperatorPaneFourteen" min="-2" pref="12" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="ImageFrame18" min="-2" max="-2" attributes="0"/>
+                          <Component id="ImageFrameFourteen" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jScrollPane21" pref="117" max="32767" attributes="0"/>
+                          <Component id="jScrollPaneFourteen" pref="117" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Container class="javax.swing.JPanel" name="EventTitlePanel21">
+                <Container class="javax.swing.JPanel" name="EventTitlePanelFourteen">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="0" green="0" red="0" type="rgb"/>
@@ -2215,9 +2220,9 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="EventTitleLabel21" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="EventTitleLabelFourteen" alignment="0" max="32767" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="DateTextLabel21" min="-2" pref="253" max="-2" attributes="0"/>
+                                      <Component id="DateTextLabelFourteen" min="-2" pref="253" max="-2" attributes="0"/>
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
@@ -2229,16 +2234,16 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="EventTitleLabel21" min="-2" max="-2" attributes="0"/>
+                              <Component id="EventTitleLabelFourteen" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="DateTextLabel21" min="-2" max="-2" attributes="0"/>
+                              <Component id="DateTextLabelFourteen" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
                   </Layout>
                   <SubComponents>
-                    <Component class="javax.swing.JLabel" name="EventTitleLabel21">
+                    <Component class="javax.swing.JLabel" name="EventTitleLabelFourteen">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Tahoma" size="18" style="1"/>
@@ -2249,7 +2254,7 @@
                         <Property name="text" type="java.lang.String" value="jLabel1"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="DateTextLabel21">
+                    <Component class="javax.swing.JLabel" name="DateTextLabelFourteen">
                       <Properties>
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -2259,7 +2264,7 @@
                     </Component>
                   </SubComponents>
                 </Container>
-                <Container class="javax.swing.JPanel" name="ImageFrame18">
+                <Container class="javax.swing.JPanel" name="ImageFrameFourteen">
                   <Properties>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -2282,20 +2287,20 @@
                     </DimensionLayout>
                   </Layout>
                 </Container>
-                <Container class="javax.swing.JPanel" name="SeperatorPane18">
+                <Container class="javax.swing.JPanel" name="SeperatorPaneFourteen">
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
                     <Property name="useNullLayout" type="boolean" value="true"/>
                   </Layout>
                 </Container>
-                <Container class="javax.swing.JScrollPane" name="jScrollPane21">
+                <Container class="javax.swing.JScrollPane" name="jScrollPaneFourteen">
                   <AuxValues>
                     <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
                   </AuxValues>
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                   <SubComponents>
-                    <Component class="javax.swing.JTextPane" name="DescriptionTextPanel18">
+                    <Component class="javax.swing.JTextPane" name="DescriptionTextPanelFourteen">
                     </Component>
                   </SubComponents>
                 </Container>
@@ -2320,17 +2325,17 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
-                          <Component id="EventTitlePanel22" alignment="1" max="32767" attributes="0"/>
+                          <Component id="EventTitlePanelFifteen" alignment="1" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="SeperatorPane19" min="-2" pref="280" max="-2" attributes="0"/>
+                          <Component id="SeperatorPaneFifteen" min="-2" pref="280" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jScrollPane22" alignment="0" pref="176" max="32767" attributes="0"/>
-                              <Component id="ImageFrame19" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jScrollPaneFifteen" alignment="0" pref="176" max="32767" attributes="0"/>
+                              <Component id="ImageFrameFifteen" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
@@ -2339,20 +2344,20 @@
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="EventTitlePanel22" min="-2" max="-2" attributes="0"/>
+                          <Component id="EventTitlePanelFifteen" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
-                          <Component id="SeperatorPane19" min="-2" pref="12" max="-2" attributes="0"/>
+                          <Component id="SeperatorPaneFifteen" min="-2" pref="12" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="ImageFrame19" min="-2" max="-2" attributes="0"/>
+                          <Component id="ImageFrameFifteen" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jScrollPane22" pref="117" max="32767" attributes="0"/>
+                          <Component id="jScrollPaneFifteen" pref="117" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Container class="javax.swing.JPanel" name="EventTitlePanel22">
+                <Container class="javax.swing.JPanel" name="EventTitlePanelFifteen">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="0" green="0" red="0" type="rgb"/>
@@ -2365,9 +2370,9 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="EventTitleLabel22" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="EventTitleLabelFifteen" alignment="0" max="32767" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="DateTextLabel22" min="-2" pref="253" max="-2" attributes="0"/>
+                                      <Component id="DateTextLabelFifteen" min="-2" pref="253" max="-2" attributes="0"/>
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
@@ -2379,16 +2384,16 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="EventTitleLabel22" min="-2" max="-2" attributes="0"/>
+                              <Component id="EventTitleLabelFifteen" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="DateTextLabel22" min="-2" max="-2" attributes="0"/>
+                              <Component id="DateTextLabelFifteen" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
                   </Layout>
                   <SubComponents>
-                    <Component class="javax.swing.JLabel" name="EventTitleLabel22">
+                    <Component class="javax.swing.JLabel" name="EventTitleLabelFifteen">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Tahoma" size="18" style="1"/>
@@ -2399,7 +2404,7 @@
                         <Property name="text" type="java.lang.String" value="jLabel1"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="DateTextLabel22">
+                    <Component class="javax.swing.JLabel" name="DateTextLabelFifteen">
                       <Properties>
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -2409,7 +2414,7 @@
                     </Component>
                   </SubComponents>
                 </Container>
-                <Container class="javax.swing.JPanel" name="ImageFrame19">
+                <Container class="javax.swing.JPanel" name="ImageFrameFifteen">
                   <Properties>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -2432,20 +2437,20 @@
                     </DimensionLayout>
                   </Layout>
                 </Container>
-                <Container class="javax.swing.JPanel" name="SeperatorPane19">
+                <Container class="javax.swing.JPanel" name="SeperatorPaneFifteen">
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
                     <Property name="useNullLayout" type="boolean" value="true"/>
                   </Layout>
                 </Container>
-                <Container class="javax.swing.JScrollPane" name="jScrollPane22">
+                <Container class="javax.swing.JScrollPane" name="jScrollPaneFifteen">
                   <AuxValues>
                     <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
                   </AuxValues>
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                   <SubComponents>
-                    <Component class="javax.swing.JTextPane" name="DescriptionTextPanel19">
+                    <Component class="javax.swing.JTextPane" name="DescriptionTextPanelFifteen">
                     </Component>
                   </SubComponents>
                 </Container>
@@ -2470,17 +2475,17 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
-                          <Component id="EventTitlePanel23" alignment="1" max="32767" attributes="0"/>
+                          <Component id="EventTitlePanelSixteen" alignment="1" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="SeperatorPane20" min="-2" pref="280" max="-2" attributes="0"/>
+                          <Component id="SeperatorPaneSixteen" min="-2" pref="280" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jScrollPane23" alignment="0" pref="176" max="32767" attributes="0"/>
-                              <Component id="ImageFrame20" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jScrollPaneSixteen" alignment="0" pref="176" max="32767" attributes="0"/>
+                              <Component id="ImageFrameSixteen" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
@@ -2489,20 +2494,20 @@
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="EventTitlePanel23" min="-2" max="-2" attributes="0"/>
+                          <Component id="EventTitlePanelSixteen" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
-                          <Component id="SeperatorPane20" min="-2" pref="12" max="-2" attributes="0"/>
+                          <Component id="SeperatorPaneSixteen" min="-2" pref="12" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="ImageFrame20" min="-2" max="-2" attributes="0"/>
+                          <Component id="ImageFrameSixteen" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jScrollPane23" pref="117" max="32767" attributes="0"/>
+                          <Component id="jScrollPaneSixteen" pref="117" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Container class="javax.swing.JPanel" name="EventTitlePanel23">
+                <Container class="javax.swing.JPanel" name="EventTitlePanelSixteen">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="0" green="0" red="0" type="rgb"/>
@@ -2515,9 +2520,9 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="EventTitleLabel23" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="EventTitleLabelSixteen" alignment="0" max="32767" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="DateTextLabel23" min="-2" pref="253" max="-2" attributes="0"/>
+                                      <Component id="DateTextLabelSixteen" min="-2" pref="253" max="-2" attributes="0"/>
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
@@ -2529,16 +2534,16 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="EventTitleLabel23" min="-2" max="-2" attributes="0"/>
+                              <Component id="EventTitleLabelSixteen" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="DateTextLabel23" min="-2" max="-2" attributes="0"/>
+                              <Component id="DateTextLabelSixteen" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
                   </Layout>
                   <SubComponents>
-                    <Component class="javax.swing.JLabel" name="EventTitleLabel23">
+                    <Component class="javax.swing.JLabel" name="EventTitleLabelSixteen">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Tahoma" size="18" style="1"/>
@@ -2549,7 +2554,7 @@
                         <Property name="text" type="java.lang.String" value="jLabel1"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="DateTextLabel23">
+                    <Component class="javax.swing.JLabel" name="DateTextLabelSixteen">
                       <Properties>
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -2559,7 +2564,7 @@
                     </Component>
                   </SubComponents>
                 </Container>
-                <Container class="javax.swing.JPanel" name="ImageFrame20">
+                <Container class="javax.swing.JPanel" name="ImageFrameSixteen">
                   <Properties>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -2582,13 +2587,13 @@
                     </DimensionLayout>
                   </Layout>
                 </Container>
-                <Container class="javax.swing.JPanel" name="SeperatorPane20">
+                <Container class="javax.swing.JPanel" name="SeperatorPaneSixteen">
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
                     <Property name="useNullLayout" type="boolean" value="true"/>
                   </Layout>
                 </Container>
-                <Container class="javax.swing.JScrollPane" name="jScrollPane23">
+                <Container class="javax.swing.JScrollPane" name="jScrollPaneSixteen">
                   <AuxValues>
                     <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
                   </AuxValues>
@@ -2605,5 +2610,62 @@
         </Container>
       </SubComponents>
     </Container>
+    <Component class="javax.swing.JButton" name="EditBtn">
+      <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/Graphics/EditIconNonHover.png"/>
+        </Property>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+            <LineBorder/>
+          </Border>
+        </Property>
+        <Property name="contentAreaFilled" type="boolean" value="false"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="EditBtnActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="SaveBtn">
+      <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/Graphics/SaveIconNonHover.png"/>
+        </Property>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+            <LineBorder/>
+          </Border>
+        </Property>
+        <Property name="contentAreaFilled" type="boolean" value="false"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SaveBtnActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="AddBtn">
+      <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/Graphics/AddIconNonHover.png"/>
+        </Property>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+            <LineBorder/>
+          </Border>
+        </Property>
+        <Property name="contentAreaFilled" type="boolean" value="false"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AddBtnActionPerformed"/>
+      </Events>
+    </Component>
   </SubComponents>
 </Form>
