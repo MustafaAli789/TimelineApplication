@@ -5,6 +5,8 @@
  */
 package TimelineApplication;
 
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author S199841769
@@ -26,7 +28,6 @@ public class Maintimeline extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-        java.awt.GridBagConstraints gridBagConstraints;
 
         jSeparator1 = new javax.swing.JSeparator();
         TimelineTitleLabel = new javax.swing.JLabel();
@@ -172,9 +173,14 @@ public class Maintimeline extends javax.swing.JFrame {
         TimelineTitleLabel.setText("TIMELINE TITLE HERE");
 
         DeleteBtn.setForeground(new java.awt.Color(255, 255, 255));
-        DeleteBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Graphics/DeleteIconNonHover.png"))); // NOI18N
+        DeleteBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/Graphics/DeleteIconNonHover.png"))); // NOI18N
         DeleteBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         DeleteBtn.setContentAreaFilled(false);
+        DeleteBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                DeleteBtnMouseExited(evt);
+            }
+        });
         DeleteBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DeleteBtnActionPerformed(evt);
@@ -1589,7 +1595,7 @@ public class Maintimeline extends javax.swing.JFrame {
         ScrollableAreaPane.setViewportView(jPanel1);
 
         EditBtn.setForeground(new java.awt.Color(255, 255, 255));
-        EditBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Graphics/EditIconNonHover.png"))); // NOI18N
+        EditBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/Graphics/EditIconNonHover.png"))); // NOI18N
         EditBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         EditBtn.setContentAreaFilled(false);
         EditBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -1599,7 +1605,7 @@ public class Maintimeline extends javax.swing.JFrame {
         });
 
         SaveBtn.setForeground(new java.awt.Color(255, 255, 255));
-        SaveBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Graphics/SaveIconNonHover.png"))); // NOI18N
+        SaveBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/Graphics/SaveIconNonHover.png"))); // NOI18N
         SaveBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         SaveBtn.setContentAreaFilled(false);
         SaveBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -1609,7 +1615,7 @@ public class Maintimeline extends javax.swing.JFrame {
         });
 
         AddBtn.setForeground(new java.awt.Color(255, 255, 255));
-        AddBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Graphics/AddIconNonHover.png"))); // NOI18N
+        AddBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/Graphics/SaveIconNonHover.png"))); // NOI18N
         AddBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         AddBtn.setContentAreaFilled(false);
         AddBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -1655,7 +1661,7 @@ public class Maintimeline extends javax.swing.JFrame {
                     .addComponent(SaveBtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(DeleteBtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(AddBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -1676,6 +1682,11 @@ public class Maintimeline extends javax.swing.JFrame {
     private void AddBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddBtnActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_AddBtnActionPerformed
+
+    private void DeleteBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DeleteBtnMouseExited
+        ImageIcon deleteBtnNonHover = new ImageIcon("DeleteButtonIconNonHover.png");
+        DeleteBtn.setIcon(deleteBtnNonHover);
+    }//GEN-LAST:event_DeleteBtnMouseExited
 
     /**
      * @param args the command line arguments
