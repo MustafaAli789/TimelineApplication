@@ -5,6 +5,7 @@
  */
 package TimelineApplication;
 
+import java.awt.Color;
 import javax.swing.JButton;
 
 /**
@@ -31,12 +32,23 @@ public class Start extends javax.swing.JFrame {
 
         TitleLabel = new javax.swing.JLabel();
         Start = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setLocationByPlatform(true);
+        setMaximumSize(new java.awt.Dimension(665, 454));
+        setMinimumSize(new java.awt.Dimension(665, 454));
+        setPreferredSize(new java.awt.Dimension(665, 454));
+        setResizable(false);
+        getContentPane().setLayout(null);
 
-        TitleLabel.setFont(new java.awt.Font("Copperplate Gothic Bold", 1, 48)); // NOI18N
+        TitleLabel.setFont(new java.awt.Font("Cooper Black", 1, 48)); // NOI18N
+        TitleLabel.setForeground(new java.awt.Color(255, 102, 51));
         TitleLabel.setText("TIMELINE BUILDER");
+        getContentPane().add(TitleLabel);
+        TitleLabel.setBounds(60, 90, 568, 54);
 
+        Start.setBackground(new java.awt.Color(255, 0, 0));
         Start.setFont(new java.awt.Font("Copperplate Gothic Bold", 0, 18)); // NOI18N
         Start.setText("START");
         Start.addActionListener(new java.awt.event.ActionListener() {
@@ -44,30 +56,12 @@ public class Start extends javax.swing.JFrame {
                 StartActionPerformed(evt);
             }
         });
+        getContentPane().add(Start);
+        Start.setBounds(230, 290, 214, 60);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(33, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(Start, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(196, 196, 196))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(TitleLabel)
-                        .addGap(20, 20, 20))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(55, 55, 55)
-                .addComponent(TitleLabel)
-                .addGap(55, 55, 55)
-                .addComponent(Start, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(118, Short.MAX_VALUE))
-        );
+        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\ocdsb\\Documents\\abstract-crystalized-moving-fractal-motion-background-good-for-churches-lyrics-presentations-screen-savers-etc_rpwr11ed__F0000.png")); // NOI18N
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(0, 0, 660, 450);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -76,6 +70,13 @@ public class Start extends javax.swing.JFrame {
         Login loginscreen = new Login();
         loginscreen.setVisible(true);
         super.dispose();
+        
+        for (int i = 1; i <= 9; i++) {
+            JButton btn = new JButton(String.valueOf(i));
+            btn.setBackground(Color.ORANGE);
+            btn.setForeground(Color.ORANGE);
+            Start.add(btn);
+        }
     }//GEN-LAST:event_StartActionPerformed
 
     /**
@@ -107,6 +108,8 @@ public class Start extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
+        
+        
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Start().setVisible(true);
@@ -117,5 +120,6 @@ public class Start extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Start;
     private javax.swing.JLabel TitleLabel;
+    private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }

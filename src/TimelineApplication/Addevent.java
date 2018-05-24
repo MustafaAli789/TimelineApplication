@@ -1,14 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package TimelineApplication;
-
-/**
- *
- * @author S199841769
- */
+import java.io.*;
 public class Addevent extends javax.swing.JFrame {
 
     /**
@@ -181,13 +172,47 @@ public class Addevent extends javax.swing.JFrame {
     }//GEN-LAST:event_CancelBtnActionPerformed
 
     private void SaveBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveBtnActionPerformed
+           String eventpos = EventPositionTextField.getText();
+           String eventname = EventNameTextField.getText();
+           String eventTime = TimeTextField.getText();
+           String eventdesc = DescriptionTextField.getText();
+           String eventimg = ImageUrlTextField.getText();
+           
+
+    try {
+                File file = new File("Event.txt");
+                file.createNewFile();
+                // if file doesnt exists, then create it
+                if (!file.exists()) {
+                    file.createNewFile();
+                }
+
+                FileWriter fw = new FileWriter(file.getAbsoluteFile());
+                PrintWriter pw = new PrintWriter(fw);
+                pw.write("Event position: " + eventpos); 
+                pw.println();
+                pw.write("Event name: " + eventname);
+                pw.println();
+                pw.write("Time: " + eventTime);
+                pw.println();
+                pw.write("Description: " + eventdesc);
+                pw.println();
+                pw.write("Image (URL): " + eventimg);
+                pw.println();
+                pw.close();
+
+                System.out.println("Done");
+
+            } catch (IOException e) {
+                e.printStackTrace();
+}
         Maintimeline mainscreen = new Maintimeline();
         mainscreen.setVisible(true);
         super.dispose();
     }//GEN-LAST:event_SaveBtnActionPerformed
 
     private void EventPositionTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EventPositionTextFieldActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_EventPositionTextFieldActionPerformed
 
     /**
