@@ -4,7 +4,11 @@
  * and open the template in the editor.
  */
 package TimelineApplication;
-
+import java.io.*;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Scanner;
 /**
  *
  * @author S199841769
@@ -48,7 +52,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
         getContentPane().add(LoginRegisterBtn);
-        LoginRegisterBtn.setBounds(179, 217, 123, 25);
+        LoginRegisterBtn.setBounds(179, 217, 145, 29);
 
         LoginPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
@@ -63,6 +67,11 @@ public class Login extends javax.swing.JFrame {
         PasswordLabel.setText("Password:");
 
         PasswordField.setText("jPasswordField1");
+        PasswordField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PasswordFieldActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout LoginPanelLayout = new javax.swing.GroupLayout(LoginPanel);
         LoginPanel.setLayout(LoginPanelLayout);
@@ -92,11 +101,11 @@ public class Login extends javax.swing.JFrame {
         );
 
         getContentPane().add(LoginPanel);
-        LoginPanel.setBounds(12, 36, 290, 163);
+        LoginPanel.setBounds(12, 36, 284, 163);
 
         LoginLabel.setText("Login");
         getContentPane().add(LoginLabel);
-        LoginLabel.setBounds(12, 13, 30, 16);
+        LoginLabel.setBounds(12, 13, 35, 16);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -108,13 +117,59 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_LoginRegisterBtnActionPerformed
 
     private void UsernameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsernameTextFieldActionPerformed
-        // TODO add your handling code here:
+        String Uname = UsernameTextField.getText();
+// TODO add your handling code here:
     }//GEN-LAST:event_UsernameTextFieldActionPerformed
 
+    private void PasswordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PasswordFieldActionPerformed
+        String pw = PasswordField.getText();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_PasswordFieldActionPerformed
+    
+    public static ArrayList<String> readUP(){
+        String fName = "Q&A.txt";
+        String line = null;
+        ArrayList<String> UPlist = new ArrayList<String>();
+        try{
+            FileReader fileReader = new FileReader(fName);
+            BufferedReader bufferedReader = new BufferedReader(fileReader); 
+            while (true){
+                line = bufferedReader.readLine();
+                    if (line == null){
+                        break;
+                    }
+                    else {
+                        UPlist.add(line);
+                    }
+            }          
+        }
+        catch (FileNotFoundException ex){
+            System.out.println("Cannot find the file "+fName);
+        }
+        catch (IOException ex){
+            System.out.println("Error occured when reading file.");
+        }
+        
+        return (UPlist);
+    }
+    
+    public static boolean UPverify(ArrayList<String> a, String pw, String Uname){
+        boolean verified = false;
+        for (int x=0; x<=a.size(); x++){
+            if (a.get(x)==Uname){
+                if (a.get(x+1)==pw){
+                    verified = true ;
+                    break;
+                }
+            }
+        }
+        return (verified);
+    }
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+        System.out.println(readUP());
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
