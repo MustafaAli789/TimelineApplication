@@ -39,10 +39,12 @@ public class Login extends javax.swing.JFrame {
         PasswordLabel = new javax.swing.JLabel();
         PasswordField = new javax.swing.JPasswordField();
         LoginLabel = new javax.swing.JLabel();
+        AnnouceLabel = new javax.swing.JLabel();
 
         jLabel3.setText("jLabel3");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Login System");
         getContentPane().setLayout(null);
 
         LoginRegisterBtn.setText("Login / Register");
@@ -107,22 +109,32 @@ public class Login extends javax.swing.JFrame {
         getContentPane().add(LoginLabel);
         LoginLabel.setBounds(12, 13, 35, 16);
 
+        AnnouceLabel.setToolTipText("");
+        getContentPane().add(AnnouceLabel);
+        AnnouceLabel.setBounds(60, 10, 240, 16);
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void LoginRegisterBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginRegisterBtnActionPerformed
-        Maintimeline mainscreen = new Maintimeline();
-        mainscreen.setVisible(true);
-        super.dispose();
+        String Uname = UsernameTextField.getText();
+        String pw = PasswordField.getText();
+        if(UPverify(readUP(),pw, Uname)==true){
+            Maintimeline mainscreen = new Maintimeline();
+            mainscreen.setVisible(true);
+            super.dispose();
+        } 
+        
+        
     }//GEN-LAST:event_LoginRegisterBtnActionPerformed
 
     private void UsernameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsernameTextFieldActionPerformed
-        String Uname = UsernameTextField.getText();
+        
 // TODO add your handling code here:
     }//GEN-LAST:event_UsernameTextFieldActionPerformed
 
     private void PasswordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PasswordFieldActionPerformed
-        String pw = PasswordField.getText();
+        
         // TODO add your handling code here:
     }//GEN-LAST:event_PasswordFieldActionPerformed
     
@@ -153,15 +165,16 @@ public class Login extends javax.swing.JFrame {
         return (UPlist);
     }
     
-    public static boolean UPverify(ArrayList<String> a, String pw, String Uname){
+    public boolean UPverify(ArrayList<String> a, String pw, String Uname){
         boolean verified = false;
-        for (int x=0; x<=a.size(); x++){
-            if (a.get(x)==Uname){
-                if (a.get(x+1)==pw){
-                    verified = true ;
-                    break;
-                }
+        for (int x=0; x<a.size(); x++){
+            if (a.get(x).equals(Uname) && a.get(x+1).equals(pw)){
+                verified = true;
+                break;
             }
+        }
+        if (verified == false){
+            AnnouceLabel.setText("Invalid Username or Password.");
         }
         return (verified);
     }
@@ -203,13 +216,14 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel AnnouceLabel;
     private javax.swing.JLabel LoginLabel;
     private javax.swing.JPanel LoginPanel;
     private javax.swing.JButton LoginRegisterBtn;
-    private javax.swing.JPasswordField PasswordField;
+    public javax.swing.JPasswordField PasswordField;
     private javax.swing.JLabel PasswordLabel;
     private javax.swing.JLabel UsernameLabel;
-    private javax.swing.JTextField UsernameTextField;
+    public javax.swing.JTextField UsernameTextField;
     private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
 }
