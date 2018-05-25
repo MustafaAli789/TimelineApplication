@@ -11,6 +11,8 @@ import javax.swing.ImageIcon;
 import java.io.*;
 import javax.swing.JPanel;
 import java.util.*;
+import javax.swing.JLabel;
+import javax.swing.JTextPane;
 
 /**
  *
@@ -24,36 +26,45 @@ public class Maintimeline extends javax.swing.JFrame {
     public Maintimeline() {
         initComponents();        
         
-        ArrayList<JPanel> eventPanelNames = new ArrayList<>();
-        eventPanelNames.add(EventPane1);
-        eventPanelNames.add(EventPane2);
-        eventPanelNames.add(EventPane3);
-        eventPanelNames.add(EventPane4);
-        eventPanelNames.add(EventPane5);
-        eventPanelNames.add(EventPane6);
-        eventPanelNames.add(EventPane7);
-        eventPanelNames.add(EventPane8);
-        eventPanelNames.add(EventPane9);
-        eventPanelNames.add(EventPane10);
-        eventPanelNames.add(EventPane11);
-        eventPanelNames.add(EventPane12);
-        eventPanelNames.add(EventPane13);
-        eventPanelNames.add(EventPane14);
-        eventPanelNames.add(EventPane15);
-        eventPanelNames.add(EventPane16);
         
+        //The array below will store all event title variable names and event date variable names for later use
+        JLabel eventTitleDateNames[][]={{EventTitleLabelOne, DateTextLabelOne},{EventTitleLabelTwo, DateTextLabelTwo},{EventTitleLabelThree, DateTextLabelThree}, 
+        {EventTitleLabelFour, DateTextLabelFour}, {EventTitleLabelFive, DateTextLabelFive}, {EventTitleLabelSix, DateTextLabelSix}, {EventTitleLabelSeven, DateTextLabelSeven}, 
+        {EventTitleLabelEight, DateTextLabelEight}, {EventTitleLabelNine, DateTextLabelNine},{EventTitleLabelTen, DateTextLabelTen}, {EventTitleLabelEleven, DateTextLabelEleven}, 
+        {EventTitleLabelTwelve, DateTextLabelTwelve}, {EventTitleLabelThirteen, DateTextLabelThirteen}, {EventTitleLabelFourteen, DateTextLabelFourteen}, 
+        {EventTitleLabelFifteen, DateTextLabelFifteen},{EventTitleLabelSixteen, DateTextLabelSixteen}};
+
+        //The array below will store all event description variable names for later use
+        JTextPane eventDescriptionNames[]={DescriptionTextPanelOne,DescriptionTextPanelTwo, DescriptionTextPanelThree, DescriptionTextPanelFour, DescriptionTextPanelFive,
+        DescriptionTextPanelSix, DescriptionTextPanelSeven, DescriptionTextPanelEight, DescriptionTextPanelNine, DescriptionTextPanelTen, DescriptionTextPanelEleven, 
+        DescriptionTextPanelTwelve, DescriptionTextPanelThirteen, DescriptionTextPanelFourteen, DescriptionTextPanelFifteen, DescriptionTextPanelSixteen};
         
+        //The array below will store all event pane variable names for later use
+        JPanel eventPaneNames[]={EventPane1, EventPane2, EventPane3, EventPane4, EventPane5, EventPane6, EventPane7, EventPane8, EventPane9, EventPane10, EventPane11, EventPane12,
+        EventPane13, EventPane14, EventPane15, EventPane16};
         
-        for(JPanel name : eventPanelNames){
-            setEventInvisible(name);
+        //The array below will store all arrow variable names for later use
+        JLabel eventArrowNames[]={Arrow1, Arrow2, Arrow3, Arrow4, Arrow5, Arrow6, Arrow7, Arrow8, Arrow9, Arrow10, Arrow11, Arrow12};
+        
+        //Initially setting all events to non visible
+        for(JPanel eventName : eventPaneNames){
+            setEventPaneInvisible(eventName);
+            
+        }  
+        
+        //Setting all arros to non visible 
+        for (JLabel arrowName : eventArrowNames){
+            setArrowInvisible(arrowName);
         }
-        
-        EventPane1.setVisible(true);
         
     }
 
-    public static void setEventInvisible(JPanel EventPane){
-        EventPane.setVisible(false);
+    public static void setEventPaneInvisible(JPanel eventPaneName){
+        eventPaneName.setVisible(false);
+    }
+    
+    public static void setArrowInvisible (JLabel arrowName){
+        arrowName.setVisible(false);
     }
     
     File image = new File("/DeleteIconHover");
@@ -211,7 +222,19 @@ public class Maintimeline extends javax.swing.JFrame {
         ImageFrameSixteen = new javax.swing.JPanel();
         SeperatorPaneSixteen = new javax.swing.JPanel();
         jScrollPaneSixteen = new javax.swing.JScrollPane();
-        DescriptionTextPanel20 = new javax.swing.JTextPane();
+        DescriptionTextPanelSixteen = new javax.swing.JTextPane();
+        Arrow12 = new javax.swing.JLabel();
+        Arrow1 = new javax.swing.JLabel();
+        Arrow2 = new javax.swing.JLabel();
+        Arrow3 = new javax.swing.JLabel();
+        Arrow4 = new javax.swing.JLabel();
+        Arrow5 = new javax.swing.JLabel();
+        Arrow6 = new javax.swing.JLabel();
+        Arrow7 = new javax.swing.JLabel();
+        Arrow8 = new javax.swing.JLabel();
+        Arrow9 = new javax.swing.JLabel();
+        Arrow10 = new javax.swing.JLabel();
+        Arrow11 = new javax.swing.JLabel();
         DeleteBtn = new javax.swing.JButton();
         SaveBtn = new javax.swing.JButton();
         EditBtn = new javax.swing.JButton();
@@ -279,6 +302,7 @@ public class Maintimeline extends javax.swing.JFrame {
 
         SeperatorPaneOne.setLayout(null);
 
+        DescriptionTextPanelOne.setEditable(false);
         jScrollPaneOne.setViewportView(DescriptionTextPanelOne);
 
         javax.swing.GroupLayout EventPane1Layout = new javax.swing.GroupLayout(EventPane1);
@@ -307,7 +331,7 @@ public class Maintimeline extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(ImageFrameOne, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPaneOne)
+                .addComponent(jScrollPaneOne, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -364,6 +388,7 @@ public class Maintimeline extends javax.swing.JFrame {
 
         SeperatorPaneThree.setLayout(null);
 
+        DescriptionTextPanelThree.setEditable(false);
         jScrollPaneThree.setViewportView(DescriptionTextPanelThree);
 
         javax.swing.GroupLayout EventPane3Layout = new javax.swing.GroupLayout(EventPane3);
@@ -449,6 +474,7 @@ public class Maintimeline extends javax.swing.JFrame {
 
         SeperatorPaneTwo.setLayout(null);
 
+        DescriptionTextPanelTwo.setEditable(false);
         jScrollPaneTwo.setViewportView(DescriptionTextPanelTwo);
 
         javax.swing.GroupLayout EventPane2Layout = new javax.swing.GroupLayout(EventPane2);
@@ -477,7 +503,7 @@ public class Maintimeline extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(ImageFrameTwo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPaneTwo)
+                .addComponent(jScrollPaneTwo, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -534,6 +560,7 @@ public class Maintimeline extends javax.swing.JFrame {
 
         SeperatorPaneFour.setLayout(null);
 
+        DescriptionTextPanelFour.setEditable(false);
         jScrollPaneFour.setViewportView(DescriptionTextPanelFour);
 
         javax.swing.GroupLayout EventPane4Layout = new javax.swing.GroupLayout(EventPane4);
@@ -562,7 +589,7 @@ public class Maintimeline extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(ImageFrameFour, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPaneFour)
+                .addComponent(jScrollPaneFour, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -619,6 +646,7 @@ public class Maintimeline extends javax.swing.JFrame {
 
         SeperatorPaneFive.setLayout(null);
 
+        DescriptionTextPanelFive.setEditable(false);
         jScrollPaneFive.setViewportView(DescriptionTextPanelFive);
 
         javax.swing.GroupLayout EventPane5Layout = new javax.swing.GroupLayout(EventPane5);
@@ -704,6 +732,7 @@ public class Maintimeline extends javax.swing.JFrame {
 
         SeperatorPaneSix.setLayout(null);
 
+        DescriptionTextPanelSix.setEditable(false);
         jScrollPaneSix.setViewportView(DescriptionTextPanelSix);
 
         javax.swing.GroupLayout EventPane6Layout = new javax.swing.GroupLayout(EventPane6);
@@ -789,6 +818,7 @@ public class Maintimeline extends javax.swing.JFrame {
 
         SeperatorPaneSeven.setLayout(null);
 
+        DescriptionTextPanelSeven.setEditable(false);
         jScrollPaneSeven.setViewportView(DescriptionTextPanelSeven);
 
         javax.swing.GroupLayout EventPane7Layout = new javax.swing.GroupLayout(EventPane7);
@@ -874,6 +904,7 @@ public class Maintimeline extends javax.swing.JFrame {
 
         SeperatorPaneEight.setLayout(null);
 
+        DescriptionTextPanelEight.setEditable(false);
         jScrollPaneEight.setViewportView(DescriptionTextPanelEight);
 
         javax.swing.GroupLayout EventPane8Layout = new javax.swing.GroupLayout(EventPane8);
@@ -959,6 +990,7 @@ public class Maintimeline extends javax.swing.JFrame {
 
         SeperatorPaneNine.setLayout(null);
 
+        DescriptionTextPanelNine.setEditable(false);
         jScrollPaneNine.setViewportView(DescriptionTextPanelNine);
 
         javax.swing.GroupLayout EventPane9Layout = new javax.swing.GroupLayout(EventPane9);
@@ -1044,6 +1076,7 @@ public class Maintimeline extends javax.swing.JFrame {
 
         SeperatorPaneTen.setLayout(null);
 
+        DescriptionTextPanelTen.setEditable(false);
         jScrollPaneTen.setViewportView(DescriptionTextPanelTen);
 
         javax.swing.GroupLayout EventPane10Layout = new javax.swing.GroupLayout(EventPane10);
@@ -1129,6 +1162,7 @@ public class Maintimeline extends javax.swing.JFrame {
 
         SeperatorPaneEleven.setLayout(null);
 
+        DescriptionTextPanelEleven.setEditable(false);
         jScrollPaneEleven.setViewportView(DescriptionTextPanelEleven);
 
         javax.swing.GroupLayout EventPane11Layout = new javax.swing.GroupLayout(EventPane11);
@@ -1214,6 +1248,7 @@ public class Maintimeline extends javax.swing.JFrame {
 
         SeperatorPaneTwelve.setLayout(null);
 
+        DescriptionTextPanelTwelve.setEditable(false);
         jScrollPaneTwelve.setViewportView(DescriptionTextPanelTwelve);
 
         javax.swing.GroupLayout EventPane12Layout = new javax.swing.GroupLayout(EventPane12);
@@ -1299,6 +1334,7 @@ public class Maintimeline extends javax.swing.JFrame {
 
         SeperatorPaneThirteen.setLayout(null);
 
+        DescriptionTextPanelThirteen.setEditable(false);
         jScrollPaneThirteen.setViewportView(DescriptionTextPanelThirteen);
 
         javax.swing.GroupLayout EventPane13Layout = new javax.swing.GroupLayout(EventPane13);
@@ -1384,6 +1420,7 @@ public class Maintimeline extends javax.swing.JFrame {
 
         SeperatorPaneFourteen.setLayout(null);
 
+        DescriptionTextPanelFourteen.setEditable(false);
         jScrollPaneFourteen.setViewportView(DescriptionTextPanelFourteen);
 
         javax.swing.GroupLayout EventPane14Layout = new javax.swing.GroupLayout(EventPane14);
@@ -1469,6 +1506,7 @@ public class Maintimeline extends javax.swing.JFrame {
 
         SeperatorPaneFifteen.setLayout(null);
 
+        DescriptionTextPanelFifteen.setEditable(false);
         jScrollPaneFifteen.setViewportView(DescriptionTextPanelFifteen);
 
         javax.swing.GroupLayout EventPane15Layout = new javax.swing.GroupLayout(EventPane15);
@@ -1554,7 +1592,8 @@ public class Maintimeline extends javax.swing.JFrame {
 
         SeperatorPaneSixteen.setLayout(null);
 
-        jScrollPaneSixteen.setViewportView(DescriptionTextPanel20);
+        DescriptionTextPanelSixteen.setEditable(false);
+        jScrollPaneSixteen.setViewportView(DescriptionTextPanelSixteen);
 
         javax.swing.GroupLayout EventPane16Layout = new javax.swing.GroupLayout(EventPane16);
         EventPane16.setLayout(EventPane16Layout);
@@ -1587,6 +1626,42 @@ public class Maintimeline extends javax.swing.JFrame {
         );
 
         jPanel1.add(EventPane16, new org.netbeans.lib.awtextra.AbsoluteConstraints(64, 1286, 191, -1));
+
+        Arrow12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/arrow.png"))); // NOI18N
+        jPanel1.add(Arrow12, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 1460, -1, -1));
+
+        Arrow1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/arrow.png"))); // NOI18N
+        jPanel1.add(Arrow1, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 220, -1, -1));
+
+        Arrow2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/arrow.png"))); // NOI18N
+        jPanel1.add(Arrow2, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 220, -1, -1));
+
+        Arrow3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/arrow.png"))); // NOI18N
+        jPanel1.add(Arrow3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 220, -1, -1));
+
+        Arrow4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/arrow.png"))); // NOI18N
+        jPanel1.add(Arrow4, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 640, -1, -1));
+
+        Arrow5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/arrow.png"))); // NOI18N
+        jPanel1.add(Arrow5, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 640, -1, -1));
+
+        Arrow6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/arrow.png"))); // NOI18N
+        jPanel1.add(Arrow6, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 640, -1, -1));
+
+        Arrow7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/arrow.png"))); // NOI18N
+        jPanel1.add(Arrow7, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 1040, -1, -1));
+
+        Arrow8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/arrow.png"))); // NOI18N
+        jPanel1.add(Arrow8, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 1040, -1, -1));
+
+        Arrow9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/arrow.png"))); // NOI18N
+        jPanel1.add(Arrow9, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 1040, -1, -1));
+
+        Arrow10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/arrow.png"))); // NOI18N
+        jPanel1.add(Arrow10, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 1460, -1, -1));
+
+        Arrow11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/arrow.png"))); // NOI18N
+        jPanel1.add(Arrow11, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 1460, -1, -1));
 
         ScrollableAreaPane.setViewportView(jPanel1);
 
@@ -1806,6 +1881,18 @@ public class Maintimeline extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AddBtn;
+    private javax.swing.JLabel Arrow1;
+    private javax.swing.JLabel Arrow10;
+    private javax.swing.JLabel Arrow11;
+    private javax.swing.JLabel Arrow12;
+    private javax.swing.JLabel Arrow2;
+    private javax.swing.JLabel Arrow3;
+    private javax.swing.JLabel Arrow4;
+    private javax.swing.JLabel Arrow5;
+    private javax.swing.JLabel Arrow6;
+    private javax.swing.JLabel Arrow7;
+    private javax.swing.JLabel Arrow8;
+    private javax.swing.JLabel Arrow9;
     private javax.swing.JLabel DateTextLabelEight;
     private javax.swing.JLabel DateTextLabelEleven;
     private javax.swing.JLabel DateTextLabelFifteen;
@@ -1823,7 +1910,6 @@ public class Maintimeline extends javax.swing.JFrame {
     private javax.swing.JLabel DateTextLabelTwelve;
     private javax.swing.JLabel DateTextLabelTwo;
     private javax.swing.JButton DeleteBtn;
-    private javax.swing.JTextPane DescriptionTextPanel20;
     private javax.swing.JTextPane DescriptionTextPanelEight;
     private javax.swing.JTextPane DescriptionTextPanelEleven;
     private javax.swing.JTextPane DescriptionTextPanelFifteen;
@@ -1834,6 +1920,7 @@ public class Maintimeline extends javax.swing.JFrame {
     private javax.swing.JTextPane DescriptionTextPanelOne;
     private javax.swing.JTextPane DescriptionTextPanelSeven;
     private javax.swing.JTextPane DescriptionTextPanelSix;
+    private javax.swing.JTextPane DescriptionTextPanelSixteen;
     private javax.swing.JTextPane DescriptionTextPanelTen;
     private javax.swing.JTextPane DescriptionTextPanelThirteen;
     private javax.swing.JTextPane DescriptionTextPanelThree;
