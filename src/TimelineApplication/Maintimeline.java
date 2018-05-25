@@ -5,6 +5,7 @@
  */
 package TimelineApplication;
 
+import java.awt.Color;
 import java.awt.Cursor;
 import javax.swing.ImageIcon;
 import java.io.*;
@@ -1596,6 +1597,8 @@ public class Maintimeline extends javax.swing.JFrame {
 
         ScrollableAreaPane.setViewportView(jPanel1);
 
+        DeleteBtn.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
+        DeleteBtn.setText("-");
         DeleteBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         DeleteBtn.setContentAreaFilled(false);
         DeleteBtn.setMaximumSize(new java.awt.Dimension(73, 73));
@@ -1615,6 +1618,8 @@ public class Maintimeline extends javax.swing.JFrame {
             }
         });
 
+        SaveBtn.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        SaveBtn.setText("Save");
         SaveBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         SaveBtn.setContentAreaFilled(false);
         SaveBtn.setMaximumSize(new java.awt.Dimension(73, 73));
@@ -1634,6 +1639,8 @@ public class Maintimeline extends javax.swing.JFrame {
             }
         });
 
+        EditBtn.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        EditBtn.setText("Edit");
         EditBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         EditBtn.setContentAreaFilled(false);
         EditBtn.setMaximumSize(new java.awt.Dimension(73, 73));
@@ -1648,6 +1655,8 @@ public class Maintimeline extends javax.swing.JFrame {
             }
         });
 
+        AddBtn.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
+        AddBtn.setText("+");
         AddBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         AddBtn.setContentAreaFilled(false);
         AddBtn.setMaximumSize(new java.awt.Dimension(73, 73));
@@ -1692,7 +1701,7 @@ public class Maintimeline extends javax.swing.JFrame {
                 .addGap(21, 21, 21)
                 .addComponent(TimelineTitleLabel)
                 .addGap(39, 39, 39)
-                .addComponent(ScrollableAreaPane, javax.swing.GroupLayout.PREFERRED_SIZE, 520, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(ScrollableAreaPane, javax.swing.GroupLayout.PREFERRED_SIZE, 486, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(DeleteBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1706,40 +1715,47 @@ public class Maintimeline extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void DeleteBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DeleteBtnMouseEntered
-        DeleteBtn.setIcon(createImageIcon("\\\\ad.ocdsb.ca\\studenthome\\8\\S346691868\\NetBeansProjects\\TimelineApplication\\DeleteIconHover", "Delete Button"));
-                //setIcon(new javax.swing.ImageIcon(getClass().getResource("/DeleteIconHover.png")));
+        //DeleteBtn.setIcon(createImageIcon("\\\\ad.ocdsb.ca\\studenthome\\8\\S346691868\\NetBeansProjects\\TimelineApplication\\DeleteIconHover", "Delete Button"));
+        DeleteBtn.setForeground(Color.red);
         
         DeleteBtn.setCursor(new Cursor(Cursor.HAND_CURSOR));
     }//GEN-LAST:event_DeleteBtnMouseEntered
 
     private void DeleteBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DeleteBtnMouseExited
+        DeleteBtn.setForeground(Color.black);
         DeleteBtn.setIcon(createImageIcon("/DeleteIconNonHover.png", "Delete Button Non Hover"));
     }//GEN-LAST:event_DeleteBtnMouseExited
 
     private void SaveBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SaveBtnMouseEntered
-        SaveBtn.setIcon(createImageIcon("/SaveIconHover.png", "Save Button Hover"));
+        SaveBtn.setForeground(Color.green);
+        //SaveBtn.setIcon(createImageIcon("/SaveIconHover.png", "Save Button Hover"));
         SaveBtn.setCursor(new Cursor(Cursor.HAND_CURSOR));
     }//GEN-LAST:event_SaveBtnMouseEntered
 
     private void SaveBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SaveBtnMouseExited
+        SaveBtn.setForeground(Color.black);
         SaveBtn.setIcon(createImageIcon("/SaveIconNonHover.png", "Save Button Non Hover"));
     }//GEN-LAST:event_SaveBtnMouseExited
 
     private void EditBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EditBtnMouseEntered
-        EditBtn.setIcon(createImageIcon("/EditIconHover.png", "Edit Button Hover"));
+        //EditBtn.setIcon(createImageIcon("/EditIconHover.png", "Edit Button Hover"));
+        EditBtn.setForeground(Color.green);
         EditBtn.setCursor(new Cursor(Cursor.HAND_CURSOR));
     }//GEN-LAST:event_EditBtnMouseEntered
 
     private void EditBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EditBtnMouseExited
+        EditBtn.setForeground(Color.black);
         EditBtn.setIcon(createImageIcon("/EditIconNonHover.png", "Edit Button non Hover"));
     }//GEN-LAST:event_EditBtnMouseExited
 
     private void AddBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddBtnMouseEntered
-        AddBtn.setIcon(createImageIcon("/AddIconHover.png", "Add Button Hover"));
+        //AddBtn.setIcon(createImageIcon("/AddIconHover.png", "Add Button Hover"));
+        AddBtn.setForeground(Color.green);
         AddBtn.setCursor(new Cursor(Cursor.HAND_CURSOR));
     }//GEN-LAST:event_AddBtnMouseEntered
 
     private void AddBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddBtnMouseExited
+        AddBtn.setForeground(Color.black);
         AddBtn.setIcon(createImageIcon("/AddIconNonHover.png", "Add Button Non Hover"));
     }//GEN-LAST:event_AddBtnMouseExited
 
