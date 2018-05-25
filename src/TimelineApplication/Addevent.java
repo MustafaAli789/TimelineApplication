@@ -33,6 +33,7 @@ public class Addevent extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        EventNameLabel.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
         EventNameLabel.setText("Event Name:");
 
         EventNameTextField.addActionListener(new java.awt.event.ActionListener() {
@@ -41,8 +42,10 @@ public class Addevent extends javax.swing.JFrame {
             }
         });
 
+        TimeLabel.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
         TimeLabel.setText("Time:");
 
+        DescriptionLabel.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
         DescriptionLabel.setText("Description:");
 
         DescriptionTextField.addActionListener(new java.awt.event.ActionListener() {
@@ -51,6 +54,7 @@ public class Addevent extends javax.swing.JFrame {
             }
         });
 
+        ImageUrlLabel.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
         ImageUrlLabel.setText("Image URL:");
 
         ImageUrlTextField.addActionListener(new java.awt.event.ActionListener() {
@@ -79,52 +83,39 @@ public class Addevent extends javax.swing.JFrame {
             }
         });
 
-        EventPositionLabel.setText("Event Positon:");
+        EventPositionLabel.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
+        EventPositionLabel.setText("Event Positon (Specify the Position, a Numerical Value):");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addComponent(EventPositionLabel))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addComponent(EventPositionTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 388, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addComponent(EventNameLabel))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addComponent(EventNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 388, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addComponent(TimeLabel))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addComponent(TimeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 388, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addComponent(DescriptionLabel))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addComponent(DescriptionTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 388, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addComponent(ImageUrlLabel))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addComponent(ImageUrlTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 388, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(80, 80, 80)
-                .addComponent(SaveBtn)
-                .addGap(117, 117, 117)
-                .addComponent(CancelBtn))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(78, 78, 78)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(EventPositionLabel)
+                            .addComponent(EventPositionTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 388, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(EventNameLabel)
+                            .addComponent(EventNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 388, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(TimeLabel)
+                            .addComponent(TimeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 388, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(DescriptionLabel)
+                            .addComponent(DescriptionTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 388, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ImageUrlLabel)
+                            .addComponent(ImageUrlTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 388, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(148, 148, 148)
+                        .addComponent(SaveBtn)
+                        .addGap(117, 117, 117)
+                        .addComponent(CancelBtn)))
+                .addContainerGap(92, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(13, 13, 13)
+                .addGap(55, 55, 55)
                 .addComponent(EventPositionLabel)
                 .addGap(7, 7, 7)
                 .addComponent(EventPositionTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -140,14 +131,15 @@ public class Addevent extends javax.swing.JFrame {
                 .addComponent(DescriptionLabel)
                 .addGap(7, 7, 7)
                 .addComponent(DescriptionTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(13, 13, 13)
+                .addGap(38, 38, 38)
                 .addComponent(ImageUrlLabel)
                 .addGap(7, 7, 7)
                 .addComponent(ImageUrlTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(16, 16, 16)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 85, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(SaveBtn)
-                    .addComponent(CancelBtn)))
+                    .addComponent(CancelBtn))
+                .addGap(26, 26, 26))
         );
 
         pack();
