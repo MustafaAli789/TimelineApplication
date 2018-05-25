@@ -200,14 +200,11 @@ public class Login extends javax.swing.JFrame {
                break;               
             }
         }
-        System.out.println(DecideWrite);
         if (DecideWrite==true){
-            String fName = "/Q&A.txt";
+            String fName = "Q&A.txt";
             try{
-                FileWriter fileWriter = new FileWriter("/Q&A.txt");
+                FileWriter fileWriter = new FileWriter("Q&A.txt");
                 BufferedWriter bufferedWriter = new BufferedWriter (fileWriter);
-                System.out.println(a);
-                System.out.println(b);
                 fileWriter.write(a);
                 fileWriter.write(b); 
                     } 
