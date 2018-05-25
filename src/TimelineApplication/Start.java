@@ -30,9 +30,11 @@ public class Start extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel2 = new javax.swing.JLabel();
         TitleLabel = new javax.swing.JLabel();
         Start = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setLocationByPlatform(true);
@@ -42,11 +44,11 @@ public class Start extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(null);
 
-        TitleLabel.setFont(new java.awt.Font("Cooper Black", 1, 48)); // NOI18N
+        TitleLabel.setFont(new java.awt.Font("Comic Sans MS", 1, 48)); // NOI18N
         TitleLabel.setForeground(new java.awt.Color(255, 102, 51));
         TitleLabel.setText("TIMELINE BUILDER");
         getContentPane().add(TitleLabel);
-        TitleLabel.setBounds(60, 90, 568, 54);
+        TitleLabel.setBounds(80, 80, 510, 54);
 
         Start.setBackground(new java.awt.Color(255, 0, 0));
         Start.setFont(new java.awt.Font("Copperplate Gothic Bold", 0, 18)); // NOI18N
@@ -59,9 +61,15 @@ public class Start extends javax.swing.JFrame {
         getContentPane().add(Start);
         Start.setBounds(230, 290, 214, 60);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\ocdsb\\Documents\\abstract-crystalized-moving-fractal-motion-background-good-for-churches-lyrics-presentations-screen-savers-etc_rpwr11ed__F0000.png")); // NOI18N
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(0, 0, 660, 450);
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/Graphics/Bright-Blue-Background-1.png"))); // NOI18N
+        jLabel3.setText("jLabel3");
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(-260, -60, 930, 540);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/Graphics/Bright-Blue-Background-1.png"))); // NOI18N
+        jLabel1.setText("jLabel1");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(-30, -20, 700, 480);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -120,6 +128,8 @@ public class Start extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Start;
     private javax.swing.JLabel TitleLabel;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
 }

@@ -5,6 +5,10 @@
  */
 package TimelineApplication;
 
+import java.awt.Cursor;
+import javax.swing.ImageIcon;
+import java.io.*;
+
 /**
  *
  * @author S199841769
@@ -18,6 +22,21 @@ public class Maintimeline extends javax.swing.JFrame {
         initComponents();
     }
 
+    File image = new File("/DeleteIconHover");
+    
+    protected ImageIcon createImageIcon(String path,
+                                           String description) {
+    java.net.URL imgURL = getClass().getResource(path);
+    if (imgURL != null) {
+        return new ImageIcon(imgURL, description);
+    } else {
+        System.out.println(image.getAbsolutePath());
+        System.out.println("The file: " + image.exists());
+        System.err.println("Couldn't find file: " + path);
+        return null;
+    }
+}
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -26,11 +45,9 @@ public class Maintimeline extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-        java.awt.GridBagConstraints gridBagConstraints;
 
         jSeparator1 = new javax.swing.JSeparator();
         TimelineTitleLabel = new javax.swing.JLabel();
-        DeleteBtn = new javax.swing.JButton();
         ScrollableAreaPane = new javax.swing.JScrollPane();
         jPanel1 = new javax.swing.JPanel();
         EventPane1 = new javax.swing.JPanel();
@@ -161,8 +178,9 @@ public class Maintimeline extends javax.swing.JFrame {
         SeperatorPaneSixteen = new javax.swing.JPanel();
         jScrollPaneSixteen = new javax.swing.JScrollPane();
         DescriptionTextPanel20 = new javax.swing.JTextPane();
-        EditBtn = new javax.swing.JButton();
+        DeleteBtn = new javax.swing.JButton();
         SaveBtn = new javax.swing.JButton();
+        EditBtn = new javax.swing.JButton();
         AddBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -170,16 +188,6 @@ public class Maintimeline extends javax.swing.JFrame {
 
         TimelineTitleLabel.setFont(new java.awt.Font("Copperplate Gothic Bold", 1, 24)); // NOI18N
         TimelineTitleLabel.setText("TIMELINE TITLE HERE");
-
-        DeleteBtn.setForeground(new java.awt.Color(255, 255, 255));
-        DeleteBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Graphics/DeleteIconNonHover.png"))); // NOI18N
-        DeleteBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        DeleteBtn.setContentAreaFilled(false);
-        DeleteBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DeleteBtnActionPerformed(evt);
-            }
-        });
 
         ScrollableAreaPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
@@ -1588,33 +1596,69 @@ public class Maintimeline extends javax.swing.JFrame {
 
         ScrollableAreaPane.setViewportView(jPanel1);
 
-        EditBtn.setForeground(new java.awt.Color(255, 255, 255));
-        EditBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Graphics/EditIconNonHover.png"))); // NOI18N
-        EditBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        EditBtn.setContentAreaFilled(false);
-        EditBtn.addActionListener(new java.awt.event.ActionListener() {
+        DeleteBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        DeleteBtn.setContentAreaFilled(false);
+        DeleteBtn.setMaximumSize(new java.awt.Dimension(73, 73));
+        DeleteBtn.setMinimumSize(new java.awt.Dimension(73, 73));
+        DeleteBtn.setPreferredSize(new java.awt.Dimension(73, 73));
+        DeleteBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                DeleteBtnMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                DeleteBtnMouseExited(evt);
+            }
+        });
+        DeleteBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EditBtnActionPerformed(evt);
+                DeleteBtnActionPerformed(evt);
             }
         });
 
-        SaveBtn.setForeground(new java.awt.Color(255, 255, 255));
-        SaveBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Graphics/SaveIconNonHover.png"))); // NOI18N
         SaveBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         SaveBtn.setContentAreaFilled(false);
+        SaveBtn.setMaximumSize(new java.awt.Dimension(73, 73));
+        SaveBtn.setMinimumSize(new java.awt.Dimension(73, 73));
+        SaveBtn.setPreferredSize(new java.awt.Dimension(73, 73));
+        SaveBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                SaveBtnMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                SaveBtnMouseExited(evt);
+            }
+        });
         SaveBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SaveBtnActionPerformed(evt);
             }
         });
 
-        AddBtn.setForeground(new java.awt.Color(255, 255, 255));
-        AddBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Graphics/AddIconNonHover.png"))); // NOI18N
+        EditBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        EditBtn.setContentAreaFilled(false);
+        EditBtn.setMaximumSize(new java.awt.Dimension(73, 73));
+        EditBtn.setMinimumSize(new java.awt.Dimension(73, 73));
+        EditBtn.setPreferredSize(new java.awt.Dimension(73, 73));
+        EditBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                EditBtnMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                EditBtnMouseExited(evt);
+            }
+        });
+
         AddBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         AddBtn.setContentAreaFilled(false);
-        AddBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AddBtnActionPerformed(evt);
+        AddBtn.setMaximumSize(new java.awt.Dimension(73, 73));
+        AddBtn.setMinimumSize(new java.awt.Dimension(73, 73));
+        AddBtn.setPreferredSize(new java.awt.Dimension(73, 73));
+        AddBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                AddBtnMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                AddBtnMouseExited(evt);
             }
         });
 
@@ -1623,24 +1667,24 @@ public class Maintimeline extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(457, 457, 457)
+                .addComponent(TimelineTitleLabel)
+                .addGap(0, 434, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(457, 457, 457)
-                        .addComponent(TimelineTitleLabel))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(ScrollableAreaPane, javax.swing.GroupLayout.PREFERRED_SIZE, 1180, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 12, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(AddBtn)
-                .addGap(18, 18, 18)
-                .addComponent(EditBtn)
-                .addGap(18, 18, 18)
-                .addComponent(SaveBtn)
-                .addGap(18, 18, 18)
-                .addComponent(DeleteBtn)
-                .addContainerGap())
+                        .addContainerGap()
+                        .addComponent(ScrollableAreaPane, javax.swing.GroupLayout.PREFERRED_SIZE, 1146, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGap(821, 821, 821)
+                        .addComponent(AddBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(EditBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(SaveBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(23, 23, 23)
+                        .addComponent(DeleteBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1648,34 +1692,64 @@ public class Maintimeline extends javax.swing.JFrame {
                 .addGap(21, 21, 21)
                 .addComponent(TimelineTitleLabel)
                 .addGap(39, 39, 39)
-                .addComponent(ScrollableAreaPane, javax.swing.GroupLayout.PREFERRED_SIZE, 597, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(EditBtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(SaveBtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(DeleteBtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(AddBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(ScrollableAreaPane, javax.swing.GroupLayout.PREFERRED_SIZE, 520, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(DeleteBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(SaveBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(EditBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(AddBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(24, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void DeleteBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DeleteBtnMouseEntered
+        DeleteBtn.setIcon(createImageIcon("\\\\ad.ocdsb.ca\\studenthome\\8\\S346691868\\NetBeansProjects\\TimelineApplication\\DeleteIconHover", "Delete Button"));
+                //setIcon(new javax.swing.ImageIcon(getClass().getResource("/DeleteIconHover.png")));
+        
+        DeleteBtn.setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_DeleteBtnMouseEntered
+
+    private void DeleteBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DeleteBtnMouseExited
+        DeleteBtn.setIcon(createImageIcon("/DeleteIconNonHover.png", "Delete Button Non Hover"));
+    }//GEN-LAST:event_DeleteBtnMouseExited
+
+    private void SaveBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SaveBtnMouseEntered
+        SaveBtn.setIcon(createImageIcon("/SaveIconHover.png", "Save Button Hover"));
+        SaveBtn.setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_SaveBtnMouseEntered
+
+    private void SaveBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SaveBtnMouseExited
+        SaveBtn.setIcon(createImageIcon("/SaveIconNonHover.png", "Save Button Non Hover"));
+    }//GEN-LAST:event_SaveBtnMouseExited
+
+    private void EditBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EditBtnMouseEntered
+        EditBtn.setIcon(createImageIcon("/EditIconHover.png", "Edit Button Hover"));
+        EditBtn.setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_EditBtnMouseEntered
+
+    private void EditBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EditBtnMouseExited
+        EditBtn.setIcon(createImageIcon("/EditIconNonHover.png", "Edit Button non Hover"));
+    }//GEN-LAST:event_EditBtnMouseExited
+
+    private void AddBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddBtnMouseEntered
+        AddBtn.setIcon(createImageIcon("/AddIconHover.png", "Add Button Hover"));
+        AddBtn.setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_AddBtnMouseEntered
+
+    private void AddBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddBtnMouseExited
+        AddBtn.setIcon(createImageIcon("/AddIconNonHover.png", "Add Button Non Hover"));
+    }//GEN-LAST:event_AddBtnMouseExited
+
     private void DeleteBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteBtnActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_DeleteBtnActionPerformed
 
-    private void EditBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditBtnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_EditBtnActionPerformed
-
     private void SaveBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveBtnActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_SaveBtnActionPerformed
-
-    private void AddBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddBtnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_AddBtnActionPerformed
 
     /**
      * @param args the command line arguments
