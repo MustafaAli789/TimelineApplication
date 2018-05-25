@@ -63,7 +63,7 @@ public class Addevent extends javax.swing.JFrame {
             }
         });
 
-        SaveBtn.setText("SAVE");
+        SaveBtn.setText("ADD");
         SaveBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SaveBtnActionPerformed(evt);
