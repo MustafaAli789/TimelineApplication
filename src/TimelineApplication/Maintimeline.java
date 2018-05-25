@@ -5,6 +5,7 @@
  */
 package TimelineApplication;
 
+import java.awt.Cursor;
 import javax.swing.ImageIcon;
 
 /**
@@ -1593,6 +1594,11 @@ public class Maintimeline extends javax.swing.JFrame {
                 DeleteBtnMouseExited(evt);
             }
         });
+        DeleteBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DeleteBtnActionPerformed(evt);
+            }
+        });
 
         SaveBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Graphics/SaveIconNonHover.png"))); // NOI18N
         SaveBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -1606,6 +1612,11 @@ public class Maintimeline extends javax.swing.JFrame {
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 SaveBtnMouseExited(evt);
+            }
+        });
+        SaveBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SaveBtnActionPerformed(evt);
             }
         });
 
@@ -1682,6 +1693,7 @@ public class Maintimeline extends javax.swing.JFrame {
 
     private void DeleteBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DeleteBtnMouseEntered
         DeleteBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Graphics/DeleteIconHover.png")));
+        DeleteBtn.setCursor(new Cursor(Cursor.HAND_CURSOR));
     }//GEN-LAST:event_DeleteBtnMouseEntered
 
     private void DeleteBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DeleteBtnMouseExited
@@ -1690,6 +1702,7 @@ public class Maintimeline extends javax.swing.JFrame {
 
     private void SaveBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SaveBtnMouseEntered
         SaveBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Graphics/SaveIconHover.png")));
+        SaveBtn.setCursor(new Cursor(Cursor.HAND_CURSOR));
     }//GEN-LAST:event_SaveBtnMouseEntered
 
     private void SaveBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SaveBtnMouseExited
@@ -1698,6 +1711,7 @@ public class Maintimeline extends javax.swing.JFrame {
 
     private void EditBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EditBtnMouseEntered
         EditBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Graphics/EditIconHover.png")));
+        EditBtn.setCursor(new Cursor(Cursor.HAND_CURSOR));
     }//GEN-LAST:event_EditBtnMouseEntered
 
     private void EditBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EditBtnMouseExited
@@ -1706,11 +1720,20 @@ public class Maintimeline extends javax.swing.JFrame {
 
     private void AddBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddBtnMouseEntered
         AddBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Graphics/AddIconHover.png")));
+        AddBtn.setCursor(new Cursor(Cursor.HAND_CURSOR));
     }//GEN-LAST:event_AddBtnMouseEntered
 
     private void AddBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddBtnMouseExited
         AddBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Graphics/AddIconNonHover.png")));
     }//GEN-LAST:event_AddBtnMouseExited
+
+    private void DeleteBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DeleteBtnActionPerformed
+
+    private void SaveBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SaveBtnActionPerformed
 
     /**
      * @param args the command line arguments
