@@ -34,9 +34,13 @@
               <EmptySpace min="0" pref="434" max="32767" attributes="0"/>
           </Group>
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
-                  <Group type="102" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="ScrollableAreaPane" min="-2" pref="1146" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="821" max="-2" attributes="0"/>
                       <Component id="AddBtn" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="EditBtn" min="-2" max="-2" attributes="0"/>
@@ -45,7 +49,6 @@
                       <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                       <Component id="DeleteBtn" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Component id="ScrollableAreaPane" min="-2" pref="1146" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
@@ -56,8 +59,8 @@
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace min="21" pref="21" max="-2" attributes="0"/>
               <Component id="TimelineTitleLabel" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="39" pref="39" max="-2" attributes="0"/>
-              <Component id="ScrollableAreaPane" min="-2" pref="597" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+              <Component id="ScrollableAreaPane" min="-2" pref="520" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="DeleteBtn" min="-2" pref="73" max="-2" attributes="0"/>
@@ -65,7 +68,7 @@
                   <Component id="EditBtn" min="-2" pref="73" max="-2" attributes="0"/>
                   <Component id="AddBtn" min="-2" pref="73" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="30" max="32767" attributes="0"/>
+              <EmptySpace pref="24" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -2590,9 +2593,6 @@
     </Container>
     <Component class="javax.swing.JButton" name="DeleteBtn">
       <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/TimelineApplication/DeleteIconNonHover.png"/>
-        </Property>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
             <LineBorder/>
@@ -2617,9 +2617,6 @@
     </Component>
     <Component class="javax.swing.JButton" name="SaveBtn">
       <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/TimelineApplication/SaveIconNonHover.png"/>
-        </Property>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
             <LineBorder/>
@@ -2644,9 +2641,6 @@
     </Component>
     <Component class="javax.swing.JButton" name="EditBtn">
       <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/TimelineApplication/EditIconNonHover.png"/>
-        </Property>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
             <LineBorder/>
@@ -2670,9 +2664,6 @@
     </Component>
     <Component class="javax.swing.JButton" name="AddBtn">
       <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/TimelineApplication/AddIconNonHover.png"/>
-        </Property>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
             <LineBorder/>

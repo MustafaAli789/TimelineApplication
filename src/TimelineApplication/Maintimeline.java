@@ -21,6 +21,17 @@ public class Maintimeline extends javax.swing.JFrame {
         initComponents();
     }
 
+    protected ImageIcon createImageIcon(String path,
+                                           String description) {
+    java.net.URL imgURL = getClass().getResource(path);
+    if (imgURL != null) {
+        return new ImageIcon(imgURL, description);
+    } else {
+        System.err.println("Couldn't find file: " + path);
+        return null;
+    }
+}
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -1580,7 +1591,6 @@ public class Maintimeline extends javax.swing.JFrame {
 
         ScrollableAreaPane.setViewportView(jPanel1);
 
-        DeleteBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/DeleteIconNonHover.png"))); // NOI18N
         DeleteBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         DeleteBtn.setContentAreaFilled(false);
         DeleteBtn.setMaximumSize(new java.awt.Dimension(73, 73));
@@ -1600,7 +1610,6 @@ public class Maintimeline extends javax.swing.JFrame {
             }
         });
 
-        SaveBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SaveIconNonHover.png"))); // NOI18N
         SaveBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         SaveBtn.setContentAreaFilled(false);
         SaveBtn.setMaximumSize(new java.awt.Dimension(73, 73));
@@ -1620,7 +1629,6 @@ public class Maintimeline extends javax.swing.JFrame {
             }
         });
 
-        EditBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EditIconNonHover.png"))); // NOI18N
         EditBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         EditBtn.setContentAreaFilled(false);
         EditBtn.setMaximumSize(new java.awt.Dimension(73, 73));
@@ -1635,7 +1643,6 @@ public class Maintimeline extends javax.swing.JFrame {
             }
         });
 
-        AddBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/AddIconNonHover.png"))); // NOI18N
         AddBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         AddBtn.setContentAreaFilled(false);
         AddBtn.setMaximumSize(new java.awt.Dimension(73, 73));
@@ -1659,17 +1666,19 @@ public class Maintimeline extends javax.swing.JFrame {
                 .addComponent(TimelineTitleLabel)
                 .addGap(0, 434, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
-                .addGap(26, 26, 26)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(ScrollableAreaPane, javax.swing.GroupLayout.PREFERRED_SIZE, 1146, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGap(821, 821, 821)
                         .addComponent(AddBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(EditBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(SaveBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(23, 23, 23)
-                        .addComponent(DeleteBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(ScrollableAreaPane, javax.swing.GroupLayout.PREFERRED_SIZE, 1146, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(DeleteBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -1678,53 +1687,55 @@ public class Maintimeline extends javax.swing.JFrame {
                 .addGap(21, 21, 21)
                 .addComponent(TimelineTitleLabel)
                 .addGap(39, 39, 39)
-                .addComponent(ScrollableAreaPane, javax.swing.GroupLayout.PREFERRED_SIZE, 597, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(ScrollableAreaPane, javax.swing.GroupLayout.PREFERRED_SIZE, 520, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(DeleteBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(SaveBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(EditBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(AddBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void DeleteBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DeleteBtnMouseEntered
-        DeleteBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/DeleteIconHover.png")));
+        DeleteBtn.setIcon(createImageIcon("/DeleteIconHover.png", "Delete Button"));
+                //setIcon(new javax.swing.ImageIcon(getClass().getResource("/DeleteIconHover.png")));
+        
         DeleteBtn.setCursor(new Cursor(Cursor.HAND_CURSOR));
     }//GEN-LAST:event_DeleteBtnMouseEntered
 
     private void DeleteBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DeleteBtnMouseExited
-        DeleteBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/DeleteIconNonHover.png")));
+        DeleteBtn.setIcon(createImageIcon("/DeleteIconNonHover.png", "Delete Button Non Hover"));
     }//GEN-LAST:event_DeleteBtnMouseExited
 
     private void SaveBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SaveBtnMouseEntered
-        SaveBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SaveIconHover.png")));
+        SaveBtn.setIcon(createImageIcon("/SaveIconHover.png", "Save Button Hover"));
         SaveBtn.setCursor(new Cursor(Cursor.HAND_CURSOR));
     }//GEN-LAST:event_SaveBtnMouseEntered
 
     private void SaveBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SaveBtnMouseExited
-        SaveBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SaveIconNonHover.png")));
+        SaveBtn.setIcon(createImageIcon("/SaveIconNonHover.png", "Save Button Non Hover"));
     }//GEN-LAST:event_SaveBtnMouseExited
 
     private void EditBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EditBtnMouseEntered
-        EditBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EditIconHover.png")));
+        EditBtn.setIcon(createImageIcon("/EditIconHover.png", "Edit Button Hover"));
         EditBtn.setCursor(new Cursor(Cursor.HAND_CURSOR));
     }//GEN-LAST:event_EditBtnMouseEntered
 
     private void EditBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EditBtnMouseExited
-        EditBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EditIconNonHover.png")));
+        EditBtn.setIcon(createImageIcon("/EditIconNonHover.png", "Edit Button non Hover"));
     }//GEN-LAST:event_EditBtnMouseExited
 
     private void AddBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddBtnMouseEntered
-        AddBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/AddIconHover.png")));
+        AddBtn.setIcon(createImageIcon("/AddIconHover.png", "Add Button Hover"));
         AddBtn.setCursor(new Cursor(Cursor.HAND_CURSOR));
     }//GEN-LAST:event_AddBtnMouseEntered
 
     private void AddBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddBtnMouseExited
-        AddBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/AddIconNonHover.png")));
+        AddBtn.setIcon(createImageIcon("/AddIconNonHover.png", "Add Button Non Hover"));
     }//GEN-LAST:event_AddBtnMouseExited
 
     private void DeleteBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteBtnActionPerformed
