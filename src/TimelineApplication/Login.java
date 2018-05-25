@@ -19,11 +19,17 @@ public class Login extends javax.swing.JFrame {
 
     /**
      * Creates new form lOGIN
-     */
+    
+    */
+    
+    File text = new File("/Q&A.txt");
     public Login() {
         initComponents();
+        System.out.println(text.getAbsolutePath());
     }
 
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -162,7 +168,7 @@ public class Login extends javax.swing.JFrame {
         String line = null;
         ArrayList<String> UPlist = new ArrayList<String>();
         try{
-            FileReader fileReader = new FileReader(fName);
+            FileReader fileReader = new FileReader("/Q&A.txt");
             BufferedReader bufferedReader = new BufferedReader(fileReader); 
             while (true){
                 line = bufferedReader.readLine();
@@ -175,7 +181,7 @@ public class Login extends javax.swing.JFrame {
             }          
         }
         catch (FileNotFoundException ex){
-            System.out.println("Cannot find the file "+fName);
+            System.out.println("Cannot find the file "+"/Q&A.txt");
         }
         catch (IOException ex){
             System.out.println("Error occured when reading file.");
@@ -194,12 +200,14 @@ public class Login extends javax.swing.JFrame {
                break;               
             }
         }
-        
+        System.out.println(DecideWrite);
         if (DecideWrite==true){
-            String fName = "Q&A.txt";
+            String fName = "/Q&A.txt";
             try{
-                FileWriter fileWriter = new FileWriter(fName);
+                FileWriter fileWriter = new FileWriter("/Q&A.txt");
                 BufferedWriter bufferedWriter = new BufferedWriter (fileWriter);
+                System.out.println(a);
+                System.out.println(b);
                 fileWriter.write(a);
                 fileWriter.write(b); 
                     } 
