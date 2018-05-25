@@ -2591,7 +2591,7 @@
     <Component class="javax.swing.JButton" name="DeleteBtn">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Graphics/DeleteIconNonHover.png"/>
+          <Image iconType="3" name="/TimelineApplication/Graphics/DeleteIconNonHover.png"/>
         </Property>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -2618,7 +2618,7 @@
     <Component class="javax.swing.JButton" name="SaveBtn">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Graphics/SaveIconNonHover.png"/>
+          <Image iconType="3" name="/TimelineApplication/Graphics/SaveIconNonHover.png"/>
         </Property>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -2645,7 +2645,7 @@
     <Component class="javax.swing.JButton" name="EditBtn">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Graphics/EditIconNonHover.png"/>
+          <Image iconType="3" name="/TimelineApplication/Graphics/EditIconNonHover.png"/>
         </Property>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -2671,7 +2671,7 @@
     <Component class="javax.swing.JButton" name="AddBtn">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Graphics/AddIconNonHover.png"/>
+          <Image iconType="3" name="/TimelineApplication/Graphics/AddIconNonHover.png"/>
         </Property>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
