@@ -7,6 +7,7 @@ package TimelineApplication;
 
 import java.awt.Cursor;
 import javax.swing.ImageIcon;
+import java.io.*;
 
 /**
  *
@@ -21,12 +22,16 @@ public class Maintimeline extends javax.swing.JFrame {
         initComponents();
     }
 
+    File image = new File("/DeleteIconHover");
+    
     protected ImageIcon createImageIcon(String path,
                                            String description) {
     java.net.URL imgURL = getClass().getResource(path);
     if (imgURL != null) {
         return new ImageIcon(imgURL, description);
     } else {
+        System.out.println(image.getAbsolutePath());
+        System.out.println("The file: " + image.exists());
         System.err.println("Couldn't find file: " + path);
         return null;
     }
@@ -1701,7 +1706,7 @@ public class Maintimeline extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void DeleteBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DeleteBtnMouseEntered
-        DeleteBtn.setIcon(createImageIcon("/DeleteIconHover.png", "Delete Button"));
+        DeleteBtn.setIcon(createImageIcon("\\\\ad.ocdsb.ca\\studenthome\\8\\S346691868\\NetBeansProjects\\TimelineApplication\\DeleteIconHover", "Delete Button"));
                 //setIcon(new javax.swing.ImageIcon(getClass().getResource("/DeleteIconHover.png")));
         
         DeleteBtn.setCursor(new Cursor(Cursor.HAND_CURSOR));
