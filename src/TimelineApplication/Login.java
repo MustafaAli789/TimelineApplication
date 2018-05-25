@@ -9,6 +9,8 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 /**
  *
  * @author S199841769
@@ -40,6 +42,7 @@ public class Login extends javax.swing.JFrame {
         PasswordField = new javax.swing.JPasswordField();
         LoginLabel = new javax.swing.JLabel();
         AnnouceLabel = new javax.swing.JLabel();
+        SigninButton = new javax.swing.JButton();
 
         jLabel3.setText("jLabel3");
 
@@ -47,14 +50,14 @@ public class Login extends javax.swing.JFrame {
         setTitle("Login System");
         getContentPane().setLayout(null);
 
-        LoginRegisterBtn.setText("Login / Register");
+        LoginRegisterBtn.setText("Login");
         LoginRegisterBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 LoginRegisterBtnActionPerformed(evt);
             }
         });
         getContentPane().add(LoginRegisterBtn);
-        LoginRegisterBtn.setBounds(179, 217, 145, 29);
+        LoginRegisterBtn.setBounds(155, 220, 140, 29);
 
         LoginPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
@@ -113,6 +116,15 @@ public class Login extends javax.swing.JFrame {
         getContentPane().add(AnnouceLabel);
         AnnouceLabel.setBounds(60, 10, 240, 16);
 
+        SigninButton.setText("Sign In");
+        SigninButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SigninButtonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(SigninButton);
+        SigninButton.setBounds(20, 220, 130, 29);
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -134,9 +146,16 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_UsernameTextFieldActionPerformed
 
     private void PasswordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PasswordFieldActionPerformed
-        
+       
         // TODO add your handling code here:
     }//GEN-LAST:event_PasswordFieldActionPerformed
+
+    private void SigninButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SigninButtonActionPerformed
+        String RecUname = UsernameTextField.getText();
+        String RecPw = PasswordField.getText();
+        Register (RecUname,RecPw);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SigninButtonActionPerformed
     
     public static ArrayList<String> readUP(){
         String fName = "Q&A.txt";
@@ -164,7 +183,32 @@ public class Login extends javax.swing.JFrame {
         
         return (UPlist);
     }
-    
+    public void Register (String a, String b){
+        ArrayList<String> UPlist = readUP();
+        boolean DecideWrite = true;
+        for (int x=0; x<UPlist.size(); x++){
+            if (UPlist.get(x).equals(a)){
+               AnnouceLabel.setText("The username you entered has been used.");
+               DecideWrite = false;
+               break;
+            }
+        }
+        if (DecideWrite==true){
+            String fName = "Q&A.txt";
+            try{
+                FileWriter fileWriter = new FileWriter(fName);
+                BufferedWriter bufferedWriter = new BufferedWriter (fileWriter);
+                fileWriter.write(a);
+                fileWriter.write(b); 
+                    } 
+            catch (FileNotFoundException ex){
+                System.out.println("Cannot find the file "+fName);
+            }
+            catch (IOException e) {
+                e.printStackTrace();
+            }        
+        }
+    }
     public boolean UPverify(ArrayList<String> a, String pw, String Uname){
         boolean verified = false;
         for (int x=0; x<a.size(); x++){
@@ -178,6 +222,7 @@ public class Login extends javax.swing.JFrame {
         }
         return (verified);
     }
+    
     /**
      * @param args the command line arguments
      */
@@ -222,6 +267,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JButton LoginRegisterBtn;
     public javax.swing.JPasswordField PasswordField;
     private javax.swing.JLabel PasswordLabel;
+    private javax.swing.JButton SigninButton;
     private javax.swing.JLabel UsernameLabel;
     public javax.swing.JTextField UsernameTextField;
     private javax.swing.JLabel jLabel3;
