@@ -183,6 +183,7 @@ public class Login extends javax.swing.JFrame {
         
         return (UPlist);
     }
+    
     public void Register (String a, String b){
         ArrayList<String> UPlist = readUP();
         boolean DecideWrite = true;
@@ -190,9 +191,10 @@ public class Login extends javax.swing.JFrame {
             if (UPlist.get(x).equals(a)){
                AnnouceLabel.setText("The username you entered has been used.");
                DecideWrite = false;
-               break;
+               break;               
             }
         }
+        
         if (DecideWrite==true){
             String fName = "Q&A.txt";
             try{
