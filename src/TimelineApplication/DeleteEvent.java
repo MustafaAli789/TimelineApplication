@@ -51,7 +51,7 @@ public class DeleteEvent extends javax.swing.JFrame {
             }
         });
 
-        SaveBtn.setText("SAVE");
+        SaveBtn.setText("DELETE");
         SaveBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SaveBtnActionPerformed(evt);
