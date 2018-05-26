@@ -141,7 +141,7 @@ public class Login extends javax.swing.JFrame {
             Maintimeline mainscreen = new Maintimeline();
             mainscreen.setVisible(true);
             super.dispose();
-        }        
+        }
     }//GEN-LAST:event_LoginRegisterBtnActionPerformed
 
     private void UsernameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsernameTextFieldActionPerformed
@@ -158,7 +158,11 @@ public class Login extends javax.swing.JFrame {
         AnnouceLabel.setText("");
         String RecUname = UsernameTextField.getText();
         String RecPw = PasswordField.getText();
-        Register (RecUname,RecPw);
+        if(Register(RecUname,RecPw)==true){
+            Maintimeline mainscreen = new Maintimeline();
+            mainscreen.setVisible(true);
+            super.dispose();
+        }
         // TODO add your handling code here:
     }//GEN-LAST:event_SigninButtonActionPerformed
     public static File UnamePW = new File("src/TimelineApplication/UnamePW.txt"); 
@@ -188,7 +192,7 @@ public class Login extends javax.swing.JFrame {
         return (UPlist);
     }
     
-    public void Register (String a, String b){
+    public boolean Register (String a, String b){
         ArrayList<String> UPlist = readUP();
         boolean DecideWrite = true;
         for (int x=0; x<UPlist.size(); x++){
@@ -201,15 +205,13 @@ public class Login extends javax.swing.JFrame {
         if (DecideWrite==true){
             try{
                 Writer fileWriter;
-                fileWriter = new BufferedWriter(new FileWriter(UnamePW, true));
-                System.out.println(a);
-                System.out.println(b);                
+                fileWriter = new BufferedWriter(new FileWriter(UnamePW, true));             
                 fileWriter.append(a);
                 fileWriter.append("\n");                
                 fileWriter.append(b); 
                 fileWriter.append("\n");
                 fileWriter.close();
-                    } 
+                } 
             catch (FileNotFoundException ex){
                 System.out.println("Cannot find the file "+UnamePW);
             }
@@ -217,6 +219,7 @@ public class Login extends javax.swing.JFrame {
                 e.printStackTrace();
             }        
         }
+        return (DecideWrite);
     }
     public boolean UPverify(ArrayList<String> a, String pw, String Uname){
         boolean verified = false;
@@ -236,7 +239,6 @@ public class Login extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        System.out.println(readUP());
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
