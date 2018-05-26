@@ -28,12 +28,17 @@ import javax.swing.JTextPane;
  */
 public class Maintimeline extends javax.swing.JFrame {
 
+    public static boolean addBtnClicked = false;
+    public static boolean deleteBtnClicked = false;
+    public static boolean editBtnClicked = false;
+    
+    
     /**
      * Creates new form Maintimeline
      */
     public Maintimeline() {
-        initComponents();       
-        
+        initComponents();  
+                
         //The array below will store all event title variable names and event date variable names as well as event image variable names for later use
         JLabel eventTitleDateImageNames[][]={{EventTitleLabelOne, DateTextLabelOne, EventImage1},{EventTitleLabelTwo, DateTextLabelTwo, EventImage2},{EventTitleLabelThree, DateTextLabelThree, EventImage3}, 
         {EventTitleLabelFour, DateTextLabelFour, EventImage4}, {EventTitleLabelFive, DateTextLabelFive, EventImage5}, {EventTitleLabelSix, DateTextLabelSix, EventImage6}, {EventTitleLabelSeven, DateTextLabelSeven, EventImage7}, 
@@ -94,9 +99,10 @@ public class Maintimeline extends javax.swing.JFrame {
     }
     
     public static File eventInformationFile = new File("src/TimelineApplication/eventsInformation.txt");
-    public static ArrayList<ArrayList<String>> eventInformationList = new ArrayList<>();
-    
+    public static ArrayList<ArrayList<String>> eventInformationList = new ArrayList<>(); //2d list of all event info
+       
     public static void setEventPaneVisibility(JPanel eventPaneName, boolean visibilityState){
+        System.out.println(eventInformationList);
         eventPaneName.setVisible(visibilityState);
     }
     
@@ -1263,6 +1269,11 @@ public class Maintimeline extends javax.swing.JFrame {
         EditBtn.setMinimumSize(new java.awt.Dimension(73, 73));
         EditBtn.setPreferredSize(new java.awt.Dimension(73, 73));
         EditBtn.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/EditIconHover.png"))); // NOI18N
+        EditBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EditBtnActionPerformed(evt);
+            }
+        });
 
         AddBtn.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
         AddBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/AddIconNonHover.png"))); // NOI18N
@@ -1371,10 +1382,25 @@ public class Maintimeline extends javax.swing.JFrame {
     }//GEN-LAST:event_SaveBtnActionPerformed
 
     private void AddBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddBtnActionPerformed
-        Addevent event = new Addevent();
-        event.setVisible(true);
-        super.dispose();
+        
+        if(!addBtnClicked){
+            Addevent addEvent = new Addevent();
+            addEvent.setVisible(true);
+        }
+                
+        addBtnClicked = true;
+        
     }//GEN-LAST:event_AddBtnActionPerformed
+
+    private void EditBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditBtnActionPerformed
+        if(!editBtnClicked){
+            Editevent editEvent = new Editevent();
+            editEvent.setVisible(true);
+        }
+        
+        editBtnClicked = true;
+        
+    }//GEN-LAST:event_EditBtnActionPerformed
 
     /**
      * @param args the command line arguments

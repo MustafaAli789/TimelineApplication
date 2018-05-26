@@ -2,15 +2,14 @@ package TimelineApplication;
 import java.io.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import static TimelineApplication.Maintimeline.addBtnClicked;
+import static TimelineApplication.Maintimeline.editBtnClicked;
 
-
-public class Addevent extends javax.swing.JFrame {
+public class Editevent extends javax.swing.JFrame {
 
     /**
      * Creates new form Addevent
      */
-    public Addevent() {
+    public Editevent() {
         initComponents();
     }
 
@@ -34,14 +33,14 @@ public class Addevent extends javax.swing.JFrame {
         DescriptionTextField = new javax.swing.JTextField();
         ImageUrlLabel = new javax.swing.JLabel();
         ImageUrlTextField = new javax.swing.JTextField();
-        SaveBtn = new javax.swing.JButton();
+        EditBtn = new javax.swing.JButton();
         CancelBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(102, 204, 255));
         setResizable(false);
 
-        jPanel1.setBackground(new java.awt.Color(0, 204, 204));
+        jPanel1.setBackground(new java.awt.Color(204, 255, 204));
 
         EventPositionLabel.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
         EventPositionLabel.setText("Event Positon (Specify the Position, a Numerical Value):");
@@ -82,10 +81,10 @@ public class Addevent extends javax.swing.JFrame {
             }
         });
 
-        SaveBtn.setText("ADD");
-        SaveBtn.addActionListener(new java.awt.event.ActionListener() {
+        EditBtn.setText("EDIT");
+        EditBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SaveBtnActionPerformed(evt);
+                EditBtnActionPerformed(evt);
             }
         });
 
@@ -122,7 +121,7 @@ public class Addevent extends javax.swing.JFrame {
                 .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(SaveBtn)
+                .addComponent(EditBtn)
                 .addGap(90, 90, 90)
                 .addComponent(CancelBtn)
                 .addGap(87, 87, 87))
@@ -152,7 +151,7 @@ public class Addevent extends javax.swing.JFrame {
                 .addComponent(ImageUrlTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(SaveBtn)
+                    .addComponent(EditBtn)
                     .addComponent(CancelBtn))
                 .addGap(27, 27, 27))
         );
@@ -190,11 +189,11 @@ public class Addevent extends javax.swing.JFrame {
     }//GEN-LAST:event_ImageUrlTextFieldActionPerformed
 
     private void CancelBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelBtnActionPerformed
-        addBtnClicked = false;
+        editBtnClicked = false;
         this.dispose();
     }//GEN-LAST:event_CancelBtnActionPerformed
 
-    private void SaveBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveBtnActionPerformed
+    private void EditBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditBtnActionPerformed
            String eventpos = EventPositionTextField.getText();
            String eventname = EventNameTextField.getText();
            String eventTime = TimeTextField.getText();
@@ -233,10 +232,10 @@ public class Addevent extends javax.swing.JFrame {
             mainscreen = new Maintimeline();
         mainscreen.setVisible(true);
         super.dispose();
-    }//GEN-LAST:event_SaveBtnActionPerformed
+    }//GEN-LAST:event_EditBtnActionPerformed
 
     private void EventPositionTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EventPositionTextFieldActionPerformed
-        addBtnClicked = false;
+
     }//GEN-LAST:event_EventPositionTextFieldActionPerformed
 
     /**
@@ -256,20 +255,23 @@ public class Addevent extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Addevent.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Editevent.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Addevent.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Editevent.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Addevent.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Editevent.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Addevent.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Editevent.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Addevent().setVisible(true);
+                new Editevent().setVisible(true);
             }
         });
     }
@@ -278,13 +280,13 @@ public class Addevent extends javax.swing.JFrame {
     private javax.swing.JButton CancelBtn;
     private javax.swing.JLabel DescriptionLabel;
     private javax.swing.JTextField DescriptionTextField;
+    private javax.swing.JButton EditBtn;
     private javax.swing.JLabel EventNameLabel;
     private javax.swing.JTextField EventNameTextField;
     private javax.swing.JLabel EventPositionLabel;
     private javax.swing.JTextField EventPositionTextField;
     private javax.swing.JLabel ImageUrlLabel;
     private javax.swing.JTextField ImageUrlTextField;
-    private javax.swing.JButton SaveBtn;
     private javax.swing.JLabel TimeLabel;
     private javax.swing.JTextField TimeTextField;
     private javax.swing.JPanel jPanel1;
