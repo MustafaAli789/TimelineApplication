@@ -18,6 +18,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextPane;
 
 
@@ -32,12 +33,12 @@ public class Maintimeline extends javax.swing.JFrame {
      */
     public Maintimeline() {
         initComponents();       
-        //The array below will store all event title variable names and event date variable names for later use
-        JLabel eventTitleDateNames[][]={{EventTitleLabelOne, DateTextLabelOne},{EventTitleLabelTwo, DateTextLabelTwo},{EventTitleLabelThree, DateTextLabelThree}, 
-        {EventTitleLabelFour, DateTextLabelFour}, {EventTitleLabelFive, DateTextLabelFive}, {EventTitleLabelSix, DateTextLabelSix}, {EventTitleLabelSeven, DateTextLabelSeven}, 
-        {EventTitleLabelEight, DateTextLabelEight}, {EventTitleLabelNine, DateTextLabelNine},{EventTitleLabelTen, DateTextLabelTen}, {EventTitleLabelEleven, DateTextLabelEleven}, 
-        {EventTitleLabelTwelve, DateTextLabelTwelve}, {EventTitleLabelThirteen, DateTextLabelThirteen}, {EventTitleLabelFourteen, DateTextLabelFourteen}, 
-        {EventTitleLabelFifteen, DateTextLabelFifteen},{EventTitleLabelSixteen, DateTextLabelSixteen}};
+        //The array below will store all event title variable names and event date variable names as well as event image variable names for later use
+        JLabel eventTitleDateImageNames[][]={{EventTitleLabelOne, DateTextLabelOne, EventImage1},{EventTitleLabelTwo, DateTextLabelTwo, EventImage2},{EventTitleLabelThree, DateTextLabelThree, EventImage3}, 
+        {EventTitleLabelFour, DateTextLabelFour, EventImage4}, {EventTitleLabelFive, DateTextLabelFive, EventImage5}, {EventTitleLabelSix, DateTextLabelSix, EventImage6}, {EventTitleLabelSeven, DateTextLabelSeven, EventImage7}, 
+        {EventTitleLabelEight, DateTextLabelEight, EventImage8}, {EventTitleLabelNine, DateTextLabelNine, EventImage9},{EventTitleLabelTen, DateTextLabelTen, EventImage10}, {EventTitleLabelEleven, DateTextLabelEleven, EventImage11}, 
+        {EventTitleLabelTwelve, DateTextLabelTwelve, EventImage12}, {EventTitleLabelThirteen, DateTextLabelThirteen, EventImage13}, {EventTitleLabelFourteen, DateTextLabelFourteen, EventImage14}, 
+        {EventTitleLabelFifteen, DateTextLabelFifteen, EventImage15},{EventTitleLabelSixteen, DateTextLabelSixteen, EventImage16}};
 
         //The array below will store all event description variable names for later use
         JTextPane eventDescriptionNames[]={DescriptionTextPanelOne,DescriptionTextPanelTwo, DescriptionTextPanelThree, DescriptionTextPanelFour, DescriptionTextPanelFive,
@@ -63,30 +64,13 @@ public class Maintimeline extends javax.swing.JFrame {
         }
         
         readEventsInformation();
-        
-        Image image = null;
-        try{
-            URL url = new URL("https://pbs.twimg.com/profile_images/658733542713659392/3o2wa2_M_400x400.jpg");
-            try {
-                image = ImageIO.read(url);
-                EventImage1.setIcon(new ImageIcon(image));
-            } catch (IOException ex) {
-                System.out.println("Another error.");
-            }
-        }
-        catch(MalformedURLException e){
-            System.out.println("There was an error with loading the URL.");
-        }
-        
- 
-   
-        
+               
         //Initializing Events
         int numOfEvents = getNumOfEvents();
         System.out.println(numOfEvents);
         for (int i = 0; i< numOfEvents; i++){
             //passing names of variables and current event num from previously defined lists with all var names
-            editEvent(eventTitleDateNames[i][0], eventTitleDateNames[i][1], eventDescriptionNames[i], i); 
+            editEvent(eventTitleDateImageNames[i][0], eventTitleDateImageNames[i][1], eventDescriptionNames[i], eventTitleDateImageNames[i][2], i); 
             setEventPaneVisibility(eventPaneNames[i], true); //setting events to visible
             setArrowVisibility(eventArrowNames[i], true);
         }
@@ -104,12 +88,29 @@ public class Maintimeline extends javax.swing.JFrame {
         arrowName.setVisible(visibilityState);
     }
     
-    public static void editEvent(JLabel title, JLabel date, JTextPane description, int eventNum){
+    
+    public static void editEvent(JLabel title, JLabel date, JTextPane description, JLabel eventImage, int eventNum){
         
         
         title.setText(eventInformationList.get(eventNum).get(1)); //1st index is title
         date.setText(eventInformationList.get(eventNum).get(2)); //2nd index is date
         description.setText(eventInformationList.get(eventNum).get(3)); //3rd index is description
+        
+        Image image = null;
+        try{
+            URL url = new URL(eventInformationList.get(eventNum).get(4));
+            try {
+                image = ImageIO.read(url);
+                eventImage.setIcon(new ImageIcon(image));
+            } catch (IOException ex) {
+                String error = "The URL for the " + eventInformationList.get(eventNum).get(1) + " image is wrong.";
+                JOptionPane.showMessageDialog(null, error);
+            }
+        }
+        catch(MalformedURLException e){
+            String error = "The URL for " + eventInformationList.get(eventNum).get(1) + " does not exist.";
+            JOptionPane.showMessageDialog(null, error);
+        }
         
     }
     
@@ -588,20 +589,20 @@ public class Maintimeline extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        EventPane5.add(EventTitlePanelFive, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 1, 279, -1));
+        EventPane5.add(EventTitlePanelFive, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 1, 279, 60));
 
         SeperatorPaneFive.setLayout(null);
-        EventPane5.add(SeperatorPaneFive, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, 68, 280, 12));
+        EventPane5.add(SeperatorPaneFive, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 280, 12));
 
         DescriptionTextPanelFive.setEditable(false);
         jScrollPaneFive.setViewportView(DescriptionTextPanelFive);
 
-        EventPane5.add(jScrollPaneFive, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 249, 176, 117));
+        EventPane5.add(jScrollPaneFive, new org.netbeans.lib.awtextra.AbsoluteConstraints(7, 249, 180, 120));
 
         EventImage5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        EventPane5.add(EventImage5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 172, 150));
+        EventPane5.add(EventImage5, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 80, 170, 160));
 
-        jPanel1.add(EventPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(893, 456, 191, -1));
+        jPanel1.add(EventPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(893, 456, 191, 375));
 
         EventPane6.setBackground(new java.awt.Color(153, 153, 153));
         EventPane6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
@@ -639,20 +640,20 @@ public class Maintimeline extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        EventPane6.add(EventTitlePanelSix, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 1, 279, -1));
+        EventPane6.add(EventTitlePanelSix, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 1, 279, 60));
 
         SeperatorPaneSix.setLayout(null);
-        EventPane6.add(SeperatorPaneSix, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, 68, 280, 12));
+        EventPane6.add(SeperatorPaneSix, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 280, 12));
 
         DescriptionTextPanelSix.setEditable(false);
         jScrollPaneSix.setViewportView(DescriptionTextPanelSix);
 
-        EventPane6.add(jScrollPaneSix, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 249, 176, 117));
+        EventPane6.add(jScrollPaneSix, new org.netbeans.lib.awtextra.AbsoluteConstraints(7, 249, 180, 120));
 
         EventImage6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        EventPane6.add(EventImage6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 172, 150));
+        EventPane6.add(EventImage6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 172, 160));
 
-        jPanel1.add(EventPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(617, 456, 191, -1));
+        jPanel1.add(EventPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(617, 456, 191, 375));
 
         EventPane7.setBackground(new java.awt.Color(153, 153, 153));
         EventPane7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
@@ -690,20 +691,20 @@ public class Maintimeline extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        EventPane7.add(EventTitlePanelSeven, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 1, 279, -1));
+        EventPane7.add(EventTitlePanelSeven, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 1, 279, 60));
 
         SeperatorPaneSeven.setLayout(null);
-        EventPane7.add(SeperatorPaneSeven, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, 68, 280, 12));
+        EventPane7.add(SeperatorPaneSeven, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 280, 12));
 
         DescriptionTextPanelSeven.setEditable(false);
         jScrollPaneSeven.setViewportView(DescriptionTextPanelSeven);
 
-        EventPane7.add(jScrollPaneSeven, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 249, 176, 117));
+        EventPane7.add(jScrollPaneSeven, new org.netbeans.lib.awtextra.AbsoluteConstraints(7, 249, 180, 120));
 
         EventImage7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        EventPane7.add(EventImage7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 172, 150));
+        EventPane7.add(EventImage7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 172, 160));
 
-        jPanel1.add(EventPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(341, 456, 191, -1));
+        jPanel1.add(EventPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(341, 456, 191, 375));
 
         EventPane8.setBackground(new java.awt.Color(153, 153, 153));
         EventPane8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
@@ -741,20 +742,20 @@ public class Maintimeline extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        EventPane8.add(EventTitlePanelEight, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 1, 279, -1));
+        EventPane8.add(EventTitlePanelEight, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 1, 279, 60));
 
         SeperatorPaneEight.setLayout(null);
-        EventPane8.add(SeperatorPaneEight, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, 68, 280, 12));
+        EventPane8.add(SeperatorPaneEight, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 280, 12));
 
         DescriptionTextPanelEight.setEditable(false);
         jScrollPaneEight.setViewportView(DescriptionTextPanelEight);
 
-        EventPane8.add(jScrollPaneEight, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 249, 176, 117));
+        EventPane8.add(jScrollPaneEight, new org.netbeans.lib.awtextra.AbsoluteConstraints(7, 249, 180, 120));
 
         EventImage8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        EventPane8.add(EventImage8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 172, 150));
+        EventPane8.add(EventImage8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 172, 160));
 
-        jPanel1.add(EventPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(64, 456, 191, -1));
+        jPanel1.add(EventPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(64, 456, 191, 375));
 
         EventPane9.setBackground(new java.awt.Color(153, 153, 153));
         EventPane9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
@@ -792,20 +793,20 @@ public class Maintimeline extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        EventPane9.add(EventTitlePanelNine, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 1, 279, -1));
+        EventPane9.add(EventTitlePanelNine, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 1, 279, 60));
 
         SeperatorPaneNine.setLayout(null);
-        EventPane9.add(SeperatorPaneNine, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, 68, 280, 12));
+        EventPane9.add(SeperatorPaneNine, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 280, 12));
 
         DescriptionTextPanelNine.setEditable(false);
         jScrollPaneNine.setViewportView(DescriptionTextPanelNine);
 
-        EventPane9.add(jScrollPaneNine, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 249, 176, 117));
+        EventPane9.add(jScrollPaneNine, new org.netbeans.lib.awtextra.AbsoluteConstraints(7, 249, 180, 120));
 
         EventImage9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        EventPane9.add(EventImage9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 172, 150));
+        EventPane9.add(EventImage9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 172, 160));
 
-        jPanel1.add(EventPane9, new org.netbeans.lib.awtextra.AbsoluteConstraints(893, 871, 191, -1));
+        jPanel1.add(EventPane9, new org.netbeans.lib.awtextra.AbsoluteConstraints(893, 871, 191, 375));
 
         EventPane10.setBackground(new java.awt.Color(153, 153, 153));
         EventPane10.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
@@ -843,20 +844,20 @@ public class Maintimeline extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        EventPane10.add(EventTitlePanelTen, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 1, 279, -1));
+        EventPane10.add(EventTitlePanelTen, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 1, 279, 60));
 
         SeperatorPaneTen.setLayout(null);
-        EventPane10.add(SeperatorPaneTen, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, 68, 280, 12));
+        EventPane10.add(SeperatorPaneTen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 280, 12));
 
         DescriptionTextPanelTen.setEditable(false);
         jScrollPaneTen.setViewportView(DescriptionTextPanelTen);
 
-        EventPane10.add(jScrollPaneTen, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 249, 176, 117));
+        EventPane10.add(jScrollPaneTen, new org.netbeans.lib.awtextra.AbsoluteConstraints(7, 249, 180, 120));
 
         EventImage10.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        EventPane10.add(EventImage10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 172, 150));
+        EventPane10.add(EventImage10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 172, 160));
 
-        jPanel1.add(EventPane10, new org.netbeans.lib.awtextra.AbsoluteConstraints(617, 871, 191, -1));
+        jPanel1.add(EventPane10, new org.netbeans.lib.awtextra.AbsoluteConstraints(617, 871, 191, 375));
 
         EventPane11.setBackground(new java.awt.Color(153, 153, 153));
         EventPane11.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
@@ -894,20 +895,20 @@ public class Maintimeline extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        EventPane11.add(EventTitlePanelEleven, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 1, 279, -1));
+        EventPane11.add(EventTitlePanelEleven, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 1, 279, 60));
 
         SeperatorPaneEleven.setLayout(null);
-        EventPane11.add(SeperatorPaneEleven, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, 68, 280, 12));
+        EventPane11.add(SeperatorPaneEleven, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 280, 12));
 
         DescriptionTextPanelEleven.setEditable(false);
         jScrollPaneEleven.setViewportView(DescriptionTextPanelEleven);
 
-        EventPane11.add(jScrollPaneEleven, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 249, 176, 117));
+        EventPane11.add(jScrollPaneEleven, new org.netbeans.lib.awtextra.AbsoluteConstraints(7, 249, 180, 120));
 
         EventImage11.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        EventPane11.add(EventImage11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 172, 150));
+        EventPane11.add(EventImage11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 172, 160));
 
-        jPanel1.add(EventPane11, new org.netbeans.lib.awtextra.AbsoluteConstraints(341, 871, 191, -1));
+        jPanel1.add(EventPane11, new org.netbeans.lib.awtextra.AbsoluteConstraints(341, 871, 191, 375));
 
         EventPane12.setBackground(new java.awt.Color(153, 153, 153));
         EventPane12.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
@@ -945,20 +946,20 @@ public class Maintimeline extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        EventPane12.add(EventTitlePanelTwelve, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 1, 279, -1));
+        EventPane12.add(EventTitlePanelTwelve, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 1, 279, 60));
 
         SeperatorPaneTwelve.setLayout(null);
-        EventPane12.add(SeperatorPaneTwelve, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, 68, 280, 12));
+        EventPane12.add(SeperatorPaneTwelve, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 280, 12));
 
         DescriptionTextPanelTwelve.setEditable(false);
         jScrollPaneTwelve.setViewportView(DescriptionTextPanelTwelve);
 
-        EventPane12.add(jScrollPaneTwelve, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 249, 176, 117));
+        EventPane12.add(jScrollPaneTwelve, new org.netbeans.lib.awtextra.AbsoluteConstraints(7, 249, 180, 120));
 
         EventImage12.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        EventPane12.add(EventImage12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 172, 150));
+        EventPane12.add(EventImage12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 172, 160));
 
-        jPanel1.add(EventPane12, new org.netbeans.lib.awtextra.AbsoluteConstraints(64, 871, 191, -1));
+        jPanel1.add(EventPane12, new org.netbeans.lib.awtextra.AbsoluteConstraints(64, 871, 191, 375));
 
         EventPane13.setBackground(new java.awt.Color(153, 153, 153));
         EventPane13.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
@@ -996,20 +997,20 @@ public class Maintimeline extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        EventPane13.add(EventTitlePanelThirteen, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 1, 279, -1));
+        EventPane13.add(EventTitlePanelThirteen, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 1, 279, 60));
 
         SeperatorPaneThirteen.setLayout(null);
-        EventPane13.add(SeperatorPaneThirteen, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, 68, 280, 12));
+        EventPane13.add(SeperatorPaneThirteen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 280, 12));
 
         DescriptionTextPanelThirteen.setEditable(false);
         jScrollPaneThirteen.setViewportView(DescriptionTextPanelThirteen);
 
-        EventPane13.add(jScrollPaneThirteen, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 249, 176, 117));
+        EventPane13.add(jScrollPaneThirteen, new org.netbeans.lib.awtextra.AbsoluteConstraints(7, 249, 180, 120));
 
         EventImage13.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        EventPane13.add(EventImage13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 172, 150));
+        EventPane13.add(EventImage13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 172, 160));
 
-        jPanel1.add(EventPane13, new org.netbeans.lib.awtextra.AbsoluteConstraints(893, 1286, 191, -1));
+        jPanel1.add(EventPane13, new org.netbeans.lib.awtextra.AbsoluteConstraints(893, 1286, 191, 375));
 
         EventPane14.setBackground(new java.awt.Color(153, 153, 153));
         EventPane14.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
@@ -1047,20 +1048,20 @@ public class Maintimeline extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        EventPane14.add(EventTitlePanelFourteen, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 1, 279, -1));
+        EventPane14.add(EventTitlePanelFourteen, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 1, 279, 60));
 
         SeperatorPaneFourteen.setLayout(null);
-        EventPane14.add(SeperatorPaneFourteen, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, 68, 280, 12));
+        EventPane14.add(SeperatorPaneFourteen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 280, 12));
 
         DescriptionTextPanelFourteen.setEditable(false);
         jScrollPaneFourteen.setViewportView(DescriptionTextPanelFourteen);
 
-        EventPane14.add(jScrollPaneFourteen, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 249, 176, 117));
+        EventPane14.add(jScrollPaneFourteen, new org.netbeans.lib.awtextra.AbsoluteConstraints(7, 249, 180, 120));
 
         EventImage14.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        EventPane14.add(EventImage14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 172, 150));
+        EventPane14.add(EventImage14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 172, 160));
 
-        jPanel1.add(EventPane14, new org.netbeans.lib.awtextra.AbsoluteConstraints(617, 1286, 191, -1));
+        jPanel1.add(EventPane14, new org.netbeans.lib.awtextra.AbsoluteConstraints(617, 1286, 191, 375));
 
         EventPane15.setBackground(new java.awt.Color(153, 153, 153));
         EventPane15.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
@@ -1098,20 +1099,20 @@ public class Maintimeline extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        EventPane15.add(EventTitlePanelFifteen, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 1, 279, -1));
+        EventPane15.add(EventTitlePanelFifteen, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 1, 279, 60));
 
         SeperatorPaneFifteen.setLayout(null);
-        EventPane15.add(SeperatorPaneFifteen, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, 68, 280, 12));
+        EventPane15.add(SeperatorPaneFifteen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 280, 12));
 
         DescriptionTextPanelFifteen.setEditable(false);
         jScrollPaneFifteen.setViewportView(DescriptionTextPanelFifteen);
 
-        EventPane15.add(jScrollPaneFifteen, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 249, 176, 117));
+        EventPane15.add(jScrollPaneFifteen, new org.netbeans.lib.awtextra.AbsoluteConstraints(7, 249, 180, 120));
 
         EventImage15.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        EventPane15.add(EventImage15, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 172, 150));
+        EventPane15.add(EventImage15, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 172, 160));
 
-        jPanel1.add(EventPane15, new org.netbeans.lib.awtextra.AbsoluteConstraints(341, 1286, 191, -1));
+        jPanel1.add(EventPane15, new org.netbeans.lib.awtextra.AbsoluteConstraints(341, 1286, 191, 375));
 
         EventPane16.setBackground(new java.awt.Color(153, 153, 153));
         EventPane16.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
@@ -1149,20 +1150,20 @@ public class Maintimeline extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        EventPane16.add(EventTitlePanelSixteen, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 1, 279, -1));
+        EventPane16.add(EventTitlePanelSixteen, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 1, 279, 60));
 
         SeperatorPaneSixteen.setLayout(null);
-        EventPane16.add(SeperatorPaneSixteen, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, 68, 280, 12));
+        EventPane16.add(SeperatorPaneSixteen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 280, 12));
 
         DescriptionTextPanelSixteen.setEditable(false);
         jScrollPaneSixteen.setViewportView(DescriptionTextPanelSixteen);
 
-        EventPane16.add(jScrollPaneSixteen, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 249, 176, 117));
+        EventPane16.add(jScrollPaneSixteen, new org.netbeans.lib.awtextra.AbsoluteConstraints(7, 249, 180, 117));
 
         EventImage16.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        EventPane16.add(EventImage16, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 172, 150));
+        EventPane16.add(EventImage16, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 172, 160));
 
-        jPanel1.add(EventPane16, new org.netbeans.lib.awtextra.AbsoluteConstraints(64, 1286, 191, -1));
+        jPanel1.add(EventPane16, new org.netbeans.lib.awtextra.AbsoluteConstraints(64, 1286, 191, 375));
 
         Arrow12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/arrow.png"))); // NOI18N
         jPanel1.add(Arrow12, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 1460, -1, -1));
