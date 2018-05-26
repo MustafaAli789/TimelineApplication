@@ -146,8 +146,7 @@ public class Maintimeline extends javax.swing.JFrame {
     
     File image = new File("/DeleteIconHover");
     
-    protected ImageIcon createImageIcon(String path,
-                                           String description) {
+    protected ImageIcon createImageIcon(String path, String description) {
     java.net.URL imgURL = getClass().getResource(path);
     if (imgURL != null) {
         return new ImageIcon(imgURL, description);
@@ -1749,6 +1748,7 @@ public class Maintimeline extends javax.swing.JFrame {
         DeleteBtn.setMaximumSize(new java.awt.Dimension(73, 73));
         DeleteBtn.setMinimumSize(new java.awt.Dimension(73, 73));
         DeleteBtn.setPreferredSize(new java.awt.Dimension(73, 73));
+        DeleteBtn.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/DeleteIconHover.png"))); // NOI18N
         DeleteBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DeleteBtnActionPerformed(evt);
@@ -1762,6 +1762,7 @@ public class Maintimeline extends javax.swing.JFrame {
         SaveBtn.setMaximumSize(new java.awt.Dimension(73, 73));
         SaveBtn.setMinimumSize(new java.awt.Dimension(73, 73));
         SaveBtn.setPreferredSize(new java.awt.Dimension(73, 73));
+        SaveBtn.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/SaveIconHover.png"))); // NOI18N
         SaveBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SaveBtnActionPerformed(evt);
@@ -1775,6 +1776,7 @@ public class Maintimeline extends javax.swing.JFrame {
         EditBtn.setMaximumSize(new java.awt.Dimension(73, 73));
         EditBtn.setMinimumSize(new java.awt.Dimension(73, 73));
         EditBtn.setPreferredSize(new java.awt.Dimension(73, 73));
+        EditBtn.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/EditIconHover.png"))); // NOI18N
 
         AddBtn.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
         AddBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/AddIconNonHover.png"))); // NOI18N
@@ -1834,7 +1836,7 @@ public class Maintimeline extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void DeleteBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DeleteBtnMouseEntered
-        //DeleteBtn.setIcon(createImageIcon("\\\\ad.ocdsb.ca\\studenthome\\8\\S346691868\\NetBeansProjects\\TimelineApplication\\DeleteIconHover", "Delete Button"));
+        DeleteBtn.setIcon(createImageIcon("/DeleteIconHover", "Delete Button"));
         DeleteBtn.setForeground(Color.red);
         
         DeleteBtn.setCursor(new Cursor(Cursor.HAND_CURSOR));
@@ -1847,7 +1849,7 @@ public class Maintimeline extends javax.swing.JFrame {
 
     private void SaveBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SaveBtnMouseEntered
         SaveBtn.setForeground(Color.green);
-        //SaveBtn.setIcon(createImageIcon("/SaveIconHover.png", "Save Button Hover"));
+        SaveBtn.setIcon(createImageIcon("/SaveIconHover.png", "Save Button Hover"));
         SaveBtn.setCursor(new Cursor(Cursor.HAND_CURSOR));
     }//GEN-LAST:event_SaveBtnMouseEntered
 
@@ -1857,7 +1859,7 @@ public class Maintimeline extends javax.swing.JFrame {
     }//GEN-LAST:event_SaveBtnMouseExited
 
     private void EditBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EditBtnMouseEntered
-        //EditBtn.setIcon(createImageIcon("/EditIconHover.png", "Edit Button Hover"));
+        EditBtn.setIcon(createImageIcon("/EditIconHover.png", "Edit Button Hover"));
         EditBtn.setForeground(Color.green);
         EditBtn.setCursor(new Cursor(Cursor.HAND_CURSOR));
     }//GEN-LAST:event_EditBtnMouseEntered
@@ -1868,7 +1870,7 @@ public class Maintimeline extends javax.swing.JFrame {
     }//GEN-LAST:event_EditBtnMouseExited
 
     private void AddBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddBtnMouseEntered
-        //AddBtn.setIcon(createImageIcon("/AddIconHover.png", "Add Button Hover"));
+        AddBtn.setIcon(createImageIcon("/AddIconHover.png", "Add Button Hover"));
         AddBtn.setForeground(Color.green);
         AddBtn.setCursor(new Cursor(Cursor.HAND_CURSOR));
     }//GEN-LAST:event_AddBtnMouseEntered
@@ -1879,7 +1881,9 @@ public class Maintimeline extends javax.swing.JFrame {
     }//GEN-LAST:event_AddBtnMouseExited
 
     private void DeleteBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteBtnActionPerformed
-        // TODO add your handling code here:
+        DeleteEvent del_event = new DeleteEvent();
+        del_event.setVisible(true);
+        super.dispose();
     }//GEN-LAST:event_DeleteBtnActionPerformed
 
     private void SaveBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveBtnActionPerformed
@@ -1887,7 +1891,9 @@ public class Maintimeline extends javax.swing.JFrame {
     }//GEN-LAST:event_SaveBtnActionPerformed
 
     private void AddBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddBtnActionPerformed
-        // TODO add your handling code here:
+        Addevent event = new Addevent();
+        event.setVisible(true);
+        super.dispose();
     }//GEN-LAST:event_AddBtnActionPerformed
 
     /**
