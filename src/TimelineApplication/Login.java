@@ -8,7 +8,6 @@ import java.io.*;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 /**
@@ -22,14 +21,10 @@ public class Login extends javax.swing.JFrame {
     
     */
     
-    File text = new File("/Q&A.txt");
     public Login() {
         initComponents();
-        System.out.println(text.getAbsolutePath());
-    }
-
-    
-    
+        PasswordField.setText("");
+    }    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -54,6 +49,10 @@ public class Login extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Login System");
+        setBounds(new java.awt.Rectangle(0, 1, 0, 0));
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setPreferredSize(new java.awt.Dimension(350, 300));
+        setResizable(false);
         getContentPane().setLayout(null);
 
         LoginRegisterBtn.setText("Login");
@@ -94,7 +93,7 @@ public class Login extends javax.swing.JFrame {
                     .addComponent(UsernameTextField)
                     .addComponent(UsernameLabel, javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(PasswordLabel, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(PasswordField, javax.swing.GroupLayout.DEFAULT_SIZE, 261, Short.MAX_VALUE))
+                    .addComponent(PasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 15, Short.MAX_VALUE))
         );
         LoginPanelLayout.setVerticalGroup(
@@ -135,15 +134,14 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void LoginRegisterBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginRegisterBtnActionPerformed
+        AnnouceLabel.setText("");
         String Uname = UsernameTextField.getText();
         String pw = PasswordField.getText();
         if(UPverify(readUP(),pw, Uname)==true){
             Maintimeline mainscreen = new Maintimeline();
             mainscreen.setVisible(true);
             super.dispose();
-        } 
-        
-        
+        }        
     }//GEN-LAST:event_LoginRegisterBtnActionPerformed
 
     private void UsernameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsernameTextFieldActionPerformed
@@ -157,18 +155,18 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_PasswordFieldActionPerformed
 
     private void SigninButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SigninButtonActionPerformed
+        AnnouceLabel.setText("");
         String RecUname = UsernameTextField.getText();
         String RecPw = PasswordField.getText();
         Register (RecUname,RecPw);
         // TODO add your handling code here:
     }//GEN-LAST:event_SigninButtonActionPerformed
-    
+    public static File UnamePW = new File("src/TimelineApplication/UnamePW.txt"); 
     public static ArrayList<String> readUP(){
-        String fName = "Q&A.txt";
         String line = null;
         ArrayList<String> UPlist = new ArrayList<String>();
         try{
-            FileReader fileReader = new FileReader("/Q&A.txt");
+            FileReader fileReader = new FileReader(UnamePW);
             BufferedReader bufferedReader = new BufferedReader(fileReader); 
             while (true){
                 line = bufferedReader.readLine();
@@ -178,10 +176,10 @@ public class Login extends javax.swing.JFrame {
                     else {
                         UPlist.add(line);
                     }
-            }          
+            }
         }
         catch (FileNotFoundException ex){
-            System.out.println("Cannot find the file "+"/Q&A.txt");
+            System.out.println("Cannot find the file "+UnamePW);
         }
         catch (IOException ex){
             System.out.println("Error occured when reading file.");
@@ -195,21 +193,25 @@ public class Login extends javax.swing.JFrame {
         boolean DecideWrite = true;
         for (int x=0; x<UPlist.size(); x++){
             if (UPlist.get(x).equals(a)){
-               AnnouceLabel.setText("The username you entered has been used.");
+               AnnouceLabel.setText("The username entered has been used.");
                DecideWrite = false;
                break;               
             }
         }
         if (DecideWrite==true){
-            String fName = "Q&A.txt";
             try{
-                FileWriter fileWriter = new FileWriter("Q&A.txt");
-                BufferedWriter bufferedWriter = new BufferedWriter (fileWriter);
-                fileWriter.write(a);
-                fileWriter.write(b); 
+                Writer fileWriter;
+                fileWriter = new BufferedWriter(new FileWriter(UnamePW, true));
+                System.out.println(a);
+                System.out.println(b);                
+                fileWriter.append(a);
+                fileWriter.append("\n");                
+                fileWriter.append(b); 
+                fileWriter.append("\n");
+                fileWriter.close();
                     } 
             catch (FileNotFoundException ex){
-                System.out.println("Cannot find the file "+fName);
+                System.out.println("Cannot find the file "+UnamePW);
             }
             catch (IOException e) {
                 e.printStackTrace();
