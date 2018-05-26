@@ -11,8 +11,11 @@ import javax.swing.ImageIcon;
 import java.io.*;
 import javax.swing.JPanel;
 import java.util.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JLabel;
 import javax.swing.JTextPane;
+
 
 /**
  *
@@ -25,8 +28,7 @@ public class Maintimeline extends javax.swing.JFrame {
      */
     public Maintimeline() {
         initComponents();        
-        
-        
+      
         //The array below will store all event title variable names and event date variable names for later use
         JLabel eventTitleDateNames[][]={{EventTitleLabelOne, DateTextLabelOne},{EventTitleLabelTwo, DateTextLabelTwo},{EventTitleLabelThree, DateTextLabelThree}, 
         {EventTitleLabelFour, DateTextLabelFour}, {EventTitleLabelFive, DateTextLabelFive}, {EventTitleLabelSix, DateTextLabelSix}, {EventTitleLabelSeven, DateTextLabelSeven}, 
@@ -52,13 +54,18 @@ public class Maintimeline extends javax.swing.JFrame {
             
         }  
         
-        //Setting all arros to non visible 
+        //Setting all arrows to non visible 
         for (JLabel arrowName : eventArrowNames){
             setArrowInvisible(arrowName);
         }
         
-    }
+        readEventsInformation();
 
+        
+    }
+    
+    public static File eventInformationFile = new File("src/TimelineApplication/eventsInformation.txt");
+      
     public static void setEventPaneInvisible(JPanel eventPaneName){
         eventPaneName.setVisible(false);
     }
@@ -66,6 +73,49 @@ public class Maintimeline extends javax.swing.JFrame {
     public static void setArrowInvisible (JLabel arrowName){
         arrowName.setVisible(false);
     }
+    
+    public static void readEventsInformation(){
+    
+        ArrayList<ArrayList<String>> eventInformationList = new ArrayList<>();
+        for(int i = 0; i<16; i++){
+            eventInformationList.add(new ArrayList<String>());
+        }
+        
+        if(eventInformationFile.exists()){
+            try {
+                Scanner sc1 = new Scanner(eventInformationFile);
+                
+                int lines = 0; //number of lines in text file
+                while(sc1.hasNextLine()){
+                    lines+=1;
+                    sc1.nextLine();
+                }
+                                
+                Scanner sc2 = new Scanner(eventInformationFile);
+                
+                //Put even information into the 2d list
+                for(int i = 0; i <lines/5; i++){ //number of 2d lists
+                    for (int j = 0; j<5; j++){;
+                        eventInformationList.get(i).add(sc2.nextLine());
+                    }
+                }
+                
+                System.out.println("List" + eventInformationList);
+                
+            } catch (FileNotFoundException ex) {
+                System.out.println("Error for some reason!");
+            }
+        }
+        else{
+            try {
+                eventInformationFile.createNewFile();
+            } catch (IOException ex) {
+                System.out.println("Attemped to create new database but path to file coult not be found.");
+            }
+        }
+        
+    }
+    
     
     File image = new File("/DeleteIconHover");
     
