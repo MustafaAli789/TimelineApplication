@@ -33,6 +33,7 @@ public class Maintimeline extends javax.swing.JFrame {
      */
     public Maintimeline() {
         initComponents();       
+        
         //The array below will store all event title variable names and event date variable names as well as event image variable names for later use
         JLabel eventTitleDateImageNames[][]={{EventTitleLabelOne, DateTextLabelOne, EventImage1},{EventTitleLabelTwo, DateTextLabelTwo, EventImage2},{EventTitleLabelThree, DateTextLabelThree, EventImage3}, 
         {EventTitleLabelFour, DateTextLabelFour, EventImage4}, {EventTitleLabelFive, DateTextLabelFive, EventImage5}, {EventTitleLabelSix, DateTextLabelSix, EventImage6}, {EventTitleLabelSeven, DateTextLabelSeven, EventImage7}, 
@@ -72,7 +73,22 @@ public class Maintimeline extends javax.swing.JFrame {
             //passing names of variables and current event num from previously defined lists with all var names
             editEvent(eventTitleDateImageNames[i][0], eventTitleDateImageNames[i][1], eventDescriptionNames[i], eventTitleDateImageNames[i][2], i); 
             setEventPaneVisibility(eventPaneNames[i], true); //setting events to visible
-            setArrowVisibility(eventArrowNames[i], true);
+            
+            //This is to take into account the presence of rows and therefore change in num of arrows each time row changes
+            if(numOfEvents <=4 && i<numOfEvents-1){
+                setArrowVisibility(eventArrowNames[i], true);
+            }   
+            else if(numOfEvents > 4 && numOfEvents <= 8 && i<numOfEvents-2){ //Ex: on row 2, 2 less arrows than the num of events will be shown
+                setArrowVisibility(eventArrowNames[i], true);
+            }
+            else if(numOfEvents > 8 && numOfEvents <= 12 && i<numOfEvents-3){
+                setArrowVisibility(eventArrowNames[i], true);
+            }
+            else if (numOfEvents > 12 && i<numOfEvents-4){
+                setArrowVisibility(eventArrowNames[i], true);
+            }
+           
+        
         }
         
     }
@@ -88,7 +104,7 @@ public class Maintimeline extends javax.swing.JFrame {
         arrowName.setVisible(visibilityState);
     }
     
-    
+    //This method can be called any time an event is added or edited to put the text and image into the event screen
     public static void editEvent(JLabel title, JLabel date, JTextPane description, JLabel eventImage, int eventNum){
         
         
