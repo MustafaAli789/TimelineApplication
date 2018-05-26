@@ -73,7 +73,6 @@ public class Maintimeline extends javax.swing.JFrame {
                
         //Initializing Events
         int numOfEvents = getNumOfEvents();
-        System.out.println(numOfEvents);
         for (int i = 0; i< numOfEvents; i++){
             //passing names of variables and current event num from previously defined lists with all var names
             editEvent(eventTitleDateImageNames[i][0], eventTitleDateImageNames[i][1], eventDescriptionNames[i], eventTitleDateImageNames[i][2], i); 
@@ -102,7 +101,6 @@ public class Maintimeline extends javax.swing.JFrame {
     public static ArrayList<ArrayList<String>> eventInformationList = new ArrayList<>(); //2d list of all event info
        
     public static void setEventPaneVisibility(JPanel eventPaneName, boolean visibilityState){
-        System.out.println(eventInformationList);
         eventPaneName.setVisible(visibilityState);
     }
     
@@ -110,17 +108,10 @@ public class Maintimeline extends javax.swing.JFrame {
         arrowName.setVisible(visibilityState);
     }
     
-    //This method can be called any time an event is added or edited to put the text and image into the event screen
-    public static void editEvent(JLabel title, JLabel date, JTextPane description, JLabel eventImage, int eventNum){
-        
-        
-        title.setText(eventInformationList.get(eventNum).get(1)); //1st index is title
-        date.setText(eventInformationList.get(eventNum).get(2)); //2nd index is date
-        description.setText(eventInformationList.get(eventNum).get(3)); //3rd index is description
-        
+    public static void setImage(JLabel eventImage, String link, int eventNum){
         Image image = null;
         try{
-            URL url = new URL(eventInformationList.get(eventNum).get(4));
+            URL url = new URL(link);
             try {
                 image = ImageIO.read(url);
                 eventImage.setIcon(new ImageIcon(image));
@@ -133,7 +124,23 @@ public class Maintimeline extends javax.swing.JFrame {
             String error = "The URL for " + eventInformationList.get(eventNum).get(1) + " does not exist.";
             JOptionPane.showMessageDialog(null, error);
         }
+    }
+    
+    //This method can be called any time an event is added or edited to put the text and image into the event screen
+    public static void editEvent(JLabel title, JLabel date, JTextPane description, JLabel eventImage, int eventNum){
         
+        
+        title.setText(eventInformationList.get(eventNum).get(1)); //1st index is title
+        date.setText(eventInformationList.get(eventNum).get(2)); //2nd index is date
+        description.setText(eventInformationList.get(eventNum).get(3)); //3rd index is description
+        
+        if(!eventInformationList.get(eventNum).get(4).isEmpty()){
+            setImage(eventImage, eventInformationList.get(eventNum).get(4), eventNum);
+        }
+        else{ //if no URL provided, just put white box instead
+            setImage(eventImage, "https://vignette.wikia.nocookie.net/uncyclopedia/images/4/44/White_square.png/revision/latest?cb=20061003200043", eventNum);
+        }
+         
     }
     
     public static int getNumOfEvents(){
