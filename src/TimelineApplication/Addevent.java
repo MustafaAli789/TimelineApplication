@@ -1,5 +1,7 @@
 package TimelineApplication;
 import java.io.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 public class Addevent extends javax.swing.JFrame {
 
     /**
@@ -158,7 +160,8 @@ public class Addevent extends javax.swing.JFrame {
     }//GEN-LAST:event_ImageUrlTextFieldActionPerformed
 
     private void CancelBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelBtnActionPerformed
-        Maintimeline mainscreen = new Maintimeline();
+        Maintimeline mainscreen = null;
+            mainscreen = new Maintimeline();
         mainscreen.setVisible(true);
         super.dispose();
     }//GEN-LAST:event_CancelBtnActionPerformed
@@ -172,7 +175,7 @@ public class Addevent extends javax.swing.JFrame {
            
 
     try {
-                File file = new File("Event.txt");
+                File file = new File("Events.txt");
                 file.createNewFile();
                 // if file doesnt exists, then create it
                 if (!file.exists()) {
@@ -181,15 +184,15 @@ public class Addevent extends javax.swing.JFrame {
 
                 FileWriter fw = new FileWriter(file.getAbsoluteFile());
                 PrintWriter pw = new PrintWriter(fw);
-                pw.write("Event position: " + eventpos); 
+                pw.write(eventpos); 
                 pw.println();
-                pw.write("Event name: " + eventname);
+                pw.write(eventname);
                 pw.println();
-                pw.write("Time: " + eventTime);
+                pw.write(eventTime);
                 pw.println();
-                pw.write("Description: " + eventdesc);
+                pw.write(eventdesc);
                 pw.println();
-                pw.write("Image (URL): " + eventimg);
+                pw.write(eventimg);
                 pw.println();
                 pw.close();
 
@@ -198,7 +201,8 @@ public class Addevent extends javax.swing.JFrame {
             } catch (IOException e) {
                 e.printStackTrace();
 }
-        Maintimeline mainscreen = new Maintimeline();
+        Maintimeline mainscreen = null;
+            mainscreen = new Maintimeline();
         mainscreen.setVisible(true);
         super.dispose();
     }//GEN-LAST:event_SaveBtnActionPerformed

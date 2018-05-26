@@ -5,6 +5,9 @@
  */
 package TimelineApplication;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author S199841769
@@ -109,13 +112,15 @@ public class DeleteEvent extends javax.swing.JFrame {
     }//GEN-LAST:event_DeleteEventFieldActionPerformed
 
     private void SaveBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveBtnActionPerformed
-        Maintimeline mainscreen = new Maintimeline();
+        Maintimeline mainscreen = null;
+            mainscreen = new Maintimeline();
         mainscreen.setVisible(true);
         super.dispose();
     }//GEN-LAST:event_SaveBtnActionPerformed
 
     private void CancelBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelBtnActionPerformed
-        Maintimeline mainscreen = new Maintimeline();
+        Maintimeline mainscreen = null;
+            mainscreen = new Maintimeline();
         mainscreen.setVisible(true);
         super.dispose();
     }//GEN-LAST:event_CancelBtnActionPerformed
