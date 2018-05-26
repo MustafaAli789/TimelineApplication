@@ -7,12 +7,16 @@ package TimelineApplication;
 
 import java.awt.Color;
 import java.awt.Cursor;
+import java.awt.Image;
 import javax.swing.ImageIcon;
 import java.io.*;
+import java.net.MalformedURLException;
+import java.net.URL;
 import javax.swing.JPanel;
 import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.imageio.ImageIO;
 import javax.swing.JLabel;
 import javax.swing.JTextPane;
 
@@ -59,6 +63,23 @@ public class Maintimeline extends javax.swing.JFrame {
         }
         
         readEventsInformation();
+        
+        Image image = null;
+        try{
+            URL url = new URL("https://pbs.twimg.com/profile_images/658733542713659392/3o2wa2_M_400x400.jpg");
+            try {
+                image = ImageIO.read(url);
+                EventImage1.setIcon(new ImageIcon(image));
+            } catch (IOException ex) {
+                System.out.println("Another error.");
+            }
+        }
+        catch(MalformedURLException e){
+            System.out.println("There was an error with loading the URL.");
+        }
+        
+ 
+   
         
         //Initializing Events
         int numOfEvents = getNumOfEvents();
@@ -161,39 +182,38 @@ public class Maintimeline extends javax.swing.JFrame {
         EventTitlePanelOne = new javax.swing.JPanel();
         EventTitleLabelOne = new javax.swing.JLabel();
         DateTextLabelOne = new javax.swing.JLabel();
-        ImageFrameOne = new javax.swing.JPanel();
         SeperatorPaneOne = new javax.swing.JPanel();
         jScrollPaneOne = new javax.swing.JScrollPane();
         DescriptionTextPanelOne = new javax.swing.JTextPane();
+        EventImage1 = new javax.swing.JLabel();
         EventPane3 = new javax.swing.JPanel();
         EventTitlePanelThree = new javax.swing.JPanel();
         EventTitleLabelThree = new javax.swing.JLabel();
         DateTextLabelThree = new javax.swing.JLabel();
-        ImageFrameThree = new javax.swing.JPanel();
         SeperatorPaneThree = new javax.swing.JPanel();
         jScrollPaneThree = new javax.swing.JScrollPane();
         DescriptionTextPanelThree = new javax.swing.JTextPane();
+        EventImage3 = new javax.swing.JLabel();
         EventPane2 = new javax.swing.JPanel();
         EventTitlePanelTwo = new javax.swing.JPanel();
         EventTitleLabelTwo = new javax.swing.JLabel();
         DateTextLabelTwo = new javax.swing.JLabel();
-        ImageFrameTwo = new javax.swing.JPanel();
         SeperatorPaneTwo = new javax.swing.JPanel();
         jScrollPaneTwo = new javax.swing.JScrollPane();
         DescriptionTextPanelTwo = new javax.swing.JTextPane();
+        EventImage2 = new javax.swing.JLabel();
         EventPane4 = new javax.swing.JPanel();
         EventTitlePanelFour = new javax.swing.JPanel();
         EventTitleLabelFour = new javax.swing.JLabel();
         DateTextLabelFour = new javax.swing.JLabel();
-        ImageFrameFour = new javax.swing.JPanel();
         SeperatorPaneFour = new javax.swing.JPanel();
         jScrollPaneFour = new javax.swing.JScrollPane();
         DescriptionTextPanelFour = new javax.swing.JTextPane();
+        EventImage4 = new javax.swing.JLabel();
         EventPane5 = new javax.swing.JPanel();
         EventTitlePanelFive = new javax.swing.JPanel();
         EventTitleLabelFive = new javax.swing.JLabel();
         DateTextLabelFive = new javax.swing.JLabel();
-        ImageFrameFive = new javax.swing.JPanel();
         SeperatorPaneFive = new javax.swing.JPanel();
         jScrollPaneFive = new javax.swing.JScrollPane();
         DescriptionTextPanelFive = new javax.swing.JTextPane();
@@ -201,7 +221,6 @@ public class Maintimeline extends javax.swing.JFrame {
         EventTitlePanelSix = new javax.swing.JPanel();
         EventTitleLabelSix = new javax.swing.JLabel();
         DateTextLabelSix = new javax.swing.JLabel();
-        ImageFrameSix = new javax.swing.JPanel();
         SeperatorPaneSix = new javax.swing.JPanel();
         jScrollPaneSix = new javax.swing.JScrollPane();
         DescriptionTextPanelSix = new javax.swing.JTextPane();
@@ -209,7 +228,6 @@ public class Maintimeline extends javax.swing.JFrame {
         EventTitlePanelSeven = new javax.swing.JPanel();
         EventTitleLabelSeven = new javax.swing.JLabel();
         DateTextLabelSeven = new javax.swing.JLabel();
-        ImageFrameSeven = new javax.swing.JPanel();
         SeperatorPaneSeven = new javax.swing.JPanel();
         jScrollPaneSeven = new javax.swing.JScrollPane();
         DescriptionTextPanelSeven = new javax.swing.JTextPane();
@@ -217,7 +235,6 @@ public class Maintimeline extends javax.swing.JFrame {
         EventTitlePanelEight = new javax.swing.JPanel();
         EventTitleLabelEight = new javax.swing.JLabel();
         DateTextLabelEight = new javax.swing.JLabel();
-        ImageFrameEight = new javax.swing.JPanel();
         SeperatorPaneEight = new javax.swing.JPanel();
         jScrollPaneEight = new javax.swing.JScrollPane();
         DescriptionTextPanelEight = new javax.swing.JTextPane();
@@ -225,7 +242,6 @@ public class Maintimeline extends javax.swing.JFrame {
         EventTitlePanelNine = new javax.swing.JPanel();
         EventTitleLabelNine = new javax.swing.JLabel();
         DateTextLabelNine = new javax.swing.JLabel();
-        ImageFrameNine = new javax.swing.JPanel();
         SeperatorPaneNine = new javax.swing.JPanel();
         jScrollPaneNine = new javax.swing.JScrollPane();
         DescriptionTextPanelNine = new javax.swing.JTextPane();
@@ -233,7 +249,6 @@ public class Maintimeline extends javax.swing.JFrame {
         EventTitlePanelTen = new javax.swing.JPanel();
         EventTitleLabelTen = new javax.swing.JLabel();
         DateTextLabelTen = new javax.swing.JLabel();
-        ImageFrameTen = new javax.swing.JPanel();
         SeperatorPaneTen = new javax.swing.JPanel();
         jScrollPaneTen = new javax.swing.JScrollPane();
         DescriptionTextPanelTen = new javax.swing.JTextPane();
@@ -241,7 +256,6 @@ public class Maintimeline extends javax.swing.JFrame {
         EventTitlePanelEleven = new javax.swing.JPanel();
         EventTitleLabelEleven = new javax.swing.JLabel();
         DateTextLabelEleven = new javax.swing.JLabel();
-        ImageFrameEleven = new javax.swing.JPanel();
         SeperatorPaneEleven = new javax.swing.JPanel();
         jScrollPaneEleven = new javax.swing.JScrollPane();
         DescriptionTextPanelEleven = new javax.swing.JTextPane();
@@ -249,7 +263,6 @@ public class Maintimeline extends javax.swing.JFrame {
         EventTitlePanelTwelve = new javax.swing.JPanel();
         EventTitleLabelTwelve = new javax.swing.JLabel();
         DateTextLabelTwelve = new javax.swing.JLabel();
-        ImageFrameTwelve = new javax.swing.JPanel();
         SeperatorPaneTwelve = new javax.swing.JPanel();
         jScrollPaneTwelve = new javax.swing.JScrollPane();
         DescriptionTextPanelTwelve = new javax.swing.JTextPane();
@@ -257,7 +270,6 @@ public class Maintimeline extends javax.swing.JFrame {
         EventTitlePanelThirteen = new javax.swing.JPanel();
         EventTitleLabelThirteen = new javax.swing.JLabel();
         DateTextLabelThirteen = new javax.swing.JLabel();
-        ImageFrameThirteen = new javax.swing.JPanel();
         SeperatorPaneThirteen = new javax.swing.JPanel();
         jScrollPaneThirteen = new javax.swing.JScrollPane();
         DescriptionTextPanelThirteen = new javax.swing.JTextPane();
@@ -265,7 +277,6 @@ public class Maintimeline extends javax.swing.JFrame {
         EventTitlePanelFourteen = new javax.swing.JPanel();
         EventTitleLabelFourteen = new javax.swing.JLabel();
         DateTextLabelFourteen = new javax.swing.JLabel();
-        ImageFrameFourteen = new javax.swing.JPanel();
         SeperatorPaneFourteen = new javax.swing.JPanel();
         jScrollPaneFourteen = new javax.swing.JScrollPane();
         DescriptionTextPanelFourteen = new javax.swing.JTextPane();
@@ -273,7 +284,6 @@ public class Maintimeline extends javax.swing.JFrame {
         EventTitlePanelFifteen = new javax.swing.JPanel();
         EventTitleLabelFifteen = new javax.swing.JLabel();
         DateTextLabelFifteen = new javax.swing.JLabel();
-        ImageFrameFifteen = new javax.swing.JPanel();
         SeperatorPaneFifteen = new javax.swing.JPanel();
         jScrollPaneFifteen = new javax.swing.JScrollPane();
         DescriptionTextPanelFifteen = new javax.swing.JTextPane();
@@ -281,7 +291,6 @@ public class Maintimeline extends javax.swing.JFrame {
         EventTitlePanelSixteen = new javax.swing.JPanel();
         EventTitleLabelSixteen = new javax.swing.JLabel();
         DateTextLabelSixteen = new javax.swing.JLabel();
-        ImageFrameSixteen = new javax.swing.JPanel();
         SeperatorPaneSixteen = new javax.swing.JPanel();
         jScrollPaneSixteen = new javax.swing.JScrollPane();
         DescriptionTextPanelSixteen = new javax.swing.JTextPane();
@@ -315,6 +324,7 @@ public class Maintimeline extends javax.swing.JFrame {
 
         EventPane1.setBackground(new java.awt.Color(153, 153, 153));
         EventPane1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
+        EventPane1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         EventTitlePanelOne.setBackground(new java.awt.Color(0, 0, 0));
 
@@ -324,6 +334,8 @@ public class Maintimeline extends javax.swing.JFrame {
 
         DateTextLabelOne.setForeground(new java.awt.Color(255, 255, 255));
         DateTextLabelOne.setText("jLabel1");
+
+        SeperatorPaneOne.setLayout(null);
 
         javax.swing.GroupLayout EventTitlePanelOneLayout = new javax.swing.GroupLayout(EventTitlePanelOne);
         EventTitlePanelOne.setLayout(EventTitlePanelOneLayout);
@@ -337,6 +349,9 @@ public class Maintimeline extends javax.swing.JFrame {
                         .addComponent(DateTextLabelOne, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, EventTitlePanelOneLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(SeperatorPaneOne, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         EventTitlePanelOneLayout.setVerticalGroup(
             EventTitlePanelOneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -345,62 +360,25 @@ public class Maintimeline extends javax.swing.JFrame {
                 .addComponent(EventTitleLabelOne)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(DateTextLabelOne)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(SeperatorPaneOne, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        ImageFrameOne.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        ImageFrameOne.setOpaque(false);
-
-        javax.swing.GroupLayout ImageFrameOneLayout = new javax.swing.GroupLayout(ImageFrameOne);
-        ImageFrameOne.setLayout(ImageFrameOneLayout);
-        ImageFrameOneLayout.setHorizontalGroup(
-            ImageFrameOneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        ImageFrameOneLayout.setVerticalGroup(
-            ImageFrameOneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 147, Short.MAX_VALUE)
-        );
-
-        SeperatorPaneOne.setLayout(null);
+        EventPane1.add(EventTitlePanelOne, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 1, 279, -1));
 
         DescriptionTextPanelOne.setEditable(false);
         jScrollPaneOne.setViewportView(DescriptionTextPanelOne);
 
-        javax.swing.GroupLayout EventPane1Layout = new javax.swing.GroupLayout(EventPane1);
-        EventPane1.setLayout(EventPane1Layout);
-        EventPane1Layout.setHorizontalGroup(
-            EventPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(EventPane1Layout.createSequentialGroup()
-                .addGap(1, 1, 1)
-                .addComponent(EventTitlePanelOne, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(EventPane1Layout.createSequentialGroup()
-                .addComponent(SeperatorPaneOne, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(EventPane1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(EventPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPaneOne, javax.swing.GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE)
-                    .addComponent(ImageFrameOne, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        EventPane1Layout.setVerticalGroup(
-            EventPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(EventPane1Layout.createSequentialGroup()
-                .addComponent(EventTitlePanelOne, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(3, 3, 3)
-                .addComponent(SeperatorPaneOne, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(ImageFrameOne, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPaneOne, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
-                .addContainerGap())
-        );
+        EventPane1.add(jScrollPaneOne, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 240, 180, 130));
 
-        jPanel1.add(EventPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(893, 41, 191, 375));
+        EventImage1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        EventPane1.add(EventImage1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 172, 150));
+
+        jPanel1.add(EventPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 40, 191, 375));
 
         EventPane3.setBackground(new java.awt.Color(153, 153, 153));
         EventPane3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
+        EventPane3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         EventTitlePanelThree.setBackground(new java.awt.Color(0, 0, 0));
 
@@ -410,6 +388,8 @@ public class Maintimeline extends javax.swing.JFrame {
 
         DateTextLabelThree.setForeground(new java.awt.Color(255, 255, 255));
         DateTextLabelThree.setText("jLabel1");
+
+        SeperatorPaneThree.setLayout(null);
 
         javax.swing.GroupLayout EventTitlePanelThreeLayout = new javax.swing.GroupLayout(EventTitlePanelThree);
         EventTitlePanelThree.setLayout(EventTitlePanelThreeLayout);
@@ -423,6 +403,9 @@ public class Maintimeline extends javax.swing.JFrame {
                         .addComponent(DateTextLabelThree, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, EventTitlePanelThreeLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(SeperatorPaneThree, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         EventTitlePanelThreeLayout.setVerticalGroup(
             EventTitlePanelThreeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -431,62 +414,25 @@ public class Maintimeline extends javax.swing.JFrame {
                 .addComponent(EventTitleLabelThree)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(DateTextLabelThree)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(SeperatorPaneThree, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        ImageFrameThree.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        ImageFrameThree.setOpaque(false);
-
-        javax.swing.GroupLayout ImageFrameThreeLayout = new javax.swing.GroupLayout(ImageFrameThree);
-        ImageFrameThree.setLayout(ImageFrameThreeLayout);
-        ImageFrameThreeLayout.setHorizontalGroup(
-            ImageFrameThreeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        ImageFrameThreeLayout.setVerticalGroup(
-            ImageFrameThreeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 147, Short.MAX_VALUE)
-        );
-
-        SeperatorPaneThree.setLayout(null);
+        EventPane3.add(EventTitlePanelThree, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 1, 279, -1));
 
         DescriptionTextPanelThree.setEditable(false);
         jScrollPaneThree.setViewportView(DescriptionTextPanelThree);
 
-        javax.swing.GroupLayout EventPane3Layout = new javax.swing.GroupLayout(EventPane3);
-        EventPane3.setLayout(EventPane3Layout);
-        EventPane3Layout.setHorizontalGroup(
-            EventPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(EventPane3Layout.createSequentialGroup()
-                .addGap(1, 1, 1)
-                .addComponent(EventTitlePanelThree, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(EventPane3Layout.createSequentialGroup()
-                .addComponent(SeperatorPaneThree, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(EventPane3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(EventPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPaneThree, javax.swing.GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE)
-                    .addComponent(ImageFrameThree, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        EventPane3Layout.setVerticalGroup(
-            EventPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(EventPane3Layout.createSequentialGroup()
-                .addComponent(EventTitlePanelThree, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(3, 3, 3)
-                .addComponent(SeperatorPaneThree, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(ImageFrameThree, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPaneThree, javax.swing.GroupLayout.DEFAULT_SIZE, 117, Short.MAX_VALUE)
-                .addContainerGap())
-        );
+        EventPane3.add(jScrollPaneThree, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 240, 180, 130));
 
-        jPanel1.add(EventPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(339, 41, 193, -1));
+        EventImage3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        EventPane3.add(EventImage3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 172, 150));
+
+        jPanel1.add(EventPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(339, 41, 193, 377));
 
         EventPane2.setBackground(new java.awt.Color(153, 153, 153));
         EventPane2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
+        EventPane2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         EventTitlePanelTwo.setBackground(new java.awt.Color(0, 0, 0));
 
@@ -496,6 +442,8 @@ public class Maintimeline extends javax.swing.JFrame {
 
         DateTextLabelTwo.setForeground(new java.awt.Color(255, 255, 255));
         DateTextLabelTwo.setText("jLabel1");
+
+        SeperatorPaneTwo.setLayout(null);
 
         javax.swing.GroupLayout EventTitlePanelTwoLayout = new javax.swing.GroupLayout(EventTitlePanelTwo);
         EventTitlePanelTwo.setLayout(EventTitlePanelTwoLayout);
@@ -509,6 +457,9 @@ public class Maintimeline extends javax.swing.JFrame {
                         .addComponent(DateTextLabelTwo, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, EventTitlePanelTwoLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(SeperatorPaneTwo, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         EventTitlePanelTwoLayout.setVerticalGroup(
             EventTitlePanelTwoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -517,62 +468,25 @@ public class Maintimeline extends javax.swing.JFrame {
                 .addComponent(EventTitleLabelTwo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(DateTextLabelTwo)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(SeperatorPaneTwo, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        ImageFrameTwo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        ImageFrameTwo.setOpaque(false);
-
-        javax.swing.GroupLayout ImageFrameTwoLayout = new javax.swing.GroupLayout(ImageFrameTwo);
-        ImageFrameTwo.setLayout(ImageFrameTwoLayout);
-        ImageFrameTwoLayout.setHorizontalGroup(
-            ImageFrameTwoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        ImageFrameTwoLayout.setVerticalGroup(
-            ImageFrameTwoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 147, Short.MAX_VALUE)
-        );
-
-        SeperatorPaneTwo.setLayout(null);
+        EventPane2.add(EventTitlePanelTwo, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 1, 279, -1));
 
         DescriptionTextPanelTwo.setEditable(false);
         jScrollPaneTwo.setViewportView(DescriptionTextPanelTwo);
 
-        javax.swing.GroupLayout EventPane2Layout = new javax.swing.GroupLayout(EventPane2);
-        EventPane2.setLayout(EventPane2Layout);
-        EventPane2Layout.setHorizontalGroup(
-            EventPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(EventPane2Layout.createSequentialGroup()
-                .addGap(1, 1, 1)
-                .addComponent(EventTitlePanelTwo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(EventPane2Layout.createSequentialGroup()
-                .addComponent(SeperatorPaneTwo, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(EventPane2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(EventPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPaneTwo, javax.swing.GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE)
-                    .addComponent(ImageFrameTwo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        EventPane2Layout.setVerticalGroup(
-            EventPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(EventPane2Layout.createSequentialGroup()
-                .addComponent(EventTitlePanelTwo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(3, 3, 3)
-                .addComponent(SeperatorPaneTwo, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(ImageFrameTwo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPaneTwo, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
-                .addContainerGap())
-        );
+        EventPane2.add(jScrollPaneTwo, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 240, 180, 130));
+
+        EventImage2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        EventPane2.add(EventImage2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 172, 150));
 
         jPanel1.add(EventPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(617, 41, 191, 375));
 
         EventPane4.setBackground(new java.awt.Color(153, 153, 153));
         EventPane4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
+        EventPane4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         EventTitlePanelFour.setBackground(new java.awt.Color(0, 0, 0));
 
@@ -582,6 +496,8 @@ public class Maintimeline extends javax.swing.JFrame {
 
         DateTextLabelFour.setForeground(new java.awt.Color(255, 255, 255));
         DateTextLabelFour.setText("jLabel1");
+
+        SeperatorPaneFour.setLayout(null);
 
         javax.swing.GroupLayout EventTitlePanelFourLayout = new javax.swing.GroupLayout(EventTitlePanelFour);
         EventTitlePanelFour.setLayout(EventTitlePanelFourLayout);
@@ -595,6 +511,9 @@ public class Maintimeline extends javax.swing.JFrame {
                         .addComponent(DateTextLabelFour, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, EventTitlePanelFourLayout.createSequentialGroup()
+                .addComponent(SeperatorPaneFour, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         EventTitlePanelFourLayout.setVerticalGroup(
             EventTitlePanelFourLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -603,57 +522,19 @@ public class Maintimeline extends javax.swing.JFrame {
                 .addComponent(EventTitleLabelFour)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(DateTextLabelFour)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(SeperatorPaneFour, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        ImageFrameFour.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        ImageFrameFour.setOpaque(false);
-
-        javax.swing.GroupLayout ImageFrameFourLayout = new javax.swing.GroupLayout(ImageFrameFour);
-        ImageFrameFour.setLayout(ImageFrameFourLayout);
-        ImageFrameFourLayout.setHorizontalGroup(
-            ImageFrameFourLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        ImageFrameFourLayout.setVerticalGroup(
-            ImageFrameFourLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 147, Short.MAX_VALUE)
-        );
-
-        SeperatorPaneFour.setLayout(null);
+        EventPane4.add(EventTitlePanelFour, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 1, 279, -1));
 
         DescriptionTextPanelFour.setEditable(false);
         jScrollPaneFour.setViewportView(DescriptionTextPanelFour);
 
-        javax.swing.GroupLayout EventPane4Layout = new javax.swing.GroupLayout(EventPane4);
-        EventPane4.setLayout(EventPane4Layout);
-        EventPane4Layout.setHorizontalGroup(
-            EventPane4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(EventPane4Layout.createSequentialGroup()
-                .addGap(1, 1, 1)
-                .addComponent(EventTitlePanelFour, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(EventPane4Layout.createSequentialGroup()
-                .addComponent(SeperatorPaneFour, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(EventPane4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(EventPane4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPaneFour, javax.swing.GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE)
-                    .addComponent(ImageFrameFour, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        EventPane4Layout.setVerticalGroup(
-            EventPane4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(EventPane4Layout.createSequentialGroup()
-                .addComponent(EventTitlePanelFour, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(3, 3, 3)
-                .addComponent(SeperatorPaneFour, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(ImageFrameFour, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPaneFour, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
-                .addContainerGap())
-        );
+        EventPane4.add(jScrollPaneFour, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 240, 180, 130));
+
+        EventImage4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        EventPane4.add(EventImage4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 172, 150));
 
         jPanel1.add(EventPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(64, 41, 190, 375));
 
@@ -692,20 +573,6 @@ public class Maintimeline extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        ImageFrameFive.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        ImageFrameFive.setOpaque(false);
-
-        javax.swing.GroupLayout ImageFrameFiveLayout = new javax.swing.GroupLayout(ImageFrameFive);
-        ImageFrameFive.setLayout(ImageFrameFiveLayout);
-        ImageFrameFiveLayout.setHorizontalGroup(
-            ImageFrameFiveLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        ImageFrameFiveLayout.setVerticalGroup(
-            ImageFrameFiveLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 147, Short.MAX_VALUE)
-        );
-
         SeperatorPaneFive.setLayout(null);
 
         DescriptionTextPanelFive.setEditable(false);
@@ -723,9 +590,7 @@ public class Maintimeline extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(EventPane5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(EventPane5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPaneFive, javax.swing.GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE)
-                    .addComponent(ImageFrameFive, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jScrollPaneFive, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         EventPane5Layout.setVerticalGroup(
@@ -734,9 +599,7 @@ public class Maintimeline extends javax.swing.JFrame {
                 .addComponent(EventTitlePanelFive, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(3, 3, 3)
                 .addComponent(SeperatorPaneFive, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(ImageFrameFive, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(169, 169, 169)
                 .addComponent(jScrollPaneFive, javax.swing.GroupLayout.DEFAULT_SIZE, 117, Short.MAX_VALUE)
                 .addContainerGap())
         );
@@ -778,20 +641,6 @@ public class Maintimeline extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        ImageFrameSix.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        ImageFrameSix.setOpaque(false);
-
-        javax.swing.GroupLayout ImageFrameSixLayout = new javax.swing.GroupLayout(ImageFrameSix);
-        ImageFrameSix.setLayout(ImageFrameSixLayout);
-        ImageFrameSixLayout.setHorizontalGroup(
-            ImageFrameSixLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        ImageFrameSixLayout.setVerticalGroup(
-            ImageFrameSixLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 147, Short.MAX_VALUE)
-        );
-
         SeperatorPaneSix.setLayout(null);
 
         DescriptionTextPanelSix.setEditable(false);
@@ -809,9 +658,7 @@ public class Maintimeline extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(EventPane6Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(EventPane6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPaneSix, javax.swing.GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE)
-                    .addComponent(ImageFrameSix, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jScrollPaneSix, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         EventPane6Layout.setVerticalGroup(
@@ -820,9 +667,7 @@ public class Maintimeline extends javax.swing.JFrame {
                 .addComponent(EventTitlePanelSix, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(3, 3, 3)
                 .addComponent(SeperatorPaneSix, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(ImageFrameSix, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(169, 169, 169)
                 .addComponent(jScrollPaneSix, javax.swing.GroupLayout.DEFAULT_SIZE, 117, Short.MAX_VALUE)
                 .addContainerGap())
         );
@@ -864,20 +709,6 @@ public class Maintimeline extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        ImageFrameSeven.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        ImageFrameSeven.setOpaque(false);
-
-        javax.swing.GroupLayout ImageFrameSevenLayout = new javax.swing.GroupLayout(ImageFrameSeven);
-        ImageFrameSeven.setLayout(ImageFrameSevenLayout);
-        ImageFrameSevenLayout.setHorizontalGroup(
-            ImageFrameSevenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        ImageFrameSevenLayout.setVerticalGroup(
-            ImageFrameSevenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 147, Short.MAX_VALUE)
-        );
-
         SeperatorPaneSeven.setLayout(null);
 
         DescriptionTextPanelSeven.setEditable(false);
@@ -895,9 +726,7 @@ public class Maintimeline extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(EventPane7Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(EventPane7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPaneSeven, javax.swing.GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE)
-                    .addComponent(ImageFrameSeven, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jScrollPaneSeven, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         EventPane7Layout.setVerticalGroup(
@@ -906,9 +735,7 @@ public class Maintimeline extends javax.swing.JFrame {
                 .addComponent(EventTitlePanelSeven, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(3, 3, 3)
                 .addComponent(SeperatorPaneSeven, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(ImageFrameSeven, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(169, 169, 169)
                 .addComponent(jScrollPaneSeven, javax.swing.GroupLayout.DEFAULT_SIZE, 117, Short.MAX_VALUE)
                 .addContainerGap())
         );
@@ -950,20 +777,6 @@ public class Maintimeline extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        ImageFrameEight.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        ImageFrameEight.setOpaque(false);
-
-        javax.swing.GroupLayout ImageFrameEightLayout = new javax.swing.GroupLayout(ImageFrameEight);
-        ImageFrameEight.setLayout(ImageFrameEightLayout);
-        ImageFrameEightLayout.setHorizontalGroup(
-            ImageFrameEightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        ImageFrameEightLayout.setVerticalGroup(
-            ImageFrameEightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 147, Short.MAX_VALUE)
-        );
-
         SeperatorPaneEight.setLayout(null);
 
         DescriptionTextPanelEight.setEditable(false);
@@ -981,9 +794,7 @@ public class Maintimeline extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(EventPane8Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(EventPane8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPaneEight, javax.swing.GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE)
-                    .addComponent(ImageFrameEight, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jScrollPaneEight, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         EventPane8Layout.setVerticalGroup(
@@ -992,9 +803,7 @@ public class Maintimeline extends javax.swing.JFrame {
                 .addComponent(EventTitlePanelEight, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(3, 3, 3)
                 .addComponent(SeperatorPaneEight, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(ImageFrameEight, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(169, 169, 169)
                 .addComponent(jScrollPaneEight, javax.swing.GroupLayout.DEFAULT_SIZE, 117, Short.MAX_VALUE)
                 .addContainerGap())
         );
@@ -1036,20 +845,6 @@ public class Maintimeline extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        ImageFrameNine.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        ImageFrameNine.setOpaque(false);
-
-        javax.swing.GroupLayout ImageFrameNineLayout = new javax.swing.GroupLayout(ImageFrameNine);
-        ImageFrameNine.setLayout(ImageFrameNineLayout);
-        ImageFrameNineLayout.setHorizontalGroup(
-            ImageFrameNineLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        ImageFrameNineLayout.setVerticalGroup(
-            ImageFrameNineLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 147, Short.MAX_VALUE)
-        );
-
         SeperatorPaneNine.setLayout(null);
 
         DescriptionTextPanelNine.setEditable(false);
@@ -1067,9 +862,7 @@ public class Maintimeline extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(EventPane9Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(EventPane9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPaneNine, javax.swing.GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE)
-                    .addComponent(ImageFrameNine, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jScrollPaneNine, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         EventPane9Layout.setVerticalGroup(
@@ -1078,9 +871,7 @@ public class Maintimeline extends javax.swing.JFrame {
                 .addComponent(EventTitlePanelNine, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(3, 3, 3)
                 .addComponent(SeperatorPaneNine, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(ImageFrameNine, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(169, 169, 169)
                 .addComponent(jScrollPaneNine, javax.swing.GroupLayout.DEFAULT_SIZE, 117, Short.MAX_VALUE)
                 .addContainerGap())
         );
@@ -1122,20 +913,6 @@ public class Maintimeline extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        ImageFrameTen.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        ImageFrameTen.setOpaque(false);
-
-        javax.swing.GroupLayout ImageFrameTenLayout = new javax.swing.GroupLayout(ImageFrameTen);
-        ImageFrameTen.setLayout(ImageFrameTenLayout);
-        ImageFrameTenLayout.setHorizontalGroup(
-            ImageFrameTenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        ImageFrameTenLayout.setVerticalGroup(
-            ImageFrameTenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 147, Short.MAX_VALUE)
-        );
-
         SeperatorPaneTen.setLayout(null);
 
         DescriptionTextPanelTen.setEditable(false);
@@ -1153,9 +930,7 @@ public class Maintimeline extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(EventPane10Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(EventPane10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPaneTen, javax.swing.GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE)
-                    .addComponent(ImageFrameTen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jScrollPaneTen, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         EventPane10Layout.setVerticalGroup(
@@ -1164,9 +939,7 @@ public class Maintimeline extends javax.swing.JFrame {
                 .addComponent(EventTitlePanelTen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(3, 3, 3)
                 .addComponent(SeperatorPaneTen, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(ImageFrameTen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(169, 169, 169)
                 .addComponent(jScrollPaneTen, javax.swing.GroupLayout.DEFAULT_SIZE, 117, Short.MAX_VALUE)
                 .addContainerGap())
         );
@@ -1208,20 +981,6 @@ public class Maintimeline extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        ImageFrameEleven.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        ImageFrameEleven.setOpaque(false);
-
-        javax.swing.GroupLayout ImageFrameElevenLayout = new javax.swing.GroupLayout(ImageFrameEleven);
-        ImageFrameEleven.setLayout(ImageFrameElevenLayout);
-        ImageFrameElevenLayout.setHorizontalGroup(
-            ImageFrameElevenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        ImageFrameElevenLayout.setVerticalGroup(
-            ImageFrameElevenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 147, Short.MAX_VALUE)
-        );
-
         SeperatorPaneEleven.setLayout(null);
 
         DescriptionTextPanelEleven.setEditable(false);
@@ -1239,9 +998,7 @@ public class Maintimeline extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(EventPane11Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(EventPane11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPaneEleven, javax.swing.GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE)
-                    .addComponent(ImageFrameEleven, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jScrollPaneEleven, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         EventPane11Layout.setVerticalGroup(
@@ -1250,9 +1007,7 @@ public class Maintimeline extends javax.swing.JFrame {
                 .addComponent(EventTitlePanelEleven, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(3, 3, 3)
                 .addComponent(SeperatorPaneEleven, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(ImageFrameEleven, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(169, 169, 169)
                 .addComponent(jScrollPaneEleven, javax.swing.GroupLayout.DEFAULT_SIZE, 117, Short.MAX_VALUE)
                 .addContainerGap())
         );
@@ -1294,20 +1049,6 @@ public class Maintimeline extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        ImageFrameTwelve.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        ImageFrameTwelve.setOpaque(false);
-
-        javax.swing.GroupLayout ImageFrameTwelveLayout = new javax.swing.GroupLayout(ImageFrameTwelve);
-        ImageFrameTwelve.setLayout(ImageFrameTwelveLayout);
-        ImageFrameTwelveLayout.setHorizontalGroup(
-            ImageFrameTwelveLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        ImageFrameTwelveLayout.setVerticalGroup(
-            ImageFrameTwelveLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 147, Short.MAX_VALUE)
-        );
-
         SeperatorPaneTwelve.setLayout(null);
 
         DescriptionTextPanelTwelve.setEditable(false);
@@ -1325,9 +1066,7 @@ public class Maintimeline extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(EventPane12Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(EventPane12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPaneTwelve, javax.swing.GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE)
-                    .addComponent(ImageFrameTwelve, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jScrollPaneTwelve, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         EventPane12Layout.setVerticalGroup(
@@ -1336,9 +1075,7 @@ public class Maintimeline extends javax.swing.JFrame {
                 .addComponent(EventTitlePanelTwelve, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(3, 3, 3)
                 .addComponent(SeperatorPaneTwelve, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(ImageFrameTwelve, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(169, 169, 169)
                 .addComponent(jScrollPaneTwelve, javax.swing.GroupLayout.DEFAULT_SIZE, 117, Short.MAX_VALUE)
                 .addContainerGap())
         );
@@ -1380,20 +1117,6 @@ public class Maintimeline extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        ImageFrameThirteen.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        ImageFrameThirteen.setOpaque(false);
-
-        javax.swing.GroupLayout ImageFrameThirteenLayout = new javax.swing.GroupLayout(ImageFrameThirteen);
-        ImageFrameThirteen.setLayout(ImageFrameThirteenLayout);
-        ImageFrameThirteenLayout.setHorizontalGroup(
-            ImageFrameThirteenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        ImageFrameThirteenLayout.setVerticalGroup(
-            ImageFrameThirteenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 147, Short.MAX_VALUE)
-        );
-
         SeperatorPaneThirteen.setLayout(null);
 
         DescriptionTextPanelThirteen.setEditable(false);
@@ -1411,9 +1134,7 @@ public class Maintimeline extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(EventPane13Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(EventPane13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPaneThirteen, javax.swing.GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE)
-                    .addComponent(ImageFrameThirteen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jScrollPaneThirteen, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         EventPane13Layout.setVerticalGroup(
@@ -1422,9 +1143,7 @@ public class Maintimeline extends javax.swing.JFrame {
                 .addComponent(EventTitlePanelThirteen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(3, 3, 3)
                 .addComponent(SeperatorPaneThirteen, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(ImageFrameThirteen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(169, 169, 169)
                 .addComponent(jScrollPaneThirteen, javax.swing.GroupLayout.DEFAULT_SIZE, 117, Short.MAX_VALUE)
                 .addContainerGap())
         );
@@ -1466,20 +1185,6 @@ public class Maintimeline extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        ImageFrameFourteen.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        ImageFrameFourteen.setOpaque(false);
-
-        javax.swing.GroupLayout ImageFrameFourteenLayout = new javax.swing.GroupLayout(ImageFrameFourteen);
-        ImageFrameFourteen.setLayout(ImageFrameFourteenLayout);
-        ImageFrameFourteenLayout.setHorizontalGroup(
-            ImageFrameFourteenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        ImageFrameFourteenLayout.setVerticalGroup(
-            ImageFrameFourteenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 147, Short.MAX_VALUE)
-        );
-
         SeperatorPaneFourteen.setLayout(null);
 
         DescriptionTextPanelFourteen.setEditable(false);
@@ -1497,9 +1202,7 @@ public class Maintimeline extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(EventPane14Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(EventPane14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPaneFourteen, javax.swing.GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE)
-                    .addComponent(ImageFrameFourteen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jScrollPaneFourteen, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         EventPane14Layout.setVerticalGroup(
@@ -1508,9 +1211,7 @@ public class Maintimeline extends javax.swing.JFrame {
                 .addComponent(EventTitlePanelFourteen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(3, 3, 3)
                 .addComponent(SeperatorPaneFourteen, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(ImageFrameFourteen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(169, 169, 169)
                 .addComponent(jScrollPaneFourteen, javax.swing.GroupLayout.DEFAULT_SIZE, 117, Short.MAX_VALUE)
                 .addContainerGap())
         );
@@ -1552,20 +1253,6 @@ public class Maintimeline extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        ImageFrameFifteen.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        ImageFrameFifteen.setOpaque(false);
-
-        javax.swing.GroupLayout ImageFrameFifteenLayout = new javax.swing.GroupLayout(ImageFrameFifteen);
-        ImageFrameFifteen.setLayout(ImageFrameFifteenLayout);
-        ImageFrameFifteenLayout.setHorizontalGroup(
-            ImageFrameFifteenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        ImageFrameFifteenLayout.setVerticalGroup(
-            ImageFrameFifteenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 147, Short.MAX_VALUE)
-        );
-
         SeperatorPaneFifteen.setLayout(null);
 
         DescriptionTextPanelFifteen.setEditable(false);
@@ -1583,9 +1270,7 @@ public class Maintimeline extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(EventPane15Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(EventPane15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPaneFifteen, javax.swing.GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE)
-                    .addComponent(ImageFrameFifteen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jScrollPaneFifteen, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         EventPane15Layout.setVerticalGroup(
@@ -1594,9 +1279,7 @@ public class Maintimeline extends javax.swing.JFrame {
                 .addComponent(EventTitlePanelFifteen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(3, 3, 3)
                 .addComponent(SeperatorPaneFifteen, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(ImageFrameFifteen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(169, 169, 169)
                 .addComponent(jScrollPaneFifteen, javax.swing.GroupLayout.DEFAULT_SIZE, 117, Short.MAX_VALUE)
                 .addContainerGap())
         );
@@ -1638,20 +1321,6 @@ public class Maintimeline extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        ImageFrameSixteen.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        ImageFrameSixteen.setOpaque(false);
-
-        javax.swing.GroupLayout ImageFrameSixteenLayout = new javax.swing.GroupLayout(ImageFrameSixteen);
-        ImageFrameSixteen.setLayout(ImageFrameSixteenLayout);
-        ImageFrameSixteenLayout.setHorizontalGroup(
-            ImageFrameSixteenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        ImageFrameSixteenLayout.setVerticalGroup(
-            ImageFrameSixteenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 147, Short.MAX_VALUE)
-        );
-
         SeperatorPaneSixteen.setLayout(null);
 
         DescriptionTextPanelSixteen.setEditable(false);
@@ -1669,9 +1338,7 @@ public class Maintimeline extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(EventPane16Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(EventPane16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPaneSixteen, javax.swing.GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE)
-                    .addComponent(ImageFrameSixteen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jScrollPaneSixteen, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         EventPane16Layout.setVerticalGroup(
@@ -1680,9 +1347,7 @@ public class Maintimeline extends javax.swing.JFrame {
                 .addComponent(EventTitlePanelSixteen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(3, 3, 3)
                 .addComponent(SeperatorPaneSixteen, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(ImageFrameSixteen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(169, 169, 169)
                 .addComponent(jScrollPaneSixteen, javax.swing.GroupLayout.DEFAULT_SIZE, 117, Short.MAX_VALUE)
                 .addContainerGap())
         );
@@ -1967,6 +1632,10 @@ public class Maintimeline extends javax.swing.JFrame {
     private javax.swing.JTextPane DescriptionTextPanelTwelve;
     private javax.swing.JTextPane DescriptionTextPanelTwo;
     private javax.swing.JButton EditBtn;
+    private javax.swing.JLabel EventImage1;
+    private javax.swing.JLabel EventImage2;
+    private javax.swing.JLabel EventImage3;
+    private javax.swing.JLabel EventImage4;
     private javax.swing.JPanel EventPane1;
     private javax.swing.JPanel EventPane10;
     private javax.swing.JPanel EventPane11;
@@ -2015,22 +1684,6 @@ public class Maintimeline extends javax.swing.JFrame {
     private javax.swing.JPanel EventTitlePanelThree;
     private javax.swing.JPanel EventTitlePanelTwelve;
     private javax.swing.JPanel EventTitlePanelTwo;
-    private javax.swing.JPanel ImageFrameEight;
-    private javax.swing.JPanel ImageFrameEleven;
-    private javax.swing.JPanel ImageFrameFifteen;
-    private javax.swing.JPanel ImageFrameFive;
-    private javax.swing.JPanel ImageFrameFour;
-    private javax.swing.JPanel ImageFrameFourteen;
-    private javax.swing.JPanel ImageFrameNine;
-    private javax.swing.JPanel ImageFrameOne;
-    private javax.swing.JPanel ImageFrameSeven;
-    private javax.swing.JPanel ImageFrameSix;
-    private javax.swing.JPanel ImageFrameSixteen;
-    private javax.swing.JPanel ImageFrameTen;
-    private javax.swing.JPanel ImageFrameThirteen;
-    private javax.swing.JPanel ImageFrameThree;
-    private javax.swing.JPanel ImageFrameTwelve;
-    private javax.swing.JPanel ImageFrameTwo;
     private javax.swing.JButton SaveBtn;
     private javax.swing.JScrollPane ScrollableAreaPane;
     private javax.swing.JPanel SeperatorPaneEight;

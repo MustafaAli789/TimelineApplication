@@ -115,45 +115,12 @@
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="893" y="41" width="191" height="375"/>
+                  <AbsoluteConstraints x="890" y="40" width="191" height="375"/>
                 </Constraint>
               </Constraints>
 
-              <Layout>
-                <DimensionLayout dim="0">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
-                          <Component id="EventTitlePanelOne" alignment="1" max="32767" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="SeperatorPaneOne" min="-2" pref="280" max="-2" attributes="0"/>
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jScrollPaneOne" pref="176" max="32767" attributes="0"/>
-                              <Component id="ImageFrameOne" max="32767" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="32767" attributes="0"/>
-                      </Group>
-                  </Group>
-                </DimensionLayout>
-                <DimensionLayout dim="1">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="EventTitlePanelOne" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
-                          <Component id="SeperatorPaneOne" min="-2" pref="12" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="ImageFrameOne" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jScrollPaneOne" pref="105" max="32767" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                </DimensionLayout>
+              <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
+                <Property name="useNullLayout" type="boolean" value="false"/>
               </Layout>
               <SubComponents>
                 <Container class="javax.swing.JPanel" name="EventTitlePanelOne">
@@ -162,6 +129,11 @@
                       <Color blue="0" green="0" red="0" type="rgb"/>
                     </Property>
                   </Properties>
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                      <AbsoluteConstraints x="2" y="1" width="279" height="-1"/>
+                    </Constraint>
+                  </Constraints>
 
                   <Layout>
                     <DimensionLayout dim="0">
@@ -177,6 +149,10 @@
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              <Component id="SeperatorPaneOne" min="-2" pref="280" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
@@ -187,6 +163,7 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="DateTextLabelOne" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
+                              <Component id="SeperatorPaneOne" min="-2" pref="12" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -211,41 +188,23 @@
                         <Property name="text" type="java.lang.String" value="jLabel1"/>
                       </Properties>
                     </Component>
+                    <Container class="javax.swing.JPanel" name="SeperatorPaneOne">
+
+                      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
+                        <Property name="useNullLayout" type="boolean" value="true"/>
+                      </Layout>
+                    </Container>
                   </SubComponents>
-                </Container>
-                <Container class="javax.swing.JPanel" name="ImageFrameOne">
-                  <Properties>
-                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                      <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                        <LineBorder/>
-                      </Border>
-                    </Property>
-                    <Property name="opaque" type="boolean" value="false"/>
-                  </Properties>
-
-                  <Layout>
-                    <DimensionLayout dim="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      </Group>
-                    </DimensionLayout>
-                    <DimensionLayout dim="1">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="147" max="32767" attributes="0"/>
-                      </Group>
-                    </DimensionLayout>
-                  </Layout>
-                </Container>
-                <Container class="javax.swing.JPanel" name="SeperatorPaneOne">
-
-                  <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
-                    <Property name="useNullLayout" type="boolean" value="true"/>
-                  </Layout>
                 </Container>
                 <Container class="javax.swing.JScrollPane" name="jScrollPaneOne">
                   <AuxValues>
                     <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
                   </AuxValues>
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                      <AbsoluteConstraints x="6" y="240" width="180" height="130"/>
+                    </Constraint>
+                  </Constraints>
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                   <SubComponents>
@@ -256,6 +215,20 @@
                     </Component>
                   </SubComponents>
                 </Container>
+                <Component class="javax.swing.JLabel" name="EventImage1">
+                  <Properties>
+                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                      <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                        <LineBorder/>
+                      </Border>
+                    </Property>
+                  </Properties>
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                      <AbsoluteConstraints x="10" y="80" width="172" height="150"/>
+                    </Constraint>
+                  </Constraints>
+                </Component>
               </SubComponents>
             </Container>
             <Container class="javax.swing.JPanel" name="EventPane3">
@@ -273,45 +246,12 @@
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="339" y="41" width="193" height="-1"/>
+                  <AbsoluteConstraints x="339" y="41" width="193" height="377"/>
                 </Constraint>
               </Constraints>
 
-              <Layout>
-                <DimensionLayout dim="0">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
-                          <Component id="EventTitlePanelThree" alignment="1" max="32767" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="SeperatorPaneThree" min="-2" pref="280" max="-2" attributes="0"/>
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jScrollPaneThree" alignment="0" pref="176" max="32767" attributes="0"/>
-                              <Component id="ImageFrameThree" alignment="0" max="32767" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="32767" attributes="0"/>
-                      </Group>
-                  </Group>
-                </DimensionLayout>
-                <DimensionLayout dim="1">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="EventTitlePanelThree" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
-                          <Component id="SeperatorPaneThree" min="-2" pref="12" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="ImageFrameThree" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jScrollPaneThree" pref="117" max="32767" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                </DimensionLayout>
+              <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
+                <Property name="useNullLayout" type="boolean" value="false"/>
               </Layout>
               <SubComponents>
                 <Container class="javax.swing.JPanel" name="EventTitlePanelThree">
@@ -320,6 +260,11 @@
                       <Color blue="0" green="0" red="0" type="rgb"/>
                     </Property>
                   </Properties>
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                      <AbsoluteConstraints x="2" y="1" width="279" height="-1"/>
+                    </Constraint>
+                  </Constraints>
 
                   <Layout>
                     <DimensionLayout dim="0">
@@ -335,6 +280,10 @@
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              <Component id="SeperatorPaneThree" min="-2" pref="280" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
@@ -345,6 +294,7 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="DateTextLabelThree" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
+                              <Component id="SeperatorPaneThree" min="-2" pref="12" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -369,41 +319,23 @@
                         <Property name="text" type="java.lang.String" value="jLabel1"/>
                       </Properties>
                     </Component>
+                    <Container class="javax.swing.JPanel" name="SeperatorPaneThree">
+
+                      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
+                        <Property name="useNullLayout" type="boolean" value="true"/>
+                      </Layout>
+                    </Container>
                   </SubComponents>
-                </Container>
-                <Container class="javax.swing.JPanel" name="ImageFrameThree">
-                  <Properties>
-                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                      <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                        <LineBorder/>
-                      </Border>
-                    </Property>
-                    <Property name="opaque" type="boolean" value="false"/>
-                  </Properties>
-
-                  <Layout>
-                    <DimensionLayout dim="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      </Group>
-                    </DimensionLayout>
-                    <DimensionLayout dim="1">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="147" max="32767" attributes="0"/>
-                      </Group>
-                    </DimensionLayout>
-                  </Layout>
-                </Container>
-                <Container class="javax.swing.JPanel" name="SeperatorPaneThree">
-
-                  <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
-                    <Property name="useNullLayout" type="boolean" value="true"/>
-                  </Layout>
                 </Container>
                 <Container class="javax.swing.JScrollPane" name="jScrollPaneThree">
                   <AuxValues>
                     <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
                   </AuxValues>
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                      <AbsoluteConstraints x="6" y="240" width="180" height="130"/>
+                    </Constraint>
+                  </Constraints>
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                   <SubComponents>
@@ -414,6 +346,20 @@
                     </Component>
                   </SubComponents>
                 </Container>
+                <Component class="javax.swing.JLabel" name="EventImage3">
+                  <Properties>
+                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                      <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                        <LineBorder/>
+                      </Border>
+                    </Property>
+                  </Properties>
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                      <AbsoluteConstraints x="10" y="80" width="172" height="150"/>
+                    </Constraint>
+                  </Constraints>
+                </Component>
               </SubComponents>
             </Container>
             <Container class="javax.swing.JPanel" name="EventPane2">
@@ -435,41 +381,8 @@
                 </Constraint>
               </Constraints>
 
-              <Layout>
-                <DimensionLayout dim="0">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
-                          <Component id="EventTitlePanelTwo" alignment="1" max="32767" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="SeperatorPaneTwo" min="-2" pref="280" max="-2" attributes="0"/>
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jScrollPaneTwo" alignment="0" pref="176" max="32767" attributes="0"/>
-                              <Component id="ImageFrameTwo" alignment="0" max="32767" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="32767" attributes="0"/>
-                      </Group>
-                  </Group>
-                </DimensionLayout>
-                <DimensionLayout dim="1">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="EventTitlePanelTwo" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
-                          <Component id="SeperatorPaneTwo" min="-2" pref="12" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="ImageFrameTwo" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jScrollPaneTwo" pref="105" max="32767" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                </DimensionLayout>
+              <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
+                <Property name="useNullLayout" type="boolean" value="false"/>
               </Layout>
               <SubComponents>
                 <Container class="javax.swing.JPanel" name="EventTitlePanelTwo">
@@ -478,6 +391,11 @@
                       <Color blue="0" green="0" red="0" type="rgb"/>
                     </Property>
                   </Properties>
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                      <AbsoluteConstraints x="2" y="1" width="279" height="-1"/>
+                    </Constraint>
+                  </Constraints>
 
                   <Layout>
                     <DimensionLayout dim="0">
@@ -493,6 +411,10 @@
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              <Component id="SeperatorPaneTwo" min="-2" pref="280" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
@@ -503,6 +425,7 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="DateTextLabelTwo" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
+                              <Component id="SeperatorPaneTwo" min="-2" pref="12" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -527,41 +450,23 @@
                         <Property name="text" type="java.lang.String" value="jLabel1"/>
                       </Properties>
                     </Component>
+                    <Container class="javax.swing.JPanel" name="SeperatorPaneTwo">
+
+                      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
+                        <Property name="useNullLayout" type="boolean" value="true"/>
+                      </Layout>
+                    </Container>
                   </SubComponents>
-                </Container>
-                <Container class="javax.swing.JPanel" name="ImageFrameTwo">
-                  <Properties>
-                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                      <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                        <LineBorder/>
-                      </Border>
-                    </Property>
-                    <Property name="opaque" type="boolean" value="false"/>
-                  </Properties>
-
-                  <Layout>
-                    <DimensionLayout dim="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      </Group>
-                    </DimensionLayout>
-                    <DimensionLayout dim="1">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="147" max="32767" attributes="0"/>
-                      </Group>
-                    </DimensionLayout>
-                  </Layout>
-                </Container>
-                <Container class="javax.swing.JPanel" name="SeperatorPaneTwo">
-
-                  <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
-                    <Property name="useNullLayout" type="boolean" value="true"/>
-                  </Layout>
                 </Container>
                 <Container class="javax.swing.JScrollPane" name="jScrollPaneTwo">
                   <AuxValues>
                     <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
                   </AuxValues>
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                      <AbsoluteConstraints x="6" y="240" width="180" height="130"/>
+                    </Constraint>
+                  </Constraints>
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                   <SubComponents>
@@ -572,6 +477,20 @@
                     </Component>
                   </SubComponents>
                 </Container>
+                <Component class="javax.swing.JLabel" name="EventImage2">
+                  <Properties>
+                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                      <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                        <LineBorder/>
+                      </Border>
+                    </Property>
+                  </Properties>
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                      <AbsoluteConstraints x="10" y="80" width="172" height="150"/>
+                    </Constraint>
+                  </Constraints>
+                </Component>
               </SubComponents>
             </Container>
             <Container class="javax.swing.JPanel" name="EventPane4">
@@ -593,41 +512,8 @@
                 </Constraint>
               </Constraints>
 
-              <Layout>
-                <DimensionLayout dim="0">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
-                          <Component id="EventTitlePanelFour" alignment="1" max="32767" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="SeperatorPaneFour" min="-2" pref="280" max="-2" attributes="0"/>
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jScrollPaneFour" alignment="0" pref="176" max="32767" attributes="0"/>
-                              <Component id="ImageFrameFour" alignment="0" max="32767" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="32767" attributes="0"/>
-                      </Group>
-                  </Group>
-                </DimensionLayout>
-                <DimensionLayout dim="1">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="EventTitlePanelFour" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
-                          <Component id="SeperatorPaneFour" min="-2" pref="12" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="ImageFrameFour" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jScrollPaneFour" pref="105" max="32767" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                </DimensionLayout>
+              <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
+                <Property name="useNullLayout" type="boolean" value="false"/>
               </Layout>
               <SubComponents>
                 <Container class="javax.swing.JPanel" name="EventTitlePanelFour">
@@ -636,6 +522,11 @@
                       <Color blue="0" green="0" red="0" type="rgb"/>
                     </Property>
                   </Properties>
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                      <AbsoluteConstraints x="2" y="1" width="279" height="-1"/>
+                    </Constraint>
+                  </Constraints>
 
                   <Layout>
                     <DimensionLayout dim="0">
@@ -651,6 +542,10 @@
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="SeperatorPaneFour" min="-2" pref="280" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          </Group>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
@@ -661,6 +556,7 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="DateTextLabelFour" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
+                              <Component id="SeperatorPaneFour" min="-2" pref="12" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -685,41 +581,23 @@
                         <Property name="text" type="java.lang.String" value="jLabel1"/>
                       </Properties>
                     </Component>
+                    <Container class="javax.swing.JPanel" name="SeperatorPaneFour">
+
+                      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
+                        <Property name="useNullLayout" type="boolean" value="true"/>
+                      </Layout>
+                    </Container>
                   </SubComponents>
-                </Container>
-                <Container class="javax.swing.JPanel" name="ImageFrameFour">
-                  <Properties>
-                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                      <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                        <LineBorder/>
-                      </Border>
-                    </Property>
-                    <Property name="opaque" type="boolean" value="false"/>
-                  </Properties>
-
-                  <Layout>
-                    <DimensionLayout dim="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      </Group>
-                    </DimensionLayout>
-                    <DimensionLayout dim="1">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="147" max="32767" attributes="0"/>
-                      </Group>
-                    </DimensionLayout>
-                  </Layout>
-                </Container>
-                <Container class="javax.swing.JPanel" name="SeperatorPaneFour">
-
-                  <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
-                    <Property name="useNullLayout" type="boolean" value="true"/>
-                  </Layout>
                 </Container>
                 <Container class="javax.swing.JScrollPane" name="jScrollPaneFour">
                   <AuxValues>
                     <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
                   </AuxValues>
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                      <AbsoluteConstraints x="6" y="240" width="180" height="130"/>
+                    </Constraint>
+                  </Constraints>
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                   <SubComponents>
@@ -730,6 +608,20 @@
                     </Component>
                   </SubComponents>
                 </Container>
+                <Component class="javax.swing.JLabel" name="EventImage4">
+                  <Properties>
+                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                      <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                        <LineBorder/>
+                      </Border>
+                    </Property>
+                  </Properties>
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                      <AbsoluteConstraints x="10" y="80" width="172" height="150"/>
+                    </Constraint>
+                  </Constraints>
+                </Component>
               </SubComponents>
             </Container>
             <Container class="javax.swing.JPanel" name="EventPane5">
@@ -764,10 +656,7 @@
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jScrollPaneFive" alignment="0" pref="176" max="32767" attributes="0"/>
-                              <Component id="ImageFrameFive" alignment="0" max="32767" attributes="0"/>
-                          </Group>
+                          <Component id="jScrollPaneFive" min="-2" pref="176" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -778,9 +667,7 @@
                           <Component id="EventTitlePanelFive" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
                           <Component id="SeperatorPaneFive" min="-2" pref="12" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="ImageFrameFive" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="169" max="-2" attributes="0"/>
                           <Component id="jScrollPaneFive" pref="117" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -845,29 +732,6 @@
                     </Component>
                   </SubComponents>
                 </Container>
-                <Container class="javax.swing.JPanel" name="ImageFrameFive">
-                  <Properties>
-                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                      <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                        <LineBorder/>
-                      </Border>
-                    </Property>
-                    <Property name="opaque" type="boolean" value="false"/>
-                  </Properties>
-
-                  <Layout>
-                    <DimensionLayout dim="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      </Group>
-                    </DimensionLayout>
-                    <DimensionLayout dim="1">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="147" max="32767" attributes="0"/>
-                      </Group>
-                    </DimensionLayout>
-                  </Layout>
-                </Container>
                 <Container class="javax.swing.JPanel" name="SeperatorPaneFive">
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
@@ -922,10 +786,7 @@
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jScrollPaneSix" alignment="0" pref="176" max="32767" attributes="0"/>
-                              <Component id="ImageFrameSix" alignment="0" max="32767" attributes="0"/>
-                          </Group>
+                          <Component id="jScrollPaneSix" min="-2" pref="176" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -936,9 +797,7 @@
                           <Component id="EventTitlePanelSix" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
                           <Component id="SeperatorPaneSix" min="-2" pref="12" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="ImageFrameSix" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="169" max="-2" attributes="0"/>
                           <Component id="jScrollPaneSix" pref="117" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -1003,29 +862,6 @@
                     </Component>
                   </SubComponents>
                 </Container>
-                <Container class="javax.swing.JPanel" name="ImageFrameSix">
-                  <Properties>
-                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                      <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                        <LineBorder/>
-                      </Border>
-                    </Property>
-                    <Property name="opaque" type="boolean" value="false"/>
-                  </Properties>
-
-                  <Layout>
-                    <DimensionLayout dim="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      </Group>
-                    </DimensionLayout>
-                    <DimensionLayout dim="1">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="147" max="32767" attributes="0"/>
-                      </Group>
-                    </DimensionLayout>
-                  </Layout>
-                </Container>
                 <Container class="javax.swing.JPanel" name="SeperatorPaneSix">
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
@@ -1080,10 +916,7 @@
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jScrollPaneSeven" alignment="0" pref="176" max="32767" attributes="0"/>
-                              <Component id="ImageFrameSeven" alignment="0" max="32767" attributes="0"/>
-                          </Group>
+                          <Component id="jScrollPaneSeven" min="-2" pref="176" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -1094,9 +927,7 @@
                           <Component id="EventTitlePanelSeven" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
                           <Component id="SeperatorPaneSeven" min="-2" pref="12" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="ImageFrameSeven" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="169" max="-2" attributes="0"/>
                           <Component id="jScrollPaneSeven" pref="117" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -1161,29 +992,6 @@
                     </Component>
                   </SubComponents>
                 </Container>
-                <Container class="javax.swing.JPanel" name="ImageFrameSeven">
-                  <Properties>
-                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                      <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                        <LineBorder/>
-                      </Border>
-                    </Property>
-                    <Property name="opaque" type="boolean" value="false"/>
-                  </Properties>
-
-                  <Layout>
-                    <DimensionLayout dim="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      </Group>
-                    </DimensionLayout>
-                    <DimensionLayout dim="1">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="147" max="32767" attributes="0"/>
-                      </Group>
-                    </DimensionLayout>
-                  </Layout>
-                </Container>
                 <Container class="javax.swing.JPanel" name="SeperatorPaneSeven">
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
@@ -1238,10 +1046,7 @@
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jScrollPaneEight" alignment="0" pref="176" max="32767" attributes="0"/>
-                              <Component id="ImageFrameEight" alignment="0" max="32767" attributes="0"/>
-                          </Group>
+                          <Component id="jScrollPaneEight" min="-2" pref="176" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -1252,9 +1057,7 @@
                           <Component id="EventTitlePanelEight" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
                           <Component id="SeperatorPaneEight" min="-2" pref="12" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="ImageFrameEight" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="169" max="-2" attributes="0"/>
                           <Component id="jScrollPaneEight" pref="117" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -1319,29 +1122,6 @@
                     </Component>
                   </SubComponents>
                 </Container>
-                <Container class="javax.swing.JPanel" name="ImageFrameEight">
-                  <Properties>
-                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                      <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                        <LineBorder/>
-                      </Border>
-                    </Property>
-                    <Property name="opaque" type="boolean" value="false"/>
-                  </Properties>
-
-                  <Layout>
-                    <DimensionLayout dim="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      </Group>
-                    </DimensionLayout>
-                    <DimensionLayout dim="1">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="147" max="32767" attributes="0"/>
-                      </Group>
-                    </DimensionLayout>
-                  </Layout>
-                </Container>
                 <Container class="javax.swing.JPanel" name="SeperatorPaneEight">
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
@@ -1396,10 +1176,7 @@
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jScrollPaneNine" alignment="0" pref="176" max="32767" attributes="0"/>
-                              <Component id="ImageFrameNine" alignment="0" max="32767" attributes="0"/>
-                          </Group>
+                          <Component id="jScrollPaneNine" min="-2" pref="176" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -1410,9 +1187,7 @@
                           <Component id="EventTitlePanelNine" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
                           <Component id="SeperatorPaneNine" min="-2" pref="12" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="ImageFrameNine" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="169" max="-2" attributes="0"/>
                           <Component id="jScrollPaneNine" pref="117" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -1477,29 +1252,6 @@
                     </Component>
                   </SubComponents>
                 </Container>
-                <Container class="javax.swing.JPanel" name="ImageFrameNine">
-                  <Properties>
-                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                      <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                        <LineBorder/>
-                      </Border>
-                    </Property>
-                    <Property name="opaque" type="boolean" value="false"/>
-                  </Properties>
-
-                  <Layout>
-                    <DimensionLayout dim="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      </Group>
-                    </DimensionLayout>
-                    <DimensionLayout dim="1">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="147" max="32767" attributes="0"/>
-                      </Group>
-                    </DimensionLayout>
-                  </Layout>
-                </Container>
                 <Container class="javax.swing.JPanel" name="SeperatorPaneNine">
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
@@ -1554,10 +1306,7 @@
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jScrollPaneTen" alignment="0" pref="176" max="32767" attributes="0"/>
-                              <Component id="ImageFrameTen" alignment="0" max="32767" attributes="0"/>
-                          </Group>
+                          <Component id="jScrollPaneTen" min="-2" pref="176" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -1568,9 +1317,7 @@
                           <Component id="EventTitlePanelTen" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
                           <Component id="SeperatorPaneTen" min="-2" pref="12" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="ImageFrameTen" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="169" max="-2" attributes="0"/>
                           <Component id="jScrollPaneTen" pref="117" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -1635,29 +1382,6 @@
                     </Component>
                   </SubComponents>
                 </Container>
-                <Container class="javax.swing.JPanel" name="ImageFrameTen">
-                  <Properties>
-                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                      <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                        <LineBorder/>
-                      </Border>
-                    </Property>
-                    <Property name="opaque" type="boolean" value="false"/>
-                  </Properties>
-
-                  <Layout>
-                    <DimensionLayout dim="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      </Group>
-                    </DimensionLayout>
-                    <DimensionLayout dim="1">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="147" max="32767" attributes="0"/>
-                      </Group>
-                    </DimensionLayout>
-                  </Layout>
-                </Container>
                 <Container class="javax.swing.JPanel" name="SeperatorPaneTen">
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
@@ -1712,10 +1436,7 @@
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jScrollPaneEleven" alignment="0" pref="176" max="32767" attributes="0"/>
-                              <Component id="ImageFrameEleven" alignment="0" max="32767" attributes="0"/>
-                          </Group>
+                          <Component id="jScrollPaneEleven" min="-2" pref="176" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -1726,9 +1447,7 @@
                           <Component id="EventTitlePanelEleven" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
                           <Component id="SeperatorPaneEleven" min="-2" pref="12" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="ImageFrameEleven" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="169" max="-2" attributes="0"/>
                           <Component id="jScrollPaneEleven" pref="117" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -1793,29 +1512,6 @@
                     </Component>
                   </SubComponents>
                 </Container>
-                <Container class="javax.swing.JPanel" name="ImageFrameEleven">
-                  <Properties>
-                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                      <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                        <LineBorder/>
-                      </Border>
-                    </Property>
-                    <Property name="opaque" type="boolean" value="false"/>
-                  </Properties>
-
-                  <Layout>
-                    <DimensionLayout dim="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      </Group>
-                    </DimensionLayout>
-                    <DimensionLayout dim="1">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="147" max="32767" attributes="0"/>
-                      </Group>
-                    </DimensionLayout>
-                  </Layout>
-                </Container>
                 <Container class="javax.swing.JPanel" name="SeperatorPaneEleven">
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
@@ -1870,10 +1566,7 @@
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jScrollPaneTwelve" alignment="0" pref="176" max="32767" attributes="0"/>
-                              <Component id="ImageFrameTwelve" alignment="0" max="32767" attributes="0"/>
-                          </Group>
+                          <Component id="jScrollPaneTwelve" min="-2" pref="176" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -1884,9 +1577,7 @@
                           <Component id="EventTitlePanelTwelve" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
                           <Component id="SeperatorPaneTwelve" min="-2" pref="12" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="ImageFrameTwelve" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="169" max="-2" attributes="0"/>
                           <Component id="jScrollPaneTwelve" pref="117" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -1951,29 +1642,6 @@
                     </Component>
                   </SubComponents>
                 </Container>
-                <Container class="javax.swing.JPanel" name="ImageFrameTwelve">
-                  <Properties>
-                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                      <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                        <LineBorder/>
-                      </Border>
-                    </Property>
-                    <Property name="opaque" type="boolean" value="false"/>
-                  </Properties>
-
-                  <Layout>
-                    <DimensionLayout dim="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      </Group>
-                    </DimensionLayout>
-                    <DimensionLayout dim="1">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="147" max="32767" attributes="0"/>
-                      </Group>
-                    </DimensionLayout>
-                  </Layout>
-                </Container>
                 <Container class="javax.swing.JPanel" name="SeperatorPaneTwelve">
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
@@ -2028,10 +1696,7 @@
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jScrollPaneThirteen" alignment="0" pref="176" max="32767" attributes="0"/>
-                              <Component id="ImageFrameThirteen" alignment="0" max="32767" attributes="0"/>
-                          </Group>
+                          <Component id="jScrollPaneThirteen" min="-2" pref="176" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -2042,9 +1707,7 @@
                           <Component id="EventTitlePanelThirteen" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
                           <Component id="SeperatorPaneThirteen" min="-2" pref="12" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="ImageFrameThirteen" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="169" max="-2" attributes="0"/>
                           <Component id="jScrollPaneThirteen" pref="117" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -2109,29 +1772,6 @@
                     </Component>
                   </SubComponents>
                 </Container>
-                <Container class="javax.swing.JPanel" name="ImageFrameThirteen">
-                  <Properties>
-                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                      <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                        <LineBorder/>
-                      </Border>
-                    </Property>
-                    <Property name="opaque" type="boolean" value="false"/>
-                  </Properties>
-
-                  <Layout>
-                    <DimensionLayout dim="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      </Group>
-                    </DimensionLayout>
-                    <DimensionLayout dim="1">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="147" max="32767" attributes="0"/>
-                      </Group>
-                    </DimensionLayout>
-                  </Layout>
-                </Container>
                 <Container class="javax.swing.JPanel" name="SeperatorPaneThirteen">
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
@@ -2186,10 +1826,7 @@
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jScrollPaneFourteen" alignment="0" pref="176" max="32767" attributes="0"/>
-                              <Component id="ImageFrameFourteen" alignment="0" max="32767" attributes="0"/>
-                          </Group>
+                          <Component id="jScrollPaneFourteen" min="-2" pref="176" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -2200,9 +1837,7 @@
                           <Component id="EventTitlePanelFourteen" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
                           <Component id="SeperatorPaneFourteen" min="-2" pref="12" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="ImageFrameFourteen" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="169" max="-2" attributes="0"/>
                           <Component id="jScrollPaneFourteen" pref="117" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -2267,29 +1902,6 @@
                     </Component>
                   </SubComponents>
                 </Container>
-                <Container class="javax.swing.JPanel" name="ImageFrameFourteen">
-                  <Properties>
-                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                      <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                        <LineBorder/>
-                      </Border>
-                    </Property>
-                    <Property name="opaque" type="boolean" value="false"/>
-                  </Properties>
-
-                  <Layout>
-                    <DimensionLayout dim="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      </Group>
-                    </DimensionLayout>
-                    <DimensionLayout dim="1">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="147" max="32767" attributes="0"/>
-                      </Group>
-                    </DimensionLayout>
-                  </Layout>
-                </Container>
                 <Container class="javax.swing.JPanel" name="SeperatorPaneFourteen">
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
@@ -2344,10 +1956,7 @@
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jScrollPaneFifteen" alignment="0" pref="176" max="32767" attributes="0"/>
-                              <Component id="ImageFrameFifteen" alignment="0" max="32767" attributes="0"/>
-                          </Group>
+                          <Component id="jScrollPaneFifteen" min="-2" pref="176" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -2358,9 +1967,7 @@
                           <Component id="EventTitlePanelFifteen" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
                           <Component id="SeperatorPaneFifteen" min="-2" pref="12" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="ImageFrameFifteen" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="169" max="-2" attributes="0"/>
                           <Component id="jScrollPaneFifteen" pref="117" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -2425,29 +2032,6 @@
                     </Component>
                   </SubComponents>
                 </Container>
-                <Container class="javax.swing.JPanel" name="ImageFrameFifteen">
-                  <Properties>
-                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                      <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                        <LineBorder/>
-                      </Border>
-                    </Property>
-                    <Property name="opaque" type="boolean" value="false"/>
-                  </Properties>
-
-                  <Layout>
-                    <DimensionLayout dim="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      </Group>
-                    </DimensionLayout>
-                    <DimensionLayout dim="1">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="147" max="32767" attributes="0"/>
-                      </Group>
-                    </DimensionLayout>
-                  </Layout>
-                </Container>
                 <Container class="javax.swing.JPanel" name="SeperatorPaneFifteen">
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
@@ -2502,10 +2086,7 @@
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jScrollPaneSixteen" alignment="0" pref="176" max="32767" attributes="0"/>
-                              <Component id="ImageFrameSixteen" alignment="0" max="32767" attributes="0"/>
-                          </Group>
+                          <Component id="jScrollPaneSixteen" min="-2" pref="176" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -2516,9 +2097,7 @@
                           <Component id="EventTitlePanelSixteen" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
                           <Component id="SeperatorPaneSixteen" min="-2" pref="12" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="ImageFrameSixteen" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="169" max="-2" attributes="0"/>
                           <Component id="jScrollPaneSixteen" pref="117" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -2582,29 +2161,6 @@
                       </Properties>
                     </Component>
                   </SubComponents>
-                </Container>
-                <Container class="javax.swing.JPanel" name="ImageFrameSixteen">
-                  <Properties>
-                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                      <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                        <LineBorder/>
-                      </Border>
-                    </Property>
-                    <Property name="opaque" type="boolean" value="false"/>
-                  </Properties>
-
-                  <Layout>
-                    <DimensionLayout dim="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      </Group>
-                    </DimensionLayout>
-                    <DimensionLayout dim="1">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="147" max="32767" attributes="0"/>
-                      </Group>
-                    </DimensionLayout>
-                  </Layout>
                 </Container>
                 <Container class="javax.swing.JPanel" name="SeperatorPaneSixteen">
 
