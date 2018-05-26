@@ -50,57 +50,85 @@ public class Maintimeline extends javax.swing.JFrame {
         
         //Initially setting all events to non visible
         for(JPanel eventName : eventPaneNames){
-            setEventPaneInvisible(eventName);
+            setEventPaneVisibility(eventName, false);
             
         }  
         
         //Setting all arrows to non visible 
         for (JLabel arrowName : eventArrowNames){
-            setArrowInvisible(arrowName);
+            setArrowVisibility(arrowName, false);
         }
         
         readEventsInformation();
-
+        
+        //Initializing Events
+        int numOfEvents = getNumOfEvents();
+        System.out.println(numOfEvents);
+        for (int i = 0; i< numOfEvents; i++){
+            //passing names of variables and current event num from previously defined lists with all var names
+            editEvent(eventTitleDateNames[i][0], eventTitleDateNames[i][1], eventDescriptionNames[i], i); 
+            setEventPaneVisibility(eventPaneNames[i], true); //setting events to visible
+            setArrowVisibility(eventArrowNames[i], true);
+        }
         
     }
     
     public static File eventInformationFile = new File("src/TimelineApplication/eventsInformation.txt");
-      
-    public static void setEventPaneInvisible(JPanel eventPaneName){
-        eventPaneName.setVisible(false);
+    public static ArrayList<ArrayList<String>> eventInformationList = new ArrayList<>();
+    
+    public static void setEventPaneVisibility(JPanel eventPaneName, boolean visibilityState){
+        eventPaneName.setVisible(visibilityState);
     }
     
-    public static void setArrowInvisible (JLabel arrowName){
-        arrowName.setVisible(false);
+    public static void setArrowVisibility (JLabel arrowName, boolean visibilityState){
+        arrowName.setVisible(visibilityState);
+    }
+    
+    public static void editEvent(JLabel title, JLabel date, JTextPane description, int eventNum){
+        
+        
+        title.setText(eventInformationList.get(eventNum).get(1)); //1st index is title
+        date.setText(eventInformationList.get(eventNum).get(2)); //2nd index is date
+        description.setText(eventInformationList.get(eventNum).get(3)); //3rd index is description
+        
+    }
+    
+    public static int getNumOfEvents(){
+        if(eventInformationFile.exists()){
+            Scanner sc1;
+            try {
+                sc1 = new Scanner(eventInformationFile);
+                int lines = 0; //number of lines in text file
+                while(sc1.hasNextLine()){
+                    lines+=1;
+                    sc1.nextLine();
+                }
+                return lines/5;
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(Maintimeline.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        return 0;
     }
     
     public static void readEventsInformation(){
-    
-        ArrayList<ArrayList<String>> eventInformationList = new ArrayList<>();
+        
+        //Add 16 sublists to main list
         for(int i = 0; i<16; i++){
             eventInformationList.add(new ArrayList<String>());
         }
         
         if(eventInformationFile.exists()){
             try {
-                Scanner sc1 = new Scanner(eventInformationFile);
                 
-                int lines = 0; //number of lines in text file
-                while(sc1.hasNextLine()){
-                    lines+=1;
-                    sc1.nextLine();
-                }
-                                
                 Scanner sc2 = new Scanner(eventInformationFile);
                 
                 //Put even information into the 2d list
-                for(int i = 0; i <lines/5; i++){ //number of 2d lists
+                for(int i = 0; i <getNumOfEvents(); i++){ //number of 2d lists
                     for (int j = 0; j<5; j++){;
                         eventInformationList.get(i).add(sc2.nextLine());
                     }
                 }
-                
-                System.out.println("List" + eventInformationList);
                 
             } catch (FileNotFoundException ex) {
                 System.out.println("Error for some reason!");
