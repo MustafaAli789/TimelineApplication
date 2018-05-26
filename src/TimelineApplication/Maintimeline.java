@@ -27,8 +27,7 @@ public class Maintimeline extends javax.swing.JFrame {
      * Creates new form Maintimeline
      */
     public Maintimeline() {
-        initComponents();        
-      
+        initComponents();       
         //The array below will store all event title variable names and event date variable names for later use
         JLabel eventTitleDateNames[][]={{EventTitleLabelOne, DateTextLabelOne},{EventTitleLabelTwo, DateTextLabelTwo},{EventTitleLabelThree, DateTextLabelThree}, 
         {EventTitleLabelFour, DateTextLabelFour}, {EventTitleLabelFive, DateTextLabelFive}, {EventTitleLabelSix, DateTextLabelSix}, {EventTitleLabelSeven, DateTextLabelSeven}, 
@@ -1744,20 +1743,12 @@ public class Maintimeline extends javax.swing.JFrame {
         ScrollableAreaPane.setViewportView(jPanel1);
 
         DeleteBtn.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
-        DeleteBtn.setText("-");
+        DeleteBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/DeleteIconNonHover.png"))); // NOI18N
         DeleteBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         DeleteBtn.setContentAreaFilled(false);
         DeleteBtn.setMaximumSize(new java.awt.Dimension(73, 73));
         DeleteBtn.setMinimumSize(new java.awt.Dimension(73, 73));
         DeleteBtn.setPreferredSize(new java.awt.Dimension(73, 73));
-        DeleteBtn.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                DeleteBtnMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                DeleteBtnMouseExited(evt);
-            }
-        });
         DeleteBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DeleteBtnActionPerformed(evt);
@@ -1765,20 +1756,12 @@ public class Maintimeline extends javax.swing.JFrame {
         });
 
         SaveBtn.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        SaveBtn.setText("Save");
+        SaveBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/SaveIconNonHover.png"))); // NOI18N
         SaveBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         SaveBtn.setContentAreaFilled(false);
         SaveBtn.setMaximumSize(new java.awt.Dimension(73, 73));
         SaveBtn.setMinimumSize(new java.awt.Dimension(73, 73));
         SaveBtn.setPreferredSize(new java.awt.Dimension(73, 73));
-        SaveBtn.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                SaveBtnMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                SaveBtnMouseExited(evt);
-            }
-        });
         SaveBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SaveBtnActionPerformed(evt);
@@ -1786,36 +1769,21 @@ public class Maintimeline extends javax.swing.JFrame {
         });
 
         EditBtn.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        EditBtn.setText("Edit");
+        EditBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/EditIconNonHover.png"))); // NOI18N
         EditBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         EditBtn.setContentAreaFilled(false);
         EditBtn.setMaximumSize(new java.awt.Dimension(73, 73));
         EditBtn.setMinimumSize(new java.awt.Dimension(73, 73));
         EditBtn.setPreferredSize(new java.awt.Dimension(73, 73));
-        EditBtn.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                EditBtnMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                EditBtnMouseExited(evt);
-            }
-        });
 
         AddBtn.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
-        AddBtn.setText("+");
+        AddBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/AddIconNonHover.png"))); // NOI18N
         AddBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         AddBtn.setContentAreaFilled(false);
         AddBtn.setMaximumSize(new java.awt.Dimension(73, 73));
         AddBtn.setMinimumSize(new java.awt.Dimension(73, 73));
         AddBtn.setPreferredSize(new java.awt.Dimension(73, 73));
-        AddBtn.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                AddBtnMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                AddBtnMouseExited(evt);
-            }
-        });
+        AddBtn.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/AddIconHover.png"))); // NOI18N
         AddBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AddBtnActionPerformed(evt);
@@ -1829,14 +1797,14 @@ public class Maintimeline extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(457, 457, 457)
                 .addComponent(TimelineTitleLabel)
-                .addGap(0, 434, Short.MAX_VALUE))
+                .addGap(0, 443, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(ScrollableAreaPane, javax.swing.GroupLayout.PREFERRED_SIZE, 1146, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGap(821, 821, 821)
+                        .addGap(815, 815, 815)
                         .addComponent(AddBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(EditBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1844,7 +1812,7 @@ public class Maintimeline extends javax.swing.JFrame {
                         .addComponent(SaveBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(23, 23, 23)
                         .addComponent(DeleteBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(45, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
