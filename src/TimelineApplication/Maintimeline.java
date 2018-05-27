@@ -32,6 +32,7 @@ public class Maintimeline extends javax.swing.JFrame {
     public static boolean addBtnClicked = false;
     public static boolean deleteBtnClicked = false;
     public static boolean editBtnClicked = false;
+    public static int numOfEvents;
     public static ArrayList<ArrayList<JLabel>> eventTitleDateImageNames = new ArrayList<ArrayList<JLabel>>();
     public static ArrayList<JTextPane> eventDescriptionNames = new ArrayList<JTextPane>();
     public static ArrayList<JPanel> eventPaneNames = new ArrayList<JPanel>();
@@ -67,10 +68,12 @@ public class Maintimeline extends javax.swing.JFrame {
         JLabel array4[]={Arrow1, Arrow2, Arrow3, Arrow4, Arrow5, Arrow6, Arrow7, Arrow8, Arrow9, Arrow10, Arrow11, Arrow12};
         
         putVariableNamesIntoList(array1, array2, array3, array4); 
-        readEventsInformation();
-          
+        setNumOfEvents(); //Initally gets number of events when screen loads
+        readEventsInformation(); //Reads file and puts info into eventInfo list
+        
+        
         //Initializing screen
-        updateScreen(0);
+        updateScreen(0, numOfEvents);
 
     }
    
@@ -91,8 +94,7 @@ public class Maintimeline extends javax.swing.JFrame {
         
         //Putting array3 information into eventPaneNames list
         Collections.addAll(eventPaneNames, array3);
-        
-        System.out.println(eventPaneNames.size());
+               
         
         //Putting array4 information into arrowNames list
         Collections.addAll(arrowNames, array4);     
@@ -128,13 +130,13 @@ public class Maintimeline extends javax.swing.JFrame {
     
     //This method can be called any time an event is added, deleted or edited (unless no shift required, then simply call setEventInfo) to 
     //put the text and image into the event screen as well as update which events are visible and which arrows are visible
-    public static void updateScreen (int eventStartNumber){
+    public static void updateScreen (int eventStartNumber, int numOfEvents){
 
-        int numOfEvents = getNumOfEvents();
         
         //Putting text and image into each visible event
         for(int i = eventStartNumber; i< numOfEvents; i++){
             setEventInfo(eventTitleDateImageNames.get(i).get(0), eventTitleDateImageNames.get(i).get(1), eventDescriptionNames.get(i), eventTitleDateImageNames.get(i).get(2), i);
+            
         }
         
         //Setting all events to non visible
@@ -184,7 +186,7 @@ public class Maintimeline extends javax.swing.JFrame {
          
     }
     
-    public static int getNumOfEvents(){
+    public static void setNumOfEvents(){
         if(eventInformationFile.exists()){
             Scanner sc1;
             try {
@@ -194,16 +196,15 @@ public class Maintimeline extends javax.swing.JFrame {
                     lines+=1;
                     sc1.nextLine();
                 }
-                return lines/5;
+                numOfEvents = lines/5;
             } catch (FileNotFoundException ex) {
                 Logger.getLogger(Maintimeline.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-        return 0;
     }
     
     public static void readEventsInformation(){
-        
+       
         //Add 16 sublists to main list
         for(int i = 0; i<16; i++){
             eventInformationList.add(new ArrayList<String>());
@@ -215,11 +216,13 @@ public class Maintimeline extends javax.swing.JFrame {
                 Scanner sc2 = new Scanner(eventInformationFile);
                 
                 //Put even information into the 2d list
-                for(int i = 0; i <getNumOfEvents(); i++){ //number of 2d lists
+                for(int i = 0; i <numOfEvents; i++){ //number of 2d lists
                     for (int j = 0; j<5; j++){;
                         eventInformationList.get(i).add(sc2.nextLine());
+                        
                     }
                 }
+                System.out.println(eventInformationList);
                 
             } catch (FileNotFoundException ex) {
                 System.out.println("Error for some reason!");

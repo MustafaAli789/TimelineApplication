@@ -3,6 +3,11 @@ import java.io.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import static TimelineApplication.Maintimeline.addBtnClicked;
+import static TimelineApplication.Maintimeline.eventInformationList;
+import static TimelineApplication.Maintimeline.numOfEvents;
+import static TimelineApplication.Maintimeline.updateScreen;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 
 public class Addevent extends javax.swing.JFrame {
@@ -37,7 +42,7 @@ public class Addevent extends javax.swing.JFrame {
         SaveBtn = new javax.swing.JButton();
         CancelBtn = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setBackground(new java.awt.Color(102, 204, 255));
         setResizable(false);
 
@@ -195,44 +200,38 @@ public class Addevent extends javax.swing.JFrame {
     }//GEN-LAST:event_CancelBtnActionPerformed
 
     private void SaveBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveBtnActionPerformed
-           String eventpos = EventPositionTextField.getText();
-           String eventname = EventNameTextField.getText();
-           String eventTime = TimeTextField.getText();
-           String eventdesc = DescriptionTextField.getText();
-           String eventimg = ImageUrlTextField.getText();
+           int eventPos = Integer.parseInt(EventPositionTextField.getText());
+           String eventName = EventNameTextField.getText();
+           String eventDate = TimeTextField.getText();
+           String eventDesc = DescriptionTextField.getText();
+           String eventImg = ImageUrlTextField.getText();
            
-
-    try {
-                File file = new File("Events.txt");
-                file.createNewFile();
-                // if file doesnt exists, then create it
-                if (!file.exists()) {
-                    file.createNewFile();
-                }
-
-                FileWriter fw = new FileWriter(file.getAbsoluteFile());
-                PrintWriter pw = new PrintWriter(fw);
-                pw.write(eventpos); 
-                pw.println();
-                pw.write(eventname);
-                pw.println();
-                pw.write(eventTime);
-                pw.println();
-                pw.write(eventdesc);
-                pw.println();
-                pw.write(eventimg);
-                pw.println();
-                pw.close();
-
-                System.out.println("Done");
-
-            } catch (IOException e) {
-                e.printStackTrace();
-}
-        Maintimeline mainscreen = null;
-            mainscreen = new Maintimeline();
-        mainscreen.setVisible(true);
-        super.dispose();
+           
+           
+           if(numOfEvents < 16){
+               if(eventPos >= 0 && eventPos <= (numOfEvents + 1)){
+                   eventInformationList.add(eventPos - 1, new ArrayList<String>()); //inserting a new sublist to then add the new event info into
+                   eventInformationList.remove(eventInformationList.size()-1); //remove the 17th sublist that is now present
+                   eventInformationList.get(eventPos-1).add(EventPositionTextField.getText());
+                   eventInformationList.get(eventPos-1).add(eventName);
+                   eventInformationList.get(eventPos-1).add(eventDate);
+                   eventInformationList.get(eventPos-1).add(eventDesc);
+                   eventInformationList.get(eventPos-1).add(eventImg);
+                   numOfEvents +=1;
+                   updateScreen(eventPos-1, numOfEvents);
+               }
+               else{
+                   JOptionPane.showMessageDialog(null, "That is an invalid event position!");
+               }
+           }
+           else{
+               JOptionPane.showMessageDialog(null, "You have reached the maximum number of events!");
+           }
+           
+           addBtnClicked = false;
+           this.dispose();
+           
+           
     }//GEN-LAST:event_SaveBtnActionPerformed
 
     private void EventPositionTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EventPositionTextFieldActionPerformed
