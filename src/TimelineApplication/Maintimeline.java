@@ -22,6 +22,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextPane;
 
 
+
 /**
  *
  * @author S199841769
@@ -31,6 +32,12 @@ public class Maintimeline extends javax.swing.JFrame {
     public static boolean addBtnClicked = false;
     public static boolean deleteBtnClicked = false;
     public static boolean editBtnClicked = false;
+    public static ArrayList<ArrayList<JLabel>> eventTitleDateImageNames = new ArrayList<ArrayList<JLabel>>();
+    public static ArrayList<JTextPane> eventDescriptionNames = new ArrayList<JTextPane>();
+    public static ArrayList<JPanel> eventPaneNames = new ArrayList<JPanel>();
+    public static ArrayList<JLabel> arrowNames = new ArrayList<JLabel>();
+    public static File eventInformationFile = new File("src/TimelineApplication/eventsInformation.txt");
+    public static ArrayList<ArrayList<String>> eventInformationList = new ArrayList<>(); //2d list of all event info
     
     
     /**
@@ -40,65 +47,58 @@ public class Maintimeline extends javax.swing.JFrame {
         initComponents();  
                 
         //The array below will store all event title variable names and event date variable names as well as event image variable names for later use
-        JLabel eventTitleDateImageNames[][]={{EventTitleLabelOne, DateTextLabelOne, EventImage1},{EventTitleLabelTwo, DateTextLabelTwo, EventImage2},{EventTitleLabelThree, DateTextLabelThree, EventImage3}, 
+        JLabel array1[][]={{EventTitleLabelOne, DateTextLabelOne, EventImage1},{EventTitleLabelTwo, DateTextLabelTwo, EventImage2},{EventTitleLabelThree, DateTextLabelThree, EventImage3}, 
         {EventTitleLabelFour, DateTextLabelFour, EventImage4}, {EventTitleLabelFive, DateTextLabelFive, EventImage5}, {EventTitleLabelSix, DateTextLabelSix, EventImage6}, {EventTitleLabelSeven, DateTextLabelSeven, EventImage7}, 
         {EventTitleLabelEight, DateTextLabelEight, EventImage8}, {EventTitleLabelNine, DateTextLabelNine, EventImage9},{EventTitleLabelTen, DateTextLabelTen, EventImage10}, {EventTitleLabelEleven, DateTextLabelEleven, EventImage11}, 
         {EventTitleLabelTwelve, DateTextLabelTwelve, EventImage12}, {EventTitleLabelThirteen, DateTextLabelThirteen, EventImage13}, {EventTitleLabelFourteen, DateTextLabelFourteen, EventImage14}, 
         {EventTitleLabelFifteen, DateTextLabelFifteen, EventImage15},{EventTitleLabelSixteen, DateTextLabelSixteen, EventImage16}};
 
+       
         //The array below will store all event description variable names for later use
-        JTextPane eventDescriptionNames[]={DescriptionTextPanelOne,DescriptionTextPanelTwo, DescriptionTextPanelThree, DescriptionTextPanelFour, DescriptionTextPanelFive,
+        JTextPane array2[]={DescriptionTextPanelOne,DescriptionTextPanelTwo, DescriptionTextPanelThree, DescriptionTextPanelFour, DescriptionTextPanelFive,
         DescriptionTextPanelSix, DescriptionTextPanelSeven, DescriptionTextPanelEight, DescriptionTextPanelNine, DescriptionTextPanelTen, DescriptionTextPanelEleven, 
         DescriptionTextPanelTwelve, DescriptionTextPanelThirteen, DescriptionTextPanelFourteen, DescriptionTextPanelFifteen, DescriptionTextPanelSixteen};
         
         //The array below will store all event pane variable names for later use
-        JPanel eventPaneNames[]={EventPane1, EventPane2, EventPane3, EventPane4, EventPane5, EventPane6, EventPane7, EventPane8, EventPane9, EventPane10, EventPane11, EventPane12,
+        JPanel array3[]={EventPane1, EventPane2, EventPane3, EventPane4, EventPane5, EventPane6, EventPane7, EventPane8, EventPane9, EventPane10, EventPane11, EventPane12,
         EventPane13, EventPane14, EventPane15, EventPane16};
         
         //The array below will store all arrow variable names for later use
-        JLabel eventArrowNames[]={Arrow1, Arrow2, Arrow3, Arrow4, Arrow5, Arrow6, Arrow7, Arrow8, Arrow9, Arrow10, Arrow11, Arrow12};
+        JLabel array4[]={Arrow1, Arrow2, Arrow3, Arrow4, Arrow5, Arrow6, Arrow7, Arrow8, Arrow9, Arrow10, Arrow11, Arrow12};
         
-        //Initially setting all events to non visible
-        for(JPanel eventName : eventPaneNames){
-            setEventPaneVisibility(eventName, false);
-            
-        }  
-        
-        //Setting all arrows to non visible 
-        for (JLabel arrowName : eventArrowNames){
-            setArrowVisibility(arrowName, false);
-        }
-        
+        putVariableNamesIntoList(array1, array2, array3, array4); 
         readEventsInformation();
-               
-        //Initializing Events
-        int numOfEvents = getNumOfEvents();
-        for (int i = 0; i< numOfEvents; i++){
-            //passing names of variables and current event num from previously defined lists with all var names
-            editEvent(eventTitleDateImageNames[i][0], eventTitleDateImageNames[i][1], eventDescriptionNames[i], eventTitleDateImageNames[i][2], i); 
-            setEventPaneVisibility(eventPaneNames[i], true); //setting events to visible
-            
-            //This is to take into account the presence of rows and therefore change in num of arrows each time row changes
-            if(numOfEvents <=4 && i<numOfEvents-1){
-                setArrowVisibility(eventArrowNames[i], true);
-            }   
-            else if(numOfEvents > 4 && numOfEvents <= 8 && i<numOfEvents-2){ //Ex: on row 2, 2 less arrows than the num of events will be shown
-                setArrowVisibility(eventArrowNames[i], true);
-            }
-            else if(numOfEvents > 8 && numOfEvents <= 12 && i<numOfEvents-3){
-                setArrowVisibility(eventArrowNames[i], true);
-            }
-            else if (numOfEvents > 12 && i<numOfEvents-4){
-                setArrowVisibility(eventArrowNames[i], true);
-            }
-           
+          
+        //Initializing screen
+        updateScreen(0);
+
+    }
+   
+    
+    public static void putVariableNamesIntoList(JLabel[][] array1, JTextPane[] array2, JPanel[] array3, JLabel[] array4){
         
+        //The code below puts the var names in the first array defined above (array1) into an arraylist --> this is necessary b/c the arrays defined above cannot be accessed anywhere
+        //else but the "copies" of them made here can be accessed elsewhere
+        
+        for(JLabel[] event : array1){
+            ArrayList<JLabel> currentSubList = new ArrayList<>();
+            Collections.addAll(currentSubList, event);
+            eventTitleDateImageNames.add(currentSubList);
         }
+        
+        //Putting array2 information into eventDescriptionNames list
+        Collections.addAll(eventDescriptionNames, array2);
+        
+        //Putting array3 information into eventPaneNames list
+        Collections.addAll(eventPaneNames, array3);
+        
+        System.out.println(eventPaneNames.size());
+        
+        //Putting array4 information into arrowNames list
+        Collections.addAll(arrowNames, array4);     
         
     }
-    
-    public static File eventInformationFile = new File("src/TimelineApplication/eventsInformation.txt");
-    public static ArrayList<ArrayList<String>> eventInformationList = new ArrayList<>(); //2d list of all event info
+       
        
     public static void setEventPaneVisibility(JPanel eventPaneName, boolean visibilityState){
         eventPaneName.setVisible(visibilityState);
@@ -114,7 +114,7 @@ public class Maintimeline extends javax.swing.JFrame {
             URL url = new URL(link);
             try {
                 image = ImageIO.read(url);
-                eventImage.setIcon(new ImageIcon(image));
+                eventImage.setIcon(new ImageIcon(image)); //eventImage refers to the jLabel being  referenced
             } catch (IOException ex) {
                 String error = "The URL for the " + eventInformationList.get(eventNum).get(1) + " image is wrong.";
                 JOptionPane.showMessageDialog(null, error);
@@ -126,10 +126,51 @@ public class Maintimeline extends javax.swing.JFrame {
         }
     }
     
-    //This method can be called any time an event is added or edited to put the text and image into the event screen
-    public static void editEvent(JLabel title, JLabel date, JTextPane description, JLabel eventImage, int eventNum){
+    //This method can be called any time an event is added, deleted or edited (unless no shift required, then simply call setEventInfo) to 
+    //put the text and image into the event screen as well as update which events are visible and which arrows are visible
+    public static void updateScreen (int eventStartNumber){
+
+        int numOfEvents = getNumOfEvents();
         
+        //Putting text and image into each visible event
+        for(int i = eventStartNumber; i< numOfEvents; i++){
+            setEventInfo(eventTitleDateImageNames.get(i).get(0), eventTitleDateImageNames.get(i).get(1), eventDescriptionNames.get(i), eventTitleDateImageNames.get(i).get(2), i);
+        }
         
+        //Setting all events to non visible
+        for(JPanel eventName : eventPaneNames){
+            setEventPaneVisibility(eventName, false);
+ 
+        }  
+        
+        //Setting all arrows to non visible 
+        for (JLabel arrowName : arrowNames){
+            setArrowVisibility(arrowName, false);
+        }
+        
+        //Setting appropriate events and arrows back to visible
+        for (int i = 0; i <numOfEvents; i++){
+            setEventPaneVisibility(eventPaneNames.get(i), true);
+            
+            //This is to take into account the presence of rows and therefore change in num of arrows each time row changes
+            if(numOfEvents <=4 && i<numOfEvents-1){
+                setArrowVisibility(arrowNames.get(i), true);
+            }   
+            else if(numOfEvents > 4 && numOfEvents <= 8 && i<numOfEvents-2){ //Ex: on row 2, 2 less arrows than the num of events will be shown
+                setArrowVisibility(arrowNames.get(i), true);
+            }
+            else if(numOfEvents > 8 && numOfEvents <= 12 && i<numOfEvents-3){
+                setArrowVisibility(arrowNames.get(i), true);
+            }
+            else if (numOfEvents > 12 && i<numOfEvents-4){
+                setArrowVisibility(arrowNames.get(i), true);
+            } 
+        } 
+    }
+    
+    
+    public static void setEventInfo(JLabel title, JLabel date, JTextPane description, JLabel eventImage, int eventNum){
+
         title.setText(eventInformationList.get(eventNum).get(1)); //1st index is title
         date.setText(eventInformationList.get(eventNum).get(2)); //2nd index is date
         description.setText(eventInformationList.get(eventNum).get(3)); //3rd index is description
@@ -1445,101 +1486,101 @@ public class Maintimeline extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton AddBtn;
-    private javax.swing.JLabel Arrow1;
-    private javax.swing.JLabel Arrow10;
-    private javax.swing.JLabel Arrow11;
-    private javax.swing.JLabel Arrow12;
-    private javax.swing.JLabel Arrow2;
-    private javax.swing.JLabel Arrow3;
-    private javax.swing.JLabel Arrow4;
-    private javax.swing.JLabel Arrow5;
-    private javax.swing.JLabel Arrow6;
-    private javax.swing.JLabel Arrow7;
-    private javax.swing.JLabel Arrow8;
-    private javax.swing.JLabel Arrow9;
-    private javax.swing.JLabel DateTextLabelEight;
-    private javax.swing.JLabel DateTextLabelEleven;
-    private javax.swing.JLabel DateTextLabelFifteen;
-    private javax.swing.JLabel DateTextLabelFive;
+    public static javax.swing.JButton AddBtn;
+    public static javax.swing.JLabel Arrow1;
+    public static javax.swing.JLabel Arrow10;
+    public static javax.swing.JLabel Arrow11;
+    public static javax.swing.JLabel Arrow12;
+    public static javax.swing.JLabel Arrow2;
+    public static javax.swing.JLabel Arrow3;
+    public static javax.swing.JLabel Arrow4;
+    public static javax.swing.JLabel Arrow5;
+    public static javax.swing.JLabel Arrow6;
+    public static javax.swing.JLabel Arrow7;
+    public static javax.swing.JLabel Arrow8;
+    public static javax.swing.JLabel Arrow9;
+    public static javax.swing.JLabel DateTextLabelEight;
+    public static javax.swing.JLabel DateTextLabelEleven;
+    public static javax.swing.JLabel DateTextLabelFifteen;
+    public static javax.swing.JLabel DateTextLabelFive;
     private javax.swing.JLabel DateTextLabelFour;
-    private javax.swing.JLabel DateTextLabelFourteen;
-    private javax.swing.JLabel DateTextLabelNine;
-    private javax.swing.JLabel DateTextLabelOne;
-    private javax.swing.JLabel DateTextLabelSeven;
-    private javax.swing.JLabel DateTextLabelSix;
-    private javax.swing.JLabel DateTextLabelSixteen;
-    private javax.swing.JLabel DateTextLabelTen;
-    private javax.swing.JLabel DateTextLabelThirteen;
-    private javax.swing.JLabel DateTextLabelThree;
-    private javax.swing.JLabel DateTextLabelTwelve;
-    private javax.swing.JLabel DateTextLabelTwo;
-    private javax.swing.JButton DeleteBtn;
-    private javax.swing.JTextPane DescriptionTextPanelEight;
-    private javax.swing.JTextPane DescriptionTextPanelEleven;
-    private javax.swing.JTextPane DescriptionTextPanelFifteen;
-    private javax.swing.JTextPane DescriptionTextPanelFive;
-    private javax.swing.JTextPane DescriptionTextPanelFour;
-    private javax.swing.JTextPane DescriptionTextPanelFourteen;
-    private javax.swing.JTextPane DescriptionTextPanelNine;
-    private javax.swing.JTextPane DescriptionTextPanelOne;
-    private javax.swing.JTextPane DescriptionTextPanelSeven;
-    private javax.swing.JTextPane DescriptionTextPanelSix;
-    private javax.swing.JTextPane DescriptionTextPanelSixteen;
-    private javax.swing.JTextPane DescriptionTextPanelTen;
-    private javax.swing.JTextPane DescriptionTextPanelThirteen;
-    private javax.swing.JTextPane DescriptionTextPanelThree;
-    private javax.swing.JTextPane DescriptionTextPanelTwelve;
-    private javax.swing.JTextPane DescriptionTextPanelTwo;
-    private javax.swing.JButton EditBtn;
-    private javax.swing.JLabel EventImage1;
-    private javax.swing.JLabel EventImage10;
-    private javax.swing.JLabel EventImage11;
-    private javax.swing.JLabel EventImage12;
-    private javax.swing.JLabel EventImage13;
-    private javax.swing.JLabel EventImage14;
-    private javax.swing.JLabel EventImage15;
-    private javax.swing.JLabel EventImage16;
-    private javax.swing.JLabel EventImage2;
-    private javax.swing.JLabel EventImage3;
+    public static javax.swing.JLabel DateTextLabelFourteen;
+    public static javax.swing.JLabel DateTextLabelNine;
+    public static javax.swing.JLabel DateTextLabelOne;
+    public static javax.swing.JLabel DateTextLabelSeven;
+    public static javax.swing.JLabel DateTextLabelSix;
+    public static javax.swing.JLabel DateTextLabelSixteen;
+    public static javax.swing.JLabel DateTextLabelTen;
+    public static javax.swing.JLabel DateTextLabelThirteen;
+    public static javax.swing.JLabel DateTextLabelThree;
+    public static javax.swing.JLabel DateTextLabelTwelve;
+    public static javax.swing.JLabel DateTextLabelTwo;
+    public static javax.swing.JButton DeleteBtn;
+    public static javax.swing.JTextPane DescriptionTextPanelEight;
+    public static javax.swing.JTextPane DescriptionTextPanelEleven;
+    public static javax.swing.JTextPane DescriptionTextPanelFifteen;
+    public static javax.swing.JTextPane DescriptionTextPanelFive;
+    public static javax.swing.JTextPane DescriptionTextPanelFour;
+    public static javax.swing.JTextPane DescriptionTextPanelFourteen;
+    public static javax.swing.JTextPane DescriptionTextPanelNine;
+    public static javax.swing.JTextPane DescriptionTextPanelOne;
+    public static javax.swing.JTextPane DescriptionTextPanelSeven;
+    public static javax.swing.JTextPane DescriptionTextPanelSix;
+    public static javax.swing.JTextPane DescriptionTextPanelSixteen;
+    public static javax.swing.JTextPane DescriptionTextPanelTen;
+    public static javax.swing.JTextPane DescriptionTextPanelThirteen;
+    public static javax.swing.JTextPane DescriptionTextPanelThree;
+    public static javax.swing.JTextPane DescriptionTextPanelTwelve;
+    public static javax.swing.JTextPane DescriptionTextPanelTwo;
+    public static javax.swing.JButton EditBtn;
+    public static javax.swing.JLabel EventImage1;
+    public static javax.swing.JLabel EventImage10;
+    public static javax.swing.JLabel EventImage11;
+    public static javax.swing.JLabel EventImage12;
+    public static javax.swing.JLabel EventImage13;
+    public static javax.swing.JLabel EventImage14;
+    public static javax.swing.JLabel EventImage15;
+    public static javax.swing.JLabel EventImage16;
+    public static javax.swing.JLabel EventImage2;
+    public static javax.swing.JLabel EventImage3;
     private javax.swing.JLabel EventImage4;
-    private javax.swing.JLabel EventImage5;
-    private javax.swing.JLabel EventImage6;
-    private javax.swing.JLabel EventImage7;
-    private javax.swing.JLabel EventImage8;
-    private javax.swing.JLabel EventImage9;
-    private javax.swing.JPanel EventPane1;
-    private javax.swing.JPanel EventPane10;
-    private javax.swing.JPanel EventPane11;
-    private javax.swing.JPanel EventPane12;
-    private javax.swing.JPanel EventPane13;
-    private javax.swing.JPanel EventPane14;
-    private javax.swing.JPanel EventPane15;
-    private javax.swing.JPanel EventPane16;
-    private javax.swing.JPanel EventPane2;
-    private javax.swing.JPanel EventPane3;
-    private javax.swing.JPanel EventPane4;
-    private javax.swing.JPanel EventPane5;
-    private javax.swing.JPanel EventPane6;
-    private javax.swing.JPanel EventPane7;
-    private javax.swing.JPanel EventPane8;
-    private javax.swing.JPanel EventPane9;
-    private javax.swing.JLabel EventTitleLabelEight;
-    private javax.swing.JLabel EventTitleLabelEleven;
-    private javax.swing.JLabel EventTitleLabelFifteen;
-    private javax.swing.JLabel EventTitleLabelFive;
+    public static javax.swing.JLabel EventImage5;
+    public static javax.swing.JLabel EventImage6;
+    public static javax.swing.JLabel EventImage7;
+    public static javax.swing.JLabel EventImage8;
+    public static javax.swing.JLabel EventImage9;
+    public static javax.swing.JPanel EventPane1;
+    public static javax.swing.JPanel EventPane10;
+    public static javax.swing.JPanel EventPane11;
+    public static javax.swing.JPanel EventPane12;
+    public static javax.swing.JPanel EventPane13;
+    public static javax.swing.JPanel EventPane14;
+    public static javax.swing.JPanel EventPane15;
+    public static javax.swing.JPanel EventPane16;
+    public static javax.swing.JPanel EventPane2;
+    public static javax.swing.JPanel EventPane3;
+    public static javax.swing.JPanel EventPane4;
+    public static javax.swing.JPanel EventPane5;
+    public static javax.swing.JPanel EventPane6;
+    public static javax.swing.JPanel EventPane7;
+    public static javax.swing.JPanel EventPane8;
+    public static javax.swing.JPanel EventPane9;
+    public static javax.swing.JLabel EventTitleLabelEight;
+    public static javax.swing.JLabel EventTitleLabelEleven;
+    public static javax.swing.JLabel EventTitleLabelFifteen;
+    public static javax.swing.JLabel EventTitleLabelFive;
     private javax.swing.JLabel EventTitleLabelFour;
-    private javax.swing.JLabel EventTitleLabelFourteen;
-    private javax.swing.JLabel EventTitleLabelNine;
-    private javax.swing.JLabel EventTitleLabelOne;
-    private javax.swing.JLabel EventTitleLabelSeven;
-    private javax.swing.JLabel EventTitleLabelSix;
-    private javax.swing.JLabel EventTitleLabelSixteen;
-    private javax.swing.JLabel EventTitleLabelTen;
-    private javax.swing.JLabel EventTitleLabelThirteen;
-    private javax.swing.JLabel EventTitleLabelThree;
-    private javax.swing.JLabel EventTitleLabelTwelve;
-    private javax.swing.JLabel EventTitleLabelTwo;
+    public static javax.swing.JLabel EventTitleLabelFourteen;
+    public static javax.swing.JLabel EventTitleLabelNine;
+    public static javax.swing.JLabel EventTitleLabelOne;
+    public static javax.swing.JLabel EventTitleLabelSeven;
+    public static javax.swing.JLabel EventTitleLabelSix;
+    public static javax.swing.JLabel EventTitleLabelSixteen;
+    public static javax.swing.JLabel EventTitleLabelTen;
+    public static javax.swing.JLabel EventTitleLabelThirteen;
+    public static javax.swing.JLabel EventTitleLabelThree;
+    public static javax.swing.JLabel EventTitleLabelTwelve;
+    public static javax.swing.JLabel EventTitleLabelTwo;
     private javax.swing.JPanel EventTitlePanelEight;
     private javax.swing.JPanel EventTitlePanelEleven;
     private javax.swing.JPanel EventTitlePanelFifteen;
@@ -1556,7 +1597,7 @@ public class Maintimeline extends javax.swing.JFrame {
     private javax.swing.JPanel EventTitlePanelThree;
     private javax.swing.JPanel EventTitlePanelTwelve;
     private javax.swing.JPanel EventTitlePanelTwo;
-    private javax.swing.JButton SaveBtn;
+    public static javax.swing.JButton SaveBtn;
     private javax.swing.JScrollPane ScrollableAreaPane;
     private javax.swing.JPanel SeperatorPaneEight;
     private javax.swing.JPanel SeperatorPaneEleven;
@@ -1575,7 +1616,7 @@ public class Maintimeline extends javax.swing.JFrame {
     private javax.swing.JPanel SeperatorPaneTwelve;
     private javax.swing.JPanel SeperatorPaneTwo;
     private javax.swing.JLabel TimelineTitleLabel;
-    private javax.swing.JPanel jPanel1;
+    public static javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPaneEight;
     private javax.swing.JScrollPane jScrollPaneEleven;
     private javax.swing.JScrollPane jScrollPaneFifteen;
