@@ -69,6 +69,12 @@ public class Addevent extends javax.swing.JFrame {
         TimeLabel.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
         TimeLabel.setText("Time:");
 
+        TimeTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TimeTextFieldActionPerformed(evt);
+            }
+        });
+
         DescriptionLabel.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
         DescriptionLabel.setText("Description:");
 
@@ -237,6 +243,10 @@ public class Addevent extends javax.swing.JFrame {
     private void EventPositionTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EventPositionTextFieldActionPerformed
         addBtnClicked = false;
     }//GEN-LAST:event_EventPositionTextFieldActionPerformed
+
+    private void TimeTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TimeTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TimeTextFieldActionPerformed
 
     /**
      * @param args the command line arguments
