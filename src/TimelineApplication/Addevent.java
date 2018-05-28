@@ -214,7 +214,7 @@ public class Addevent extends javax.swing.JFrame {
                    eventInformationList.remove(eventInformationList.size()-1); //remove the 17th sublist that is now present
                    eventInformationList.get(eventPos-1).add(EventPositionTextField.getText());
                    eventInformationList.get(eventPos-1).add(eventName);
-                   eventInformationList.get(eventPos-1).add(eventDate);
+                   eventInformationList.get(eventPos-1).add(eventDate); 
                    eventInformationList.get(eventPos-1).add(eventDesc);
                    eventInformationList.get(eventPos-1).add(eventImg);
                    numOfEvents +=1;

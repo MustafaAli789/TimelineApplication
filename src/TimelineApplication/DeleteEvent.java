@@ -27,11 +27,13 @@ public class DeleteEvent extends javax.swing.JFrame {
             String event = eventInformationList.get(i).get(1).toString();
 
             j += 1;
-            EventList.append("Event position " + j + ": " + event + "\n");
+            
+           EventList.append(j + " (Event Position)" + ": " + event + "\n");
+           
         }
         
-
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -50,8 +52,9 @@ public class DeleteEvent extends javax.swing.JFrame {
         EventList = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(51, 204, 255));
 
-        InstructionLabel.setText("Enter the # of the event you want to delete:");
+        InstructionLabel.setText("Enter the position # of the event you want to delete:");
 
         DeleteEventField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -133,6 +136,11 @@ public class DeleteEvent extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "No event at that position");
         }
         super.dispose();
+        
+         /* code for deleting button multiple times 
+        deleteBtnClicked = false;
+        this.dispose();
+        */
     }//GEN-LAST:event_DeleteBtnActionPerformed
 
     private void CancelBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelBtnActionPerformed
@@ -172,6 +180,8 @@ public class DeleteEvent extends javax.swing.JFrame {
                 new DeleteEvent().setVisible(true);
             }
         });
+        
+       
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
