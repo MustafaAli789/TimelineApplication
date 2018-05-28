@@ -62,7 +62,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
         getContentPane().add(LoginRegisterBtn);
-        LoginRegisterBtn.setBounds(155, 220, 140, 23);
+        LoginRegisterBtn.setBounds(155, 220, 140, 29);
 
         LoginPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
@@ -107,16 +107,17 @@ public class Login extends javax.swing.JFrame {
                 .addComponent(PasswordLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(PasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
 
         getContentPane().add(LoginPanel);
-        LoginPanel.setBounds(12, 36, 288, 151);
+        LoginPanel.setBounds(12, 49, 284, 150);
 
-        LoginLabel.setText("Login");
+        LoginLabel.setText("Login/Sign up");
         getContentPane().add(LoginLabel);
-        LoginLabel.setBounds(12, 13, 25, 14);
+        LoginLabel.setBounds(10, 30, 190, 16);
 
+        AnnouceLabel.setForeground(new java.awt.Color(255, 0, 51));
         AnnouceLabel.setToolTipText("");
         getContentPane().add(AnnouceLabel);
         AnnouceLabel.setBounds(60, 10, 240, 16);
@@ -128,7 +129,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
         getContentPane().add(SigninButton);
-        SigninButton.setBounds(20, 220, 130, 23);
+        SigninButton.setBounds(20, 220, 130, 29);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
