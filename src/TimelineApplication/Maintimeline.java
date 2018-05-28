@@ -1425,8 +1425,14 @@ public class Maintimeline extends javax.swing.JFrame {
     }//GEN-LAST:event_AddBtnMouseExited
 
     private void DeleteBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteBtnActionPerformed
-        DeleteEvent del_event = new DeleteEvent();
-        del_event.setVisible(true);
+        if(!deleteBtnClicked){
+            DeleteEvent del_event = new DeleteEvent();
+            del_event.setVisible(true);
+        } 
+        
+        deleteBtnClicked = true;
+        
+        
     }//GEN-LAST:event_DeleteBtnActionPerformed
 
     private void SaveBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveBtnActionPerformed
