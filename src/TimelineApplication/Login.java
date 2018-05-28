@@ -62,7 +62,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
         getContentPane().add(LoginRegisterBtn);
-        LoginRegisterBtn.setBounds(155, 220, 140, 29);
+        LoginRegisterBtn.setBounds(155, 220, 140, 25);
 
         LoginPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
@@ -111,7 +111,7 @@ public class Login extends javax.swing.JFrame {
         );
 
         getContentPane().add(LoginPanel);
-        LoginPanel.setBounds(12, 49, 284, 150);
+        LoginPanel.setBounds(12, 49, 290, 150);
 
         LoginLabel.setText("Login/Sign up");
         getContentPane().add(LoginLabel);
@@ -129,7 +129,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
         getContentPane().add(SigninButton);
-        SigninButton.setBounds(20, 220, 130, 29);
+        SigninButton.setBounds(20, 220, 130, 25);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
