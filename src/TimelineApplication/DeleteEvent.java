@@ -22,6 +22,15 @@ public class DeleteEvent extends javax.swing.JFrame {
      */
     public DeleteEvent() {
         initComponents();
+        int j = 0;
+        for (int i = 0; i < numOfEvents ; i++){
+            String event = eventInformationList.get(i).get(1).toString();
+
+            j += 1;
+            EventList.append("Event position " + j + ": " + event + "\n");
+        }
+        
+
     }
 
     /**
@@ -119,7 +128,7 @@ public class DeleteEvent extends javax.swing.JFrame {
         
         if (del_pos_num <= numOfEvents && del_pos_num > 0){
             eventInformationList.remove(del_pos_num - 1); 
-            updateScreen(del_pos_num-1,numOfEvents-1); 
+            updateScreen(del_pos_num,numOfEvents-1); 
         } else{
             JOptionPane.showMessageDialog(null, "No event at that position");
         }
@@ -127,9 +136,6 @@ public class DeleteEvent extends javax.swing.JFrame {
     }//GEN-LAST:event_DeleteBtnActionPerformed
 
     private void CancelBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelBtnActionPerformed
-        Maintimeline mainscreen = null;
-        mainscreen = new Maintimeline();
-        mainscreen.setVisible(true);
         super.dispose();
     }//GEN-LAST:event_CancelBtnActionPerformed
 
