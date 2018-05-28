@@ -5,8 +5,14 @@
  */
 package TimelineApplication;
 
+import static TimelineApplication.Maintimeline.eventInformationList;
+import static TimelineApplication.Maintimeline.numOfEvents;
+import static TimelineApplication.Maintimeline.updateScreen;
+import static java.lang.Integer.parseInt;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.DefaultListModel;
+import javax.swing.JList;
 
 /**
  *
@@ -33,9 +39,9 @@ public class DeleteEvent extends javax.swing.JFrame {
         InstructionLabel = new javax.swing.JLabel();
         DeleteEventField = new javax.swing.JTextField();
         CancelBtn = new javax.swing.JButton();
-        SaveBtn = new javax.swing.JButton();
-        EventsPanel = new javax.swing.JScrollPane();
-        EventsList = new javax.swing.JList<>();
+        DeleteBtn = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        EventList = new javax.swing.JList<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -54,39 +60,41 @@ public class DeleteEvent extends javax.swing.JFrame {
             }
         });
 
-        SaveBtn.setText("DELETE");
-        SaveBtn.addActionListener(new java.awt.event.ActionListener() {
+        DeleteBtn.setText("DELETE");
+        DeleteBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SaveBtnActionPerformed(evt);
+                DeleteBtnActionPerformed(evt);
             }
         });
 
-        EventsList.setModel(new javax.swing.AbstractListModel<String>() {
+        EventList.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        EventsPanel.setViewportView(EventsList);
+        jScrollPane1.setViewportView(EventList);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(SaveBtn)
-                .addGap(18, 18, 18)
-                .addComponent(CancelBtn)
-                .addContainerGap())
             .addGroup(layout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(EventsPanel)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(DeleteBtn)
+                        .addGap(18, 18, 18)
+                        .addComponent(CancelBtn))
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(29, 29, 29)
                         .addComponent(InstructionLabel)
                         .addGap(18, 18, 18)
-                        .addComponent(DeleteEventField, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(DeleteEventField, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -95,12 +103,12 @@ public class DeleteEvent extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(InstructionLabel)
                     .addComponent(DeleteEventField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(EventsPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 187, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(CancelBtn)
-                    .addComponent(SaveBtn))
+                    .addComponent(DeleteBtn))
                 .addContainerGap())
         );
 
@@ -111,12 +119,19 @@ public class DeleteEvent extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_DeleteEventFieldActionPerformed
 
-    private void SaveBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveBtnActionPerformed
-        Maintimeline mainscreen = null;
-            mainscreen = new Maintimeline();
-        mainscreen.setVisible(true);
+    private void DeleteBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteBtnActionPerformed
+        String del_pos = DeleteEventField.getText();
+        int del_pos_num = parseInt(del_pos);
+        
+        if (del_pos_num <= numOfEvents && del_pos_num > 0){
+            eventInformationList.remove(del_pos_num - 1); 
+            updateScreen(del_pos_num-1,numOfEvents-1);
+            System.out.println(eventInformationList);
+        } else{
+            System.out.println("No event at that position");
+        }
         super.dispose();
-    }//GEN-LAST:event_SaveBtnActionPerformed
+    }//GEN-LAST:event_DeleteBtnActionPerformed
 
     private void CancelBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelBtnActionPerformed
         Maintimeline mainscreen = null;
@@ -162,10 +177,10 @@ public class DeleteEvent extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton CancelBtn;
+    private javax.swing.JButton DeleteBtn;
     private javax.swing.JTextField DeleteEventField;
-    private javax.swing.JList<String> EventsList;
-    private javax.swing.JScrollPane EventsPanel;
+    private javax.swing.JList<String> EventList;
     private javax.swing.JLabel InstructionLabel;
-    private javax.swing.JButton SaveBtn;
+    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

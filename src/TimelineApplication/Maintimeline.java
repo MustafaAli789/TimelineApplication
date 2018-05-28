@@ -567,6 +567,7 @@ public class Maintimeline extends javax.swing.JFrame {
 
         EventPane3.add(jScrollPaneThree, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 240, 180, 130));
 
+        EventImage3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         EventImage3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         EventPane3.add(EventImage3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 172, 150));
 
@@ -621,6 +622,7 @@ public class Maintimeline extends javax.swing.JFrame {
 
         EventPane4.add(jScrollPaneFour, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 240, 180, 130));
 
+        EventImage4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         EventImage4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         EventPane4.add(EventImage4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 172, 150));
 
@@ -1425,7 +1427,6 @@ public class Maintimeline extends javax.swing.JFrame {
     private void DeleteBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteBtnActionPerformed
         DeleteEvent del_event = new DeleteEvent();
         del_event.setVisible(true);
-        super.dispose();
     }//GEN-LAST:event_DeleteBtnActionPerformed
 
     private void SaveBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveBtnActionPerformed
