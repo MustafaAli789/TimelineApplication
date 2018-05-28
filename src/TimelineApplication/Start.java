@@ -60,7 +60,7 @@ public class Start extends javax.swing.JFrame {
         getContentPane().add(Start);
         Start.setBounds(230, 290, 214, 60);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\ocdsb\\Documents\\NetBeansProjects\\TimelineApplication\\src\\TimelineApplication\\startScreenBacground.jpg")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/startScreenBacground.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");
         getContentPane().add(jLabel1);
         jLabel1.setBounds(0, 0, 670, 460);
