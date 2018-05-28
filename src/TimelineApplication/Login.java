@@ -62,7 +62,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
         getContentPane().add(LoginRegisterBtn);
-        LoginRegisterBtn.setBounds(155, 220, 140, 29);
+        LoginRegisterBtn.setBounds(155, 220, 140, 23);
 
         LoginPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
@@ -111,24 +111,24 @@ public class Login extends javax.swing.JFrame {
         );
 
         getContentPane().add(LoginPanel);
-        LoginPanel.setBounds(12, 36, 284, 163);
+        LoginPanel.setBounds(12, 36, 288, 151);
 
         LoginLabel.setText("Login");
         getContentPane().add(LoginLabel);
-        LoginLabel.setBounds(12, 13, 35, 16);
+        LoginLabel.setBounds(12, 13, 25, 14);
 
         AnnouceLabel.setToolTipText("");
         getContentPane().add(AnnouceLabel);
         AnnouceLabel.setBounds(60, 10, 240, 16);
 
-        SigninButton.setText("Sign In");
+        SigninButton.setText("Sign Up");
         SigninButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SigninButtonActionPerformed(evt);
             }
         });
         getContentPane().add(SigninButton);
-        SigninButton.setBounds(20, 220, 130, 29);
+        SigninButton.setBounds(20, 220, 130, 23);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

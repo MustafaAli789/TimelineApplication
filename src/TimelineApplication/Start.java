@@ -33,7 +33,6 @@ public class Start extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         TitleLabel = new javax.swing.JLabel();
         Start = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -61,15 +60,10 @@ public class Start extends javax.swing.JFrame {
         getContentPane().add(Start);
         Start.setBounds(230, 290, 214, 60);
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/Graphics/Bright-Blue-Background-1.png"))); // NOI18N
-        jLabel3.setText("jLabel3");
-        getContentPane().add(jLabel3);
-        jLabel3.setBounds(-260, -60, 930, 540);
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/Graphics/Bright-Blue-Background-1.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\ocdsb\\Documents\\NetBeansProjects\\TimelineApplication\\src\\TimelineApplication\\startScreenBacground.jpg")); // NOI18N
         jLabel1.setText("jLabel1");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(-30, -20, 700, 480);
+        jLabel1.setBounds(0, 0, 670, 460);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -130,6 +124,5 @@ public class Start extends javax.swing.JFrame {
     private javax.swing.JLabel TitleLabel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
 }
