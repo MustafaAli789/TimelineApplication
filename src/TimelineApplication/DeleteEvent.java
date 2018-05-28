@@ -9,10 +9,7 @@ import static TimelineApplication.Maintimeline.eventInformationList;
 import static TimelineApplication.Maintimeline.numOfEvents;
 import static TimelineApplication.Maintimeline.updateScreen;
 import static java.lang.Integer.parseInt;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.DefaultListModel;
-import javax.swing.JList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -41,7 +38,7 @@ public class DeleteEvent extends javax.swing.JFrame {
         CancelBtn = new javax.swing.JButton();
         DeleteBtn = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        EventList = new javax.swing.JList<>();
+        EventList = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -67,11 +64,8 @@ public class DeleteEvent extends javax.swing.JFrame {
             }
         });
 
-        EventList.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
+        EventList.setColumns(20);
+        EventList.setRows(5);
         jScrollPane1.setViewportView(EventList);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -104,8 +98,8 @@ public class DeleteEvent extends javax.swing.JFrame {
                     .addComponent(InstructionLabel)
                     .addComponent(DeleteEventField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 187, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 182, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(CancelBtn)
                     .addComponent(DeleteBtn))
@@ -125,17 +119,16 @@ public class DeleteEvent extends javax.swing.JFrame {
         
         if (del_pos_num <= numOfEvents && del_pos_num > 0){
             eventInformationList.remove(del_pos_num - 1); 
-            updateScreen(del_pos_num-1,numOfEvents-1);
-            System.out.println(eventInformationList);
+            updateScreen(del_pos_num-1,numOfEvents-1); 
         } else{
-            System.out.println("No event at that position");
+            JOptionPane.showMessageDialog(null, "No event at that position");
         }
         super.dispose();
     }//GEN-LAST:event_DeleteBtnActionPerformed
 
     private void CancelBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelBtnActionPerformed
         Maintimeline mainscreen = null;
-            mainscreen = new Maintimeline();
+        mainscreen = new Maintimeline();
         mainscreen.setVisible(true);
         super.dispose();
     }//GEN-LAST:event_CancelBtnActionPerformed
@@ -179,7 +172,7 @@ public class DeleteEvent extends javax.swing.JFrame {
     private javax.swing.JButton CancelBtn;
     private javax.swing.JButton DeleteBtn;
     private javax.swing.JTextField DeleteEventField;
-    private javax.swing.JList<String> EventList;
+    private javax.swing.JTextArea EventList;
     private javax.swing.JLabel InstructionLabel;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
