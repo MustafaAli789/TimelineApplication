@@ -21,12 +21,6 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextPane;
 
-
-
-/**
- *
- * @author S199841769
- */
 public class Maintimeline extends javax.swing.JFrame {
 
     public static boolean addBtnClicked = false;
@@ -39,11 +33,7 @@ public class Maintimeline extends javax.swing.JFrame {
     public static ArrayList<JLabel> arrowNames = new ArrayList<JLabel>();
     public static File eventInformationFile = new File("src/TimelineApplication/eventsInformation.txt");
     public static ArrayList<ArrayList<String>> eventInformationList = new ArrayList<>(); //2d list of all event info
-    
-    
-    /**
-     * Creates new form Maintimeline
-     */
+
     public Maintimeline() {
         initComponents();  
                 
@@ -1452,8 +1442,8 @@ public class Maintimeline extends javax.swing.JFrame {
 
     private void EditBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditBtnActionPerformed
         if(!editBtnClicked){
-            Editevent editEvent = new Editevent();
-            editEvent.setVisible(true);
+            EditEventNum editEventNum = new EditEventNum();
+            editEventNum.setVisible(true);
         }
         
         editBtnClicked = true;
