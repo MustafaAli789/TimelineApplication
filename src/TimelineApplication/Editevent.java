@@ -6,7 +6,9 @@ import java.util.logging.Logger;
 import static TimelineApplication.Maintimeline.editBtnClicked;
 import static TimelineApplication.Maintimeline.eventInformationList;
 import static TimelineApplication.Maintimeline.numOfEvents;
+import static TimelineApplication.Maintimeline.updateScreen;
 import static java.lang.Integer.parseInt;
+import java.util.ArrayList;
 
 public class Editevent extends javax.swing.JFrame {
 
@@ -23,7 +25,11 @@ public class Editevent extends javax.swing.JFrame {
         EditTimeTextField.setText(eventInformationList.get(edit_pos_num).get(2).toString());
         EditDescriptionTextField.setText(eventInformationList.get(edit_pos_num).get(3).toString());
         EditImageUrlTextField.setText(eventInformationList.get(edit_pos_num).get(4).toString());
-            
+        int position = parseInt(EditEventPositionTextField.getText());  
+        eventInformationList.remove(position-1);
+        
+        
+          
         
     }
 
@@ -209,6 +215,26 @@ public class Editevent extends javax.swing.JFrame {
 
     private void EditBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditBtnActionPerformed
 
+        int position_new = parseInt(EditEventPositionTextField.getText()); 
+        eventInformationList.add(position_new-1, new ArrayList<String>());
+        String name = EditEventNameTextField.getText();
+        
+        String time = EditTimeTextField.getText();
+        String desc = EditDescriptionTextField.getText();
+        String URL = EditImageUrlTextField.getText();
+        
+            
+        
+        eventInformationList.get(position_new-1).add(EditEventPositionTextField.getText());
+        eventInformationList.get(position_new-1).add(name);
+        eventInformationList.get(position_new-1).add(time);
+        eventInformationList.get(position_new-1).add(desc);
+        eventInformationList.get(position_new-1).add(URL);
+        System.out.println("Hello " + eventInformationList);
+        
+        updateScreen(0,numOfEvents);
+        
+        
         editBtnClicked = false;
         this.dispose();
     }//GEN-LAST:event_EditBtnActionPerformed

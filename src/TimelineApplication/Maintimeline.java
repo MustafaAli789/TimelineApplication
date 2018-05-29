@@ -31,7 +31,7 @@ public class Maintimeline extends javax.swing.JFrame {
     public static ArrayList<JTextPane> eventDescriptionNames = new ArrayList<JTextPane>();
     public static ArrayList<JPanel> eventPaneNames = new ArrayList<JPanel>();
     public static ArrayList<JLabel> arrowNames = new ArrayList<JLabel>();
-    public static File eventInformationFile = new File("src/TimelineApplication/eventsInformation.txt");
+    public static File eventInformationFile = new File("src/TimelineApplication/eventsInformation.txt"); 
     public static ArrayList<ArrayList<String>> eventInformationList = new ArrayList<>(); //2d list of all event info
 
     public Maintimeline() {
