@@ -3,6 +3,8 @@ import java.io.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import static TimelineApplication.Maintimeline.editBtnClicked;
+import static TimelineApplication.Maintimeline.eventInformationList;
+import static java.lang.Integer.parseInt;
 
 public class Editevent extends javax.swing.JFrame {
 
@@ -26,7 +28,7 @@ public class Editevent extends javax.swing.JFrame {
         EventPositionLabel = new javax.swing.JLabel();
         EventPositionTextField = new javax.swing.JTextField();
         EventNameLabel = new javax.swing.JLabel();
-        EventNameTextField = new javax.swing.JTextField();
+        EditEventNameTextField = new javax.swing.JTextField();
         TimeLabel = new javax.swing.JLabel();
         TimeTextField = new javax.swing.JTextField();
         DescriptionLabel = new javax.swing.JLabel();
@@ -52,11 +54,11 @@ public class Editevent extends javax.swing.JFrame {
         });
 
         EventNameLabel.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
-        EventNameLabel.setText("Event Name:");
+        EventNameLabel.setText("Edit Event Name:");
 
-        EventNameTextField.addActionListener(new java.awt.event.ActionListener() {
+        EditEventNameTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EventNameTextFieldActionPerformed(evt);
+                EditEventNameTextFieldActionPerformed(evt);
             }
         });
 
@@ -107,7 +109,7 @@ public class Editevent extends javax.swing.JFrame {
                             .addComponent(EventPositionLabel)
                             .addComponent(EventPositionTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 388, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(EventNameLabel)
-                            .addComponent(EventNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 388, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(EditEventNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 388, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(TimeLabel)
                             .addComponent(DescriptionLabel)
                             .addComponent(DescriptionTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 388, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -136,7 +138,7 @@ public class Editevent extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(EventNameLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(EventNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(EditEventNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(TimeLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -176,9 +178,9 @@ public class Editevent extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void EventNameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EventNameTextFieldActionPerformed
+    private void EditEventNameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditEventNameTextFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_EventNameTextFieldActionPerformed
+    }//GEN-LAST:event_EditEventNameTextFieldActionPerformed
 
     private void DescriptionTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DescriptionTextFieldActionPerformed
         // TODO add your handling code here:
@@ -194,44 +196,9 @@ public class Editevent extends javax.swing.JFrame {
     }//GEN-LAST:event_CancelBtnActionPerformed
 
     private void EditBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditBtnActionPerformed
-           String eventpos = EventPositionTextField.getText();
-           String eventname = EventNameTextField.getText();
-           String eventTime = TimeTextField.getText();
-           String eventdesc = DescriptionTextField.getText();
-           String eventimg = ImageUrlTextField.getText();
-           
-
-    try {
-                File file = new File("Events.txt");
-                file.createNewFile();
-                // if file doesnt exists, then create it
-                if (!file.exists()) {
-                    file.createNewFile();
-                }
-
-                FileWriter fw = new FileWriter(file.getAbsoluteFile());
-                PrintWriter pw = new PrintWriter(fw);
-                pw.write(eventpos); 
-                pw.println();
-                pw.write(eventname);
-                pw.println();
-                pw.write(eventTime);
-                pw.println();
-                pw.write(eventdesc);
-                pw.println();
-                pw.write(eventimg);
-                pw.println();
-                pw.close();
-
-                System.out.println("Done");
-
-            } catch (IOException e) {
-                e.printStackTrace();
-}
-        Maintimeline mainscreen = null;
-            mainscreen = new Maintimeline();
-        mainscreen.setVisible(true);
-        super.dispose();
+       
+        editBtnClicked = false;
+        this.dispose();
     }//GEN-LAST:event_EditBtnActionPerformed
 
     private void EventPositionTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EventPositionTextFieldActionPerformed
@@ -281,8 +248,8 @@ public class Editevent extends javax.swing.JFrame {
     private javax.swing.JLabel DescriptionLabel;
     private javax.swing.JTextField DescriptionTextField;
     private javax.swing.JButton EditBtn;
+    private javax.swing.JTextField EditEventNameTextField;
     private javax.swing.JLabel EventNameLabel;
-    private javax.swing.JTextField EventNameTextField;
     private javax.swing.JLabel EventPositionLabel;
     private javax.swing.JTextField EventPositionTextField;
     private javax.swing.JLabel ImageUrlLabel;
