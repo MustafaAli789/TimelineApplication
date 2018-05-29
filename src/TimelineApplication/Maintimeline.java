@@ -664,6 +664,7 @@ public class Maintimeline extends javax.swing.JFrame {
 
         EventPane5.add(jScrollPaneFive, new org.netbeans.lib.awtextra.AbsoluteConstraints(7, 249, 180, 120));
 
+        EventImage5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         EventImage5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         EventPane5.add(EventImage5, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 80, 170, 160));
 
@@ -715,6 +716,7 @@ public class Maintimeline extends javax.swing.JFrame {
 
         EventPane6.add(jScrollPaneSix, new org.netbeans.lib.awtextra.AbsoluteConstraints(7, 249, 180, 120));
 
+        EventImage6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         EventImage6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         EventPane6.add(EventImage6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 172, 160));
 
@@ -766,6 +768,7 @@ public class Maintimeline extends javax.swing.JFrame {
 
         EventPane7.add(jScrollPaneSeven, new org.netbeans.lib.awtextra.AbsoluteConstraints(7, 249, 180, 120));
 
+        EventImage7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         EventImage7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         EventPane7.add(EventImage7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 172, 160));
 
@@ -817,6 +820,7 @@ public class Maintimeline extends javax.swing.JFrame {
 
         EventPane8.add(jScrollPaneEight, new org.netbeans.lib.awtextra.AbsoluteConstraints(7, 249, 180, 120));
 
+        EventImage8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         EventImage8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         EventPane8.add(EventImage8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 172, 160));
 
@@ -868,6 +872,7 @@ public class Maintimeline extends javax.swing.JFrame {
 
         EventPane9.add(jScrollPaneNine, new org.netbeans.lib.awtextra.AbsoluteConstraints(7, 249, 180, 120));
 
+        EventImage9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         EventImage9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         EventPane9.add(EventImage9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 172, 160));
 
@@ -919,6 +924,7 @@ public class Maintimeline extends javax.swing.JFrame {
 
         EventPane10.add(jScrollPaneTen, new org.netbeans.lib.awtextra.AbsoluteConstraints(7, 249, 180, 120));
 
+        EventImage10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         EventImage10.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         EventPane10.add(EventImage10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 172, 160));
 
@@ -970,6 +976,7 @@ public class Maintimeline extends javax.swing.JFrame {
 
         EventPane11.add(jScrollPaneEleven, new org.netbeans.lib.awtextra.AbsoluteConstraints(7, 249, 180, 120));
 
+        EventImage11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         EventImage11.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         EventPane11.add(EventImage11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 172, 160));
 
@@ -1021,6 +1028,7 @@ public class Maintimeline extends javax.swing.JFrame {
 
         EventPane12.add(jScrollPaneTwelve, new org.netbeans.lib.awtextra.AbsoluteConstraints(7, 249, 180, 120));
 
+        EventImage12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         EventImage12.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         EventPane12.add(EventImage12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 172, 160));
 
@@ -1072,6 +1080,7 @@ public class Maintimeline extends javax.swing.JFrame {
 
         EventPane13.add(jScrollPaneThirteen, new org.netbeans.lib.awtextra.AbsoluteConstraints(7, 249, 180, 120));
 
+        EventImage13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         EventImage13.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         EventPane13.add(EventImage13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 172, 160));
 
@@ -1123,6 +1132,7 @@ public class Maintimeline extends javax.swing.JFrame {
 
         EventPane14.add(jScrollPaneFourteen, new org.netbeans.lib.awtextra.AbsoluteConstraints(7, 249, 180, 120));
 
+        EventImage14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         EventImage14.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         EventPane14.add(EventImage14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 172, 160));
 
@@ -1174,6 +1184,7 @@ public class Maintimeline extends javax.swing.JFrame {
 
         EventPane15.add(jScrollPaneFifteen, new org.netbeans.lib.awtextra.AbsoluteConstraints(7, 249, 180, 120));
 
+        EventImage15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         EventImage15.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         EventPane15.add(EventImage15, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 172, 160));
 
@@ -1225,6 +1236,7 @@ public class Maintimeline extends javax.swing.JFrame {
 
         EventPane16.add(jScrollPaneSixteen, new org.netbeans.lib.awtextra.AbsoluteConstraints(7, 249, 180, 117));
 
+        EventImage16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         EventImage16.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         EventPane16.add(EventImage16, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 172, 160));
 
@@ -1523,7 +1535,7 @@ public class Maintimeline extends javax.swing.JFrame {
     public static javax.swing.JTextPane DescriptionTextPanelFour;
     public static javax.swing.JTextPane DescriptionTextPanelFourteen;
     public static javax.swing.JTextPane DescriptionTextPanelNine;
-    public static javax.swing.JTextPane DescriptionTextPanelOne;
+    private javax.swing.JTextPane DescriptionTextPanelOne;
     public static javax.swing.JTextPane DescriptionTextPanelSeven;
     public static javax.swing.JTextPane DescriptionTextPanelSix;
     public static javax.swing.JTextPane DescriptionTextPanelSixteen;

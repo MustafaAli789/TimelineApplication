@@ -5,6 +5,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import static TimelineApplication.Maintimeline.editBtnClicked;
 import static TimelineApplication.Maintimeline.eventInformationList;
+import static TimelineApplication.Maintimeline.numOfEvents;
 import static java.lang.Integer.parseInt;
 
 public class Editevent extends javax.swing.JFrame {
@@ -16,14 +17,14 @@ public class Editevent extends javax.swing.JFrame {
         initComponents();
         String edit_pos = EditEventField.getText();
         int edit_pos_num = parseInt(edit_pos);
-        if (edit_pos_num == 1){
-            EditEventPositionTextField.setText(eventInformationList.get(0).get(0).toString());
-            EditEventNameTextField.setText(eventInformationList.get(0).get(1).toString());
-            EditTimeTextField.setText(eventInformationList.get(0).get(2).toString());
-            EditDescriptionTextField.setText(eventInformationList.get(0).get(3).toString());
-            EditImageUrlTextField.setText(eventInformationList.get(0).get(4).toString());
+        edit_pos_num -= 1;
+        EditEventPositionTextField.setText(eventInformationList.get(edit_pos_num).get(0).toString());
+        EditEventNameTextField.setText(eventInformationList.get(edit_pos_num).get(1).toString());
+        EditTimeTextField.setText(eventInformationList.get(edit_pos_num).get(2).toString());
+        EditDescriptionTextField.setText(eventInformationList.get(edit_pos_num).get(3).toString());
+        EditImageUrlTextField.setText(eventInformationList.get(edit_pos_num).get(4).toString());
             
-        }
+        
     }
 
     /**
@@ -207,6 +208,7 @@ public class Editevent extends javax.swing.JFrame {
     }//GEN-LAST:event_CancelBtnActionPerformed
 
     private void EditBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditBtnActionPerformed
+
         editBtnClicked = false;
         this.dispose();
     }//GEN-LAST:event_EditBtnActionPerformed
