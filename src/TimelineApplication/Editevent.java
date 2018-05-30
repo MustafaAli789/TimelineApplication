@@ -217,8 +217,8 @@ public class Editevent extends javax.swing.JFrame {
 
         int position_new = parseInt(EditEventPositionTextField.getText()); 
         eventInformationList.add(position_new-1, new ArrayList<String>());
+       
         String name = EditEventNameTextField.getText();
-        
         String time = EditTimeTextField.getText();
         String desc = EditDescriptionTextField.getText();
         String URL = EditImageUrlTextField.getText();
