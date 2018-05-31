@@ -26,6 +26,7 @@ public class Maintimeline extends javax.swing.JFrame {
     public static boolean addBtnClicked = false;
     public static boolean deleteBtnClicked = false;
     public static boolean editBtnClicked = false;
+    public static boolean EditTitleBtnClicked = false;
     public static int numOfEvents;
     public static ArrayList<ArrayList<JLabel>> eventTitleDateImageNames = new ArrayList<ArrayList<JLabel>>();
     public static ArrayList<JTextPane> eventDescriptionNames = new ArrayList<JTextPane>();
@@ -204,7 +205,7 @@ public class Maintimeline extends javax.swing.JFrame {
             try {
                 
                 Scanner sc2 = new Scanner(eventInformationFile);
-                
+                skipLines(sc2, 1);
                 //Put even information into the 2d list
                 for(int i = 0; i <numOfEvents; i++){ //number of 2d lists
                     for (int j = 0; j<5; j++){;
@@ -228,6 +229,11 @@ public class Maintimeline extends javax.swing.JFrame {
         
     }
   
+    public static void skipLines(Scanner s,int lineNum){
+        for(int i = 0; i < lineNum;i++){
+            if(s.hasNextLine())s.nextLine();
+        }
+    }
    
     /**
      * This method is called from within the constructor to initialize the form.
@@ -386,6 +392,7 @@ public class Maintimeline extends javax.swing.JFrame {
         SaveBtn = new javax.swing.JButton();
         EditBtn = new javax.swing.JButton();
         AddBtn = new javax.swing.JButton();
+        EditTitleBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -1350,20 +1357,23 @@ public class Maintimeline extends javax.swing.JFrame {
             }
         });
 
+        EditTitleBtn.setText("Edit Title");
+        EditTitleBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EditTitleBtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(457, 457, 457)
-                .addComponent(TimelineTitleLabel)
-                .addGap(0, 443, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(ScrollableAreaPane, javax.swing.GroupLayout.PREFERRED_SIZE, 1146, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                    .addGroup(layout.createSequentialGroup()
                         .addGap(815, 815, 815)
                         .addComponent(AddBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
@@ -1372,14 +1382,25 @@ public class Maintimeline extends javax.swing.JFrame {
                         .addComponent(SaveBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(23, 23, 23)
                         .addComponent(DeleteBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addContainerGap(95, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(451, 451, 451)
+                        .addComponent(TimelineTitleLabel))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(530, 530, 530)
+                        .addComponent(EditTitleBtn)))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(21, 21, 21)
                 .addComponent(TimelineTitleLabel)
-                .addGap(39, 39, 39)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(EditTitleBtn)
+                .addGap(18, 18, 18)
                 .addComponent(ScrollableAreaPane, javax.swing.GroupLayout.PREFERRED_SIZE, 486, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1387,7 +1408,7 @@ public class Maintimeline extends javax.swing.JFrame {
                     .addComponent(SaveBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(EditBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(AddBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addContainerGap(10, Short.MAX_VALUE))
         );
 
         pack();
@@ -1462,6 +1483,15 @@ public class Maintimeline extends javax.swing.JFrame {
         
     }//GEN-LAST:event_EditBtnActionPerformed
 
+    private void EditTitleBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditTitleBtnActionPerformed
+       if(!EditTitleBtnClicked){           
+            TitleEditForm editTimeline = new TitleEditForm();
+            editTimeline.setVisible(true);
+        }
+                
+        EditTitleBtnClicked = true; 
+    }//GEN-LAST:event_EditTitleBtnActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1535,7 +1565,7 @@ public class Maintimeline extends javax.swing.JFrame {
     public static javax.swing.JTextPane DescriptionTextPanelFour;
     public static javax.swing.JTextPane DescriptionTextPanelFourteen;
     public static javax.swing.JTextPane DescriptionTextPanelNine;
-    private javax.swing.JTextPane DescriptionTextPanelOne;
+    public static javax.swing.JTextPane DescriptionTextPanelOne;
     public static javax.swing.JTextPane DescriptionTextPanelSeven;
     public static javax.swing.JTextPane DescriptionTextPanelSix;
     public static javax.swing.JTextPane DescriptionTextPanelSixteen;
@@ -1545,6 +1575,7 @@ public class Maintimeline extends javax.swing.JFrame {
     public static javax.swing.JTextPane DescriptionTextPanelTwelve;
     public static javax.swing.JTextPane DescriptionTextPanelTwo;
     public static javax.swing.JButton EditBtn;
+    private javax.swing.JButton EditTitleBtn;
     public static javax.swing.JLabel EventImage1;
     public static javax.swing.JLabel EventImage10;
     public static javax.swing.JLabel EventImage11;
