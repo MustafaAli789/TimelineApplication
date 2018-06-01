@@ -12,6 +12,7 @@ import javax.swing.ImageIcon;
 import java.io.*;
 import java.net.MalformedURLException;
 import java.net.URL;
+import static TimelineApplication.TitleEditForm.title;
 import javax.swing.JPanel;
 import java.util.*;
 import java.util.logging.Level;
@@ -21,12 +22,14 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextPane;
 
+
 public class Maintimeline extends javax.swing.JFrame {
 
     public static boolean addBtnClicked = false;
     public static boolean deleteBtnClicked = false;
     public static boolean editBtnClicked = false;
     public static boolean EditTitleBtnClicked = false;
+    public static String Title;
     public static int numOfEvents;
     public static ArrayList<ArrayList<JLabel>> eventTitleDateImageNames = new ArrayList<ArrayList<JLabel>>();
     public static ArrayList<JTextPane> eventDescriptionNames = new ArrayList<JTextPane>();
@@ -91,8 +94,7 @@ public class Maintimeline extends javax.swing.JFrame {
         Collections.addAll(arrowNames, array4);     
         
     }
-       
-       
+          
     public static void setEventPaneVisibility(JPanel eventPaneName, boolean visibilityState){
         eventPaneName.setVisible(visibilityState);
     }
@@ -122,9 +124,22 @@ public class Maintimeline extends javax.swing.JFrame {
     //This method can be called any time an event is added, deleted or edited (unless no shift required, then simply call setEventInfo) to 
     //put the text and image into the event screen as well as update which events are visible and which arrows are visible
     public static void updateScreen (int eventStartNumber, int numOfEvents){
-
+        try{
+            FileReader fileReader = new FileReader(eventInformationFile);
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+            Title = bufferedReader.readLine();
+            bufferedReader.close();
+            System.out.println(Title);
+        }
+        catch (FileNotFoundException ex){
+            System.out.println("Cannot find the file "+eventInformationFile);
+        }
+        catch (IOException ex){
+            System.out.println("Error occured when reading file.");
+        }
+        TimelineTitleLabel.setText(Title);
         
-        //Putting text and image into each visible event
+//Putting text and image into each visible event
         for(int i = eventStartNumber; i< numOfEvents; i++){
             setEventInfo(eventTitleDateImageNames.get(i).get(0), eventTitleDateImageNames.get(i).get(1), eventDescriptionNames.get(i), eventTitleDateImageNames.get(i).get(2), i);
             
@@ -160,8 +175,7 @@ public class Maintimeline extends javax.swing.JFrame {
             } 
         } 
     }
-    
-    
+        
     public static void setEventInfo(JLabel title, JLabel date, JTextPane description, JLabel eventImage, int eventNum){
 
         title.setText(eventInformationList.get(eventNum).get(1)); //1st index is title
@@ -173,8 +187,7 @@ public class Maintimeline extends javax.swing.JFrame {
         }
         else{ //if no URL provided, just put white box instead
             setImage(eventImage, "https://vignette.wikia.nocookie.net/uncyclopedia/images/4/44/White_square.png/revision/latest?cb=20061003200043", eventNum);
-        }
-         
+        }         
     }
     
     public static void setNumOfEvents(){
@@ -232,7 +245,34 @@ public class Maintimeline extends javax.swing.JFrame {
             if(s.hasNextLine())s.nextLine();
         }
     }
-   
+    
+    public static void SaveToFile(){
+        try{
+            Writer fileWriter;
+            fileWriter = new BufferedWriter(new FileWriter(eventInformationFile, false));
+            System.out.println(numOfEvents);
+            Scanner sc = new Scanner(eventInformationFile);
+            System.out.println(Title);
+            fileWriter.write(Title);
+            fileWriter.write("\n");            
+            for(int i = 0; i <numOfEvents; i++){
+                for (int j = 0; j<5; j++){
+                    fileWriter.write(eventInformationList.get(i).get(j));
+                    fileWriter.write("\n");
+                }
+            }
+            fileWriter.close();
+            updateScreen(0,numOfEvents);
+        }
+        catch (FileNotFoundException ex){
+            System.out.println("Cannot find the file "+ eventInformationFile);
+            }
+        catch (IOException e) {
+            System.out.println("Error when trying to read "+eventInformationFile);
+            }
+        
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -396,7 +436,9 @@ public class Maintimeline extends javax.swing.JFrame {
         setResizable(false);
 
         TimelineTitleLabel.setFont(new java.awt.Font("Copperplate Gothic Bold", 1, 24)); // NOI18N
+        TimelineTitleLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         TimelineTitleLabel.setText("TIMELINE TITLE HERE");
+        TimelineTitleLabel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         ScrollableAreaPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
@@ -1457,7 +1499,7 @@ public class Maintimeline extends javax.swing.JFrame {
     }//GEN-LAST:event_DeleteBtnActionPerformed
 
     private void SaveBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveBtnActionPerformed
-        // TODO add your handling code here:
+        SaveToFile();
     }//GEN-LAST:event_SaveBtnActionPerformed
 
     private void AddBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddBtnActionPerformed
@@ -1472,6 +1514,7 @@ public class Maintimeline extends javax.swing.JFrame {
     }//GEN-LAST:event_AddBtnActionPerformed
 
     private void EditBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditBtnActionPerformed
+        System.out.println(!editBtnClicked);
         if(!editBtnClicked){
             EditEventNum editEventNum = new EditEventNum();
             editEventNum.setVisible(true);
@@ -1490,6 +1533,9 @@ public class Maintimeline extends javax.swing.JFrame {
         EditTitleBtnClicked = true; 
     }//GEN-LAST:event_EditTitleBtnActionPerformed
 
+    public static void setTheTitle (String a){
+        TimelineTitleLabel.setText(a);
+    }
     /**
      * @param args the command line arguments
      */
@@ -1656,7 +1702,7 @@ public class Maintimeline extends javax.swing.JFrame {
     private javax.swing.JPanel SeperatorPaneThree;
     private javax.swing.JPanel SeperatorPaneTwelve;
     private javax.swing.JPanel SeperatorPaneTwo;
-    private javax.swing.JLabel TimelineTitleLabel;
+    public static javax.swing.JLabel TimelineTitleLabel;
     public static javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPaneEight;
     private javax.swing.JScrollPane jScrollPaneEleven;

@@ -2,12 +2,17 @@ package TimelineApplication;
 import static TimelineApplication.Maintimeline.eventInformationFile;
 import static TimelineApplication.Maintimeline.eventInformationList;
 import static TimelineApplication.Maintimeline.numOfEvents;
+import static TimelineApplication.Maintimeline.setTheTitle;
 import static TimelineApplication.Maintimeline.skipLines;
+import static TimelineApplication.Maintimeline.Title;
+//import static TimelineApplication.Maintimeline.setTitle;
+import javax.swing.JLabel;
 import java.util.Scanner;
 import java.io.*;
 import java.util.*;
 import java.util.ArrayList;
 import java.io.RandomAccessFile;
+import javax.swing.JLabel;
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -19,7 +24,7 @@ import java.io.RandomAccessFile;
  * @author SHAWN
  */
 public class TitleEditForm extends javax.swing.JFrame {
-
+    public static String title;
     /**
      * Creates new form TitleEditForm
      */
@@ -105,9 +110,13 @@ public class TitleEditForm extends javax.swing.JFrame {
 
     private void SaveBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveBtnActionPerformed
         String EventFile = "src/TimelineApplication/eventsInformation.txt";
-        String title = TimelineTitleEdited.getText();
+        title = TimelineTitleEdited.getText();        
+        Title = title;
         String line = null;
+        System.out.println(title);
+        setTheTitle(title);
         ArrayList<String> allEvent = new ArrayList<String>();
+        //Write to text file by shifting.
         try{
             Scanner sc = new Scanner(eventInformationFile);
                 skipLines(sc, 1);
@@ -121,17 +130,16 @@ public class TitleEditForm extends javax.swing.JFrame {
             for (int j=0; j<allEvent.size();j++){
                 fileWriter.write(allEvent.get(j));
                 fileWriter.write("\n");
-                
             }
             fileWriter.close();
         }
         catch (FileNotFoundException ex){
                 System.out.println("Cannot find the file "+EventFile);
             }
-            catch (IOException e) {
-                System.out.println("Error when trying to read"+EventFile);
-            }        
-// TODO add your handling code here:
+        catch (IOException e) {
+            System.out.println("Error when trying to read"+EventFile);
+            }
+        super.dispose();
     }//GEN-LAST:event_SaveBtnActionPerformed
 
     /**

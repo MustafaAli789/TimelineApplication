@@ -1,11 +1,16 @@
 package TimelineApplication;
 import static TimelineApplication.EditEventNum.EditEventField;
+import static TimelineApplication.Maintimeline.Title;
 import java.io.*;
+import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import static TimelineApplication.Maintimeline.editBtnClicked;
+import static TimelineApplication.TitleEditForm.title;
 import static TimelineApplication.Maintimeline.eventInformationList;
+import static TimelineApplication.Maintimeline.eventInformationFile;
 import static TimelineApplication.Maintimeline.numOfEvents;
+import static TimelineApplication.Maintimeline.skipLines;
 import static TimelineApplication.Maintimeline.updateScreen;
 import static java.lang.Integer.parseInt;
 import java.util.ArrayList;
@@ -20,7 +25,7 @@ public class Editevent extends javax.swing.JFrame {
         String edit_pos = EditEventField.getText();
         int edit_pos_num = parseInt(edit_pos);
         edit_pos_num -= 1;
-        EditEventPositionTextField.setText(eventInformationList.get(edit_pos_num).get(0).toString());
+        EditEventPositionTextField.setText(edit_pos);
         EditEventNameTextField.setText(eventInformationList.get(edit_pos_num).get(1).toString());
         EditTimeTextField.setText(eventInformationList.get(edit_pos_num).get(2).toString());
         EditDescriptionTextField.setText(eventInformationList.get(edit_pos_num).get(3).toString());
@@ -222,32 +227,12 @@ public class Editevent extends javax.swing.JFrame {
         String time = EditTimeTextField.getText();
         String desc = EditDescriptionTextField.getText();
         String URL = EditImageUrlTextField.getText();
-        String EventFile = "src/TimelineApplication/eventsInformation.txt";
         eventInformationList.get(position_new-1).add(EditEventPositionTextField.getText());
         eventInformationList.get(position_new-1).add(name);
         eventInformationList.get(position_new-1).add(time);
         eventInformationList.get(position_new-1).add(desc);
         eventInformationList.get(position_new-1).add(URL);
-        try{
-        Writer fileWriter;
-        fileWriter = new BufferedWriter(new FileWriter(EventFile, false));
-        System.out.println(numOfEvents);
-        for(int i = 0; i <numOfEvents; i++){
-            for (int j = 0; j<5; j++){;
-            fileWriter.write(eventInformationList.get(i).get(j));
-            fileWriter.write("\n");
-            }
-            fileWriter.close();
-            updateScreen(0,numOfEvents);
-            }
-        }
-        catch (FileNotFoundException ex){
-                System.out.println("Cannot find the file "+EventFile);
-            }
-        catch (IOException e) {
-            System.out.println("Error when trying to read"+EventFile);
-            }
-        
+        updateScreen(0,numOfEvents);
         editBtnClicked = false;
         this.dispose();
     }//GEN-LAST:event_EditBtnActionPerformed
