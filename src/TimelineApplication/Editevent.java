@@ -222,18 +222,31 @@ public class Editevent extends javax.swing.JFrame {
         String time = EditTimeTextField.getText();
         String desc = EditDescriptionTextField.getText();
         String URL = EditImageUrlTextField.getText();
-        
-            
-        
+        String EventFile = "src/TimelineApplication/eventsInformation.txt";
         eventInformationList.get(position_new-1).add(EditEventPositionTextField.getText());
         eventInformationList.get(position_new-1).add(name);
         eventInformationList.get(position_new-1).add(time);
         eventInformationList.get(position_new-1).add(desc);
         eventInformationList.get(position_new-1).add(URL);
-        System.out.println("Hello " + eventInformationList);
-        
-        updateScreen(0,numOfEvents);
-        
+        try{
+        Writer fileWriter;
+        fileWriter = new BufferedWriter(new FileWriter(EventFile, false));
+        System.out.println(numOfEvents);
+        for(int i = 0; i <numOfEvents; i++){
+            for (int j = 0; j<5; j++){;
+            fileWriter.write(eventInformationList.get(i).get(j));
+            fileWriter.write("\n");
+            }
+            fileWriter.close();
+            updateScreen(0,numOfEvents);
+            }
+        }
+        catch (FileNotFoundException ex){
+                System.out.println("Cannot find the file "+EventFile);
+            }
+        catch (IOException e) {
+            System.out.println("Error when trying to read"+EventFile);
+            }
         
         editBtnClicked = false;
         this.dispose();
