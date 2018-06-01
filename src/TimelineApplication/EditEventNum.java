@@ -14,9 +14,7 @@ public class EditEventNum extends javax.swing.JFrame {
         int j = 0;
         for (int i = 0; i < numOfEvents ; i++){
             String event = eventInformationList.get(i).get(1).toString();
-
             j += 1;
-            
            EditEventList.append(j + " (Event Position)" + ": " + event + "\n");
            
         }

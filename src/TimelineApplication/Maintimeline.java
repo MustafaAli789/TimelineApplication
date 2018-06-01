@@ -138,6 +138,7 @@ public class Maintimeline extends javax.swing.JFrame {
             System.out.println("Error occured when reading file.");
         }
         TimelineTitleLabel.setText(Title);
+        TimelineTitleLabel.setHorizontalAlignment(JLabel.CENTER);
         
 //Putting text and image into each visible event
         for(int i = eventStartNumber; i< numOfEvents; i++){
@@ -438,7 +439,9 @@ public class Maintimeline extends javax.swing.JFrame {
         TimelineTitleLabel.setFont(new java.awt.Font("Copperplate Gothic Bold", 1, 24)); // NOI18N
         TimelineTitleLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         TimelineTitleLabel.setText("TIMELINE TITLE HERE");
+        TimelineTitleLabel.setToolTipText("");
         TimelineTitleLabel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        TimelineTitleLabel.setIgnoreRepaint(true);
 
         ScrollableAreaPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
@@ -1409,10 +1412,10 @@ public class Maintimeline extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(ScrollableAreaPane))
+            .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(ScrollableAreaPane, javax.swing.GroupLayout.PREFERRED_SIZE, 1146, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(815, 815, 815)
                         .addComponent(AddBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1421,23 +1424,21 @@ public class Maintimeline extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(SaveBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(23, 23, 23)
-                        .addComponent(DeleteBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(95, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(451, 451, 451)
-                        .addComponent(TimelineTitleLabel))
+                        .addComponent(DeleteBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(530, 530, 530)
                         .addComponent(EditTitleBtn)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(TimelineTitleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(TimelineTitleLabel)
+                .addContainerGap(18, Short.MAX_VALUE)
+                .addComponent(TimelineTitleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(EditTitleBtn)
                 .addGap(18, 18, 18)
@@ -1448,7 +1449,7 @@ public class Maintimeline extends javax.swing.JFrame {
                     .addComponent(SaveBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(EditBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(AddBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(10, Short.MAX_VALUE))
+                .addGap(10, 10, 10))
         );
 
         pack();
@@ -1528,13 +1529,14 @@ public class Maintimeline extends javax.swing.JFrame {
        if(!EditTitleBtnClicked){           
             TitleEditForm editTimeline = new TitleEditForm();
             editTimeline.setVisible(true);
-        }
-                
+        }              
         EditTitleBtnClicked = true; 
     }//GEN-LAST:event_EditTitleBtnActionPerformed
 
     public static void setTheTitle (String a){
+        System.out.println(a.length());
         TimelineTitleLabel.setText(a);
+        TimelineTitleLabel.setHorizontalAlignment(JLabel.CENTER);
     }
     /**
      * @param args the command line arguments
