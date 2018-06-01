@@ -23,13 +23,10 @@ public class DeleteEvent extends javax.swing.JFrame {
      */
     public DeleteEvent() {
         initComponents();
-        int j = 0;
+        
         for (int i = 0; i < numOfEvents ; i++){
-            String event = eventInformationList.get(i).get(1).toString();
-
-            j += 1;
-            
-           EventList.append(j + " (Event Position)" + ": " + event + "\n");
+            String event = eventInformationList.get(i+1).get(0).toString(); // +1 to take into account that timeline title is first sublist
+            EventList.append(i+1 + " (Event Position)" + ": " + event + "\n");
            
         }
         
@@ -53,7 +50,7 @@ public class DeleteEvent extends javax.swing.JFrame {
         DeleteBtn = new javax.swing.JButton();
         CancelBtn = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setBackground(new java.awt.Color(51, 51, 255));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setMinimumSize(null);
@@ -103,7 +100,7 @@ public class DeleteEvent extends javax.swing.JFrame {
                 .addGap(5, 5, 5)
                 .addComponent(InstructionLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(DeleteEventField, javax.swing.GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE)
+                .addComponent(DeleteEventField, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
@@ -123,7 +120,7 @@ public class DeleteEvent extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(DeleteBtn)
                     .addComponent(CancelBtn))
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addContainerGap(37, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -155,10 +152,9 @@ public class DeleteEvent extends javax.swing.JFrame {
         int del_pos_num = parseInt(del_pos);
         
         if (del_pos_num <= numOfEvents && del_pos_num > 0){
-            System.out.println(eventInformationList.get(del_pos_num-1));
-            eventInformationList.remove(del_pos_num - 1); 
+            eventInformationList.remove(del_pos_num); 
             numOfEvents -=1;
-            updateScreen(del_pos_num-1,numOfEvents); 
+            updateScreen(numOfEvents); 
         } else{
             JOptionPane.showMessageDialog(null, "No event at that position");
         }

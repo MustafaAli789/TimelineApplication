@@ -5,7 +5,7 @@ import static TimelineApplication.Maintimeline.numOfEvents;
 import static TimelineApplication.Maintimeline.setTheTitle;
 import static TimelineApplication.Maintimeline.skipLines;
 import static TimelineApplication.Maintimeline.Title;
-//import static TimelineApplication.Maintimeline.setTitle;
+import static TimelineApplication.Maintimeline.updateScreen;
 import javax.swing.JLabel;
 import java.util.Scanner;
 import java.io.*;
@@ -44,7 +44,7 @@ public class TitleEditForm extends javax.swing.JFrame {
         EditTitleTitle = new javax.swing.JLabel();
         EditInstruction = new javax.swing.JLabel();
         TimelineTitleEdited = new javax.swing.JTextField();
-        SaveBtn = new javax.swing.JButton();
+        UpdateBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -60,11 +60,11 @@ public class TitleEditForm extends javax.swing.JFrame {
             }
         });
 
-        SaveBtn.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
-        SaveBtn.setText("Save");
-        SaveBtn.addActionListener(new java.awt.event.ActionListener() {
+        UpdateBtn.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        UpdateBtn.setText("Update");
+        UpdateBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SaveBtnActionPerformed(evt);
+                UpdateBtnActionPerformed(evt);
             }
         });
 
@@ -84,7 +84,7 @@ public class TitleEditForm extends javax.swing.JFrame {
                             .addComponent(TimelineTitleEdited)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(111, 111, 111)
-                        .addComponent(SaveBtn)))
+                        .addComponent(UpdateBtn)))
                 .addContainerGap(69, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -97,8 +97,8 @@ public class TitleEditForm extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(TimelineTitleEdited, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(SaveBtn)
-                .addContainerGap(8, Short.MAX_VALUE))
+                .addComponent(UpdateBtn)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -108,7 +108,13 @@ public class TitleEditForm extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_TimelineTitleEditedActionPerformed
 
-    private void SaveBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveBtnActionPerformed
+    private void UpdateBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateBtnActionPerformed
+        
+        title = TimelineTitleEdited.getText();
+        updateScreen(numOfEvents);
+        
+        /*
+        
         String EventFile = "src/TimelineApplication/eventsInformation.txt";
         title = TimelineTitleEdited.getText();        
         Title = title;
@@ -140,7 +146,8 @@ public class TitleEditForm extends javax.swing.JFrame {
             System.out.println("Error when trying to read"+EventFile);
             }
         super.dispose();
-    }//GEN-LAST:event_SaveBtnActionPerformed
+        */
+    }//GEN-LAST:event_UpdateBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -180,7 +187,7 @@ public class TitleEditForm extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel EditInstruction;
     private javax.swing.JLabel EditTitleTitle;
-    private javax.swing.JButton SaveBtn;
     private javax.swing.JTextField TimelineTitleEdited;
+    private javax.swing.JButton UpdateBtn;
     // End of variables declaration//GEN-END:variables
 }

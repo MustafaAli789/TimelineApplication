@@ -63,11 +63,11 @@ public class Maintimeline extends javax.swing.JFrame {
         
         putVariableNamesIntoList(array1, array2, array3, array4); 
         setNumOfEvents(); //Initally gets number of events when screen loads
-        readEventsInformation(); //Reads file and puts info into eventInfo list
-        
+        readFileContentsToList(); //Reads file and puts info into eventInfo list
+        title = eventInformationList.get(0).get(0);
         
         //Initializing screen
-        updateScreen(0, numOfEvents);
+        updateScreen(numOfEvents);
 
     }
    
@@ -111,36 +111,26 @@ public class Maintimeline extends javax.swing.JFrame {
                 image = ImageIO.read(url);
                 eventImage.setIcon(new ImageIcon(image)); //eventImage refers to the jLabel being  referenced
             } catch (IOException ex) {
-                String error = "The URL for the " + eventInformationList.get(eventNum).get(1) + " image is wrong.";
+                String error = "The URL for the " + eventInformationList.get(eventNum).get(0) + " image is wrong.";
                 JOptionPane.showMessageDialog(null, error);
             }
         }
         catch(MalformedURLException e){
-            String error = "The URL for " + eventInformationList.get(eventNum).get(1) + " does not exist.";
+            String error = "The URL for " + eventInformationList.get(eventNum).get(0) + " does not exist.";
             JOptionPane.showMessageDialog(null, error);
         }
     }
     
     //This method can be called any time an event is added, deleted or edited (unless no shift required, then simply call setEventInfo) to 
     //put the text and image into the event screen as well as update which events are visible and which arrows are visible
-    public static void updateScreen (int eventStartNumber, int numOfEvents){
-        try{
-            FileReader fileReader = new FileReader(eventInformationFile);
-            BufferedReader bufferedReader = new BufferedReader(fileReader);
-            Title = bufferedReader.readLine();
-            bufferedReader.close();
-            System.out.println(Title);
-        }
-        catch (FileNotFoundException ex){
-            System.out.println("Cannot find the file "+eventInformationFile);
-        }
-        catch (IOException ex){
-            System.out.println("Error occured when reading file.");
-        }
-        TimelineTitleLabel.setText(Title);
+    public static void updateScreen (int numOfEvents){
         
-//Putting text and image into each visible event
-        for(int i = eventStartNumber; i< numOfEvents; i++){
+        //Setting title 
+        TimelineTitleLabel.setText(title);
+                
+        //Putting text and image into each visible event
+        for(int i = 0; i< numOfEvents; i++){ 
+            
             setEventInfo(eventTitleDateImageNames.get(i).get(0), eventTitleDateImageNames.get(i).get(1), eventDescriptionNames.get(i), eventTitleDateImageNames.get(i).get(2), i);
             
         }
@@ -178,12 +168,14 @@ public class Maintimeline extends javax.swing.JFrame {
         
     public static void setEventInfo(JLabel title, JLabel date, JTextPane description, JLabel eventImage, int eventNum){
 
-        title.setText(eventInformationList.get(eventNum).get(1)); //1st index is title
-        date.setText(eventInformationList.get(eventNum).get(2)); //2nd index is date
-        description.setText(eventInformationList.get(eventNum).get(3)); //3rd index is description
+        eventNum+=1; //add 1 to take into account that title is first sublist
         
-        if(!eventInformationList.get(eventNum).get(4).isEmpty()){
-            setImage(eventImage, eventInformationList.get(eventNum).get(4), eventNum);
+        title.setText(eventInformationList.get(eventNum).get(0)); //0th index is title
+        date.setText(eventInformationList.get(eventNum).get(1)); //1sr index is date
+        description.setText(eventInformationList.get(eventNum).get(2)); //2nd index is description
+        
+        if(!eventInformationList.get(eventNum).get(3).isEmpty()){ //3rd index is URL
+            setImage(eventImage, eventInformationList.get(eventNum).get(3), eventNum);
         }
         else{ //if no URL provided, just put white box instead
             setImage(eventImage, "https://vignette.wikia.nocookie.net/uncyclopedia/images/4/44/White_square.png/revision/latest?cb=20061003200043", eventNum);
@@ -200,16 +192,18 @@ public class Maintimeline extends javax.swing.JFrame {
                     lines+=1;
                     sc1.nextLine();
                 }
-                numOfEvents = lines/5;
+                numOfEvents = lines/4; //should return integer number regardless of extra line due to title
             } catch (FileNotFoundException ex) {
                 Logger.getLogger(Maintimeline.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
     }
     
-    public static void readEventsInformation(){
+    public static void readFileContentsToList(){
        
-        //Add 16 sublists to main list
+        System.out.println("Num of Events: " + numOfEvents);
+        
+        //Add 17 sublists to main list, 1 for title and 16 for events
         for(int i = 0; i<16; i++){
             eventInformationList.add(new ArrayList<String>());
         }
@@ -217,15 +211,18 @@ public class Maintimeline extends javax.swing.JFrame {
         if(eventInformationFile.exists()){
             try {   
                 Scanner sc2 = new Scanner(eventInformationFile);
-                skipLines(sc2, 1);
-                //Put even information into the 2d list
-                for(int i = 0; i <numOfEvents; i++){ //number of 2d lists
-                    for (int j = 0; j<5; j++){;
-                        eventInformationList.get(i).add(sc2.nextLine());
+                eventInformationList.get(0).add(sc2.nextLine()); //adding title to first index
+                
+                //Put even information into the 2d list (i starts at 1 b/c index 0 is title)
+                for(int i = 0; i <numOfEvents; i++){ 
+                    for (int j = 0; j<4; j++){;
+                        eventInformationList.get(i+1).add(sc2.nextLine()); //i + 1 to take into account title being first sublist
                         
                     }
                 }
-                                
+                
+                System.out.println(eventInformationList);
+                
             } catch (FileNotFoundException ex) {
                 System.out.println("Error for some reason!");
             }
@@ -262,7 +259,7 @@ public class Maintimeline extends javax.swing.JFrame {
                 }
             }
             fileWriter.close();
-            updateScreen(0,numOfEvents);
+            updateScreen(numOfEvents);
         }
         catch (FileNotFoundException ex){
             System.out.println("Cannot find the file "+ eventInformationFile);
@@ -438,7 +435,9 @@ public class Maintimeline extends javax.swing.JFrame {
         TimelineTitleLabel.setFont(new java.awt.Font("Copperplate Gothic Bold", 1, 24)); // NOI18N
         TimelineTitleLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         TimelineTitleLabel.setText("TIMELINE TITLE HERE");
-        TimelineTitleLabel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        TimelineTitleLabel.setAutoscrolls(true);
+        TimelineTitleLabel.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        TimelineTitleLabel.setIconTextGap(0);
 
         ScrollableAreaPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
@@ -1426,11 +1425,11 @@ public class Maintimeline extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(451, 451, 451)
-                        .addComponent(TimelineTitleLabel))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(530, 530, 530)
-                        .addComponent(EditTitleBtn)))
+                        .addComponent(EditTitleBtn))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(430, 430, 430)
+                        .addComponent(TimelineTitleLabel)))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -1448,7 +1447,7 @@ public class Maintimeline extends javax.swing.JFrame {
                     .addComponent(SaveBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(EditBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(AddBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(10, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();

@@ -11,14 +11,10 @@ public class EditEventNum extends javax.swing.JFrame {
     public EditEventNum() {
         initComponents();
         
-        int j = 0;
+        //Code below simply gets each event name and appends it to the list GUI list
         for (int i = 0; i < numOfEvents ; i++){
-            String event = eventInformationList.get(i).get(1).toString();
-
-            j += 1;
-            
-           EditEventList.append(j + " (Event Position)" + ": " + event + "\n");
-           
+            String event = eventInformationList.get(i+1).get(0).toString();
+            EditEventList.append(i+1 + " (Event Position)" + ": " + event + "\n");
         }
     }
     
@@ -34,7 +30,7 @@ public class EditEventNum extends javax.swing.JFrame {
         ContinueBtn = new javax.swing.JButton();
         CancelBtn = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(255, 0, 51));
         jPanel1.setPreferredSize(new java.awt.Dimension(412, 494));

@@ -39,7 +39,7 @@ public class Addevent extends javax.swing.JFrame {
         DescriptionTextField = new javax.swing.JTextField();
         ImageUrlLabel = new javax.swing.JLabel();
         ImageUrlTextField = new javax.swing.JTextField();
-        SaveBtn = new javax.swing.JButton();
+        AddBtn = new javax.swing.JButton();
         CancelBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
@@ -93,10 +93,10 @@ public class Addevent extends javax.swing.JFrame {
             }
         });
 
-        SaveBtn.setText("ADD");
-        SaveBtn.addActionListener(new java.awt.event.ActionListener() {
+        AddBtn.setText("ADD");
+        AddBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SaveBtnActionPerformed(evt);
+                AddBtnActionPerformed(evt);
             }
         });
 
@@ -133,7 +133,7 @@ public class Addevent extends javax.swing.JFrame {
                 .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(SaveBtn)
+                .addComponent(AddBtn)
                 .addGap(90, 90, 90)
                 .addComponent(CancelBtn)
                 .addGap(87, 87, 87))
@@ -163,7 +163,7 @@ public class Addevent extends javax.swing.JFrame {
                 .addComponent(ImageUrlTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(SaveBtn)
+                    .addComponent(AddBtn)
                     .addComponent(CancelBtn))
                 .addGap(27, 27, 27))
         );
@@ -205,7 +205,7 @@ public class Addevent extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_CancelBtnActionPerformed
 
-    private void SaveBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveBtnActionPerformed
+    private void AddBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddBtnActionPerformed
            int eventPos = Integer.parseInt(EventPositionTextField.getText());
            String eventName = EventNameTextField.getText();
            String eventDate = TimeTextField.getText();
@@ -214,17 +214,16 @@ public class Addevent extends javax.swing.JFrame {
            
            
            
-           if(numOfEvents < 16){
-               if(eventPos >= 0 && eventPos <= (numOfEvents + 1)){
-                   eventInformationList.add(eventPos - 1, new ArrayList<String>()); //inserting a new sublist to then add the new event info into
+           if(numOfEvents <= 16){
+               if(eventPos > 0 && eventPos <= (numOfEvents + 1)){
+                   eventInformationList.add(eventPos, new ArrayList<String>()); //inserting a new sublist to then add the new event info into
                    eventInformationList.remove(eventInformationList.size()-1); //remove the 17th sublist that is now present
-                   eventInformationList.get(eventPos-1).add(EventPositionTextField.getText());
-                   eventInformationList.get(eventPos-1).add(eventName);
-                   eventInformationList.get(eventPos-1).add(eventDate); 
-                   eventInformationList.get(eventPos-1).add(eventDesc);
-                   eventInformationList.get(eventPos-1).add(eventImg);
+                   eventInformationList.get(eventPos).add(eventName);
+                   eventInformationList.get(eventPos).add(eventDate); 
+                   eventInformationList.get(eventPos).add(eventDesc);
+                   eventInformationList.get(eventPos).add(eventImg);
                    numOfEvents +=1;
-                   updateScreen(eventPos-1, numOfEvents);
+                   updateScreen(numOfEvents);
                }
                else{
                    JOptionPane.showMessageDialog(null, "That is an invalid event position!");
@@ -238,7 +237,7 @@ public class Addevent extends javax.swing.JFrame {
            this.dispose();
            
            
-    }//GEN-LAST:event_SaveBtnActionPerformed
+    }//GEN-LAST:event_AddBtnActionPerformed
 
     private void EventPositionTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EventPositionTextFieldActionPerformed
         addBtnClicked = false;
@@ -284,6 +283,7 @@ public class Addevent extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton AddBtn;
     private javax.swing.JButton CancelBtn;
     private javax.swing.JLabel DescriptionLabel;
     private javax.swing.JTextField DescriptionTextField;
@@ -293,7 +293,6 @@ public class Addevent extends javax.swing.JFrame {
     private javax.swing.JTextField EventPositionTextField;
     private javax.swing.JLabel ImageUrlLabel;
     private javax.swing.JTextField ImageUrlTextField;
-    private javax.swing.JButton SaveBtn;
     private javax.swing.JLabel TimeLabel;
     private javax.swing.JTextField TimeTextField;
     private javax.swing.JPanel jPanel1;

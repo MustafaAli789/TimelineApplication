@@ -24,14 +24,14 @@ public class Editevent extends javax.swing.JFrame {
         initComponents();
         String edit_pos = EditEventField.getText();
         int edit_pos_num = parseInt(edit_pos);
-        edit_pos_num -= 1;
         EditEventPositionTextField.setText(edit_pos);
-        EditEventNameTextField.setText(eventInformationList.get(edit_pos_num).get(1).toString());
-        EditTimeTextField.setText(eventInformationList.get(edit_pos_num).get(2).toString());
-        EditDescriptionTextField.setText(eventInformationList.get(edit_pos_num).get(3).toString());
-        EditImageUrlTextField.setText(eventInformationList.get(edit_pos_num).get(4).toString());
+        EditEventNameTextField.setText(eventInformationList.get(edit_pos_num).get(0).toString());
+        EditTimeTextField.setText(eventInformationList.get(edit_pos_num).get(1).toString());
+        EditDescriptionTextField.setText(eventInformationList.get(edit_pos_num).get(2).toString());
+        EditImageUrlTextField.setText(eventInformationList.get(edit_pos_num).get(3).toString());
+        
         int position = parseInt(EditEventPositionTextField.getText());  
-        eventInformationList.remove(position-1);
+        eventInformationList.remove(position);
         
         
           
@@ -61,7 +61,7 @@ public class Editevent extends javax.swing.JFrame {
         EditBtn = new javax.swing.JButton();
         CancelBtn = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setBackground(new java.awt.Color(102, 204, 255));
         setResizable(false);
 
@@ -221,18 +221,17 @@ public class Editevent extends javax.swing.JFrame {
     private void EditBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditBtnActionPerformed
 
         int position_new = parseInt(EditEventPositionTextField.getText()); 
-        eventInformationList.add(position_new-1, new ArrayList<String>());
+        eventInformationList.add(position_new, new ArrayList<String>());
        
         String name = EditEventNameTextField.getText();
         String time = EditTimeTextField.getText();
         String desc = EditDescriptionTextField.getText();
         String URL = EditImageUrlTextField.getText();
-        eventInformationList.get(position_new-1).add(EditEventPositionTextField.getText());
-        eventInformationList.get(position_new-1).add(name);
-        eventInformationList.get(position_new-1).add(time);
-        eventInformationList.get(position_new-1).add(desc);
-        eventInformationList.get(position_new-1).add(URL);
-        updateScreen(0,numOfEvents);
+        eventInformationList.get(position_new).add(name);
+        eventInformationList.get(position_new).add(time);
+        eventInformationList.get(position_new).add(desc);
+        eventInformationList.get(position_new).add(URL);
+        updateScreen(numOfEvents);
         editBtnClicked = false;
         this.dispose();
     }//GEN-LAST:event_EditBtnActionPerformed
