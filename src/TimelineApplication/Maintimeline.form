@@ -92,7 +92,7 @@
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="TIMELINE TITLE HERE"/>
         <Property name="autoscrolls" type="boolean" value="true"/>
-        <Property name="horizontalTextPosition" type="int" value="4"/>
+        <Property name="horizontalTextPosition" type="int" value="0"/>
         <Property name="iconTextGap" type="int" value="0"/>
       </Properties>
       <AuxValues>

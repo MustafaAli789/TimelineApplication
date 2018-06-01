@@ -187,12 +187,7 @@ public class Maintimeline extends javax.swing.JFrame {
             Scanner sc1;
             try {
                 sc1 = new Scanner(eventInformationFile);
-                int lines = 0; //number of lines in text file
-                while(sc1.hasNextLine()){
-                    lines+=1;
-                    sc1.nextLine();
-                }
-                numOfEvents = lines/4; //should return integer number regardless of extra line due to title
+                numOfEvents = Integer.parseInt(sc1.nextLine());
             } catch (FileNotFoundException ex) {
                 Logger.getLogger(Maintimeline.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -211,6 +206,7 @@ public class Maintimeline extends javax.swing.JFrame {
         if(eventInformationFile.exists()){
             try {   
                 Scanner sc2 = new Scanner(eventInformationFile);
+                sc2.nextLine(); //skipping first line as its number of events
                 eventInformationList.get(0).add(sc2.nextLine()); //adding title to first index
                 
                 //Put even information into the 2d list (i starts at 1 b/c index 0 is title)
@@ -436,7 +432,7 @@ public class Maintimeline extends javax.swing.JFrame {
         TimelineTitleLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         TimelineTitleLabel.setText("TIMELINE TITLE HERE");
         TimelineTitleLabel.setAutoscrolls(true);
-        TimelineTitleLabel.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        TimelineTitleLabel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         TimelineTitleLabel.setIconTextGap(0);
 
         ScrollableAreaPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
@@ -1524,7 +1520,10 @@ public class Maintimeline extends javax.swing.JFrame {
     }//GEN-LAST:event_EditBtnActionPerformed
 
     private void EditTitleBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditTitleBtnActionPerformed
-       if(!EditTitleBtnClicked){           
+       
+        System.out.println();
+        
+        if(!EditTitleBtnClicked){           
             TitleEditForm editTimeline = new TitleEditForm();
             editTimeline.setVisible(true);
         }

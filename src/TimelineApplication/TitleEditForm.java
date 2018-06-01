@@ -1,10 +1,12 @@
 package TimelineApplication;
+import static TimelineApplication.Maintimeline.EditTitleBtnClicked;
 import static TimelineApplication.Maintimeline.eventInformationFile;
 import static TimelineApplication.Maintimeline.eventInformationList;
 import static TimelineApplication.Maintimeline.numOfEvents;
 import static TimelineApplication.Maintimeline.setTheTitle;
 import static TimelineApplication.Maintimeline.skipLines;
 import static TimelineApplication.Maintimeline.Title;
+import static TimelineApplication.Maintimeline.editBtnClicked;
 import static TimelineApplication.Maintimeline.updateScreen;
 import javax.swing.JLabel;
 import java.util.Scanner;
@@ -45,8 +47,9 @@ public class TitleEditForm extends javax.swing.JFrame {
         EditInstruction = new javax.swing.JLabel();
         TimelineTitleEdited = new javax.swing.JTextField();
         UpdateBtn = new javax.swing.JButton();
+        CancelBtn = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
 
         EditTitleTitle.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         EditTitleTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -69,6 +72,14 @@ public class TitleEditForm extends javax.swing.JFrame {
             }
         });
 
+        CancelBtn.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        CancelBtn.setText("Cancel");
+        CancelBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CancelBtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -84,9 +95,11 @@ public class TitleEditForm extends javax.swing.JFrame {
                             .addComponent(EditTitleTitle)
                             .addComponent(TimelineTitleEdited)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(111, 111, 111)
-                        .addComponent(UpdateBtn)))
-                .addContainerGap(69, Short.MAX_VALUE))
+                        .addGap(49, 49, 49)
+                        .addComponent(UpdateBtn)
+                        .addGap(32, 32, 32)
+                        .addComponent(CancelBtn)))
+                .addContainerGap(58, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -97,9 +110,11 @@ public class TitleEditForm extends javax.swing.JFrame {
                 .addComponent(EditInstruction, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(TimelineTitleEdited, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(UpdateBtn)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(UpdateBtn)
+                    .addComponent(CancelBtn))
+                .addContainerGap())
         );
 
         pack();
@@ -113,7 +128,8 @@ public class TitleEditForm extends javax.swing.JFrame {
         
         title = TimelineTitleEdited.getText();
         updateScreen(numOfEvents);
-        
+        EditTitleBtnClicked = false;
+        this.dispose();
         /*
         
         String EventFile = "src/TimelineApplication/eventsInformation.txt";
@@ -149,6 +165,11 @@ public class TitleEditForm extends javax.swing.JFrame {
         super.dispose();
         */
     }//GEN-LAST:event_UpdateBtnActionPerformed
+
+    private void CancelBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelBtnActionPerformed
+        EditTitleBtnClicked = false;
+        this.dispose();
+    }//GEN-LAST:event_CancelBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -186,6 +207,7 @@ public class TitleEditForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton CancelBtn;
     private javax.swing.JLabel EditInstruction;
     private javax.swing.JLabel EditTitleTitle;
     private javax.swing.JTextField TimelineTitleEdited;
