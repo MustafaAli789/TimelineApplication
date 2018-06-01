@@ -51,6 +51,7 @@ public class TitleEditForm extends javax.swing.JFrame {
         EditTitleTitle.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         EditTitleTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         EditTitleTitle.setText("Edit Timeline Title");
+        EditTitleTitle.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         EditInstruction.setText("Enter Timeline Title below:");
 
