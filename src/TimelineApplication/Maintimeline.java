@@ -232,28 +232,23 @@ public class Maintimeline extends javax.swing.JFrame {
         }
         
     }
-  
-    public static void skipLines(Scanner s,int lineNum){
-        for(int i = 0; i < lineNum;i++){
-            if(s.hasNextLine())s.nextLine();
-        }
-    }
-    
+      
     public static void SaveToFile(){
         try{
             Writer fileWriter;
             fileWriter = new BufferedWriter(new FileWriter(eventInformationFile, false));
-            System.out.println(numOfEvents);
             Scanner sc = new Scanner(eventInformationFile);
-            System.out.println(Title);
-            fileWriter.write(Title);
+            fileWriter.write(Integer.toString(numOfEvents)); //Writing the num of events as first line
+            fileWriter.write("\n");  
+            fileWriter.write(eventInformationList.get(0).get(0)); //writing title name as second line
             fileWriter.write("\n");            
-            for(int i = 0; i <numOfEvents; i++){
-                for (int j = 0; j<5; j++){
-                    fileWriter.write(eventInformationList.get(i).get(j));
+            for(int i = 0; i <numOfEvents; i++){ //writing event information starting on third line
+                for (int j = 0; j<4; j++){
+                    fileWriter.write(eventInformationList.get(i+1).get(j));
                     fileWriter.write("\n");
                 }
             }
+            JOptionPane.showMessageDialog(null, "Timeline has been saved!");
             fileWriter.close();
             updateScreen(numOfEvents);
         }
