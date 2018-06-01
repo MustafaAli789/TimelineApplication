@@ -202,8 +202,7 @@ public class Maintimeline extends javax.swing.JFrame {
         }
         
         if(eventInformationFile.exists()){
-            try {
-                
+            try {   
                 Scanner sc2 = new Scanner(eventInformationFile);
                 skipLines(sc2, 1);
                 //Put even information into the 2d list
@@ -213,8 +212,7 @@ public class Maintimeline extends javax.swing.JFrame {
                         
                     }
                 }
-                System.out.println(eventInformationList);
-                
+                                
             } catch (FileNotFoundException ex) {
                 System.out.println("Error for some reason!");
             }
