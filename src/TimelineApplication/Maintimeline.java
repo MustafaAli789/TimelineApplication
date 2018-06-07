@@ -58,7 +58,7 @@ public class Maintimeline extends javax.swing.JFrame {
         EventPane13, EventPane14, EventPane15, EventPane16};
         
         //The array below will store all arrow variable names for later use
-        JLabel array4[]={Arrow1, Arrow2, Arrow3, Arrow4, Arrow5, Arrow6, Arrow7, Arrow8, Arrow9, Arrow10, Arrow11, Arrow12};
+        JLabel array4[]={Arrow1, Arrow2, Arrow3, Arrow4, Arrow5, Arrow6, Arrow7, Arrow8, Arrow9, Arrow10, Arrow11, Arrow12, Arrow13, Arrow14, Arrow15};
         
         putVariableNamesIntoList(array1, array2, array3, array4); 
         setNumOfEvents(); //Initally gets number of events when screen loads
@@ -153,13 +153,13 @@ public class Maintimeline extends javax.swing.JFrame {
             if(numOfEvents <=4 && i<numOfEvents-1){
                 setArrowVisibility(arrowNames.get(i), true);
             }   
-            else if(numOfEvents > 4 && numOfEvents <= 8 && i<numOfEvents-2){ //Ex: on row 2, 2 less arrows than the num of events will be shown
+            else if(numOfEvents > 4 && numOfEvents <= 8 && i<numOfEvents-1){ //Ex: on row 2, 2 less arrows than the num of events will be shown
                 setArrowVisibility(arrowNames.get(i), true);
             }
-            else if(numOfEvents > 8 && numOfEvents <= 12 && i<numOfEvents-3){
+            else if(numOfEvents > 8 && numOfEvents <= 12 && i<numOfEvents-2){
                 setArrowVisibility(arrowNames.get(i), true);
             }
-            else if (numOfEvents > 12 && i<numOfEvents-4){
+            else if (numOfEvents > 12 && i<numOfEvents-3){
                 setArrowVisibility(arrowNames.get(i), true);
             } 
         } 
@@ -404,15 +404,18 @@ public class Maintimeline extends javax.swing.JFrame {
         Arrow1 = new javax.swing.JLabel();
         Arrow2 = new javax.swing.JLabel();
         Arrow3 = new javax.swing.JLabel();
-        Arrow4 = new javax.swing.JLabel();
         Arrow5 = new javax.swing.JLabel();
         Arrow6 = new javax.swing.JLabel();
         Arrow7 = new javax.swing.JLabel();
-        Arrow8 = new javax.swing.JLabel();
         Arrow9 = new javax.swing.JLabel();
         Arrow10 = new javax.swing.JLabel();
         Arrow11 = new javax.swing.JLabel();
+        Arrow13 = new javax.swing.JLabel();
+        Arrow14 = new javax.swing.JLabel();
+        Arrow15 = new javax.swing.JLabel();
         Arrow12 = new javax.swing.JLabel();
+        Arrow4 = new javax.swing.JLabel();
+        Arrow8 = new javax.swing.JLabel();
         DeleteBtn = new javax.swing.JButton();
         SaveBtn = new javax.swing.JButton();
         EditBtn = new javax.swing.JButton();
@@ -1287,32 +1290,41 @@ public class Maintimeline extends javax.swing.JFrame {
         Arrow3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/arrow.png"))); // NOI18N
         jPanel1.add(Arrow3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 192, 40, 60));
 
-        Arrow4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/arrow to right.png"))); // NOI18N
-        jPanel1.add(Arrow4, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 630, -1, -1));
-
         Arrow5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/arrow to right.png"))); // NOI18N
-        jPanel1.add(Arrow5, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 630, -1, -1));
+        jPanel1.add(Arrow5, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 630, -1, -1));
 
         Arrow6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/arrow to right.png"))); // NOI18N
-        jPanel1.add(Arrow6, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 630, -1, -1));
+        jPanel1.add(Arrow6, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 630, -1, -1));
 
-        Arrow7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/arrow.png"))); // NOI18N
-        jPanel1.add(Arrow7, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 1040, -1, -1));
-
-        Arrow8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/arrow.png"))); // NOI18N
-        jPanel1.add(Arrow8, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 1040, -1, -1));
+        Arrow7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/arrow to right.png"))); // NOI18N
+        jPanel1.add(Arrow7, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 630, -1, -1));
 
         Arrow9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/arrow.png"))); // NOI18N
-        jPanel1.add(Arrow9, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 1040, -1, -1));
+        jPanel1.add(Arrow9, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 1040, -1, -1));
 
-        Arrow10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/arrow to right.png"))); // NOI18N
-        jPanel1.add(Arrow10, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 1440, -1, -1));
+        Arrow10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/arrow.png"))); // NOI18N
+        jPanel1.add(Arrow10, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 1040, -1, -1));
 
-        Arrow11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/arrow to right.png"))); // NOI18N
-        jPanel1.add(Arrow11, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 1440, -1, -1));
+        Arrow11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/arrow.png"))); // NOI18N
+        jPanel1.add(Arrow11, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 1040, -1, -1));
 
-        Arrow12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/arrow to right.png"))); // NOI18N
-        jPanel1.add(Arrow12, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 1440, -1, -1));
+        Arrow13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/arrow to right.png"))); // NOI18N
+        jPanel1.add(Arrow13, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 1470, -1, -1));
+
+        Arrow14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/arrow to right.png"))); // NOI18N
+        jPanel1.add(Arrow14, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 1470, -1, -1));
+
+        Arrow15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/arrow to right.png"))); // NOI18N
+        jPanel1.add(Arrow15, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 1470, -1, -1));
+
+        Arrow12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/down arrow.png"))); // NOI18N
+        jPanel1.add(Arrow12, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 1250, -1, -1));
+
+        Arrow4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/down arrow.png"))); // NOI18N
+        jPanel1.add(Arrow4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 420, -1, -1));
+
+        Arrow8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/down arrow.png"))); // NOI18N
+        jPanel1.add(Arrow8, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 840, -1, -1));
 
         ScrollableAreaPane.setViewportView(jPanel1);
 
@@ -1568,14 +1580,17 @@ public class Maintimeline extends javax.swing.JFrame {
     public static javax.swing.JLabel Arrow1;
     public static javax.swing.JLabel Arrow10;
     public static javax.swing.JLabel Arrow11;
-    public static javax.swing.JLabel Arrow12;
+    private javax.swing.JLabel Arrow12;
+    public static javax.swing.JLabel Arrow13;
+    public static javax.swing.JLabel Arrow14;
+    public static javax.swing.JLabel Arrow15;
     public static javax.swing.JLabel Arrow2;
     public static javax.swing.JLabel Arrow3;
-    public static javax.swing.JLabel Arrow4;
+    private javax.swing.JLabel Arrow4;
     public static javax.swing.JLabel Arrow5;
     public static javax.swing.JLabel Arrow6;
     public static javax.swing.JLabel Arrow7;
-    public static javax.swing.JLabel Arrow8;
+    private javax.swing.JLabel Arrow8;
     public static javax.swing.JLabel Arrow9;
     public static javax.swing.JLabel DateTextLabelEight;
     public static javax.swing.JLabel DateTextLabelEleven;

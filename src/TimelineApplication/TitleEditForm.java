@@ -4,7 +4,6 @@ import static TimelineApplication.Maintimeline.eventInformationFile;
 import static TimelineApplication.Maintimeline.eventInformationList;
 import static TimelineApplication.Maintimeline.numOfEvents;
 import static TimelineApplication.Maintimeline.setTheTitle;
-import static TimelineApplication.Maintimeline.skipLines;
 import static TimelineApplication.Maintimeline.Title;
 import static TimelineApplication.Maintimeline.editBtnClicked;
 import static TimelineApplication.Maintimeline.updateScreen;
