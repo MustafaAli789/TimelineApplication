@@ -401,7 +401,6 @@ public class Maintimeline extends javax.swing.JFrame {
         jScrollPaneSixteen = new javax.swing.JScrollPane();
         DescriptionTextPanelSixteen = new javax.swing.JTextPane();
         EventImage16 = new javax.swing.JLabel();
-        Arrow12 = new javax.swing.JLabel();
         Arrow1 = new javax.swing.JLabel();
         Arrow2 = new javax.swing.JLabel();
         Arrow3 = new javax.swing.JLabel();
@@ -413,6 +412,7 @@ public class Maintimeline extends javax.swing.JFrame {
         Arrow9 = new javax.swing.JLabel();
         Arrow10 = new javax.swing.JLabel();
         Arrow11 = new javax.swing.JLabel();
+        Arrow12 = new javax.swing.JLabel();
         DeleteBtn = new javax.swing.JButton();
         SaveBtn = new javax.swing.JButton();
         EditBtn = new javax.swing.JButton();
@@ -1278,9 +1278,6 @@ public class Maintimeline extends javax.swing.JFrame {
 
         jPanel1.add(EventPane16, new org.netbeans.lib.awtextra.AbsoluteConstraints(893, 1286, 191, 375));
 
-        Arrow12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/arrow.png"))); // NOI18N
-        jPanel1.add(Arrow12, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 1460, -1, -1));
-
         Arrow1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/arrow.png"))); // NOI18N
         jPanel1.add(Arrow1, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 220, -1, -1));
 
@@ -1290,14 +1287,14 @@ public class Maintimeline extends javax.swing.JFrame {
         Arrow3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/arrow.png"))); // NOI18N
         jPanel1.add(Arrow3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 192, 40, 60));
 
-        Arrow4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/arrow.png"))); // NOI18N
-        jPanel1.add(Arrow4, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 640, -1, -1));
+        Arrow4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/arrow to right.png"))); // NOI18N
+        jPanel1.add(Arrow4, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 630, -1, -1));
 
-        Arrow5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/arrow.png"))); // NOI18N
-        jPanel1.add(Arrow5, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 640, -1, -1));
+        Arrow5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/arrow to right.png"))); // NOI18N
+        jPanel1.add(Arrow5, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 630, -1, -1));
 
-        Arrow6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/arrow.png"))); // NOI18N
-        jPanel1.add(Arrow6, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 640, -1, -1));
+        Arrow6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/arrow to right.png"))); // NOI18N
+        jPanel1.add(Arrow6, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 630, -1, -1));
 
         Arrow7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/arrow.png"))); // NOI18N
         jPanel1.add(Arrow7, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 1040, -1, -1));
@@ -1308,11 +1305,14 @@ public class Maintimeline extends javax.swing.JFrame {
         Arrow9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/arrow.png"))); // NOI18N
         jPanel1.add(Arrow9, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 1040, -1, -1));
 
-        Arrow10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/arrow.png"))); // NOI18N
-        jPanel1.add(Arrow10, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 1460, -1, -1));
+        Arrow10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/arrow to right.png"))); // NOI18N
+        jPanel1.add(Arrow10, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 1440, -1, -1));
 
-        Arrow11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/arrow.png"))); // NOI18N
-        jPanel1.add(Arrow11, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 1460, -1, -1));
+        Arrow11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/arrow to right.png"))); // NOI18N
+        jPanel1.add(Arrow11, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 1440, -1, -1));
+
+        Arrow12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/arrow to right.png"))); // NOI18N
+        jPanel1.add(Arrow12, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 1440, -1, -1));
 
         ScrollableAreaPane.setViewportView(jPanel1);
 
