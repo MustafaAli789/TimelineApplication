@@ -1,16 +1,8 @@
 package TimelineApplication;
 import static TimelineApplication.EditEventNum.EditEventField;
-import static TimelineApplication.Maintimeline.Title;
-import java.io.*;
-import java.util.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import static TimelineApplication.Maintimeline.editBtnClicked;
-import static TimelineApplication.TitleEditForm.title;
 import static TimelineApplication.Maintimeline.eventInformationList;
-import static TimelineApplication.Maintimeline.eventInformationFile;
 import static TimelineApplication.Maintimeline.numOfEvents;
-import static TimelineApplication.Maintimeline.skipLines;
 import static TimelineApplication.Maintimeline.updateScreen;
 import static java.lang.Integer.parseInt;
 import java.util.ArrayList;
