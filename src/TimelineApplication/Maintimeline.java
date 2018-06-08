@@ -422,9 +422,13 @@ public class Maintimeline extends javax.swing.JFrame {
         EditBtn = new javax.swing.JButton();
         AddBtn = new javax.swing.JButton();
         EditTitleBtn = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(51, 255, 204));
         setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         TimelineTitleLabel.setFont(new java.awt.Font("Copperplate Gothic Bold", 1, 24)); // NOI18N
         TimelineTitleLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -432,6 +436,7 @@ public class Maintimeline extends javax.swing.JFrame {
         TimelineTitleLabel.setAutoscrolls(true);
         TimelineTitleLabel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         TimelineTitleLabel.setIconTextGap(0);
+        getContentPane().add(TimelineTitleLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 21, -1, -1));
 
         ScrollableAreaPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
@@ -440,6 +445,7 @@ public class Maintimeline extends javax.swing.JFrame {
 
         EventPane1.setBackground(new java.awt.Color(153, 153, 153));
         EventPane1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
+        EventPane1.setForeground(new java.awt.Color(255, 0, 0));
         EventPane1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         EventTitlePanelOne.setBackground(new java.awt.Color(0, 0, 0));
@@ -1329,6 +1335,8 @@ public class Maintimeline extends javax.swing.JFrame {
 
         ScrollableAreaPane.setViewportView(jPanel1);
 
+        getContentPane().add(ScrollableAreaPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 96, 1146, 486));
+
         DeleteBtn.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
         DeleteBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/DeleteIconNonHover.png"))); // NOI18N
         DeleteBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -1343,6 +1351,7 @@ public class Maintimeline extends javax.swing.JFrame {
                 DeleteBtnActionPerformed(evt);
             }
         });
+        getContentPane().add(DeleteBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1125, 600, -1, -1));
 
         SaveBtn.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         SaveBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/SaveIconNonHover.png"))); // NOI18N
@@ -1363,6 +1372,7 @@ public class Maintimeline extends javax.swing.JFrame {
                 SaveBtnActionPerformed(evt);
             }
         });
+        getContentPane().add(SaveBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1029, 600, -1, -1));
 
         EditBtn.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         EditBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/EditIconNonHover.png"))); // NOI18N
@@ -1378,6 +1388,7 @@ public class Maintimeline extends javax.swing.JFrame {
                 EditBtnActionPerformed(evt);
             }
         });
+        getContentPane().add(EditBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(938, 600, -1, -1));
 
         AddBtn.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
         AddBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/AddIconNonHover.png"))); // NOI18N
@@ -1398,6 +1409,7 @@ public class Maintimeline extends javax.swing.JFrame {
                 AddBtnActionPerformed(evt);
             }
         });
+        getContentPane().add(AddBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(847, 600, -1, -1));
 
         EditTitleBtn.setText("Edit Title");
         EditTitleBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -1405,53 +1417,19 @@ public class Maintimeline extends javax.swing.JFrame {
                 EditTitleBtnActionPerformed(evt);
             }
         });
+        getContentPane().add(EditTitleBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 55, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(ScrollableAreaPane, javax.swing.GroupLayout.PREFERRED_SIZE, 1146, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(815, 815, 815)
-                        .addComponent(AddBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(EditBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(SaveBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(23, 23, 23)
-                        .addComponent(DeleteBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(530, 530, 530)
-                        .addComponent(EditTitleBtn))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(430, 430, 430)
-                        .addComponent(TimelineTitleLabel)))
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(TimelineTitleLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(EditTitleBtn)
-                .addGap(18, 18, 18)
-                .addComponent(ScrollableAreaPane, javax.swing.GroupLayout.PREFERRED_SIZE, 486, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(DeleteBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(SaveBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(EditBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(AddBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/Change Colour Button Non Hover.png"))); // NOI18N
+        jButton1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jButton1.setContentAreaFilled(false);
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/Change Colour Button Hoverr.png"))); // NOI18N
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 600, 74, 73));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/Background.jpg"))); // NOI18N
+        jLabel1.setMaximumSize(new java.awt.Dimension(1208, 705));
+        jLabel1.setPreferredSize(new java.awt.Dimension(1208, 705));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 0, 1240, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -1711,6 +1689,8 @@ public class Maintimeline extends javax.swing.JFrame {
     private javax.swing.JPanel SeperatorPaneTwelve;
     private javax.swing.JPanel SeperatorPaneTwo;
     public static javax.swing.JLabel TimelineTitleLabel;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
     public static javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPaneEight;
     private javax.swing.JScrollPane jScrollPaneEleven;
