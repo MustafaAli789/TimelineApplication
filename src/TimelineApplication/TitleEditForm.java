@@ -126,7 +126,9 @@ public class TitleEditForm extends javax.swing.JFrame {
     private void UpdateBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateBtnActionPerformed
         
         title = TimelineTitleEdited.getText();
-        updateScreen(numOfEvents);
+        eventInformationList.get(0).remove(0); //remvoves old title list
+        eventInformationList.get(0).add(title);
+        updateScreen(numOfEvents); 
         EditTitleBtnClicked = false;
         this.dispose();
         /*

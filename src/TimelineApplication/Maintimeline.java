@@ -239,6 +239,7 @@ public class Maintimeline extends javax.swing.JFrame {
             Scanner sc = new Scanner(eventInformationFile);
             fileWriter.write(Integer.toString(numOfEvents)); //Writing the num of events as first line
             fileWriter.write("\n");  
+            System.out.println(eventInformationList.get(0).get(0));
             fileWriter.write(eventInformationList.get(0).get(0)); //writing title name as second line
             fileWriter.write("\n");            
             for(int i = 0; i <numOfEvents; i++){ //writing event information starting on third line
