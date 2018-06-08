@@ -214,7 +214,7 @@ public class Addevent extends javax.swing.JFrame {
            
            
            
-           if(numOfEvents <= 16){
+           if(numOfEvents <= 20){
                if(eventPos > 0 && eventPos <= (numOfEvents + 1)){
                    eventInformationList.add(eventPos, new ArrayList<String>()); //inserting a new sublist to then add the new event info into
                    eventInformationList.remove(eventInformationList.size()-1); //remove the 17th sublist that is now present

@@ -45,20 +45,22 @@ public class Maintimeline extends javax.swing.JFrame {
         {EventTitleLabelFour, DateTextLabelFour, EventImage4}, {EventTitleLabelFive, DateTextLabelFive, EventImage5}, {EventTitleLabelSix, DateTextLabelSix, EventImage6}, {EventTitleLabelSeven, DateTextLabelSeven, EventImage7}, 
         {EventTitleLabelEight, DateTextLabelEight, EventImage8}, {EventTitleLabelNine, DateTextLabelNine, EventImage9},{EventTitleLabelTen, DateTextLabelTen, EventImage10}, {EventTitleLabelEleven, DateTextLabelEleven, EventImage11}, 
         {EventTitleLabelTwelve, DateTextLabelTwelve, EventImage12}, {EventTitleLabelThirteen, DateTextLabelThirteen, EventImage13}, {EventTitleLabelFourteen, DateTextLabelFourteen, EventImage14}, 
-        {EventTitleLabelFifteen, DateTextLabelFifteen, EventImage15},{EventTitleLabelSixteen, DateTextLabelSixteen, EventImage16}};
+        {EventTitleLabelFifteen, DateTextLabelFifteen, EventImage15},{EventTitleLabelSixteen, DateTextLabelSixteen, EventImage16},{EventTitleLabelSeventeen, DateTextLabelSeventeen, EventImage17},{EventTitleLabelEighteen, DateTextLabelEighteen, EventImage18},
+        {EventTitleLabelNinteen, DateTextLabelNinteen, EventImage19},{EventTitleLabelTwenty, DateTextLabelTwenty, EventImage20}};
 
        
         //The array below will store all event description variable names for later use
         JTextPane array2[]={DescriptionTextPanelOne,DescriptionTextPanelTwo, DescriptionTextPanelThree, DescriptionTextPanelFour, DescriptionTextPanelFive,
         DescriptionTextPanelSix, DescriptionTextPanelSeven, DescriptionTextPanelEight, DescriptionTextPanelNine, DescriptionTextPanelTen, DescriptionTextPanelEleven, 
-        DescriptionTextPanelTwelve, DescriptionTextPanelThirteen, DescriptionTextPanelFourteen, DescriptionTextPanelFifteen, DescriptionTextPanelSixteen};
+        DescriptionTextPanelTwelve, DescriptionTextPanelThirteen, DescriptionTextPanelFourteen, DescriptionTextPanelFifteen, DescriptionTextPanelSixteen,DescriptionTextPanelSeventeen,
+        DescriptionTextPanelEighteen,DescriptionTextPanelNinteen,DescriptionTextPanelTwenty};
         
         //The array below will store all event pane variable names for later use
         JPanel array3[]={EventPane1, EventPane2, EventPane3, EventPane4, EventPane5, EventPane6, EventPane7, EventPane8, EventPane9, EventPane10, EventPane11, EventPane12,
-        EventPane13, EventPane14, EventPane15, EventPane16};
+        EventPane13, EventPane14, EventPane15, EventPane16, EventPane17,EventPane18,EventPane19,EventPane20};
         
         //The array below will store all arrow variable names for later use
-        JLabel array4[]={Arrow1, Arrow2, Arrow3, Arrow4, Arrow5, Arrow6, Arrow7, Arrow8, Arrow9, Arrow10, Arrow11, Arrow12, Arrow13, Arrow14, Arrow15};
+        JLabel array4[]={Arrow1, Arrow2, Arrow3, Arrow4, Arrow5, Arrow6, Arrow7, Arrow8, Arrow9, Arrow10, Arrow11, Arrow12, Arrow13, Arrow14, Arrow15,Arrow16,Arrow17,Arrow18,Arrow19};
         
         putVariableNamesIntoList(array1, array2, array3, array4); 
         setNumOfEvents(); //Initally gets number of events when screen loads
@@ -150,16 +152,18 @@ public class Maintimeline extends javax.swing.JFrame {
             setEventPaneVisibility(eventPaneNames.get(i), true);
             
             //This is to take into account the presence of rows and therefore change in num of arrows each time row changes
-            if(numOfEvents <=4 && i<numOfEvents-1){
+            if(numOfEvents <=4 && i<numOfEvents){
                 setArrowVisibility(arrowNames.get(i), true);
             }   
-            else if(numOfEvents > 4 && numOfEvents <= 8 && i<numOfEvents-1){ //Ex: on row 2, 2 less arrows than the num of events will be shown
+            else if(numOfEvents > 4 && numOfEvents <= 8 && i<numOfEvents){ //Ex: on row 2, 2 less arrows than the num of events will be shown
                 setArrowVisibility(arrowNames.get(i), true);
             }
-            else if(numOfEvents > 8 && numOfEvents <= 12 && i<numOfEvents-2){
+            else if(numOfEvents > 8 && numOfEvents <= 12 && i<numOfEvents){
                 setArrowVisibility(arrowNames.get(i), true);
             }
-            else if (numOfEvents > 12 && i<numOfEvents-3){
+            else if (numOfEvents > 12 && numOfEvents <= 16 && i<numOfEvents){
+                setArrowVisibility(arrowNames.get(i), true);
+            } else if (numOfEvents > 16 && i<numOfEvents){
                 setArrowVisibility(arrowNames.get(i), true);
             } 
         } 
@@ -198,7 +202,7 @@ public class Maintimeline extends javax.swing.JFrame {
         System.out.println("Num of Events: " + numOfEvents);
         
         //Add 17 sublists to main list, 1 for title and 16 for events
-        for(int i = 0; i<16; i++){
+        for(int i = 0; i<21; i++){
             eventInformationList.add(new ArrayList<String>());
         }
         
@@ -402,27 +406,63 @@ public class Maintimeline extends javax.swing.JFrame {
         jScrollPaneSixteen = new javax.swing.JScrollPane();
         DescriptionTextPanelSixteen = new javax.swing.JTextPane();
         EventImage16 = new javax.swing.JLabel();
+        EventPane17 = new javax.swing.JPanel();
+        EventTitlePanelSeventeen = new javax.swing.JPanel();
+        EventTitleLabelSeventeen = new javax.swing.JLabel();
+        DateTextLabelSeventeen = new javax.swing.JLabel();
+        SeperatorPaneSeventeen = new javax.swing.JPanel();
+        jScrollPaneSeventeen = new javax.swing.JScrollPane();
+        DescriptionTextPanelSeventeen = new javax.swing.JTextPane();
+        EventImage17 = new javax.swing.JLabel();
+        EventPane18 = new javax.swing.JPanel();
+        EventTitlePanelEighteen = new javax.swing.JPanel();
+        EventTitleLabelEighteen = new javax.swing.JLabel();
+        DateTextLabelEighteen = new javax.swing.JLabel();
+        SeperatorPaneEighteen = new javax.swing.JPanel();
+        jScrollPaneEighteen = new javax.swing.JScrollPane();
+        DescriptionTextPanelEighteen = new javax.swing.JTextPane();
+        EventImage18 = new javax.swing.JLabel();
+        EventPane19 = new javax.swing.JPanel();
+        EventTitlePanelNinteen = new javax.swing.JPanel();
+        EventTitleLabelNinteen = new javax.swing.JLabel();
+        DateTextLabelNinteen = new javax.swing.JLabel();
+        SeperatorPaneNinteen = new javax.swing.JPanel();
+        jScrollPaneNinteen = new javax.swing.JScrollPane();
+        DescriptionTextPanelNinteen = new javax.swing.JTextPane();
+        EventImage19 = new javax.swing.JLabel();
+        EventPane20 = new javax.swing.JPanel();
+        EventTitlePanelTwenty = new javax.swing.JPanel();
+        EventTitleLabelTwenty = new javax.swing.JLabel();
+        DateTextLabelTwenty = new javax.swing.JLabel();
+        SeperatorPaneTwenty = new javax.swing.JPanel();
+        jScrollPaneTwenty = new javax.swing.JScrollPane();
+        DescriptionTextPanelTwenty = new javax.swing.JTextPane();
+        EventImage20 = new javax.swing.JLabel();
         Arrow1 = new javax.swing.JLabel();
         Arrow2 = new javax.swing.JLabel();
         Arrow3 = new javax.swing.JLabel();
+        Arrow4 = new javax.swing.JLabel();
         Arrow5 = new javax.swing.JLabel();
         Arrow6 = new javax.swing.JLabel();
         Arrow7 = new javax.swing.JLabel();
+        Arrow8 = new javax.swing.JLabel();
         Arrow9 = new javax.swing.JLabel();
         Arrow10 = new javax.swing.JLabel();
         Arrow11 = new javax.swing.JLabel();
+        Arrow12 = new javax.swing.JLabel();
         Arrow13 = new javax.swing.JLabel();
         Arrow14 = new javax.swing.JLabel();
         Arrow15 = new javax.swing.JLabel();
-        Arrow12 = new javax.swing.JLabel();
-        Arrow4 = new javax.swing.JLabel();
-        Arrow8 = new javax.swing.JLabel();
+        Arrow16 = new javax.swing.JLabel();
+        Arrow17 = new javax.swing.JLabel();
+        Arrow18 = new javax.swing.JLabel();
+        Arrow19 = new javax.swing.JLabel();
         DeleteBtn = new javax.swing.JButton();
         SaveBtn = new javax.swing.JButton();
         EditBtn = new javax.swing.JButton();
         AddBtn = new javax.swing.JButton();
         EditTitleBtn = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        ChangeColourBtn = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -687,7 +727,7 @@ public class Maintimeline extends javax.swing.JFrame {
                     .addComponent(EventTitleLabelFive, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(EventTitlePanelFiveLayout.createSequentialGroup()
                         .addComponent(DateTextLabelFive, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 6, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         EventTitlePanelFiveLayout.setVerticalGroup(
@@ -739,7 +779,7 @@ public class Maintimeline extends javax.swing.JFrame {
                     .addComponent(EventTitleLabelSix, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(EventTitlePanelSixLayout.createSequentialGroup()
                         .addComponent(DateTextLabelSix, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 6, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         EventTitlePanelSixLayout.setVerticalGroup(
@@ -791,7 +831,7 @@ public class Maintimeline extends javax.swing.JFrame {
                     .addComponent(EventTitleLabelSeven, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(EventTitlePanelSevenLayout.createSequentialGroup()
                         .addComponent(DateTextLabelSeven, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 6, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         EventTitlePanelSevenLayout.setVerticalGroup(
@@ -843,7 +883,7 @@ public class Maintimeline extends javax.swing.JFrame {
                     .addComponent(EventTitleLabelEight, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(EventTitlePanelEightLayout.createSequentialGroup()
                         .addComponent(DateTextLabelEight, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 6, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         EventTitlePanelEightLayout.setVerticalGroup(
@@ -895,7 +935,7 @@ public class Maintimeline extends javax.swing.JFrame {
                     .addComponent(EventTitleLabelNine, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(EventTitlePanelNineLayout.createSequentialGroup()
                         .addComponent(DateTextLabelNine, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 6, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         EventTitlePanelNineLayout.setVerticalGroup(
@@ -947,7 +987,7 @@ public class Maintimeline extends javax.swing.JFrame {
                     .addComponent(EventTitleLabelTen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(EventTitlePanelTenLayout.createSequentialGroup()
                         .addComponent(DateTextLabelTen, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 6, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         EventTitlePanelTenLayout.setVerticalGroup(
@@ -999,7 +1039,7 @@ public class Maintimeline extends javax.swing.JFrame {
                     .addComponent(EventTitleLabelEleven, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(EventTitlePanelElevenLayout.createSequentialGroup()
                         .addComponent(DateTextLabelEleven, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 6, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         EventTitlePanelElevenLayout.setVerticalGroup(
@@ -1051,7 +1091,7 @@ public class Maintimeline extends javax.swing.JFrame {
                     .addComponent(EventTitleLabelTwelve, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(EventTitlePanelTwelveLayout.createSequentialGroup()
                         .addComponent(DateTextLabelTwelve, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 6, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         EventTitlePanelTwelveLayout.setVerticalGroup(
@@ -1103,7 +1143,7 @@ public class Maintimeline extends javax.swing.JFrame {
                     .addComponent(EventTitleLabelThirteen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(EventTitlePanelThirteenLayout.createSequentialGroup()
                         .addComponent(DateTextLabelThirteen, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 6, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         EventTitlePanelThirteenLayout.setVerticalGroup(
@@ -1155,7 +1195,7 @@ public class Maintimeline extends javax.swing.JFrame {
                     .addComponent(EventTitleLabelFourteen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(EventTitlePanelFourteenLayout.createSequentialGroup()
                         .addComponent(DateTextLabelFourteen, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 6, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         EventTitlePanelFourteenLayout.setVerticalGroup(
@@ -1207,7 +1247,7 @@ public class Maintimeline extends javax.swing.JFrame {
                     .addComponent(EventTitleLabelFifteen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(EventTitlePanelFifteenLayout.createSequentialGroup()
                         .addComponent(DateTextLabelFifteen, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 6, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         EventTitlePanelFifteenLayout.setVerticalGroup(
@@ -1259,7 +1299,7 @@ public class Maintimeline extends javax.swing.JFrame {
                     .addComponent(EventTitleLabelSixteen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(EventTitlePanelSixteenLayout.createSequentialGroup()
                         .addComponent(DateTextLabelSixteen, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 6, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         EventTitlePanelSixteenLayout.setVerticalGroup(
@@ -1286,7 +1326,215 @@ public class Maintimeline extends javax.swing.JFrame {
         EventImage16.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         EventPane16.add(EventImage16, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 172, 160));
 
-        jPanel1.add(EventPane16, new org.netbeans.lib.awtextra.AbsoluteConstraints(893, 1286, 191, 375));
+        jPanel1.add(EventPane16, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 1290, 191, 375));
+
+        EventPane17.setBackground(new java.awt.Color(153, 153, 153));
+        EventPane17.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
+        EventPane17.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        EventTitlePanelSeventeen.setBackground(new java.awt.Color(0, 0, 0));
+
+        EventTitleLabelSeventeen.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        EventTitleLabelSeventeen.setForeground(new java.awt.Color(255, 255, 255));
+        EventTitleLabelSeventeen.setText("jLabel1");
+
+        DateTextLabelSeventeen.setForeground(new java.awt.Color(255, 255, 255));
+        DateTextLabelSeventeen.setText("jLabel1");
+
+        javax.swing.GroupLayout EventTitlePanelSeventeenLayout = new javax.swing.GroupLayout(EventTitlePanelSeventeen);
+        EventTitlePanelSeventeen.setLayout(EventTitlePanelSeventeenLayout);
+        EventTitlePanelSeventeenLayout.setHorizontalGroup(
+            EventTitlePanelSeventeenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(EventTitlePanelSeventeenLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(EventTitlePanelSeventeenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(EventTitleLabelSeventeen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(EventTitlePanelSeventeenLayout.createSequentialGroup()
+                        .addComponent(DateTextLabelSeventeen, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 6, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        EventTitlePanelSeventeenLayout.setVerticalGroup(
+            EventTitlePanelSeventeenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(EventTitlePanelSeventeenLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(EventTitleLabelSeventeen)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(DateTextLabelSeventeen)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        EventPane17.add(EventTitlePanelSeventeen, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 1, 279, 60));
+
+        SeperatorPaneSeventeen.setLayout(null);
+        EventPane17.add(SeperatorPaneSeventeen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 280, 12));
+
+        DescriptionTextPanelSeventeen.setEditable(false);
+        jScrollPaneSeventeen.setViewportView(DescriptionTextPanelSeventeen);
+
+        EventPane17.add(jScrollPaneSeventeen, new org.netbeans.lib.awtextra.AbsoluteConstraints(7, 249, 180, 120));
+
+        EventImage17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        EventImage17.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        EventPane17.add(EventImage17, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 172, 160));
+
+        jPanel1.add(EventPane17, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 1720, 191, 375));
+
+        EventPane18.setBackground(new java.awt.Color(153, 153, 153));
+        EventPane18.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
+        EventPane18.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        EventTitlePanelEighteen.setBackground(new java.awt.Color(0, 0, 0));
+
+        EventTitleLabelEighteen.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        EventTitleLabelEighteen.setForeground(new java.awt.Color(255, 255, 255));
+        EventTitleLabelEighteen.setText("jLabel1");
+
+        DateTextLabelEighteen.setForeground(new java.awt.Color(255, 255, 255));
+        DateTextLabelEighteen.setText("jLabel1");
+
+        javax.swing.GroupLayout EventTitlePanelEighteenLayout = new javax.swing.GroupLayout(EventTitlePanelEighteen);
+        EventTitlePanelEighteen.setLayout(EventTitlePanelEighteenLayout);
+        EventTitlePanelEighteenLayout.setHorizontalGroup(
+            EventTitlePanelEighteenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(EventTitlePanelEighteenLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(EventTitlePanelEighteenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(EventTitleLabelEighteen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(EventTitlePanelEighteenLayout.createSequentialGroup()
+                        .addComponent(DateTextLabelEighteen, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 6, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        EventTitlePanelEighteenLayout.setVerticalGroup(
+            EventTitlePanelEighteenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(EventTitlePanelEighteenLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(EventTitleLabelEighteen)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(DateTextLabelEighteen)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        EventPane18.add(EventTitlePanelEighteen, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 1, 279, 60));
+
+        SeperatorPaneEighteen.setLayout(null);
+        EventPane18.add(SeperatorPaneEighteen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 280, 12));
+
+        DescriptionTextPanelEighteen.setEditable(false);
+        jScrollPaneEighteen.setViewportView(DescriptionTextPanelEighteen);
+
+        EventPane18.add(jScrollPaneEighteen, new org.netbeans.lib.awtextra.AbsoluteConstraints(7, 249, 180, 120));
+
+        EventImage18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        EventImage18.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        EventPane18.add(EventImage18, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 172, 160));
+
+        jPanel1.add(EventPane18, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 1720, 191, 375));
+
+        EventPane19.setBackground(new java.awt.Color(153, 153, 153));
+        EventPane19.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
+        EventPane19.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        EventTitlePanelNinteen.setBackground(new java.awt.Color(0, 0, 0));
+
+        EventTitleLabelNinteen.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        EventTitleLabelNinteen.setForeground(new java.awt.Color(255, 255, 255));
+        EventTitleLabelNinteen.setText("jLabel1");
+
+        DateTextLabelNinteen.setForeground(new java.awt.Color(255, 255, 255));
+        DateTextLabelNinteen.setText("jLabel1");
+
+        javax.swing.GroupLayout EventTitlePanelNinteenLayout = new javax.swing.GroupLayout(EventTitlePanelNinteen);
+        EventTitlePanelNinteen.setLayout(EventTitlePanelNinteenLayout);
+        EventTitlePanelNinteenLayout.setHorizontalGroup(
+            EventTitlePanelNinteenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(EventTitlePanelNinteenLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(EventTitlePanelNinteenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(EventTitleLabelNinteen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(EventTitlePanelNinteenLayout.createSequentialGroup()
+                        .addComponent(DateTextLabelNinteen, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 6, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        EventTitlePanelNinteenLayout.setVerticalGroup(
+            EventTitlePanelNinteenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(EventTitlePanelNinteenLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(EventTitleLabelNinteen)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(DateTextLabelNinteen)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        EventPane19.add(EventTitlePanelNinteen, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 1, 279, 60));
+
+        SeperatorPaneNinteen.setLayout(null);
+        EventPane19.add(SeperatorPaneNinteen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 280, 12));
+
+        DescriptionTextPanelNinteen.setEditable(false);
+        jScrollPaneNinteen.setViewportView(DescriptionTextPanelNinteen);
+
+        EventPane19.add(jScrollPaneNinteen, new org.netbeans.lib.awtextra.AbsoluteConstraints(7, 249, 180, 120));
+
+        EventImage19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        EventImage19.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        EventPane19.add(EventImage19, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 172, 160));
+
+        jPanel1.add(EventPane19, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 1720, 191, 375));
+
+        EventPane20.setBackground(new java.awt.Color(153, 153, 153));
+        EventPane20.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
+        EventPane20.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        EventTitlePanelTwenty.setBackground(new java.awt.Color(0, 0, 0));
+
+        EventTitleLabelTwenty.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        EventTitleLabelTwenty.setForeground(new java.awt.Color(255, 255, 255));
+        EventTitleLabelTwenty.setText("jLabel1");
+
+        DateTextLabelTwenty.setForeground(new java.awt.Color(255, 255, 255));
+        DateTextLabelTwenty.setText("jLabel1");
+
+        javax.swing.GroupLayout EventTitlePanelTwentyLayout = new javax.swing.GroupLayout(EventTitlePanelTwenty);
+        EventTitlePanelTwenty.setLayout(EventTitlePanelTwentyLayout);
+        EventTitlePanelTwentyLayout.setHorizontalGroup(
+            EventTitlePanelTwentyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(EventTitlePanelTwentyLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(EventTitlePanelTwentyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(EventTitleLabelTwenty, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(EventTitlePanelTwentyLayout.createSequentialGroup()
+                        .addComponent(DateTextLabelTwenty, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 6, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        EventTitlePanelTwentyLayout.setVerticalGroup(
+            EventTitlePanelTwentyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(EventTitlePanelTwentyLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(EventTitleLabelTwenty)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(DateTextLabelTwenty)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        EventPane20.add(EventTitlePanelTwenty, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 1, 279, 60));
+
+        SeperatorPaneTwenty.setLayout(null);
+        EventPane20.add(SeperatorPaneTwenty, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 280, 12));
+
+        DescriptionTextPanelTwenty.setEditable(false);
+        jScrollPaneTwenty.setViewportView(DescriptionTextPanelTwenty);
+
+        EventPane20.add(jScrollPaneTwenty, new org.netbeans.lib.awtextra.AbsoluteConstraints(7, 249, 180, 120));
+
+        EventImage20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        EventImage20.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        EventPane20.add(EventImage20, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 172, 160));
+
+        jPanel1.add(EventPane20, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 1720, 191, 375));
 
         Arrow1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/arrow.png"))); // NOI18N
         jPanel1.add(Arrow1, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 220, -1, -1));
@@ -1297,6 +1545,9 @@ public class Maintimeline extends javax.swing.JFrame {
         Arrow3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/arrow.png"))); // NOI18N
         jPanel1.add(Arrow3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 192, 40, 60));
 
+        Arrow4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/down arrow.png"))); // NOI18N
+        jPanel1.add(Arrow4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 420, -1, -1));
+
         Arrow5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/arrow to right.png"))); // NOI18N
         jPanel1.add(Arrow5, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 630, -1, -1));
 
@@ -1305,6 +1556,9 @@ public class Maintimeline extends javax.swing.JFrame {
 
         Arrow7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/arrow to right.png"))); // NOI18N
         jPanel1.add(Arrow7, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 630, -1, -1));
+
+        Arrow8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/down arrow.png"))); // NOI18N
+        jPanel1.add(Arrow8, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 840, -1, -1));
 
         Arrow9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/arrow.png"))); // NOI18N
         jPanel1.add(Arrow9, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 1040, -1, -1));
@@ -1315,6 +1569,9 @@ public class Maintimeline extends javax.swing.JFrame {
         Arrow11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/arrow.png"))); // NOI18N
         jPanel1.add(Arrow11, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 1040, -1, -1));
 
+        Arrow12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/down arrow.png"))); // NOI18N
+        jPanel1.add(Arrow12, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 1250, -1, -1));
+
         Arrow13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/arrow to right.png"))); // NOI18N
         jPanel1.add(Arrow13, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 1470, -1, -1));
 
@@ -1324,14 +1581,17 @@ public class Maintimeline extends javax.swing.JFrame {
         Arrow15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/arrow to right.png"))); // NOI18N
         jPanel1.add(Arrow15, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 1470, -1, -1));
 
-        Arrow12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/down arrow.png"))); // NOI18N
-        jPanel1.add(Arrow12, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 1250, -1, -1));
+        Arrow16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/down arrow.png"))); // NOI18N
+        jPanel1.add(Arrow16, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 1680, -1, -1));
 
-        Arrow4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/down arrow.png"))); // NOI18N
-        jPanel1.add(Arrow4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 420, -1, -1));
+        Arrow17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/arrow.png"))); // NOI18N
+        jPanel1.add(Arrow17, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 1900, -1, -1));
 
-        Arrow8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/down arrow.png"))); // NOI18N
-        jPanel1.add(Arrow8, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 840, -1, -1));
+        Arrow18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/arrow.png"))); // NOI18N
+        jPanel1.add(Arrow18, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 1900, -1, -1));
+
+        Arrow19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/arrow.png"))); // NOI18N
+        jPanel1.add(Arrow19, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 1900, -1, -1));
 
         ScrollableAreaPane.setViewportView(jPanel1);
 
@@ -1419,12 +1679,17 @@ public class Maintimeline extends javax.swing.JFrame {
         });
         getContentPane().add(EditTitleBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 55, -1, -1));
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/Change Colour Button Non Hover.png"))); // NOI18N
-        jButton1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jButton1.setContentAreaFilled(false);
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/Change Colour Button Hoverr.png"))); // NOI18N
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 600, 74, 73));
+        ChangeColourBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/Change Colour Button Non Hover.png"))); // NOI18N
+        ChangeColourBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        ChangeColourBtn.setContentAreaFilled(false);
+        ChangeColourBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        ChangeColourBtn.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/Change Colour Button Hoverr.png"))); // NOI18N
+        ChangeColourBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ChangeColourBtnActionPerformed(evt);
+            }
+        });
+        getContentPane().add(ChangeColourBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 600, 74, 73));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/Background.jpg"))); // NOI18N
         jLabel1.setMaximumSize(new java.awt.Dimension(1208, 705));
@@ -1516,6 +1781,10 @@ public class Maintimeline extends javax.swing.JFrame {
         EditTitleBtnClicked = true; 
     }//GEN-LAST:event_EditTitleBtnActionPerformed
 
+    private void ChangeColourBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChangeColourBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ChangeColourBtnActionPerformed
+
     public static void setTheTitle (String a){
         TimelineTitleLabel.setText(a);
     }
@@ -1563,6 +1832,10 @@ public class Maintimeline extends javax.swing.JFrame {
     public static javax.swing.JLabel Arrow13;
     public static javax.swing.JLabel Arrow14;
     public static javax.swing.JLabel Arrow15;
+    private javax.swing.JLabel Arrow16;
+    public static javax.swing.JLabel Arrow17;
+    public static javax.swing.JLabel Arrow18;
+    public static javax.swing.JLabel Arrow19;
     public static javax.swing.JLabel Arrow2;
     public static javax.swing.JLabel Arrow3;
     private javax.swing.JLabel Arrow4;
@@ -1571,38 +1844,47 @@ public class Maintimeline extends javax.swing.JFrame {
     public static javax.swing.JLabel Arrow7;
     private javax.swing.JLabel Arrow8;
     public static javax.swing.JLabel Arrow9;
+    private javax.swing.JButton ChangeColourBtn;
     public static javax.swing.JLabel DateTextLabelEight;
+    public static javax.swing.JLabel DateTextLabelEighteen;
     public static javax.swing.JLabel DateTextLabelEleven;
     public static javax.swing.JLabel DateTextLabelFifteen;
     public static javax.swing.JLabel DateTextLabelFive;
     private javax.swing.JLabel DateTextLabelFour;
     public static javax.swing.JLabel DateTextLabelFourteen;
     public static javax.swing.JLabel DateTextLabelNine;
+    public static javax.swing.JLabel DateTextLabelNinteen;
     public static javax.swing.JLabel DateTextLabelOne;
     public static javax.swing.JLabel DateTextLabelSeven;
+    public static javax.swing.JLabel DateTextLabelSeventeen;
     public static javax.swing.JLabel DateTextLabelSix;
     public static javax.swing.JLabel DateTextLabelSixteen;
     public static javax.swing.JLabel DateTextLabelTen;
     public static javax.swing.JLabel DateTextLabelThirteen;
     public static javax.swing.JLabel DateTextLabelThree;
     public static javax.swing.JLabel DateTextLabelTwelve;
+    public static javax.swing.JLabel DateTextLabelTwenty;
     public static javax.swing.JLabel DateTextLabelTwo;
     public static javax.swing.JButton DeleteBtn;
     public static javax.swing.JTextPane DescriptionTextPanelEight;
+    public static javax.swing.JTextPane DescriptionTextPanelEighteen;
     public static javax.swing.JTextPane DescriptionTextPanelEleven;
     public static javax.swing.JTextPane DescriptionTextPanelFifteen;
     public static javax.swing.JTextPane DescriptionTextPanelFive;
     public static javax.swing.JTextPane DescriptionTextPanelFour;
     public static javax.swing.JTextPane DescriptionTextPanelFourteen;
     public static javax.swing.JTextPane DescriptionTextPanelNine;
+    public static javax.swing.JTextPane DescriptionTextPanelNinteen;
     public static javax.swing.JTextPane DescriptionTextPanelOne;
     public static javax.swing.JTextPane DescriptionTextPanelSeven;
+    public static javax.swing.JTextPane DescriptionTextPanelSeventeen;
     public static javax.swing.JTextPane DescriptionTextPanelSix;
     public static javax.swing.JTextPane DescriptionTextPanelSixteen;
     public static javax.swing.JTextPane DescriptionTextPanelTen;
     public static javax.swing.JTextPane DescriptionTextPanelThirteen;
     public static javax.swing.JTextPane DescriptionTextPanelThree;
     public static javax.swing.JTextPane DescriptionTextPanelTwelve;
+    public static javax.swing.JTextPane DescriptionTextPanelTwenty;
     public static javax.swing.JTextPane DescriptionTextPanelTwo;
     public static javax.swing.JButton EditBtn;
     private javax.swing.JButton EditTitleBtn;
@@ -1614,7 +1896,11 @@ public class Maintimeline extends javax.swing.JFrame {
     public static javax.swing.JLabel EventImage14;
     public static javax.swing.JLabel EventImage15;
     public static javax.swing.JLabel EventImage16;
+    public static javax.swing.JLabel EventImage17;
+    public static javax.swing.JLabel EventImage18;
+    public static javax.swing.JLabel EventImage19;
     public static javax.swing.JLabel EventImage2;
+    public static javax.swing.JLabel EventImage20;
     public static javax.swing.JLabel EventImage3;
     private javax.swing.JLabel EventImage4;
     public static javax.swing.JLabel EventImage5;
@@ -1630,7 +1916,11 @@ public class Maintimeline extends javax.swing.JFrame {
     public static javax.swing.JPanel EventPane14;
     public static javax.swing.JPanel EventPane15;
     public static javax.swing.JPanel EventPane16;
+    public static javax.swing.JPanel EventPane17;
+    public static javax.swing.JPanel EventPane18;
+    public static javax.swing.JPanel EventPane19;
     public static javax.swing.JPanel EventPane2;
+    public static javax.swing.JPanel EventPane20;
     public static javax.swing.JPanel EventPane3;
     public static javax.swing.JPanel EventPane4;
     public static javax.swing.JPanel EventPane5;
@@ -1639,74 +1929,89 @@ public class Maintimeline extends javax.swing.JFrame {
     public static javax.swing.JPanel EventPane8;
     public static javax.swing.JPanel EventPane9;
     public static javax.swing.JLabel EventTitleLabelEight;
+    public static javax.swing.JLabel EventTitleLabelEighteen;
     public static javax.swing.JLabel EventTitleLabelEleven;
     public static javax.swing.JLabel EventTitleLabelFifteen;
     public static javax.swing.JLabel EventTitleLabelFive;
     private javax.swing.JLabel EventTitleLabelFour;
     public static javax.swing.JLabel EventTitleLabelFourteen;
     public static javax.swing.JLabel EventTitleLabelNine;
+    public static javax.swing.JLabel EventTitleLabelNinteen;
     public static javax.swing.JLabel EventTitleLabelOne;
     public static javax.swing.JLabel EventTitleLabelSeven;
+    public static javax.swing.JLabel EventTitleLabelSeventeen;
     public static javax.swing.JLabel EventTitleLabelSix;
     public static javax.swing.JLabel EventTitleLabelSixteen;
     public static javax.swing.JLabel EventTitleLabelTen;
     public static javax.swing.JLabel EventTitleLabelThirteen;
     public static javax.swing.JLabel EventTitleLabelThree;
     public static javax.swing.JLabel EventTitleLabelTwelve;
+    public static javax.swing.JLabel EventTitleLabelTwenty;
     public static javax.swing.JLabel EventTitleLabelTwo;
     private javax.swing.JPanel EventTitlePanelEight;
+    private javax.swing.JPanel EventTitlePanelEighteen;
     private javax.swing.JPanel EventTitlePanelEleven;
     private javax.swing.JPanel EventTitlePanelFifteen;
     private javax.swing.JPanel EventTitlePanelFive;
     private javax.swing.JPanel EventTitlePanelFour;
     private javax.swing.JPanel EventTitlePanelFourteen;
     private javax.swing.JPanel EventTitlePanelNine;
+    private javax.swing.JPanel EventTitlePanelNinteen;
     private javax.swing.JPanel EventTitlePanelOne;
     private javax.swing.JPanel EventTitlePanelSeven;
+    private javax.swing.JPanel EventTitlePanelSeventeen;
     private javax.swing.JPanel EventTitlePanelSix;
     private javax.swing.JPanel EventTitlePanelSixteen;
     private javax.swing.JPanel EventTitlePanelTen;
     private javax.swing.JPanel EventTitlePanelThirteen;
     private javax.swing.JPanel EventTitlePanelThree;
     private javax.swing.JPanel EventTitlePanelTwelve;
+    private javax.swing.JPanel EventTitlePanelTwenty;
     private javax.swing.JPanel EventTitlePanelTwo;
     public static javax.swing.JButton SaveBtn;
     private javax.swing.JScrollPane ScrollableAreaPane;
     private javax.swing.JPanel SeperatorPaneEight;
+    private javax.swing.JPanel SeperatorPaneEighteen;
     private javax.swing.JPanel SeperatorPaneEleven;
     private javax.swing.JPanel SeperatorPaneFifteen;
     private javax.swing.JPanel SeperatorPaneFive;
     private javax.swing.JPanel SeperatorPaneFour;
     private javax.swing.JPanel SeperatorPaneFourteen;
     private javax.swing.JPanel SeperatorPaneNine;
+    private javax.swing.JPanel SeperatorPaneNinteen;
     private javax.swing.JPanel SeperatorPaneOne;
     private javax.swing.JPanel SeperatorPaneSeven;
+    private javax.swing.JPanel SeperatorPaneSeventeen;
     private javax.swing.JPanel SeperatorPaneSix;
     private javax.swing.JPanel SeperatorPaneSixteen;
     private javax.swing.JPanel SeperatorPaneTen;
     private javax.swing.JPanel SeperatorPaneThirteen;
     private javax.swing.JPanel SeperatorPaneThree;
     private javax.swing.JPanel SeperatorPaneTwelve;
+    private javax.swing.JPanel SeperatorPaneTwenty;
     private javax.swing.JPanel SeperatorPaneTwo;
     public static javax.swing.JLabel TimelineTitleLabel;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     public static javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPaneEight;
+    private javax.swing.JScrollPane jScrollPaneEighteen;
     private javax.swing.JScrollPane jScrollPaneEleven;
     private javax.swing.JScrollPane jScrollPaneFifteen;
     private javax.swing.JScrollPane jScrollPaneFive;
     private javax.swing.JScrollPane jScrollPaneFour;
     private javax.swing.JScrollPane jScrollPaneFourteen;
     private javax.swing.JScrollPane jScrollPaneNine;
+    private javax.swing.JScrollPane jScrollPaneNinteen;
     private javax.swing.JScrollPane jScrollPaneOne;
     private javax.swing.JScrollPane jScrollPaneSeven;
+    private javax.swing.JScrollPane jScrollPaneSeventeen;
     private javax.swing.JScrollPane jScrollPaneSix;
     private javax.swing.JScrollPane jScrollPaneSixteen;
     private javax.swing.JScrollPane jScrollPaneTen;
     private javax.swing.JScrollPane jScrollPaneThirteen;
     private javax.swing.JScrollPane jScrollPaneThree;
     private javax.swing.JScrollPane jScrollPaneTwelve;
+    private javax.swing.JScrollPane jScrollPaneTwenty;
     private javax.swing.JScrollPane jScrollPaneTwo;
     private javax.swing.JSeparator jSeparator1;
     // End of variables declaration//GEN-END:variables
