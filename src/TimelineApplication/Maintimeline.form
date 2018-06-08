@@ -10,6 +10,12 @@
     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
       <Color blue="cc" green="ff" red="33" type="rgb"/>
     </Property>
+    <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+      <Dimension value="[1176, 760]"/>
+    </Property>
+    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+      <Dimension value="[1176, 760]"/>
+    </Property>
     <Property name="resizable" type="boolean" value="false"/>
   </Properties>
   <SyntheticProperties>
@@ -26,7 +32,7 @@
     <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
     <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
-    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,2,-65,0,0,4,-72"/>
+    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,2,-51,0,0,4,-105"/>
   </AuxValues>
 
   <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
@@ -708,7 +714,7 @@
                                   <Component id="EventTitleLabelFive" alignment="0" max="32767" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="DateTextLabelFive" min="-2" pref="253" max="-2" attributes="0"/>
-                                      <EmptySpace min="0" pref="6" max="32767" attributes="0"/>
+                                      <EmptySpace min="0" pref="2" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
@@ -855,7 +861,7 @@
                                   <Component id="EventTitleLabelSix" alignment="0" max="32767" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="DateTextLabelSix" min="-2" pref="253" max="-2" attributes="0"/>
-                                      <EmptySpace min="0" pref="6" max="32767" attributes="0"/>
+                                      <EmptySpace min="0" pref="2" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
@@ -1002,7 +1008,7 @@
                                   <Component id="EventTitleLabelSeven" alignment="0" max="32767" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="DateTextLabelSeven" min="-2" pref="253" max="-2" attributes="0"/>
-                                      <EmptySpace min="0" pref="6" max="32767" attributes="0"/>
+                                      <EmptySpace min="0" pref="2" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
@@ -1149,7 +1155,7 @@
                                   <Component id="EventTitleLabelEight" alignment="0" max="32767" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="DateTextLabelEight" min="-2" pref="253" max="-2" attributes="0"/>
-                                      <EmptySpace min="0" pref="6" max="32767" attributes="0"/>
+                                      <EmptySpace min="0" pref="2" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
@@ -1296,7 +1302,7 @@
                                   <Component id="EventTitleLabelNine" alignment="0" max="32767" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="DateTextLabelNine" min="-2" pref="253" max="-2" attributes="0"/>
-                                      <EmptySpace min="0" pref="6" max="32767" attributes="0"/>
+                                      <EmptySpace min="0" pref="2" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
@@ -1443,7 +1449,7 @@
                                   <Component id="EventTitleLabelTen" alignment="0" max="32767" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="DateTextLabelTen" min="-2" pref="253" max="-2" attributes="0"/>
-                                      <EmptySpace min="0" pref="6" max="32767" attributes="0"/>
+                                      <EmptySpace min="0" pref="2" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
@@ -1590,7 +1596,7 @@
                                   <Component id="EventTitleLabelEleven" alignment="0" max="32767" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="DateTextLabelEleven" min="-2" pref="253" max="-2" attributes="0"/>
-                                      <EmptySpace min="0" pref="6" max="32767" attributes="0"/>
+                                      <EmptySpace min="0" pref="2" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
@@ -1737,7 +1743,7 @@
                                   <Component id="EventTitleLabelTwelve" alignment="0" max="32767" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="DateTextLabelTwelve" min="-2" pref="253" max="-2" attributes="0"/>
-                                      <EmptySpace min="0" pref="6" max="32767" attributes="0"/>
+                                      <EmptySpace min="0" pref="2" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
@@ -1884,7 +1890,7 @@
                                   <Component id="EventTitleLabelThirteen" alignment="0" max="32767" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="DateTextLabelThirteen" min="-2" pref="253" max="-2" attributes="0"/>
-                                      <EmptySpace min="0" pref="6" max="32767" attributes="0"/>
+                                      <EmptySpace min="0" pref="2" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
@@ -2031,7 +2037,7 @@
                                   <Component id="EventTitleLabelFourteen" alignment="0" max="32767" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="DateTextLabelFourteen" min="-2" pref="253" max="-2" attributes="0"/>
-                                      <EmptySpace min="0" pref="6" max="32767" attributes="0"/>
+                                      <EmptySpace min="0" pref="2" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
@@ -2178,7 +2184,7 @@
                                   <Component id="EventTitleLabelFifteen" alignment="0" max="32767" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="DateTextLabelFifteen" min="-2" pref="253" max="-2" attributes="0"/>
-                                      <EmptySpace min="0" pref="6" max="32767" attributes="0"/>
+                                      <EmptySpace min="0" pref="2" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
@@ -2325,7 +2331,7 @@
                                   <Component id="EventTitleLabelSixteen" alignment="0" max="32767" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="DateTextLabelSixteen" min="-2" pref="253" max="-2" attributes="0"/>
-                                      <EmptySpace min="0" pref="6" max="32767" attributes="0"/>
+                                      <EmptySpace min="0" pref="2" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
@@ -2472,7 +2478,7 @@
                                   <Component id="EventTitleLabelSeventeen" alignment="0" max="32767" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="DateTextLabelSeventeen" min="-2" pref="253" max="-2" attributes="0"/>
-                                      <EmptySpace min="0" pref="6" max="32767" attributes="0"/>
+                                      <EmptySpace min="0" pref="2" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
@@ -2619,7 +2625,7 @@
                                   <Component id="EventTitleLabelEighteen" alignment="0" max="32767" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="DateTextLabelEighteen" min="-2" pref="253" max="-2" attributes="0"/>
-                                      <EmptySpace min="0" pref="6" max="32767" attributes="0"/>
+                                      <EmptySpace min="0" pref="2" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
@@ -2737,7 +2743,7 @@
               </AuxValues>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="360" y="1720" width="191" height="375"/>
+                  <AbsoluteConstraints x="340" y="1720" width="191" height="375"/>
                 </Constraint>
               </Constraints>
 
@@ -2766,7 +2772,7 @@
                                   <Component id="EventTitleLabelNinteen" alignment="0" max="32767" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="DateTextLabelNinteen" min="-2" pref="253" max="-2" attributes="0"/>
-                                      <EmptySpace min="0" pref="6" max="32767" attributes="0"/>
+                                      <EmptySpace min="0" pref="2" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
@@ -2884,7 +2890,7 @@
               </AuxValues>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="100" y="1720" width="191" height="375"/>
+                  <AbsoluteConstraints x="70" y="1720" width="191" height="375"/>
                 </Constraint>
               </Constraints>
 
@@ -2913,7 +2919,7 @@
                                   <Component id="EventTitleLabelTwenty" alignment="0" max="32767" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="DateTextLabelTwenty" min="-2" pref="253" max="-2" attributes="0"/>
-                                      <EmptySpace min="0" pref="6" max="32767" attributes="0"/>
+                                      <EmptySpace min="0" pref="2" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
@@ -3267,7 +3273,7 @@
               </AuxValues>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="570" y="1900" width="-1" height="-1"/>
+                  <AbsoluteConstraints x="560" y="1900" width="-1" height="-1"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -3282,7 +3288,7 @@
               </AuxValues>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="310" y="1900" width="-1" height="-1"/>
+                  <AbsoluteConstraints x="290" y="1900" width="-1" height="-1"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -3328,7 +3334,7 @@
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="1125" y="600" width="-1" height="-1"/>
+          <AbsoluteConstraints x="1080" y="600" width="-1" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -3371,7 +3377,7 @@
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="1029" y="600" width="-1" height="-1"/>
+          <AbsoluteConstraints x="980" y="600" width="-1" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -3413,7 +3419,7 @@
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="938" y="600" width="-1" height="-1"/>
+          <AbsoluteConstraints x="890" y="600" width="-1" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -3456,7 +3462,7 @@
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="847" y="600" width="-1" height="-1"/>
+          <AbsoluteConstraints x="800" y="600" width="-1" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -3514,7 +3520,7 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="-30" y="0" width="1240" height="-1"/>
+          <AbsoluteConstraints x="-30" y="0" width="1240" height="760"/>
         </Constraint>
       </Constraints>
     </Component>
