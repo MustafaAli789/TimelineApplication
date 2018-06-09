@@ -5,7 +5,6 @@
  */
 package TimelineApplication;
 
-import java.awt.Color;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 import java.io.*;
@@ -1774,7 +1773,8 @@ public class Maintimeline extends javax.swing.JFrame {
     }//GEN-LAST:event_EditTitleBtnActionPerformed
 
     private void ChangeColourBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChangeColourBtnActionPerformed
-        // TODO add your handling code here:
+        ChangeColour colour = new ChangeColour();
+        colour.setVisible(true);
     }//GEN-LAST:event_ChangeColourBtnActionPerformed
 
     public static void setTheTitle (String a){
