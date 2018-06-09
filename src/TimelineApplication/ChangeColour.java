@@ -20,6 +20,26 @@ import static TimelineApplication.Maintimeline.EventPane17;
 import static TimelineApplication.Maintimeline.EventPane18;
 import static TimelineApplication.Maintimeline.EventPane19;
 import static TimelineApplication.Maintimeline.EventPane20;
+import static TimelineApplication.Maintimeline.EventTitlePanelEight;
+import static TimelineApplication.Maintimeline.EventTitlePanelEighteen;
+import static TimelineApplication.Maintimeline.EventTitlePanelEleven;
+import static TimelineApplication.Maintimeline.EventTitlePanelFifteen;
+import static TimelineApplication.Maintimeline.EventTitlePanelFive;
+import static TimelineApplication.Maintimeline.EventTitlePanelFour;
+import static TimelineApplication.Maintimeline.EventTitlePanelFourteen;
+import static TimelineApplication.Maintimeline.EventTitlePanelNine;
+import static TimelineApplication.Maintimeline.EventTitlePanelNinteen;
+import static TimelineApplication.Maintimeline.EventTitlePanelOne;
+import static TimelineApplication.Maintimeline.EventTitlePanelSeven;
+import static TimelineApplication.Maintimeline.EventTitlePanelSeventeen;
+import static TimelineApplication.Maintimeline.EventTitlePanelSix;
+import static TimelineApplication.Maintimeline.EventTitlePanelSixteen;
+import static TimelineApplication.Maintimeline.EventTitlePanelTen;
+import static TimelineApplication.Maintimeline.EventTitlePanelThirteen;
+import static TimelineApplication.Maintimeline.EventTitlePanelThree;
+import static TimelineApplication.Maintimeline.EventTitlePanelTwelve;
+import static TimelineApplication.Maintimeline.EventTitlePanelTwenty;
+import static TimelineApplication.Maintimeline.EventTitlePanelTwo;
 import static TimelineApplication.Maintimeline.eventInformationList;
 import java.awt.Color;
 import javax.swing.JColorChooser;
@@ -318,63 +338,83 @@ public class ChangeColour extends javax.swing.JFrame {
         Color newColor = JColorChooser.showDialog(null, "Choose a color", Color.WHITE);
         if (Event1.isSelected()){
             EventPane1.setBackground(newColor);
+            EventTitlePanelOne.setBackground(newColor);
         } 
         if (Event2.isSelected()){
             EventPane2.setBackground(newColor);
+            EventTitlePanelTwo.setBackground(newColor);
         }
         if (Event3.isSelected()){
             EventPane3.setBackground(newColor);
+            EventTitlePanelThree.setBackground(newColor);
         }
         if (Event4.isSelected()){
             EventPane4.setBackground(newColor);
+            EventTitlePanelFour.setBackground(newColor);
         }
         if (Event5.isSelected()){
             EventPane5.setBackground(newColor);
+            EventTitlePanelFive.setBackground(newColor);
         }
         if (Event6.isSelected()){
             EventPane6.setBackground(newColor);
+            EventTitlePanelSix.setBackground(newColor);
         }
         if (Event7.isSelected()){
             EventPane7.setBackground(newColor);
+            EventTitlePanelSeven.setBackground(newColor);
         }
         if (Event8.isSelected()){
             EventPane8.setBackground(newColor);
+            EventTitlePanelEight.setBackground(newColor);
         }
         if (Event9.isSelected()){
             EventPane9.setBackground(newColor);
+            EventTitlePanelNine.setBackground(newColor);
         }
         if (Event10.isSelected()){
             EventPane10.setBackground(newColor);
+            EventTitlePanelTen.setBackground(newColor);
         }
         if (Event11.isSelected()){
             EventPane11.setBackground(newColor);
+            EventTitlePanelEleven.setBackground(newColor);
         }
         if (Event12.isSelected()){
             EventPane12.setBackground(newColor);
+            EventTitlePanelTwelve.setBackground(newColor);
         }
         if (Event13.isSelected()){
             EventPane13.setBackground(newColor);
+            EventTitlePanelThirteen.setBackground(newColor);
         }
         if (Event14.isSelected()){
             EventPane14.setBackground(newColor);
+            EventTitlePanelFourteen.setBackground(newColor);
         }
         if (Event15.isSelected()){
             EventPane15.setBackground(newColor);
+            EventTitlePanelFifteen.setBackground(newColor);
         }
         if (Event16.isSelected()){
             EventPane16.setBackground(newColor);
+            EventTitlePanelSixteen.setBackground(newColor);
         }
         if (Event17.isSelected()){
             EventPane17.setBackground(newColor);
+            EventTitlePanelSeventeen.setBackground(newColor);
         }
         if (Event18.isSelected()){
             EventPane18.setBackground(newColor);
+            EventTitlePanelEighteen.setBackground(newColor);
         }
         if (Event19.isSelected()){
             EventPane19.setBackground(newColor);
+            EventTitlePanelNinteen.setBackground(newColor);
         }
         if (Event20.isSelected()){
             EventPane20.setBackground(newColor);
+            EventTitlePanelTwenty.setBackground(newColor);
         }
         this.dispose();
     }//GEN-LAST:event_SetColourActionPerformed
