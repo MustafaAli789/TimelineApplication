@@ -40,8 +40,13 @@ import static TimelineApplication.Maintimeline.EventTitlePanelThree;
 import static TimelineApplication.Maintimeline.EventTitlePanelTwelve;
 import static TimelineApplication.Maintimeline.EventTitlePanelTwenty;
 import static TimelineApplication.Maintimeline.EventTitlePanelTwo;
+import static TimelineApplication.Maintimeline.SaveToFile;
+import static TimelineApplication.Maintimeline.colorlist;
+import static TimelineApplication.Maintimeline.eventInformationFile;
 import static TimelineApplication.Maintimeline.eventInformationList;
 import java.awt.Color;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 import javax.swing.JColorChooser;
 
 public class ChangeColour extends javax.swing.JFrame {
@@ -49,6 +54,128 @@ public class ChangeColour extends javax.swing.JFrame {
         initComponents();
     }
 
+public void updateColourToScreen (java.awt.Color a){
+    if (Event1.isSelected()){
+            EventPane1.setBackground(a);
+            EventTitlePanelOne.setBackground(a);
+            colorlist.get(0).clear();
+            colorlist.get(0).add(a);
+        } 
+        if (Event2.isSelected()){
+            EventPane2.setBackground(a);
+            EventTitlePanelTwo.setBackground(a);
+            colorlist.get(1).clear();
+            colorlist.get(1).add(a);
+        }
+        if (Event3.isSelected()){
+            EventPane3.setBackground(a);
+            EventTitlePanelThree.setBackground(a);
+            colorlist.get(2).clear();
+            colorlist.get(2).add(a);
+        }
+        if (Event4.isSelected()){
+            EventPane4.setBackground(a);
+            EventTitlePanelFour.setBackground(a);
+            colorlist.get(3).clear();
+            colorlist.get(3).add(a);
+        }
+        if (Event5.isSelected()){
+            EventPane5.setBackground(a);
+            EventTitlePanelFive.setBackground(a);
+            colorlist.get(4).clear();
+            colorlist.get(4).add(a);
+        }
+        if (Event6.isSelected()){
+            EventPane6.setBackground(a);
+            EventTitlePanelSix.setBackground(a);
+            colorlist.get(5).clear();
+            colorlist.get(5).add(a);
+        }
+        if (Event7.isSelected()){
+            EventPane7.setBackground(a);
+            EventTitlePanelSeven.setBackground(a);
+            colorlist.get(6).clear();
+            colorlist.get(6).add(a);
+        }
+        if (Event8.isSelected()){
+            EventPane8.setBackground(a);
+            EventTitlePanelEight.setBackground(a);
+            colorlist.get(7).clear();
+            colorlist.get(7).add(a);
+        }
+        if (Event9.isSelected()){
+            EventPane9.setBackground(a);
+            EventTitlePanelNine.setBackground(a);
+            colorlist.get(8).clear();
+            colorlist.get(8).add(a);
+        }
+        if (Event10.isSelected()){
+            EventPane10.setBackground(a);
+            EventTitlePanelTen.setBackground(a);
+            colorlist.get(9).clear();
+            colorlist.get(9).add(a);
+        }
+        if (Event11.isSelected()){
+            EventPane11.setBackground(a);
+            EventTitlePanelEleven.setBackground(a);
+            colorlist.get(10).clear();
+            colorlist.get(10).add(a);
+        }
+        if (Event12.isSelected()){
+            EventPane12.setBackground(a);
+            EventTitlePanelTwelve.setBackground(a);
+            colorlist.get(11).clear();
+            colorlist.get(11).add(a);
+        }
+        if (Event13.isSelected()){
+            EventPane13.setBackground(a);
+            EventTitlePanelThirteen.setBackground(a);
+            colorlist.get(12).clear();
+            colorlist.get(12).add(a);
+        }
+        if (Event14.isSelected()){
+            EventPane14.setBackground(a);
+            EventTitlePanelFourteen.setBackground(a);
+            colorlist.get(13).clear();
+            colorlist.get(13).add(a);
+        }
+        if (Event15.isSelected()){
+            EventPane15.setBackground(a);
+            EventTitlePanelFifteen.setBackground(a);
+            colorlist.get(14).clear();
+            colorlist.get(14).add(a);
+        }
+        if (Event16.isSelected()){
+            EventPane16.setBackground(a);
+            EventTitlePanelSixteen.setBackground(a);
+            colorlist.get(15).clear();
+            colorlist.get(15).add(a);
+        }
+        if (Event17.isSelected()){
+            EventPane17.setBackground(a);
+            EventTitlePanelSeventeen.setBackground(a);
+            colorlist.get(16).clear();
+            colorlist.get(16).add(a);
+        }
+        if (Event18.isSelected()){
+            EventPane18.setBackground(a);
+            EventTitlePanelEighteen.setBackground(a);
+            colorlist.get(17).clear();
+            colorlist.get(17).add(a);
+        }
+        if (Event19.isSelected()){
+            EventPane19.setBackground(a);
+            EventTitlePanelNinteen.setBackground(a);
+            colorlist.get(18).clear();
+            colorlist.get(18).add(a);
+        }
+        if (Event20.isSelected()){
+            EventPane20.setBackground(a);
+            EventTitlePanelTwenty.setBackground(a);
+            colorlist.get(19).clear();
+            colorlist.get(19).add(a);
+        }
+}
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -336,86 +463,8 @@ public class ChangeColour extends javax.swing.JFrame {
 
     private void SetColourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SetColourActionPerformed
         Color newColor = JColorChooser.showDialog(null, "Choose a color", Color.WHITE);
-        if (Event1.isSelected()){
-            EventPane1.setBackground(newColor);
-            EventTitlePanelOne.setBackground(newColor);
-        } 
-        if (Event2.isSelected()){
-            EventPane2.setBackground(newColor);
-            EventTitlePanelTwo.setBackground(newColor);
-        }
-        if (Event3.isSelected()){
-            EventPane3.setBackground(newColor);
-            EventTitlePanelThree.setBackground(newColor);
-        }
-        if (Event4.isSelected()){
-            EventPane4.setBackground(newColor);
-            EventTitlePanelFour.setBackground(newColor);
-        }
-        if (Event5.isSelected()){
-            EventPane5.setBackground(newColor);
-            EventTitlePanelFive.setBackground(newColor);
-        }
-        if (Event6.isSelected()){
-            EventPane6.setBackground(newColor);
-            EventTitlePanelSix.setBackground(newColor);
-        }
-        if (Event7.isSelected()){
-            EventPane7.setBackground(newColor);
-            EventTitlePanelSeven.setBackground(newColor);
-        }
-        if (Event8.isSelected()){
-            EventPane8.setBackground(newColor);
-            EventTitlePanelEight.setBackground(newColor);
-        }
-        if (Event9.isSelected()){
-            EventPane9.setBackground(newColor);
-            EventTitlePanelNine.setBackground(newColor);
-        }
-        if (Event10.isSelected()){
-            EventPane10.setBackground(newColor);
-            EventTitlePanelTen.setBackground(newColor);
-        }
-        if (Event11.isSelected()){
-            EventPane11.setBackground(newColor);
-            EventTitlePanelEleven.setBackground(newColor);
-        }
-        if (Event12.isSelected()){
-            EventPane12.setBackground(newColor);
-            EventTitlePanelTwelve.setBackground(newColor);
-        }
-        if (Event13.isSelected()){
-            EventPane13.setBackground(newColor);
-            EventTitlePanelThirteen.setBackground(newColor);
-        }
-        if (Event14.isSelected()){
-            EventPane14.setBackground(newColor);
-            EventTitlePanelFourteen.setBackground(newColor);
-        }
-        if (Event15.isSelected()){
-            EventPane15.setBackground(newColor);
-            EventTitlePanelFifteen.setBackground(newColor);
-        }
-        if (Event16.isSelected()){
-            EventPane16.setBackground(newColor);
-            EventTitlePanelSixteen.setBackground(newColor);
-        }
-        if (Event17.isSelected()){
-            EventPane17.setBackground(newColor);
-            EventTitlePanelSeventeen.setBackground(newColor);
-        }
-        if (Event18.isSelected()){
-            EventPane18.setBackground(newColor);
-            EventTitlePanelEighteen.setBackground(newColor);
-        }
-        if (Event19.isSelected()){
-            EventPane19.setBackground(newColor);
-            EventTitlePanelNinteen.setBackground(newColor);
-        }
-        if (Event20.isSelected()){
-            EventPane20.setBackground(newColor);
-            EventTitlePanelTwenty.setBackground(newColor);
-        }
+        updateColourToScreen (newColor);
+        SaveToFile();
         this.dispose();
     }//GEN-LAST:event_SetColourActionPerformed
 

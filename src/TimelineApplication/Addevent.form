@@ -58,8 +58,21 @@
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="TimeTextField" alignment="1" min="-2" pref="388" max="-2" attributes="0"/>
+                              <Component id="ImageUrlTextField" alignment="1" min="-2" pref="388" max="-2" attributes="0"/>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="AddBtn" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="90" max="-2" attributes="0"/>
+                                  <Component id="CancelBtn" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="90" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="EventPositionLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="EventPositionTextField" alignment="0" min="-2" pref="388" max="-2" attributes="0"/>
                               <Component id="EventNameLabel" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -68,25 +81,19 @@
                               <Component id="DescriptionLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="DescriptionTextField" alignment="0" min="-2" pref="388" max="-2" attributes="0"/>
                               <Component id="ImageUrlLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="jLabel1" min="-2" pref="161" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="SearchInput" min="-2" pref="127" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="SearchButton" min="-2" pref="75" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="TimeTextField" alignment="1" min="-2" pref="388" max="-2" attributes="0"/>
-                              <Component id="ImageUrlTextField" alignment="1" min="-2" pref="388" max="-2" attributes="0"/>
-                          </Group>
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
-              </Group>
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace max="32767" attributes="0"/>
-                  <Component id="AddBtn" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="90" max="-2" attributes="0"/>
-                  <Component id="CancelBtn" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="87" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -113,7 +120,13 @@
                   <Component id="ImageUrlLabel" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="ImageUrlTextField" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="43" max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="SearchInput" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="SearchButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace pref="11" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="AddBtn" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="CancelBtn" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -203,6 +216,24 @@
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CancelBtnActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="SearchInput">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SearchInputActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Search on Google Image:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="SearchButton">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Search"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SearchButtonActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>

@@ -31,11 +31,14 @@ public class Maintimeline extends javax.swing.JFrame {
     public static int numOfEvents;
     public static ArrayList<ArrayList<JLabel>> eventTitleDateImageNames = new ArrayList<ArrayList<JLabel>>();
     public static ArrayList<JTextPane> eventDescriptionNames = new ArrayList<JTextPane>();
+    public static ArrayList<ArrayList<java.awt.Color>> colorlist=new ArrayList();
     public static ArrayList<JPanel> eventPaneNames = new ArrayList<JPanel>();
     public static ArrayList<JLabel> arrowNames = new ArrayList<JLabel>();
     public static File eventInformationFile = new File("src/TimelineApplication/eventsInformation.txt"); 
     public static ArrayList<ArrayList<String>> eventInformationList = new ArrayList<>(); //2d list of all event info
-
+    
+     
+    
     public Maintimeline() {
         initComponents();  
                 
@@ -195,6 +198,10 @@ public class Maintimeline extends javax.swing.JFrame {
             eventInformationList.add(new ArrayList<String>());
         }
         
+        for(int i = 0; i<20; i++){
+            colorlist.add(new ArrayList());
+        }
+        
         if(eventInformationFile.exists()){
             try {   
                 Scanner sc2 = new Scanner(eventInformationFile);
@@ -204,11 +211,11 @@ public class Maintimeline extends javax.swing.JFrame {
                 //Put even information into the 2d list (i starts at 1 b/c index 0 is title)
                 for(int i = 0; i <numOfEvents; i++){ 
                     for (int j = 0; j<4; j++){;
+                        System.out.println(eventInformationList);
                         eventInformationList.get(i+1).add(sc2.nextLine()); //i + 1 to take into account title being first sublist
                         
                     }
                 }
-                
                 System.out.println(eventInformationList);
                 
             } catch (FileNotFoundException ex) {
@@ -229,7 +236,6 @@ public class Maintimeline extends javax.swing.JFrame {
         try{
             Writer fileWriter;
             fileWriter = new BufferedWriter(new FileWriter(eventInformationFile, false));
-            Scanner sc = new Scanner(eventInformationFile);
             fileWriter.write(Integer.toString(numOfEvents)); //Writing the num of events as first line
             fileWriter.write("\n");  
             System.out.println(eventInformationList.get(0).get(0));
@@ -240,6 +246,9 @@ public class Maintimeline extends javax.swing.JFrame {
                     fileWriter.write(eventInformationList.get(i+1).get(j));
                     fileWriter.write("\n");
                 }
+            }
+            for (int j=0;j<colorlist.size();j++){
+                fileWriter.write(colorlist.get(j).get(0).toString());
             }
             JOptionPane.showMessageDialog(null, "Timeline has been saved!");
             fileWriter.close();
@@ -1761,7 +1770,7 @@ public class Maintimeline extends javax.swing.JFrame {
     }//GEN-LAST:event_EditBtnActionPerformed
 
     private void EditTitleBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditTitleBtnActionPerformed
-       
+        
         System.out.println();
         
         if(!EditTitleBtnClicked){           
