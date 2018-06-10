@@ -1,5 +1,6 @@
 package TimelineApplication;
 import static TimelineApplication.Maintimeline.EditTitleBtnClicked;
+import static TimelineApplication.Maintimeline.SaveToFile;
 import static TimelineApplication.Maintimeline.eventInformationFile;
 import static TimelineApplication.Maintimeline.eventInformationList;
 import static TimelineApplication.Maintimeline.numOfEvents;
@@ -129,6 +130,7 @@ public class TitleEditForm extends javax.swing.JFrame {
         eventInformationList.get(0).remove(0); //remvoves old title list
         eventInformationList.get(0).add(title);
         updateScreen(numOfEvents); 
+        SaveToFile();
         EditTitleBtnClicked = false;
         this.dispose();
         /*

@@ -11,6 +11,7 @@ import java.io.*;
 import java.net.MalformedURLException;
 import java.net.URL;
 import static TimelineApplication.TitleEditForm.title;
+import java.awt.Color;
 import javax.swing.JPanel;
 import java.util.*;
 import java.util.logging.Level;
@@ -19,6 +20,7 @@ import javax.imageio.ImageIO;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextPane;
+import javax.swing.JColorChooser;
 
 
 public class Maintimeline extends javax.swing.JFrame {
@@ -31,9 +33,9 @@ public class Maintimeline extends javax.swing.JFrame {
     public static int numOfEvents;
     public static ArrayList<ArrayList<JLabel>> eventTitleDateImageNames = new ArrayList<ArrayList<JLabel>>();
     public static ArrayList<JTextPane> eventDescriptionNames = new ArrayList<JTextPane>();
-    public static ArrayList<ArrayList<java.awt.Color>> colorlist=new ArrayList();
     public static ArrayList<JPanel> eventPaneNames = new ArrayList<JPanel>();
     public static ArrayList<JLabel> arrowNames = new ArrayList<JLabel>();
+    public static ArrayList<JPanel> eventTitlePanelNames = new ArrayList<JPanel>();
     public static File eventInformationFile = new File("src/TimelineApplication/eventsInformation.txt"); 
     public static ArrayList<ArrayList<String>> eventInformationList = new ArrayList<>(); //2d list of all event info
     
@@ -64,7 +66,9 @@ public class Maintimeline extends javax.swing.JFrame {
         //The array below will store all arrow variable names for later use
         JLabel array4[]={Arrow1, Arrow2, Arrow3, Arrow4, Arrow5, Arrow6, Arrow7, Arrow8, Arrow9, Arrow10, Arrow11, Arrow12, Arrow13, Arrow14, Arrow15,Arrow16,Arrow17,Arrow18,Arrow19};
         
-        putVariableNamesIntoList(array1, array2, array3, array4); 
+        //The array below will store all event title panel variable names for later use
+        JPanel array5[]={EventTitlePanelOne, EventTitlePanelTwo,EventTitlePanelThree,EventTitlePanelFour,EventTitlePanelFive,EventTitlePanelSix,EventTitlePanelSeven,EventTitlePanelEight,EventTitlePanelNine,EventTitlePanelTen,EventTitlePanelEleven,EventTitlePanelTwelve,EventTitlePanelThirteen,EventTitlePanelFourteen,EventTitlePanelFifteen,EventTitlePanelSixteen,EventTitlePanelSeventeen,EventTitlePanelEighteen,EventTitlePanelNinteen,EventTitlePanelTwenty};
+        putVariableNamesIntoList(array1, array2, array3, array4, array5); 
         setNumOfEvents(); //Initally gets number of events when screen loads
         readFileContentsToList(); //Reads file and puts info into eventInfo list
         title = eventInformationList.get(0).get(0);
@@ -75,7 +79,7 @@ public class Maintimeline extends javax.swing.JFrame {
     }
    
     
-    public static void putVariableNamesIntoList(JLabel[][] array1, JTextPane[] array2, JPanel[] array3, JLabel[] array4){
+    public static void putVariableNamesIntoList(JLabel[][] array1, JTextPane[] array2, JPanel[] array3, JLabel[] array4, JPanel[] array5){
         
         //The code below puts the var names in the first array defined above (array1) into an arraylist --> this is necessary b/c the arrays defined above cannot be accessed anywhere
         //else but the "copies" of them made here can be accessed elsewhere
@@ -94,7 +98,10 @@ public class Maintimeline extends javax.swing.JFrame {
                
         
         //Putting array4 information into arrowNames list
-        Collections.addAll(arrowNames, array4);     
+        Collections.addAll(arrowNames, array4);  
+        
+        //Putting array5 information into arrowNames list
+        Collections.addAll(eventTitlePanelNames, array5);
         
     }
           
@@ -134,7 +141,7 @@ public class Maintimeline extends javax.swing.JFrame {
         //Putting text and image into each visible event
         for(int i = 0; i< numOfEvents; i++){ 
             
-            setEventInfo(eventTitleDateImageNames.get(i).get(0), eventTitleDateImageNames.get(i).get(1), eventDescriptionNames.get(i), eventTitleDateImageNames.get(i).get(2), i);
+            setEventInfo(eventTitleDateImageNames.get(i).get(0), eventTitleDateImageNames.get(i).get(1), eventDescriptionNames.get(i), eventTitleDateImageNames.get(i).get(2), i, eventTitlePanelNames.get(i),eventPaneNames.get(i));
             
         }
         
@@ -161,7 +168,7 @@ public class Maintimeline extends javax.swing.JFrame {
         } 
     }
         
-    public static void setEventInfo(JLabel title, JLabel date, JTextPane description, JLabel eventImage, int eventNum){
+    public static void setEventInfo(JLabel title, JLabel date, JTextPane description, JLabel eventImage, int eventNum, JPanel coloured1, JPanel coloured2){
 
         eventNum+=1; //add 1 to take into account that title is first sublist
         
@@ -174,7 +181,14 @@ public class Maintimeline extends javax.swing.JFrame {
         }
         else{ //if no URL provided, just put white box instead
             setImage(eventImage, "https://vignette.wikia.nocookie.net/uncyclopedia/images/4/44/White_square.png/revision/latest?cb=20061003200043", eventNum);
-        }         
+        }
+        
+        int index1 = Integer.parseInt(eventInformationList.get(eventNum).get(4));
+        int index2 = Integer.parseInt(eventInformationList.get(eventNum).get(5));
+        int index3 = Integer.parseInt(eventInformationList.get(eventNum).get(6));        
+        Color color = new Color (index1, index2,index3);
+        coloured2.setBackground(color);
+        coloured1.setBackground(color);
     }
     
     public static void setNumOfEvents(){
@@ -198,10 +212,6 @@ public class Maintimeline extends javax.swing.JFrame {
             eventInformationList.add(new ArrayList<String>());
         }
         
-        for(int i = 0; i<20; i++){
-            colorlist.add(new ArrayList());
-        }
-        
         if(eventInformationFile.exists()){
             try {   
                 Scanner sc2 = new Scanner(eventInformationFile);
@@ -210,7 +220,7 @@ public class Maintimeline extends javax.swing.JFrame {
                 
                 //Put even information into the 2d list (i starts at 1 b/c index 0 is title)
                 for(int i = 0; i <numOfEvents; i++){ 
-                    for (int j = 0; j<4; j++){;
+                    for (int j = 0; j<7; j++){;
                         System.out.println(eventInformationList);
                         eventInformationList.get(i+1).add(sc2.nextLine()); //i + 1 to take into account title being first sublist
                         
@@ -242,13 +252,10 @@ public class Maintimeline extends javax.swing.JFrame {
             fileWriter.write(eventInformationList.get(0).get(0)); //writing title name as second line
             fileWriter.write("\n");            
             for(int i = 0; i <numOfEvents; i++){ //writing event information starting on third line
-                for (int j = 0; j<4; j++){
+                for (int j = 0; j<7; j++){
                     fileWriter.write(eventInformationList.get(i+1).get(j));
                     fileWriter.write("\n");
                 }
-            }
-            for (int j=0;j<colorlist.size();j++){
-                fileWriter.write(colorlist.get(j).get(0).toString());
             }
             JOptionPane.showMessageDialog(null, "Timeline has been saved!");
             fileWriter.close();
