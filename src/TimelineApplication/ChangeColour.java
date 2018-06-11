@@ -1,57 +1,14 @@
 package TimelineApplication;
 
-import static TimelineApplication.Maintimeline.EditTitleBtnClicked;
-import static TimelineApplication.Maintimeline.EventPane1;
-import static TimelineApplication.Maintimeline.EventPane2;
-import static TimelineApplication.Maintimeline.EventPane3;
-import static TimelineApplication.Maintimeline.EventPane4;
-import static TimelineApplication.Maintimeline.EventPane5;
-import static TimelineApplication.Maintimeline.EventPane6;
-import static TimelineApplication.Maintimeline.EventPane7;
-import static TimelineApplication.Maintimeline.EventPane8;
-import static TimelineApplication.Maintimeline.EventPane9;
-import static TimelineApplication.Maintimeline.EventPane10;
-import static TimelineApplication.Maintimeline.EventPane11;
-import static TimelineApplication.Maintimeline.EventPane12;
-import static TimelineApplication.Maintimeline.EventPane13;
-import static TimelineApplication.Maintimeline.EventPane14;
-import static TimelineApplication.Maintimeline.EventPane15;
-import static TimelineApplication.Maintimeline.EventPane16;
-import static TimelineApplication.Maintimeline.EventPane17;
-import static TimelineApplication.Maintimeline.EventPane18;
-import static TimelineApplication.Maintimeline.EventPane19;
-import static TimelineApplication.Maintimeline.EventPane20;
-import static TimelineApplication.Maintimeline.EventTitlePanelEight;
-import static TimelineApplication.Maintimeline.EventTitlePanelEighteen;
-import static TimelineApplication.Maintimeline.EventTitlePanelEleven;
-import static TimelineApplication.Maintimeline.EventTitlePanelFifteen;
-import static TimelineApplication.Maintimeline.EventTitlePanelFive;
-import static TimelineApplication.Maintimeline.EventTitlePanelFour;
-import static TimelineApplication.Maintimeline.EventTitlePanelFourteen;
-import static TimelineApplication.Maintimeline.EventTitlePanelNine;
-import static TimelineApplication.Maintimeline.EventTitlePanelNinteen;
-import static TimelineApplication.Maintimeline.EventTitlePanelOne;
-import static TimelineApplication.Maintimeline.EventTitlePanelSeven;
-import static TimelineApplication.Maintimeline.EventTitlePanelSeventeen;
-import static TimelineApplication.Maintimeline.EventTitlePanelSix;
-import static TimelineApplication.Maintimeline.EventTitlePanelSixteen;
-import static TimelineApplication.Maintimeline.EventTitlePanelTen;
-import static TimelineApplication.Maintimeline.EventTitlePanelThirteen;
-import static TimelineApplication.Maintimeline.EventTitlePanelThree;
-import static TimelineApplication.Maintimeline.EventTitlePanelTwelve;
-import static TimelineApplication.Maintimeline.EventTitlePanelTwenty;
-import static TimelineApplication.Maintimeline.EventTitlePanelTwo;
-import static TimelineApplication.Maintimeline.SaveToFile;
-import static TimelineApplication.Maintimeline.eventInformationFile;
+
 import static TimelineApplication.Maintimeline.eventInformationList;
 import static TimelineApplication.Maintimeline.eventPaneNames;
 import static TimelineApplication.Maintimeline.eventTitlePanelNames;
 import static TimelineApplication.Maintimeline.numOfEvents;
+import static TimelineApplication.Maintimeline.colorBtnClicked;
 import java.awt.Color;
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Scanner;
 import javax.swing.JCheckBox;
 import javax.swing.JColorChooser;
 
@@ -70,17 +27,17 @@ public class ChangeColour extends javax.swing.JFrame {
     }
         
     public void updateColourToScreen(java.awt.Color selectedColor, String ColorR, String ColorG, String ColorB) {
-        System.out.println(checkBoxList.get(1));
+        System.out.println(selectedColor);
         for (int j=1;j<=numOfEvents;j++){
-            if(checkBoxList.get(j).isSelected()){
-                eventPaneNames.get(j).setBackground(selectedColor);
-                eventTitlePanelNames.get(j).setBackground(selectedColor);
-            eventInformationList.get(j).remove(6);
-            eventInformationList.get(j).remove(5);
-            eventInformationList.get(j).remove(4);
-            eventInformationList.get(j).add(4, ColorR);
-            eventInformationList.get(j).add(5, ColorG);
-            eventInformationList.get(j).add(6, ColorB);                
+            if(checkBoxList.get(j-1).isSelected()){
+                eventPaneNames.get(j-1).setBackground(selectedColor);
+                eventTitlePanelNames.get(j-1).setBackground(selectedColor);
+                eventInformationList.get(j).remove(6);
+                eventInformationList.get(j).remove(5);
+                eventInformationList.get(j).remove(4);
+                eventInformationList.get(j).add(4, ColorR);
+                eventInformationList.get(j).add(5, ColorG);
+                eventInformationList.get(j).add(6, ColorB);                
             } 
         }
     }
@@ -112,10 +69,11 @@ public class ChangeColour extends javax.swing.JFrame {
         Event16 = new javax.swing.JCheckBox();
         Event17 = new javax.swing.JCheckBox();
         Event18 = new javax.swing.JCheckBox();
+        jButton1 = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
 
-        SetColour.setFont(new java.awt.Font("Copperplate Gothic Bold", 1, 24)); // NOI18N
+        SetColour.setFont(new java.awt.Font(".SF NS Text", 1, 24)); // NOI18N
         SetColour.setText("Set Colour");
         SetColour.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -270,6 +228,14 @@ public class ChangeColour extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setFont(new java.awt.Font(".SF NS Text", 1, 24)); // NOI18N
+        jButton1.setText("Cancel");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -303,16 +269,18 @@ public class ChangeColour extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(155, 155, 155)
-                        .addComponent(SetColour))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(26, 26, 26)
-                        .addComponent(jLabel1)))
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(38, 38, 38)
+                            .addComponent(SetColour)
+                            .addGap(33, 33, 33)
+                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addGap(42, 42, 42)
+                            .addComponent(jLabel2))))
                 .addContainerGap(25, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(42, 42, 42)
-                .addComponent(jLabel2)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -363,9 +331,11 @@ public class ChangeColour extends javax.swing.JFrame {
                         .addComponent(Event19)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Event20)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
-                .addComponent(SetColour)
-                .addGap(22, 22, 22))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(SetColour)
+                    .addComponent(jButton1))
+                .addGap(17, 17, 17))
         );
 
         pack();
@@ -373,7 +343,6 @@ public class ChangeColour extends javax.swing.JFrame {
 
     private void SetColourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SetColourActionPerformed
         Color newColor = JColorChooser.showDialog(null, "Choose a color", Color.WHITE);
-        System.out.println(newColor);
         int firstIndex = newColor.getRed();
         String ColorR = Integer.toString(firstIndex);
         int secIndex = newColor.getGreen();
@@ -381,7 +350,10 @@ public class ChangeColour extends javax.swing.JFrame {
         int thirdIndex = newColor.getBlue();
         String ColorB = Integer.toString(thirdIndex);
         updateColourToScreen(newColor, ColorR, ColorG, ColorB);
-        EditTitleBtnClicked = false;
+        colorBtnClicked = false;
+        for (int i=0; i<numOfEvents;i++){
+            checkBoxList.get(i).setSelected(false);
+        }
         this.dispose();
     }//GEN-LAST:event_SetColourActionPerformed
 
@@ -465,6 +437,12 @@ public class ChangeColour extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_Event18ActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        colorBtnClicked = false;
+        this.dispose();
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -522,6 +500,7 @@ public class ChangeColour extends javax.swing.JFrame {
     public static javax.swing.JCheckBox Event8;
     public static javax.swing.JCheckBox Event9;
     private javax.swing.JButton SetColour;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
