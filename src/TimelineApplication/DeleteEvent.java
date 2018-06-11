@@ -5,6 +5,7 @@
  */
 package TimelineApplication;
 
+import static TimelineApplication.Maintimeline.SaveToFile;
 import static TimelineApplication.Maintimeline.deleteBtnClicked;
 import static TimelineApplication.Maintimeline.eventInformationList;
 import static TimelineApplication.Maintimeline.numOfEvents;
@@ -154,6 +155,7 @@ public class DeleteEvent extends javax.swing.JFrame {
         if (del_pos_num <= numOfEvents && del_pos_num > 0){
             eventInformationList.remove(del_pos_num); 
             numOfEvents -=1;
+            SaveToFile();
             updateScreen(numOfEvents); 
         } else{
             JOptionPane.showMessageDialog(null, "No event at that position");

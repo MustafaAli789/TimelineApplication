@@ -5,6 +5,8 @@
  */
 package TimelineApplication;
 
+import static TimelineApplication.ChangeColour.Event1;
+import static TimelineApplication.ChangeColour.Event2;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 import java.io.*;
@@ -17,6 +19,7 @@ import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
+import javax.swing.JCheckBox;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextPane;
@@ -28,6 +31,7 @@ public class Maintimeline extends javax.swing.JFrame {
     public static boolean addBtnClicked = false;
     public static boolean deleteBtnClicked = false;
     public static boolean editBtnClicked = false;
+    public static boolean colorBtnClicked = false;
     public static boolean EditTitleBtnClicked = false;
     public static String Title;
     public static int numOfEvents;
@@ -68,6 +72,7 @@ public class Maintimeline extends javax.swing.JFrame {
         
         //The array below will store all event title panel variable names for later use
         JPanel array5[]={EventTitlePanelOne, EventTitlePanelTwo,EventTitlePanelThree,EventTitlePanelFour,EventTitlePanelFive,EventTitlePanelSix,EventTitlePanelSeven,EventTitlePanelEight,EventTitlePanelNine,EventTitlePanelTen,EventTitlePanelEleven,EventTitlePanelTwelve,EventTitlePanelThirteen,EventTitlePanelFourteen,EventTitlePanelFifteen,EventTitlePanelSixteen,EventTitlePanelSeventeen,EventTitlePanelEighteen,EventTitlePanelNinteen,EventTitlePanelTwenty};
+        
         putVariableNamesIntoList(array1, array2, array3, array4, array5); 
         setNumOfEvents(); //Initally gets number of events when screen loads
         readFileContentsToList(); //Reads file and puts info into eventInfo list
@@ -203,10 +208,7 @@ public class Maintimeline extends javax.swing.JFrame {
         }
     }
     
-    public static void readFileContentsToList(){
-       
-        System.out.println("Num of Events: " + numOfEvents);
-        
+    public static void readFileContentsToList(){        
         //Add 17 sublists to main list, 1 for title and 16 for events
         for(int i = 0; i<21; i++){
             eventInformationList.add(new ArrayList<String>());
@@ -221,22 +223,20 @@ public class Maintimeline extends javax.swing.JFrame {
                 //Put even information into the 2d list (i starts at 1 b/c index 0 is title)
                 for(int i = 0; i <numOfEvents; i++){ 
                     for (int j = 0; j<7; j++){;
-                        System.out.println(eventInformationList);
                         eventInformationList.get(i+1).add(sc2.nextLine()); //i + 1 to take into account title being first sublist
                         
                     }
                 }
-                System.out.println(eventInformationList);
                 
             } catch (FileNotFoundException ex) {
-                System.out.println("Error for some reason!");
+                JOptionPane.showMessageDialog(null, "Error for some reason!");
             }
         }
         else{
             try {
                 eventInformationFile.createNewFile();
             } catch (IOException ex) {
-                System.out.println("Attemped to create new database but path to file coult not be found.");
+                JOptionPane.showMessageDialog(null, "Attemped to create new database but path to file could not be found.");
             }
         }
         
@@ -248,7 +248,6 @@ public class Maintimeline extends javax.swing.JFrame {
             fileWriter = new BufferedWriter(new FileWriter(eventInformationFile, false));
             fileWriter.write(Integer.toString(numOfEvents)); //Writing the num of events as first line
             fileWriter.write("\n");  
-            System.out.println(eventInformationList.get(0).get(0));
             fileWriter.write(eventInformationList.get(0).get(0)); //writing title name as second line
             fileWriter.write("\n");            
             for(int i = 0; i <numOfEvents; i++){ //writing event information starting on third line
@@ -262,10 +261,10 @@ public class Maintimeline extends javax.swing.JFrame {
             updateScreen(numOfEvents);
         }
         catch (FileNotFoundException ex){
-            System.out.println("Cannot find the file "+ eventInformationFile);
+            JOptionPane.showMessageDialog(null, "Cannot find the file.");
             }
         catch (IOException e) {
-            System.out.println("Error when trying to read "+eventInformationFile);
+            JOptionPane.showMessageDialog(null, "Error when trying to extract file.");
             }
         
     }
@@ -1766,7 +1765,6 @@ public class Maintimeline extends javax.swing.JFrame {
     }//GEN-LAST:event_AddBtnActionPerformed
 
     private void EditBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditBtnActionPerformed
-        System.out.println(!editBtnClicked);
         if(!editBtnClicked){
             EditEventNum editEventNum = new EditEventNum();
             editEventNum.setVisible(true);
@@ -1777,20 +1775,20 @@ public class Maintimeline extends javax.swing.JFrame {
     }//GEN-LAST:event_EditBtnActionPerformed
 
     private void EditTitleBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditTitleBtnActionPerformed
-        
-        System.out.println();
-        
         if(!EditTitleBtnClicked){           
             TitleEditForm editTimeline = new TitleEditForm();
             editTimeline.setVisible(true);
         }
-                
         EditTitleBtnClicked = true; 
     }//GEN-LAST:event_EditTitleBtnActionPerformed
 
     private void ChangeColourBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChangeColourBtnActionPerformed
-        ChangeColour colour = new ChangeColour();
-        colour.setVisible(true);
+        if (!colorBtnClicked){
+            ChangeColour colour = new ChangeColour();
+            colour.setVisible(true);
+        }
+        
+        colorBtnClicked=true; 
     }//GEN-LAST:event_ChangeColourBtnActionPerformed
 
     public static void setTheTitle (String a){

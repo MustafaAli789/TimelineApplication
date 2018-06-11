@@ -1,5 +1,6 @@
 package TimelineApplication;
 
+import static TimelineApplication.Maintimeline.EditTitleBtnClicked;
 import static TimelineApplication.Maintimeline.EventPane1;
 import static TimelineApplication.Maintimeline.EventPane2;
 import static TimelineApplication.Maintimeline.EventPane3;
@@ -43,226 +44,47 @@ import static TimelineApplication.Maintimeline.EventTitlePanelTwo;
 import static TimelineApplication.Maintimeline.SaveToFile;
 import static TimelineApplication.Maintimeline.eventInformationFile;
 import static TimelineApplication.Maintimeline.eventInformationList;
+import static TimelineApplication.Maintimeline.eventPaneNames;
+import static TimelineApplication.Maintimeline.eventTitlePanelNames;
+import static TimelineApplication.Maintimeline.numOfEvents;
 import java.awt.Color;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
+import javax.swing.JCheckBox;
 import javax.swing.JColorChooser;
 
 public class ChangeColour extends javax.swing.JFrame {
+    
+    public static ArrayList<JCheckBox> checkBoxList = new ArrayList<JCheckBox>();
     public ChangeColour() {
         initComponents();
+        JCheckBox array6[]={Event1, Event2,Event3, Event4, Event5, Event6, Event7, Event8, Event9, Event10, Event11, Event12, Event13, Event14, Event15, Event16, Event17, Event18, Event19, Event20};
+        for (int i =1; i<=numOfEvents;i++){
+            array6[i-1].setText(eventInformationList.get(i).get(0));
+            array6[i-1].setEnabled(true);
+        }
+         Collections.addAll(checkBoxList, array6);
+        
+    }
+        
+    public void updateColourToScreen(java.awt.Color selectedColor, String ColorR, String ColorG, String ColorB) {
+        System.out.println(checkBoxList.get(1));
+        for (int j=1;j<=numOfEvents;j++){
+            if(checkBoxList.get(j).isSelected()){
+                eventPaneNames.get(j).setBackground(selectedColor);
+                eventTitlePanelNames.get(j).setBackground(selectedColor);
+            eventInformationList.get(j).remove(6);
+            eventInformationList.get(j).remove(5);
+            eventInformationList.get(j).remove(4);
+            eventInformationList.get(j).add(4, ColorR);
+            eventInformationList.get(j).add(5, ColorG);
+            eventInformationList.get(j).add(6, ColorB);                
+            } 
+        }
     }
 
-public void updateColourToScreen (java.awt.Color a, String ColorR,String ColorG,String ColorB){
-    if (Event1.isSelected()){
-            EventPane1.setBackground(a);
-            EventTitlePanelOne.setBackground(a);
-            eventInformationList.get(1).remove(6);
-            eventInformationList.get(1).remove(5);
-            eventInformationList.get(1).remove(4);
-            eventInformationList.get(1).add(4,ColorR);
-            eventInformationList.get(1).add(5,ColorG);
-            eventInformationList.get(1).add(6,ColorB);
-
-        } 
-        if (Event2.isSelected()){
-            EventPane2.setBackground(a);
-            EventTitlePanelTwo.setBackground(a);
-            eventInformationList.get(2).remove(6);
-            eventInformationList.get(2).remove(5);
-            eventInformationList.get(2).remove(4);
-            eventInformationList.get(2).add(4,ColorR);
-            eventInformationList.get(2).add(5,ColorG);
-            eventInformationList.get(2).add(6,ColorB);
-
-        }
-        if (Event3.isSelected()){
-            EventPane3.setBackground(a);
-            EventTitlePanelThree.setBackground(a);
-            eventInformationList.get(3).remove(6);
-            eventInformationList.get(3).remove(5);
-            eventInformationList.get(3).remove(4);
-            eventInformationList.get(3).add(4,ColorR);
-            eventInformationList.get(3).add(5,ColorG);
-            eventInformationList.get(3).add(6,ColorB);
-
-        }
-        if (Event4.isSelected()){
-            EventPane4.setBackground(a);
-            EventTitlePanelFour.setBackground(a);
-            eventInformationList.get(4).remove(6);
-            eventInformationList.get(4).remove(5);
-            eventInformationList.get(4).remove(4);
-            eventInformationList.get(4).add(4,ColorR);
-            eventInformationList.get(4).add(5,ColorG);
-            eventInformationList.get(4).add(6,ColorB);
-        }
-        if (Event5.isSelected()){
-            EventPane5.setBackground(a);
-            EventTitlePanelFive.setBackground(a);
-            eventInformationList.get(5).remove(6);
-            eventInformationList.get(5).remove(5);
-            eventInformationList.get(5).remove(4);
-            eventInformationList.get(5).add(4,ColorR);
-            eventInformationList.get(5).add(5,ColorG);
-            eventInformationList.get(5).add(6,ColorB);
-        }
-        if (Event6.isSelected()){
-            EventPane6.setBackground(a);
-            EventTitlePanelSix.setBackground(a);
-            eventInformationList.get(6).remove(6);
-            eventInformationList.get(6).remove(5);
-            eventInformationList.get(6).remove(4);
-            eventInformationList.get(6).add(4,ColorR);
-            eventInformationList.get(6).add(5,ColorG);
-            eventInformationList.get(6).add(6,ColorB);
-        }
-        if (Event7.isSelected()){
-            EventPane7.setBackground(a);
-            EventTitlePanelSeven.setBackground(a);
-            eventInformationList.get(7).remove(6);
-            eventInformationList.get(7).remove(5);
-            eventInformationList.get(7).remove(4);
-            eventInformationList.get(7).add(4,ColorR);
-            eventInformationList.get(7).add(5,ColorG);
-            eventInformationList.get(7).add(6,ColorB);
-
-        }
-        if (Event8.isSelected()){
-            EventPane8.setBackground(a);
-            EventTitlePanelEight.setBackground(a);
-            eventInformationList.get(8).remove(6);
-            eventInformationList.get(8).remove(5);
-            eventInformationList.get(8).remove(4);
-            eventInformationList.get(8).add(4,ColorR);
-            eventInformationList.get(8).add(5,ColorG);
-            eventInformationList.get(8).add(6,ColorB);
-
-        }
-        if (Event9.isSelected()){
-            EventPane9.setBackground(a);
-            EventTitlePanelNine.setBackground(a);
-            eventInformationList.get(9).remove(6);
-            eventInformationList.get(9).remove(5);
-            eventInformationList.get(9).remove(4);
-            eventInformationList.get(9).add(4,ColorR);
-            eventInformationList.get(9).add(5,ColorG);
-            eventInformationList.get(9).add(6,ColorB);
-
-        }
-        if (Event10.isSelected()){
-            EventPane10.setBackground(a);
-            EventTitlePanelTen.setBackground(a);
-            eventInformationList.get(10).remove(6);
-            eventInformationList.get(10).remove(5);
-            eventInformationList.get(10).remove(4);
-            eventInformationList.get(10).add(4,ColorR);
-            eventInformationList.get(10).add(5,ColorG);
-            eventInformationList.get(10).add(6,ColorB);
-
-        }
-        if (Event11.isSelected()){
-            EventPane11.setBackground(a);
-            EventTitlePanelEleven.setBackground(a);
-            eventInformationList.get(11).remove(6);
-            eventInformationList.get(11).remove(5);
-            eventInformationList.get(11).remove(4);
-            eventInformationList.get(11).add(4,ColorR);
-            eventInformationList.get(11).add(5,ColorG);
-            eventInformationList.get(11).add(6,ColorB);
-        }
-        if (Event12.isSelected()){
-            EventPane12.setBackground(a);
-            EventTitlePanelTwelve.setBackground(a);
-            eventInformationList.get(12).remove(6);
-            eventInformationList.get(12).remove(5);
-            eventInformationList.get(12).remove(4);
-            eventInformationList.get(12).add(4,ColorR);
-            eventInformationList.get(12).add(5,ColorG);
-            eventInformationList.get(12).add(6,ColorB);
-        }
-        if (Event13.isSelected()){
-            EventPane13.setBackground(a);
-            EventTitlePanelThirteen.setBackground(a);
-            eventInformationList.get(13).remove(6);
-            eventInformationList.get(13).remove(5);
-            eventInformationList.get(13).remove(4);
-            eventInformationList.get(13).add(4,ColorR);
-            eventInformationList.get(13).add(5,ColorG);
-            eventInformationList.get(13).add(6,ColorB);
-        }
-        if (Event14.isSelected()){
-            EventPane14.setBackground(a);
-            EventTitlePanelFourteen.setBackground(a);
-            eventInformationList.get(14).remove(6);
-            eventInformationList.get(14).remove(5);
-            eventInformationList.get(14).remove(4);
-            eventInformationList.get(14).add(4,ColorR);
-            eventInformationList.get(14).add(5,ColorG);
-            eventInformationList.get(14).add(6,ColorB);
-        }
-        if (Event15.isSelected()){
-            EventPane15.setBackground(a);
-            EventTitlePanelFifteen.setBackground(a);
-            eventInformationList.get(15).remove(6);
-            eventInformationList.get(15).remove(5);
-            eventInformationList.get(15).remove(4);
-            eventInformationList.get(15).add(4,ColorR);
-            eventInformationList.get(15).add(5,ColorG);
-            eventInformationList.get(15).add(6,ColorB);
-        }
-        if (Event16.isSelected()){
-            EventPane16.setBackground(a);
-            EventTitlePanelSixteen.setBackground(a);
-            eventInformationList.get(16).remove(6);
-            eventInformationList.get(16).remove(5);
-            eventInformationList.get(16).remove(4);
-            eventInformationList.get(16).add(4,ColorR);
-            eventInformationList.get(16).add(5,ColorG);
-            eventInformationList.get(16).add(6,ColorB);
-        }
-        if (Event17.isSelected()){
-            EventPane17.setBackground(a);
-            EventTitlePanelSeventeen.setBackground(a);
-            eventInformationList.get(17).remove(6);
-            eventInformationList.get(17).remove(5);
-            eventInformationList.get(17).remove(4);
-            eventInformationList.get(17).add(4,ColorR);
-            eventInformationList.get(17).add(5,ColorG);
-            eventInformationList.get(17).add(6,ColorB);
-        }
-        if (Event18.isSelected()){
-            EventPane18.setBackground(a);
-            EventTitlePanelEighteen.setBackground(a);
-            eventInformationList.get(18).remove(6);
-            eventInformationList.get(18).remove(5);
-            eventInformationList.get(18).remove(4);
-            eventInformationList.get(18).add(4,ColorR);
-            eventInformationList.get(18).add(5,ColorG);
-            eventInformationList.get(18).add(6,ColorB);
-        }
-        if (Event19.isSelected()){
-            EventPane19.setBackground(a);
-            EventTitlePanelNinteen.setBackground(a);
-            eventInformationList.get(19).remove(6);
-            eventInformationList.get(19).remove(5);
-            eventInformationList.get(19).remove(4);
-            eventInformationList.get(19).add(4,ColorR);
-            eventInformationList.get(19).add(5,ColorG);
-            eventInformationList.get(19).add(6,ColorB);
-        }
-        if (Event20.isSelected()){
-            EventPane20.setBackground(a);
-            EventTitlePanelTwenty.setBackground(a);
-            eventInformationList.get(20).remove(6);
-            eventInformationList.get(20).remove(5);
-            eventInformationList.get(20).remove(4);
-            eventInformationList.get(20).add(4,ColorR);
-            eventInformationList.get(20).add(5,ColorG);
-            eventInformationList.get(20).add(6,ColorB);
-        }
-}
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -301,8 +123,8 @@ public void updateColourToScreen (java.awt.Color a, String ColorR,String ColorG,
             }
         });
 
-        Event1.setText(eventInformationList.get(1).get(0));
         Event1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        Event1.setEnabled(false);
         Event1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Event1ActionPerformed(evt);
@@ -315,133 +137,133 @@ public void updateColourToScreen (java.awt.Color a, String ColorR,String ColorG,
         jLabel2.setFont(new java.awt.Font("Copperplate Gothic Bold", 1, 18)); // NOI18N
         jLabel2.setText("that you want to change the colours for");
 
-        Event2.setText(eventInformationList.get(2).get(0));
+        Event2.setEnabled(false);
         Event2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Event2ActionPerformed(evt);
             }
         });
 
-        Event3.setText(eventInformationList.get(3).get(0));
+        Event3.setEnabled(false);
         Event3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Event3ActionPerformed(evt);
             }
         });
 
-        Event4.setText(eventInformationList.get(4).get(0));
+        Event4.setEnabled(false);
         Event4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Event4ActionPerformed(evt);
             }
         });
 
-        Event5.setText(eventInformationList.get(5).get(0));
+        Event5.setEnabled(false);
         Event5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Event5ActionPerformed(evt);
             }
         });
 
-        Event6.setText(eventInformationList.get(6).get(0));
+        Event6.setEnabled(false);
         Event6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Event6ActionPerformed(evt);
             }
         });
 
-        Event7.setText(eventInformationList.get(7).get(0));
+        Event7.setEnabled(false);
         Event7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Event7ActionPerformed(evt);
             }
         });
 
-        Event8.setText(eventInformationList.get(8).get(0));
+        Event8.setEnabled(false);
         Event8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Event8ActionPerformed(evt);
             }
         });
 
-        Event9.setText(eventInformationList.get(9).get(0));
+        Event9.setEnabled(false);
         Event9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Event9ActionPerformed(evt);
             }
         });
 
-        Event10.setText(eventInformationList.get(10).get(0));
+        Event10.setEnabled(false);
         Event10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Event10ActionPerformed(evt);
             }
         });
 
-        Event19.setText(eventInformationList.get(19).get(0));
+        Event19.setEnabled(false);
         Event19.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Event19ActionPerformed(evt);
             }
         });
 
-        Event20.setText(eventInformationList.get(20).get(0));
+        Event20.setEnabled(false);
         Event20.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Event20ActionPerformed(evt);
             }
         });
 
-        Event12.setText(eventInformationList.get(12).get(0));
+        Event12.setEnabled(false);
         Event12.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Event12ActionPerformed(evt);
             }
         });
 
-        Event11.setText(eventInformationList.get(11).get(0));
+        Event11.setEnabled(false);
         Event11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Event11ActionPerformed(evt);
             }
         });
 
-        Event13.setText(eventInformationList.get(13).get(0));
+        Event13.setEnabled(false);
         Event13.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Event13ActionPerformed(evt);
             }
         });
 
-        Event14.setText(eventInformationList.get(14).get(0));
+        Event14.setEnabled(false);
         Event14.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Event14ActionPerformed(evt);
             }
         });
 
-        Event15.setText(eventInformationList.get(15).get(0));
+        Event15.setEnabled(false);
         Event15.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Event15ActionPerformed(evt);
             }
         });
 
-        Event16.setText(eventInformationList.get(16).get(0));
+        Event16.setEnabled(false);
         Event16.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Event16ActionPerformed(evt);
             }
         });
 
-        Event17.setText(eventInformationList.get(17).get(0));
+        Event17.setEnabled(false);
         Event17.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Event17ActionPerformed(evt);
             }
         });
 
-        Event18.setText(eventInformationList.get(18).get(0));
+        Event18.setEnabled(false);
         Event18.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Event18ActionPerformed(evt);
@@ -453,50 +275,51 @@ public void updateColourToScreen (java.awt.Color a, String ColorR,String ColorG,
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(Event1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Event2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Event3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Event4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Event5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Event6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Event7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Event8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Event9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Event10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Event11)
+                    .addComponent(Event12)
+                    .addComponent(Event13)
+                    .addComponent(Event14)
+                    .addComponent(Event15)
+                    .addComponent(Event16)
+                    .addComponent(Event17)
+                    .addComponent(Event18)
+                    .addComponent(Event19)
+                    .addComponent(Event20))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jLabel2)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(Event1)
-                                            .addComponent(Event2)
-                                            .addComponent(Event3)
-                                            .addComponent(Event4)
-                                            .addComponent(Event5)
-                                            .addComponent(Event6)
-                                            .addComponent(Event7)
-                                            .addComponent(Event8)
-                                            .addComponent(Event9)
-                                            .addComponent(Event10))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(Event11)
-                                            .addComponent(Event12)
-                                            .addComponent(Event13)
-                                            .addComponent(Event14)
-                                            .addComponent(Event15)
-                                            .addComponent(Event16)
-                                            .addComponent(Event17)
-                                            .addComponent(Event18)
-                                            .addComponent(Event19)
-                                            .addComponent(Event20)))))))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(155, 155, 155)
-                        .addComponent(SetColour)))
-                .addContainerGap(45, Short.MAX_VALUE))
+                        .addComponent(SetColour))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addComponent(jLabel1)))
+                .addContainerGap(25, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(42, 42, 42)
+                .addComponent(jLabel2)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(13, 13, 13)
+                .addGap(11, 11, 11)
                 .addComponent(jLabel1)
-                .addGap(4, 4, 4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -557,8 +380,8 @@ public void updateColourToScreen (java.awt.Color a, String ColorR,String ColorG,
         String ColorG = Integer.toString(secIndex);
         int thirdIndex = newColor.getBlue();
         String ColorB = Integer.toString(thirdIndex);
-        updateColourToScreen (newColor,ColorR,ColorG,ColorB);
-        SaveToFile();
+        updateColourToScreen(newColor, ColorR, ColorG, ColorB);
+        EditTitleBtnClicked = false;
         this.dispose();
     }//GEN-LAST:event_SetColourActionPerformed
 
@@ -646,7 +469,7 @@ public void updateColourToScreen (java.awt.Color a, String ColorR,String ColorG,
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        
+
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
