@@ -486,7 +486,8 @@ public class Maintimeline extends javax.swing.JFrame {
 
         ScrollableAreaPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel1.setBackground(new java.awt.Color(255, 102, 102));
+        jPanel1.setToolTipText("");
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         EventPane1.setBackground(new java.awt.Color(153, 153, 153));
