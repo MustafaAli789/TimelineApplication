@@ -79,9 +79,6 @@ public class Start extends javax.swing.JFrame {
         Maintimeline mainscreen = new Maintimeline();
         mainscreen.setVisible(true);
         super.dispose();
-         
-        /* Login loginscreen = new Login();
-        loginscreen.setVisible(true); */
         
         Start.setBackground(Color.blue);
         

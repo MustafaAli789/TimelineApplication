@@ -141,8 +141,6 @@ public class Login extends javax.swing.JFrame {
         if(UPverify(readUP(),pw, Uname)==true){
             Start startscreen = new Start();
             startscreen.setVisible(true);
-            /*Maintimeline mainscreen = new Maintimeline();
-            mainscreen.setVisible(true); */
             super.dispose();
         }
     }//GEN-LAST:event_LoginRegisterBtnActionPerformed
@@ -164,8 +162,6 @@ public class Login extends javax.swing.JFrame {
         if(Register(RecUname,RecPw)==true){
             Start startscreen = new Start();
             startscreen.setVisible(true);
-           /* Maintimeline mainscreen = new Maintimeline();
-            mainscreen.setVisible(true); */
             super.dispose();
         }
         // TODO add your handling code here:
