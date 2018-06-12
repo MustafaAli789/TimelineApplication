@@ -18,7 +18,7 @@ public class Start extends javax.swing.JFrame {
      * Creates new form Login
      */
     public Start() {
-        initComponents();
+       initComponents();
     }
 
     /**
@@ -33,6 +33,7 @@ public class Start extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         TitleLabel = new javax.swing.JLabel();
         Start = new javax.swing.JButton();
+        TimelineBuilderLabel = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -45,12 +46,13 @@ public class Start extends javax.swing.JFrame {
 
         TitleLabel.setFont(new java.awt.Font("Comic Sans MS", 1, 48)); // NOI18N
         TitleLabel.setForeground(new java.awt.Color(255, 102, 51));
-        TitleLabel.setText("TIMELINE BUILDER");
+        TitleLabel.setText("HISTORICAL");
         getContentPane().add(TitleLabel);
-        TitleLabel.setBounds(80, 80, 510, 54);
+        TitleLabel.setBounds(170, 80, 350, 120);
 
-        Start.setBackground(new java.awt.Color(255, 0, 0));
-        Start.setFont(new java.awt.Font("Copperplate Gothic Bold", 0, 18)); // NOI18N
+        Start.setBackground(new java.awt.Color(238, 119, 25));
+        Start.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
+        Start.setForeground(new java.awt.Color(0, 51, 255));
         Start.setText("START");
         Start.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -58,9 +60,14 @@ public class Start extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Start);
-        Start.setBounds(230, 290, 214, 60);
+        Start.setBounds(230, 320, 214, 60);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/startScreenBacground.jpg"))); // NOI18N
+        TimelineBuilderLabel.setFont(new java.awt.Font("Comic Sans MS", 1, 48)); // NOI18N
+        TimelineBuilderLabel.setText("TIMELINE BUILDER");
+        getContentPane().add(TimelineBuilderLabel);
+        TimelineBuilderLabel.setBounds(80, 170, 510, 90);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/startScreenBackground.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");
         getContentPane().add(jLabel1);
         jLabel1.setBounds(0, 0, 670, 460);
@@ -69,16 +76,15 @@ public class Start extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void StartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StartActionPerformed
-        Login loginscreen = new Login();
-        loginscreen.setVisible(true);
+        Maintimeline mainscreen = new Maintimeline();
+        mainscreen.setVisible(true);
         super.dispose();
+         
+        /* Login loginscreen = new Login();
+        loginscreen.setVisible(true); */
         
-        for (int i = 1; i <= 9; i++) {
-            JButton btn = new JButton(String.valueOf(i));
-            btn.setBackground(Color.ORANGE);
-            btn.setForeground(Color.ORANGE);
-            Start.add(btn);
-        }
+        Start.setBackground(Color.blue);
+        
     }//GEN-LAST:event_StartActionPerformed
 
     /**
@@ -121,6 +127,7 @@ public class Start extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Start;
+    private javax.swing.JLabel TimelineBuilderLabel;
     private javax.swing.JLabel TitleLabel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
