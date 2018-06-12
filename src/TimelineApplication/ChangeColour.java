@@ -358,83 +358,83 @@ public class ChangeColour extends javax.swing.JFrame {
     }//GEN-LAST:event_SetColourActionPerformed
 
     private void Event1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Event1ActionPerformed
-
+        checkBoxList.get(0).setSelected(true);
     }//GEN-LAST:event_Event1ActionPerformed
 
     private void Event2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Event2ActionPerformed
-        // TODO add your handling code here:
+        checkBoxList.get(1).setSelected(true);        // TODO add your handling code here:
     }//GEN-LAST:event_Event2ActionPerformed
 
     private void Event3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Event3ActionPerformed
-        // TODO add your handling code here:
+        checkBoxList.get(2).setSelected(true);    // TODO add your handling code here:
     }//GEN-LAST:event_Event3ActionPerformed
 
     private void Event4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Event4ActionPerformed
-        // TODO add your handling code here:
+        checkBoxList.get(3).setSelected(true);    // TODO add your handling code here:
     }//GEN-LAST:event_Event4ActionPerformed
 
     private void Event5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Event5ActionPerformed
-        // TODO add your handling code here:
+        checkBoxList.get(4).setSelected(true);    // TODO add your handling code here:
     }//GEN-LAST:event_Event5ActionPerformed
 
     private void Event6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Event6ActionPerformed
-        // TODO add your handling code here:
+        checkBoxList.get(5).setSelected(true);    // TODO add your handling code here:
     }//GEN-LAST:event_Event6ActionPerformed
 
     private void Event7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Event7ActionPerformed
-        // TODO add your handling code here:
+        checkBoxList.get(6).setSelected(true);    // TODO add your handling code here:
     }//GEN-LAST:event_Event7ActionPerformed
 
     private void Event8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Event8ActionPerformed
-        // TODO add your handling code here:
+        checkBoxList.get(7).setSelected(true);    // TODO add your handling code here:
     }//GEN-LAST:event_Event8ActionPerformed
 
     private void Event9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Event9ActionPerformed
-        // TODO add your handling code here:
+        checkBoxList.get(8).setSelected(true);    // TODO add your handling code here:
     }//GEN-LAST:event_Event9ActionPerformed
 
     private void Event10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Event10ActionPerformed
-        // TODO add your handling code here:
+        checkBoxList.get(9).setSelected(true);    // TODO add your handling code here:
     }//GEN-LAST:event_Event10ActionPerformed
 
     private void Event19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Event19ActionPerformed
-        // TODO add your handling code here:
+        checkBoxList.get(10).setSelected(true);    // TODO add your handling code here:
     }//GEN-LAST:event_Event19ActionPerformed
 
     private void Event20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Event20ActionPerformed
-        // TODO add your handling code here:
+        checkBoxList.get(11).setSelected(true);    // TODO add your handling code here:
     }//GEN-LAST:event_Event20ActionPerformed
 
     private void Event12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Event12ActionPerformed
-        // TODO add your handling code here:
+        checkBoxList.get(12).setSelected(true);    // TODO add your handling code here:
     }//GEN-LAST:event_Event12ActionPerformed
 
     private void Event11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Event11ActionPerformed
-        // TODO add your handling code here:
+        checkBoxList.get(13).setSelected(true);    // TODO add your handling code here:
     }//GEN-LAST:event_Event11ActionPerformed
 
     private void Event13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Event13ActionPerformed
-        // TODO add your handling code here:
+        checkBoxList.get(14).setSelected(true);    // TODO add your handling code here:
     }//GEN-LAST:event_Event13ActionPerformed
 
     private void Event14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Event14ActionPerformed
-        // TODO add your handling code here:
+        checkBoxList.get(15).setSelected(true);    // TODO add your handling code here:
     }//GEN-LAST:event_Event14ActionPerformed
 
     private void Event15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Event15ActionPerformed
-        // TODO add your handling code here:
+        checkBoxList.get(16).setSelected(true);    // TODO add your handling code here:
     }//GEN-LAST:event_Event15ActionPerformed
 
     private void Event16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Event16ActionPerformed
-        // TODO add your handling code here:
+        checkBoxList.get(17).setSelected(true);    // TODO add your handling code here:
     }//GEN-LAST:event_Event16ActionPerformed
 
     private void Event17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Event17ActionPerformed
-        // TODO add your handling code here:
+        checkBoxList.get(18).setSelected(true);    // TODO add your handling code here:
     }//GEN-LAST:event_Event17ActionPerformed
 
     private void Event18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Event18ActionPerformed
-        // TODO add your handling code here:
+        checkBoxList.get(19).setSelected(true);    // TODO add your handling code here:
     }//GEN-LAST:event_Event18ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
