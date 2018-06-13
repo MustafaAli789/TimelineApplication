@@ -141,12 +141,13 @@ public class Maintimeline extends javax.swing.JFrame {
     }
     
     public static void setImage(JLabel eventImage, String link, int eventNum){
-        Image image = null;
+        Image originalImage = null;
         try{
             URL url = new URL(link);
             try {
-                image = ImageIO.read(url);
-                eventImage.setIcon(new ImageIcon(image)); //eventImage refers to the jLabel being  referenced
+                originalImage = ImageIO.read(url);
+                Image scaledImage = originalImage.getScaledInstance(172, 150, Image.SCALE_DEFAULT); //this scaled the image to fit into container
+                eventImage.setIcon(new ImageIcon(scaledImage)); //eventImage refers to the jLabel being  referenced
             } catch (IOException ex) {
                 String error = "The URL for the " + eventInformationList.get(eventNum).get(0) + " image is wrong.";
                 JOptionPane.showMessageDialog(null, error);

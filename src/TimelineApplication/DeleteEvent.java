@@ -155,7 +155,6 @@ public class DeleteEvent extends javax.swing.JFrame {
         if (del_pos_num <= numOfEvents && del_pos_num > 0){
             eventInformationList.remove(del_pos_num); 
             numOfEvents -=1;
-            SaveToFile();
             updateScreen(numOfEvents); 
         } else{
             JOptionPane.showMessageDialog(null, "No event at that position");
