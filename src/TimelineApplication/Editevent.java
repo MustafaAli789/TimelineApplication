@@ -9,9 +9,9 @@ import java.util.ArrayList;
 
 public class Editevent extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Addevent
-     */
+    public static String oldColorR;
+    public static String oldColorG;
+    public static String oldColorB;
     public Editevent() {
         initComponents();
         String edit_pos = EditEventField.getText();
@@ -21,10 +21,13 @@ public class Editevent extends javax.swing.JFrame {
         EditTimeTextField.setText(eventInformationList.get(edit_pos_num).get(1).toString());
         EditDescriptionTextField.setText(eventInformationList.get(edit_pos_num).get(2).toString());
         EditImageUrlTextField.setText(eventInformationList.get(edit_pos_num).get(3).toString());
-        
+        oldColorR = eventInformationList.get(edit_pos_num).get(4);
+        oldColorG = eventInformationList.get(edit_pos_num).get(5);
+        oldColorB = eventInformationList.get(edit_pos_num).get(6);
         int position = parseInt(EditEventPositionTextField.getText());  
+        System.out.println(eventInformationList);
         eventInformationList.remove(position);
-        
+        System.out.println(eventInformationList);
         
           
         
@@ -211,7 +214,7 @@ public class Editevent extends javax.swing.JFrame {
     }//GEN-LAST:event_CancelBtnActionPerformed
 
     private void EditBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditBtnActionPerformed
-
+        System.out.println(eventInformationList);
         int position_new = parseInt(EditEventPositionTextField.getText()); 
         eventInformationList.add(position_new, new ArrayList<String>());
        
@@ -223,6 +226,10 @@ public class Editevent extends javax.swing.JFrame {
         eventInformationList.get(position_new).add(time);
         eventInformationList.get(position_new).add(desc);
         eventInformationList.get(position_new).add(URL);
+        eventInformationList.get(position_new).add(oldColorR);
+        eventInformationList.get(position_new).add(oldColorG);
+        eventInformationList.get(position_new).add(oldColorB); 
+        System.out.println(eventInformationList);
         updateScreen(numOfEvents);
         editBtnClicked = false;
         this.dispose();
@@ -273,7 +280,7 @@ public class Editevent extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton CancelBtn;
     private javax.swing.JLabel DescriptionLabel;
-    private javax.swing.JButton EditBtn;
+    public static javax.swing.JButton EditBtn;
     private javax.swing.JTextField EditDescriptionTextField;
     private javax.swing.JTextField EditEventNameTextField;
     private javax.swing.JTextField EditEventPositionTextField;

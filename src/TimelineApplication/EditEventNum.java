@@ -131,7 +131,7 @@ public class EditEventNum extends javax.swing.JFrame {
             Editevent editevent = new Editevent();
             editevent.setVisible(true);
         } else{
-            JOptionPane.showMessageDialog(null, "No event at that position");
+            JOptionPane.showMessageDialog(null, "No event at the position entered");
         }
         
         editBtnClicked = false;

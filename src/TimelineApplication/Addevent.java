@@ -251,6 +251,9 @@ public class Addevent extends javax.swing.JFrame {
                    eventInformationList.get(eventPos).add(eventDate); 
                    eventInformationList.get(eventPos).add(eventDesc);
                    eventInformationList.get(eventPos).add(eventImg);
+                   eventInformationList.get(eventPos).add("0");
+                   eventInformationList.get(eventPos).add("0");
+                   eventInformationList.get(eventPos).add("0");
                    numOfEvents +=1;
                    updateScreen(numOfEvents);
                }

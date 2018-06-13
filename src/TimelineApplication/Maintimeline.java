@@ -208,7 +208,6 @@ public class Maintimeline extends javax.swing.JFrame {
         else{ //if no URL provided, just put white box instead
             setImage(eventImage, "https://vignette.wikia.nocookie.net/uncyclopedia/images/4/44/White_square.png/revision/latest?cb=20061003200043", eventNum);
         }
-        
         int index1 = Integer.parseInt(eventInformationList.get(eventNum).get(4));
         int index2 = Integer.parseInt(eventInformationList.get(eventNum).get(5));
         int index3 = Integer.parseInt(eventInformationList.get(eventNum).get(6));        
