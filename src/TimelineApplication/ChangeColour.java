@@ -54,7 +54,6 @@ public class ChangeColour extends javax.swing.JFrame {
     }
         
     public void updateColourToScreen(java.awt.Color selectedColor, String ColorR, String ColorG, String ColorB) {
-        System.out.println(selectedColor);
         for (int j=1;j<=numOfEvents;j++){
             if(checkBoxList.get(j-1).isSelected()){
                 eventPaneNames.get(j-1).setBackground(selectedColor);

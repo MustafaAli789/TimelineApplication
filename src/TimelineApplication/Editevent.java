@@ -25,12 +25,7 @@ public class Editevent extends javax.swing.JFrame {
         oldColorG = eventInformationList.get(edit_pos_num).get(5);
         oldColorB = eventInformationList.get(edit_pos_num).get(6);
         int position = parseInt(EditEventPositionTextField.getText());  
-        System.out.println(eventInformationList);
-        eventInformationList.remove(position);
-        System.out.println(eventInformationList);
-        
-          
-        
+        eventInformationList.remove(position);        
     }
 
     /**
@@ -214,7 +209,6 @@ public class Editevent extends javax.swing.JFrame {
     }//GEN-LAST:event_CancelBtnActionPerformed
 
     private void EditBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditBtnActionPerformed
-        System.out.println(eventInformationList);
         int position_new = parseInt(EditEventPositionTextField.getText()); 
         eventInformationList.add(position_new, new ArrayList<String>());
        
@@ -229,7 +223,6 @@ public class Editevent extends javax.swing.JFrame {
         eventInformationList.get(position_new).add(oldColorR);
         eventInformationList.get(position_new).add(oldColorG);
         eventInformationList.get(position_new).add(oldColorB); 
-        System.out.println(eventInformationList);
         updateScreen(numOfEvents);
         editBtnClicked = false;
         this.dispose();
