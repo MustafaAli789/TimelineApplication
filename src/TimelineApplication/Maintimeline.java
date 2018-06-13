@@ -503,7 +503,7 @@ public class Maintimeline extends javax.swing.JFrame {
         TimelineTitleLabel.setAutoscrolls(true);
         TimelineTitleLabel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         TimelineTitleLabel.setIconTextGap(0);
-        getContentPane().add(TimelineTitleLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 21, -1, -1));
+        getContentPane().add(TimelineTitleLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 20, -1, 30));
 
         ScrollableAreaPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 

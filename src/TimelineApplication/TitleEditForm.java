@@ -130,7 +130,6 @@ public class TitleEditForm extends javax.swing.JFrame {
         eventInformationList.get(0).remove(0); //remvoves old title list
         eventInformationList.get(0).add(title);
         updateScreen(numOfEvents); 
-        SaveToFile();
         EditTitleBtnClicked = false;
         this.dispose();
         /*

@@ -477,12 +477,6 @@ public class ChangeColour extends javax.swing.JFrame {
         String ColorG = Integer.toString(secIndex);
         int thirdIndex = newColor.getBlue();
         String ColorB = Integer.toString(thirdIndex);
-        System.out.println(clickcounter1);
-        System.out.println(clickcounter2);
-        System.out.println(clickcounter3);
-        System.out.println(clickcounter1%2==1);
-        System.out.println(clickcounter2%2==1);
-        System.out.println(clickcounter3%2==1);
         updateColourToScreen(newColor, ColorR, ColorG, ColorB);
         colorBtnClicked = false;
         for (int i=0; i<numOfEvents;i++){
