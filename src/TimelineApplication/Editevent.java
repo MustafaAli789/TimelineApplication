@@ -6,14 +6,19 @@ import static TimelineApplication.Maintimeline.numOfEvents;
 import static TimelineApplication.Maintimeline.updateScreen;
 import static java.lang.Integer.parseInt;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 public class Editevent extends javax.swing.JFrame {
 
     public static String oldColorR;
     public static String oldColorG;
     public static String oldColorB;
+    public static int oldPosition;
+    
     public Editevent() {
         initComponents();
+        
+        //Getting all the info of chosen event and displaying it in text fields
         String edit_pos = EditEventField.getText();
         int edit_pos_num = parseInt(edit_pos);
         EditEventPositionTextField.setText(edit_pos);
@@ -24,10 +29,15 @@ public class Editevent extends javax.swing.JFrame {
         oldColorR = eventInformationList.get(edit_pos_num).get(4);
         oldColorG = eventInformationList.get(edit_pos_num).get(5);
         oldColorB = eventInformationList.get(edit_pos_num).get(6);
-        int position = parseInt(EditEventPositionTextField.getText());  
-        eventInformationList.remove(position);        
+        
+        setOldPosition();
+     
     }
 
+    public static void setOldPosition(){
+        oldPosition = parseInt(EditEventPositionTextField.getText());  
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -209,23 +219,35 @@ public class Editevent extends javax.swing.JFrame {
     }//GEN-LAST:event_CancelBtnActionPerformed
 
     private void EditBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditBtnActionPerformed
-        int position_new = parseInt(EditEventPositionTextField.getText()); 
-        eventInformationList.add(position_new, new ArrayList<String>());
-       
+        
+        //Getting text from text fields
         String name = EditEventNameTextField.getText();
         String time = EditTimeTextField.getText();
         String desc = EditDescriptionTextField.getText();
         String URL = EditImageUrlTextField.getText();
-        eventInformationList.get(position_new).add(name);
-        eventInformationList.get(position_new).add(time);
-        eventInformationList.get(position_new).add(desc);
-        eventInformationList.get(position_new).add(URL);
-        eventInformationList.get(position_new).add(oldColorR);
-        eventInformationList.get(position_new).add(oldColorG);
-        eventInformationList.get(position_new).add(oldColorB); 
-        updateScreen(numOfEvents);
-        editBtnClicked = false;
-        this.dispose();
+        
+        int positionNew = parseInt(EditEventPositionTextField.getText()); 
+        
+        //Verifying that the inputted position number is within the possible range 
+        //and then removing sublsit at that pos, adding new sublist and inserting all relevant info into main event info list
+        if(positionNew <= numOfEvents && positionNew > 0){
+            eventInformationList.remove(oldPosition);
+            eventInformationList.add(positionNew, new ArrayList<String>());
+            eventInformationList.get(positionNew).add(name);
+            eventInformationList.get(positionNew).add(time);
+            eventInformationList.get(positionNew).add(desc);
+            eventInformationList.get(positionNew).add(URL);
+            eventInformationList.get(positionNew).add(oldColorR);
+            eventInformationList.get(positionNew).add(oldColorG);
+            eventInformationList.get(positionNew).add(oldColorB); 
+            updateScreen(numOfEvents);
+            editBtnClicked = false;
+            this.dispose();
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "That position is invalid.");
+        }
+   
     }//GEN-LAST:event_EditBtnActionPerformed
 
     private void EditEventPositionTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditEventPositionTextFieldActionPerformed
@@ -276,7 +298,7 @@ public class Editevent extends javax.swing.JFrame {
     public static javax.swing.JButton EditBtn;
     private javax.swing.JTextField EditDescriptionTextField;
     private javax.swing.JTextField EditEventNameTextField;
-    private javax.swing.JTextField EditEventPositionTextField;
+    public static javax.swing.JTextField EditEventPositionTextField;
     private javax.swing.JTextField EditImageUrlTextField;
     private javax.swing.JTextField EditTimeTextField;
     private javax.swing.JLabel EventNameLabel;
