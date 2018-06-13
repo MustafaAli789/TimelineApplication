@@ -35,6 +35,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import static TimelineApplication.TitleEditForm.title;
 import java.awt.Color;
+import java.awt.Dimension;
 import javax.swing.JPanel;
 import java.util.*;
 import java.util.logging.Level;
@@ -160,9 +161,15 @@ public class Maintimeline extends javax.swing.JFrame {
     //This method can be called any time an event is added, deleted or edited (unless no shift required, then simply call setEventInfo) to 
     //put the text and image into the event screen as well as update which events are visible and which arrows are visible
     public static void updateScreen (int numOfEvents){
+                       
+        //The function below multiples the width of one row of events by the number of rows
+        //and sets that as the width of the scrollable area
+        int dynamicHeight = 425*((numOfEvents + 3)/4);        
+        mainPanel.setPreferredSize(new Dimension(1048, dynamicHeight));
+
         
         //Setting title 
-        TimelineTitleLabel.setText(title);
+        timelineTitleLabel.setText(title);
                 
         //Putting text and image into each visible event
         for(int i = 0; i< numOfEvents; i++){ 
@@ -299,9 +306,11 @@ public class Maintimeline extends javax.swing.JFrame {
     private void initComponents() {
 
         jSeparator1 = new javax.swing.JSeparator();
-        TimelineTitleLabel = new javax.swing.JLabel();
+        titlePanel = new javax.swing.JPanel();
+        timelineTitleLabel = new javax.swing.JLabel();
+        EditTitleBtn = new javax.swing.JButton();
         ScrollableAreaPane = new javax.swing.JScrollPane();
-        jPanel1 = new javax.swing.JPanel();
+        mainPanel = new javax.swing.JPanel();
         EventPane1 = new javax.swing.JPanel();
         EventTitlePanelOne = new javax.swing.JPanel();
         EventTitleLabelOne = new javax.swing.JLabel();
@@ -485,30 +494,55 @@ public class Maintimeline extends javax.swing.JFrame {
         SaveBtn = new javax.swing.JButton();
         EditBtn = new javax.swing.JButton();
         AddBtn = new javax.swing.JButton();
-        EditTitleBtn = new javax.swing.JButton();
         ChangeColourBtn = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(51, 255, 204));
-        setMinimumSize(new java.awt.Dimension(1176, 760));
-        setPreferredSize(new java.awt.Dimension(1176, 760));
+        setMinimumSize(new java.awt.Dimension(1176, 720));
+        setPreferredSize(new java.awt.Dimension(1176, 720));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        TimelineTitleLabel.setFont(new java.awt.Font("Copperplate Gothic Bold", 1, 24)); // NOI18N
-        TimelineTitleLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        TimelineTitleLabel.setText("TIMELINE TITLE HERE");
-        TimelineTitleLabel.setAutoscrolls(true);
-        TimelineTitleLabel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        TimelineTitleLabel.setIconTextGap(0);
-        getContentPane().add(TimelineTitleLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 20, -1, 30));
+        titlePanel.setBackground(new java.awt.Color(153, 204, 255));
+        titlePanel.setOpaque(false);
+
+        timelineTitleLabel.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 36)); // NOI18N
+        timelineTitleLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        timelineTitleLabel.setText("TIMELINE TITLE HERE");
+        timelineTitleLabel.setAutoscrolls(true);
+        timelineTitleLabel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        timelineTitleLabel.setIconTextGap(0);
+        timelineTitleLabel.setMaximumSize(new java.awt.Dimension(1000, 41));
+        timelineTitleLabel.setMinimumSize(new java.awt.Dimension(0, 41));
+        timelineTitleLabel.setRequestFocusEnabled(false);
+        titlePanel.add(timelineTitleLabel);
+
+        EditTitleBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/titleEditBtnNonHover.png"))); // NOI18N
+        EditTitleBtn.setBorderPainted(false);
+        EditTitleBtn.setContentAreaFilled(false);
+        EditTitleBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        EditTitleBtn.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/titleEditBtnHover.png"))); // NOI18N
+        EditTitleBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EditTitleBtnActionPerformed(evt);
+            }
+        });
+        titlePanel.add(EditTitleBtn);
+
+        getContentPane().add(titlePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 1130, 50));
 
         ScrollableAreaPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        ScrollableAreaPane.setMinimumSize(new java.awt.Dimension(27, 425));
+        ScrollableAreaPane.setPreferredSize(new java.awt.Dimension(1086, 425));
 
-        jPanel1.setBackground(new java.awt.Color(255, 102, 102));
-        jPanel1.setToolTipText("");
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        mainPanel.setBackground(new java.awt.Color(255, 210, 104));
+        mainPanel.setToolTipText("");
+        mainPanel.setInheritsPopupMenu(true);
+        mainPanel.setMinimumSize(new java.awt.Dimension(1084, 425));
+        mainPanel.setPreferredSize(new java.awt.Dimension(1084, 425));
+        mainPanel.setRequestFocusEnabled(false);
+        mainPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         EventPane1.setBackground(new java.awt.Color(153, 153, 153));
         EventPane1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
@@ -564,7 +598,7 @@ public class Maintimeline extends javax.swing.JFrame {
         EventImage1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         EventPane1.add(EventImage1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 172, 150));
 
-        jPanel1.add(EventPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 40, 191, 375));
+        mainPanel.add(EventPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 40, 191, 375));
 
         EventPane2.setBackground(new java.awt.Color(153, 153, 153));
         EventPane2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
@@ -619,7 +653,7 @@ public class Maintimeline extends javax.swing.JFrame {
         EventImage2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         EventPane2.add(EventImage2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 172, 150));
 
-        jPanel1.add(EventPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(617, 41, 191, 375));
+        mainPanel.add(EventPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(617, 41, 191, 375));
 
         EventPane3.setBackground(new java.awt.Color(153, 153, 153));
         EventPane3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
@@ -674,7 +708,7 @@ public class Maintimeline extends javax.swing.JFrame {
         EventImage3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         EventPane3.add(EventImage3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 172, 150));
 
-        jPanel1.add(EventPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(339, 41, 193, 377));
+        mainPanel.add(EventPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(339, 41, 193, 377));
 
         EventPane4.setBackground(new java.awt.Color(153, 153, 153));
         EventPane4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
@@ -729,7 +763,7 @@ public class Maintimeline extends javax.swing.JFrame {
         EventImage4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         EventPane4.add(EventImage4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 172, 150));
 
-        jPanel1.add(EventPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(64, 41, 190, 375));
+        mainPanel.add(EventPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(64, 41, 190, 375));
 
         EventPane5.setBackground(new java.awt.Color(153, 153, 153));
         EventPane5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
@@ -781,7 +815,7 @@ public class Maintimeline extends javax.swing.JFrame {
         EventImage5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         EventPane5.add(EventImage5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 172, 160));
 
-        jPanel1.add(EventPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(64, 456, 191, 375));
+        mainPanel.add(EventPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(64, 456, 191, 375));
 
         EventPane6.setBackground(new java.awt.Color(153, 153, 153));
         EventPane6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
@@ -833,7 +867,7 @@ public class Maintimeline extends javax.swing.JFrame {
         EventImage6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         EventPane6.add(EventImage6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 172, 160));
 
-        jPanel1.add(EventPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(341, 456, 191, 375));
+        mainPanel.add(EventPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(341, 456, 191, 375));
 
         EventPane7.setBackground(new java.awt.Color(153, 153, 153));
         EventPane7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
@@ -885,7 +919,7 @@ public class Maintimeline extends javax.swing.JFrame {
         EventImage7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         EventPane7.add(EventImage7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 172, 160));
 
-        jPanel1.add(EventPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 460, 191, 375));
+        mainPanel.add(EventPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 460, 191, 375));
 
         EventPane8.setBackground(new java.awt.Color(153, 153, 153));
         EventPane8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
@@ -937,7 +971,7 @@ public class Maintimeline extends javax.swing.JFrame {
         EventImage8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         EventPane8.add(EventImage8, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 80, 170, 160));
 
-        jPanel1.add(EventPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(893, 456, 191, 375));
+        mainPanel.add(EventPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(893, 456, 191, 375));
 
         EventPane9.setBackground(new java.awt.Color(153, 153, 153));
         EventPane9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
@@ -989,7 +1023,7 @@ public class Maintimeline extends javax.swing.JFrame {
         EventImage9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         EventPane9.add(EventImage9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 172, 160));
 
-        jPanel1.add(EventPane9, new org.netbeans.lib.awtextra.AbsoluteConstraints(893, 871, 191, 375));
+        mainPanel.add(EventPane9, new org.netbeans.lib.awtextra.AbsoluteConstraints(893, 871, 191, 375));
 
         EventPane10.setBackground(new java.awt.Color(153, 153, 153));
         EventPane10.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
@@ -1041,7 +1075,7 @@ public class Maintimeline extends javax.swing.JFrame {
         EventImage10.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         EventPane10.add(EventImage10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 172, 160));
 
-        jPanel1.add(EventPane10, new org.netbeans.lib.awtextra.AbsoluteConstraints(617, 871, 191, 375));
+        mainPanel.add(EventPane10, new org.netbeans.lib.awtextra.AbsoluteConstraints(617, 871, 191, 375));
 
         EventPane11.setBackground(new java.awt.Color(153, 153, 153));
         EventPane11.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
@@ -1093,7 +1127,7 @@ public class Maintimeline extends javax.swing.JFrame {
         EventImage11.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         EventPane11.add(EventImage11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 172, 160));
 
-        jPanel1.add(EventPane11, new org.netbeans.lib.awtextra.AbsoluteConstraints(341, 871, 191, 375));
+        mainPanel.add(EventPane11, new org.netbeans.lib.awtextra.AbsoluteConstraints(341, 871, 191, 375));
 
         EventPane12.setBackground(new java.awt.Color(153, 153, 153));
         EventPane12.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
@@ -1145,7 +1179,7 @@ public class Maintimeline extends javax.swing.JFrame {
         EventImage12.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         EventPane12.add(EventImage12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 172, 160));
 
-        jPanel1.add(EventPane12, new org.netbeans.lib.awtextra.AbsoluteConstraints(64, 871, 191, 375));
+        mainPanel.add(EventPane12, new org.netbeans.lib.awtextra.AbsoluteConstraints(64, 871, 191, 375));
 
         EventPane13.setBackground(new java.awt.Color(153, 153, 153));
         EventPane13.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
@@ -1197,7 +1231,7 @@ public class Maintimeline extends javax.swing.JFrame {
         EventImage13.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         EventPane13.add(EventImage13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 172, 160));
 
-        jPanel1.add(EventPane13, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 1290, 191, 375));
+        mainPanel.add(EventPane13, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 1290, 191, 375));
 
         EventPane14.setBackground(new java.awt.Color(153, 153, 153));
         EventPane14.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
@@ -1249,7 +1283,7 @@ public class Maintimeline extends javax.swing.JFrame {
         EventImage14.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         EventPane14.add(EventImage14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 172, 160));
 
-        jPanel1.add(EventPane14, new org.netbeans.lib.awtextra.AbsoluteConstraints(341, 1286, 191, 375));
+        mainPanel.add(EventPane14, new org.netbeans.lib.awtextra.AbsoluteConstraints(341, 1286, 191, 375));
 
         EventPane15.setBackground(new java.awt.Color(153, 153, 153));
         EventPane15.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
@@ -1301,7 +1335,7 @@ public class Maintimeline extends javax.swing.JFrame {
         EventImage15.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         EventPane15.add(EventImage15, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 172, 160));
 
-        jPanel1.add(EventPane15, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 1290, 191, 375));
+        mainPanel.add(EventPane15, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 1290, 191, 375));
 
         EventPane16.setBackground(new java.awt.Color(153, 153, 153));
         EventPane16.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
@@ -1353,7 +1387,7 @@ public class Maintimeline extends javax.swing.JFrame {
         EventImage16.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         EventPane16.add(EventImage16, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 172, 160));
 
-        jPanel1.add(EventPane16, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 1290, 191, 375));
+        mainPanel.add(EventPane16, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 1290, 191, 375));
 
         EventPane17.setBackground(new java.awt.Color(153, 153, 153));
         EventPane17.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
@@ -1405,7 +1439,7 @@ public class Maintimeline extends javax.swing.JFrame {
         EventImage17.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         EventPane17.add(EventImage17, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 172, 160));
 
-        jPanel1.add(EventPane17, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 1720, 191, 375));
+        mainPanel.add(EventPane17, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 1720, 191, 375));
 
         EventPane18.setBackground(new java.awt.Color(153, 153, 153));
         EventPane18.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
@@ -1457,7 +1491,7 @@ public class Maintimeline extends javax.swing.JFrame {
         EventImage18.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         EventPane18.add(EventImage18, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 172, 160));
 
-        jPanel1.add(EventPane18, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 1720, 191, 375));
+        mainPanel.add(EventPane18, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 1720, 191, 375));
 
         EventPane19.setBackground(new java.awt.Color(153, 153, 153));
         EventPane19.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
@@ -1509,7 +1543,7 @@ public class Maintimeline extends javax.swing.JFrame {
         EventImage19.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         EventPane19.add(EventImage19, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 172, 160));
 
-        jPanel1.add(EventPane19, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 1720, 191, 375));
+        mainPanel.add(EventPane19, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 1720, 191, 375));
 
         EventPane20.setBackground(new java.awt.Color(153, 153, 153));
         EventPane20.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
@@ -1561,72 +1595,73 @@ public class Maintimeline extends javax.swing.JFrame {
         EventImage20.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         EventPane20.add(EventImage20, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 172, 160));
 
-        jPanel1.add(EventPane20, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 1720, 191, 375));
+        mainPanel.add(EventPane20, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 1720, 191, 375));
 
         Arrow1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/arrow.png"))); // NOI18N
-        jPanel1.add(Arrow1, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 220, -1, -1));
+        mainPanel.add(Arrow1, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 220, -1, -1));
 
         Arrow2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/arrow.png"))); // NOI18N
-        jPanel1.add(Arrow2, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 220, -1, -1));
+        mainPanel.add(Arrow2, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 220, -1, -1));
 
         Arrow3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/arrow.png"))); // NOI18N
-        jPanel1.add(Arrow3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 192, 40, 60));
+        mainPanel.add(Arrow3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 192, 40, 60));
 
         Arrow4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/down arrow.png"))); // NOI18N
-        jPanel1.add(Arrow4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 420, -1, -1));
+        mainPanel.add(Arrow4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 420, -1, -1));
 
         Arrow5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/arrow to right.png"))); // NOI18N
-        jPanel1.add(Arrow5, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 630, -1, -1));
+        mainPanel.add(Arrow5, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 630, -1, -1));
 
         Arrow6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/arrow to right.png"))); // NOI18N
-        jPanel1.add(Arrow6, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 630, -1, -1));
+        mainPanel.add(Arrow6, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 630, -1, -1));
 
         Arrow7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/arrow to right.png"))); // NOI18N
-        jPanel1.add(Arrow7, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 630, -1, -1));
+        mainPanel.add(Arrow7, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 630, -1, -1));
 
         Arrow8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/down arrow.png"))); // NOI18N
-        jPanel1.add(Arrow8, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 840, -1, -1));
+        mainPanel.add(Arrow8, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 840, -1, -1));
 
         Arrow9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/arrow.png"))); // NOI18N
-        jPanel1.add(Arrow9, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 1040, -1, -1));
+        mainPanel.add(Arrow9, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 1040, -1, -1));
 
         Arrow10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/arrow.png"))); // NOI18N
-        jPanel1.add(Arrow10, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 1040, -1, -1));
+        mainPanel.add(Arrow10, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 1040, -1, -1));
 
         Arrow11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/arrow.png"))); // NOI18N
-        jPanel1.add(Arrow11, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 1040, -1, -1));
+        mainPanel.add(Arrow11, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 1040, -1, -1));
 
         Arrow12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/down arrow.png"))); // NOI18N
-        jPanel1.add(Arrow12, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 1250, -1, -1));
+        mainPanel.add(Arrow12, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 1250, -1, -1));
 
         Arrow13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/arrow to right.png"))); // NOI18N
-        jPanel1.add(Arrow13, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 1470, -1, -1));
+        mainPanel.add(Arrow13, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 1470, -1, -1));
 
         Arrow14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/arrow to right.png"))); // NOI18N
-        jPanel1.add(Arrow14, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 1470, -1, -1));
+        mainPanel.add(Arrow14, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 1470, -1, -1));
 
         Arrow15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/arrow to right.png"))); // NOI18N
-        jPanel1.add(Arrow15, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 1470, -1, -1));
+        mainPanel.add(Arrow15, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 1470, -1, -1));
 
         Arrow16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/down arrow.png"))); // NOI18N
-        jPanel1.add(Arrow16, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 1680, -1, -1));
+        mainPanel.add(Arrow16, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 1680, -1, -1));
 
         Arrow17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/arrow.png"))); // NOI18N
-        jPanel1.add(Arrow17, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 1900, -1, -1));
+        mainPanel.add(Arrow17, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 1900, -1, -1));
 
         Arrow18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/arrow.png"))); // NOI18N
-        jPanel1.add(Arrow18, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 1900, -1, -1));
+        mainPanel.add(Arrow18, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 1900, -1, -1));
 
         Arrow19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/arrow.png"))); // NOI18N
-        jPanel1.add(Arrow19, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 1900, -1, -1));
+        mainPanel.add(Arrow19, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 1900, -1, -1));
 
-        ScrollableAreaPane.setViewportView(jPanel1);
+        ScrollableAreaPane.setViewportView(mainPanel);
 
         getContentPane().add(ScrollableAreaPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 96, 1146, 486));
 
         DeleteBtn.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
         DeleteBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/DeleteIconNonHover.png"))); // NOI18N
         DeleteBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        DeleteBtn.setBorderPainted(false);
         DeleteBtn.setContentAreaFilled(false);
         DeleteBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         DeleteBtn.setMaximumSize(new java.awt.Dimension(73, 73));
@@ -1643,6 +1678,7 @@ public class Maintimeline extends javax.swing.JFrame {
         SaveBtn.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         SaveBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/SaveIconNonHover.png"))); // NOI18N
         SaveBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        SaveBtn.setBorderPainted(false);
         SaveBtn.setContentAreaFilled(false);
         SaveBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         SaveBtn.setMaximumSize(new java.awt.Dimension(73, 73));
@@ -1664,6 +1700,7 @@ public class Maintimeline extends javax.swing.JFrame {
         EditBtn.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         EditBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/EditIconNonHover.png"))); // NOI18N
         EditBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        EditBtn.setBorderPainted(false);
         EditBtn.setContentAreaFilled(false);
         EditBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         EditBtn.setMaximumSize(new java.awt.Dimension(73, 73));
@@ -1680,6 +1717,7 @@ public class Maintimeline extends javax.swing.JFrame {
         AddBtn.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
         AddBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/AddIconNonHover.png"))); // NOI18N
         AddBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        AddBtn.setBorderPainted(false);
         AddBtn.setContentAreaFilled(false);
         AddBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         AddBtn.setMaximumSize(new java.awt.Dimension(73, 73));
@@ -1698,16 +1736,9 @@ public class Maintimeline extends javax.swing.JFrame {
         });
         getContentPane().add(AddBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 600, -1, -1));
 
-        EditTitleBtn.setText("Edit Title");
-        EditTitleBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EditTitleBtnActionPerformed(evt);
-            }
-        });
-        getContentPane().add(EditTitleBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 55, -1, -1));
-
         ChangeColourBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/Change Colour Button Non Hover.png"))); // NOI18N
         ChangeColourBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        ChangeColourBtn.setBorderPainted(false);
         ChangeColourBtn.setContentAreaFilled(false);
         ChangeColourBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         ChangeColourBtn.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/Change Colour Button Hoverr.png"))); // NOI18N
@@ -1721,7 +1752,7 @@ public class Maintimeline extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/Background.jpg"))); // NOI18N
         jLabel1.setMaximumSize(new java.awt.Dimension(1208, 705));
         jLabel1.setPreferredSize(new java.awt.Dimension(1208, 705));
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 0, 1240, 760));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 0, 1210, 690));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -1835,7 +1866,7 @@ public class Maintimeline extends javax.swing.JFrame {
     }//GEN-LAST:event_ChangeColourBtnActionPerformed
 
     public static void setTheTitle (String a){
-        TimelineTitleLabel.setText(a);
+        timelineTitleLabel.setText(a);
     }
     /**
      * @param args the command line arguments
@@ -2018,7 +2049,7 @@ public class Maintimeline extends javax.swing.JFrame {
     public static javax.swing.JPanel EventTitlePanelTwenty;
     public static javax.swing.JPanel EventTitlePanelTwo;
     public static javax.swing.JButton SaveBtn;
-    private javax.swing.JScrollPane ScrollableAreaPane;
+    public static javax.swing.JScrollPane ScrollableAreaPane;
     private javax.swing.JPanel SeperatorPaneEight;
     private javax.swing.JPanel SeperatorPaneEighteen;
     private javax.swing.JPanel SeperatorPaneEleven;
@@ -2039,9 +2070,7 @@ public class Maintimeline extends javax.swing.JFrame {
     private javax.swing.JPanel SeperatorPaneTwelve;
     private javax.swing.JPanel SeperatorPaneTwenty;
     private javax.swing.JPanel SeperatorPaneTwo;
-    public static javax.swing.JLabel TimelineTitleLabel;
     private javax.swing.JLabel jLabel1;
-    public static javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPaneEight;
     private javax.swing.JScrollPane jScrollPaneEighteen;
     private javax.swing.JScrollPane jScrollPaneEleven;
@@ -2063,5 +2092,8 @@ public class Maintimeline extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPaneTwenty;
     private javax.swing.JScrollPane jScrollPaneTwo;
     private javax.swing.JSeparator jSeparator1;
+    public static javax.swing.JPanel mainPanel;
+    public static javax.swing.JLabel timelineTitleLabel;
+    public static javax.swing.JPanel titlePanel;
     // End of variables declaration//GEN-END:variables
 }
