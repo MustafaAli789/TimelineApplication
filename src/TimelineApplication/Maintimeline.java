@@ -7,6 +7,27 @@ package TimelineApplication;
 
 import static TimelineApplication.ChangeColour.Event1;
 import static TimelineApplication.ChangeColour.Event2;
+import static TimelineApplication.ChangeColour.checkBoxList;
+import static TimelineApplication.ChangeColour.clickcounter1;
+import static TimelineApplication.ChangeColour.clickcounter10;
+import static TimelineApplication.ChangeColour.clickcounter11;
+import static TimelineApplication.ChangeColour.clickcounter12;
+import static TimelineApplication.ChangeColour.clickcounter13;
+import static TimelineApplication.ChangeColour.clickcounter14;
+import static TimelineApplication.ChangeColour.clickcounter15;
+import static TimelineApplication.ChangeColour.clickcounter16;
+import static TimelineApplication.ChangeColour.clickcounter17;
+import static TimelineApplication.ChangeColour.clickcounter18;
+import static TimelineApplication.ChangeColour.clickcounter19;
+import static TimelineApplication.ChangeColour.clickcounter2;
+import static TimelineApplication.ChangeColour.clickcounter20;
+import static TimelineApplication.ChangeColour.clickcounter3;
+import static TimelineApplication.ChangeColour.clickcounter4;
+import static TimelineApplication.ChangeColour.clickcounter5;
+import static TimelineApplication.ChangeColour.clickcounter6;
+import static TimelineApplication.ChangeColour.clickcounter7;
+import static TimelineApplication.ChangeColour.clickcounter8;
+import static TimelineApplication.ChangeColour.clickcounter9;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 import java.io.*;
@@ -1787,6 +1808,28 @@ public class Maintimeline extends javax.swing.JFrame {
         if (!colorBtnClicked){
             ChangeColour colour = new ChangeColour();
             colour.setVisible(true);
+            clickcounter1=0;
+            clickcounter2=0;                    
+            clickcounter3=0;
+            clickcounter4=0;
+            clickcounter5=0;
+            clickcounter6=0;
+            clickcounter7=0;
+            clickcounter8=0;
+            clickcounter9=0;
+            clickcounter10=0;
+            clickcounter11=0;
+            clickcounter12=0;
+            clickcounter13=0;
+            clickcounter14=0;
+            clickcounter15=0;
+            clickcounter16=0;
+            clickcounter17=0;
+            clickcounter18=0;
+            clickcounter19=0;
+            clickcounter20=0;
+        for (int i=0;i<numOfEvents;i++)    
+            checkBoxList.get(i).setSelected(false);
         }
         
         colorBtnClicked=true; 

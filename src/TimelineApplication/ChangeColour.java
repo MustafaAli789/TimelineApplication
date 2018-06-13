@@ -13,16 +13,43 @@ import javax.swing.JCheckBox;
 import javax.swing.JColorChooser;
 
 public class ChangeColour extends javax.swing.JFrame {
-    
+
     public static ArrayList<JCheckBox> checkBoxList = new ArrayList<JCheckBox>();
+    public static int clickcounter1 = 0;
+    public static int clickcounter2 = 0;
+    public static int clickcounter3 = 0;
+    public static int clickcounter4 = 0;
+    public static int clickcounter5 = 0;
+    public static int clickcounter6 = 0;
+    public static int clickcounter7 = 0;
+    public static int clickcounter8 = 0;
+    public static int clickcounter9 = 0;
+    public static int clickcounter10 = 0;
+    public static int clickcounter11 = 0;
+    public static int clickcounter12 = 0;
+    public static int clickcounter13 = 0;
+    public static int clickcounter14 = 0;
+    public static int clickcounter15 = 0;
+    public static int clickcounter16 = 0;
+    public static int clickcounter17 = 0;
+    public static int clickcounter18 = 0;
+    public static int clickcounter19 = 0;
+    public static int clickcounter20 = 0;
+    
+    
     public ChangeColour() {
         initComponents();
         JCheckBox array6[]={Event1, Event2,Event3, Event4, Event5, Event6, Event7, Event8, Event9, Event10, Event11, Event12, Event13, Event14, Event15, Event16, Event17, Event18, Event19, Event20};
+        int array7[]={clickcounter1, clickcounter2, clickcounter3, clickcounter4, clickcounter5, clickcounter6, clickcounter7, clickcounter8, clickcounter9, clickcounter10, clickcounter11, clickcounter12, clickcounter13, clickcounter14, clickcounter15, clickcounter16, clickcounter17, clickcounter18, clickcounter19, clickcounter20};
+        for (int i =0; i<20;i++){
+            array7[i]=0;    
+        }
         for (int i =1; i<=numOfEvents;i++){
             array6[i-1].setText(eventInformationList.get(i).get(0));
             array6[i-1].setEnabled(true);
         }
          Collections.addAll(checkBoxList, array6);
+
         
     }
         
@@ -83,6 +110,11 @@ public class ChangeColour extends javax.swing.JFrame {
 
         Event1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         Event1.setEnabled(false);
+        Event1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                Event1MouseReleased(evt);
+            }
+        });
         Event1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Event1ActionPerformed(evt);
@@ -96,6 +128,11 @@ public class ChangeColour extends javax.swing.JFrame {
         jLabel2.setText("that you want to change the colours for");
 
         Event2.setEnabled(false);
+        Event2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                Event2MouseReleased(evt);
+            }
+        });
         Event2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Event2ActionPerformed(evt);
@@ -103,6 +140,11 @@ public class ChangeColour extends javax.swing.JFrame {
         });
 
         Event3.setEnabled(false);
+        Event3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                Event3MouseReleased(evt);
+            }
+        });
         Event3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Event3ActionPerformed(evt);
@@ -110,6 +152,11 @@ public class ChangeColour extends javax.swing.JFrame {
         });
 
         Event4.setEnabled(false);
+        Event4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                Event4MouseReleased(evt);
+            }
+        });
         Event4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Event4ActionPerformed(evt);
@@ -117,6 +164,11 @@ public class ChangeColour extends javax.swing.JFrame {
         });
 
         Event5.setEnabled(false);
+        Event5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                Event5MouseReleased(evt);
+            }
+        });
         Event5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Event5ActionPerformed(evt);
@@ -124,6 +176,11 @@ public class ChangeColour extends javax.swing.JFrame {
         });
 
         Event6.setEnabled(false);
+        Event6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                Event6MouseReleased(evt);
+            }
+        });
         Event6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Event6ActionPerformed(evt);
@@ -131,6 +188,11 @@ public class ChangeColour extends javax.swing.JFrame {
         });
 
         Event7.setEnabled(false);
+        Event7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                Event7MouseReleased(evt);
+            }
+        });
         Event7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Event7ActionPerformed(evt);
@@ -138,6 +200,11 @@ public class ChangeColour extends javax.swing.JFrame {
         });
 
         Event8.setEnabled(false);
+        Event8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                Event8MouseReleased(evt);
+            }
+        });
         Event8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Event8ActionPerformed(evt);
@@ -145,6 +212,11 @@ public class ChangeColour extends javax.swing.JFrame {
         });
 
         Event9.setEnabled(false);
+        Event9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                Event9MouseReleased(evt);
+            }
+        });
         Event9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Event9ActionPerformed(evt);
@@ -152,6 +224,11 @@ public class ChangeColour extends javax.swing.JFrame {
         });
 
         Event10.setEnabled(false);
+        Event10.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                Event10MouseReleased(evt);
+            }
+        });
         Event10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Event10ActionPerformed(evt);
@@ -159,6 +236,11 @@ public class ChangeColour extends javax.swing.JFrame {
         });
 
         Event19.setEnabled(false);
+        Event19.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                Event19MouseReleased(evt);
+            }
+        });
         Event19.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Event19ActionPerformed(evt);
@@ -166,6 +248,11 @@ public class ChangeColour extends javax.swing.JFrame {
         });
 
         Event20.setEnabled(false);
+        Event20.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                Event20MouseReleased(evt);
+            }
+        });
         Event20.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Event20ActionPerformed(evt);
@@ -173,6 +260,11 @@ public class ChangeColour extends javax.swing.JFrame {
         });
 
         Event12.setEnabled(false);
+        Event12.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                Event12MouseReleased(evt);
+            }
+        });
         Event12.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Event12ActionPerformed(evt);
@@ -180,6 +272,11 @@ public class ChangeColour extends javax.swing.JFrame {
         });
 
         Event11.setEnabled(false);
+        Event11.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                Event11MouseReleased(evt);
+            }
+        });
         Event11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Event11ActionPerformed(evt);
@@ -187,6 +284,11 @@ public class ChangeColour extends javax.swing.JFrame {
         });
 
         Event13.setEnabled(false);
+        Event13.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                Event13MouseReleased(evt);
+            }
+        });
         Event13.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Event13ActionPerformed(evt);
@@ -194,6 +296,11 @@ public class ChangeColour extends javax.swing.JFrame {
         });
 
         Event14.setEnabled(false);
+        Event14.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                Event14MouseReleased(evt);
+            }
+        });
         Event14.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Event14ActionPerformed(evt);
@@ -201,6 +308,11 @@ public class ChangeColour extends javax.swing.JFrame {
         });
 
         Event15.setEnabled(false);
+        Event15.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                Event15MouseReleased(evt);
+            }
+        });
         Event15.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Event15ActionPerformed(evt);
@@ -208,6 +320,11 @@ public class ChangeColour extends javax.swing.JFrame {
         });
 
         Event16.setEnabled(false);
+        Event16.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                Event16MouseReleased(evt);
+            }
+        });
         Event16.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Event16ActionPerformed(evt);
@@ -215,6 +332,11 @@ public class ChangeColour extends javax.swing.JFrame {
         });
 
         Event17.setEnabled(false);
+        Event17.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                Event17MouseReleased(evt);
+            }
+        });
         Event17.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Event17ActionPerformed(evt);
@@ -222,6 +344,11 @@ public class ChangeColour extends javax.swing.JFrame {
         });
 
         Event18.setEnabled(false);
+        Event18.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                Event18MouseReleased(evt);
+            }
+        });
         Event18.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Event18ActionPerformed(evt);
@@ -342,6 +469,7 @@ public class ChangeColour extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void SetColourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SetColourActionPerformed
+
         Color newColor = JColorChooser.showDialog(null, "Choose a color", Color.WHITE);
         int firstIndex = newColor.getRed();
         String ColorR = Integer.toString(firstIndex);
@@ -349,6 +477,12 @@ public class ChangeColour extends javax.swing.JFrame {
         String ColorG = Integer.toString(secIndex);
         int thirdIndex = newColor.getBlue();
         String ColorB = Integer.toString(thirdIndex);
+        System.out.println(clickcounter1);
+        System.out.println(clickcounter2);
+        System.out.println(clickcounter3);
+        System.out.println(clickcounter1%2==1);
+        System.out.println(clickcounter2%2==1);
+        System.out.println(clickcounter3%2==1);
         updateColourToScreen(newColor, ColorR, ColorG, ColorB);
         colorBtnClicked = false;
         for (int i=0; i<numOfEvents;i++){
@@ -358,90 +492,273 @@ public class ChangeColour extends javax.swing.JFrame {
     }//GEN-LAST:event_SetColourActionPerformed
 
     private void Event1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Event1ActionPerformed
-        checkBoxList.get(0).setSelected(true);
+        clickcounter1 +=1;
+        if (clickcounter1%2==1){
+            checkBoxList.get(0).setSelected(true);
+        }
+        else {
+            checkBoxList.get(0).setSelected(false);
+        }
     }//GEN-LAST:event_Event1ActionPerformed
 
     private void Event2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Event2ActionPerformed
-        checkBoxList.get(1).setSelected(true);        // TODO add your handling code here:
+        clickcounter2 +=1;
+        if (clickcounter2%2==1){
+            checkBoxList.get(1).setSelected(true);
+        }
+        else {
+            checkBoxList.get(1).setSelected(false);
+        }
     }//GEN-LAST:event_Event2ActionPerformed
 
     private void Event3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Event3ActionPerformed
-        checkBoxList.get(2).setSelected(true);    // TODO add your handling code here:
+        clickcounter3 +=1;
+        if (clickcounter3%2==1){
+            checkBoxList.get(2).setSelected(true);
+        }
+        else {
+            checkBoxList.get(2).setSelected(false);
+        }
     }//GEN-LAST:event_Event3ActionPerformed
 
     private void Event4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Event4ActionPerformed
-        checkBoxList.get(3).setSelected(true);    // TODO add your handling code here:
-    }//GEN-LAST:event_Event4ActionPerformed
+        clickcounter4 +=1;
+        if (clickcounter4%2==1){
+            checkBoxList.get(3).setSelected(true);
+        }
+        else {
+            checkBoxList.get(3).setSelected(false);
+        }    }//GEN-LAST:event_Event4ActionPerformed
 
     private void Event5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Event5ActionPerformed
-        checkBoxList.get(4).setSelected(true);    // TODO add your handling code here:
+        clickcounter5 +=1;
+        if (clickcounter5%2==1){
+            checkBoxList.get(4).setSelected(true);
+        }
+        else {
+            checkBoxList.get(4).setSelected(false);
+        }
     }//GEN-LAST:event_Event5ActionPerformed
 
     private void Event6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Event6ActionPerformed
-        checkBoxList.get(5).setSelected(true);    // TODO add your handling code here:
+        clickcounter6 +=1;
+        if (clickcounter6%2==1){
+            checkBoxList.get(5).setSelected(true);
+        }
+        else {
+            checkBoxList.get(5).setSelected(false);
+        }
     }//GEN-LAST:event_Event6ActionPerformed
 
     private void Event7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Event7ActionPerformed
-        checkBoxList.get(6).setSelected(true);    // TODO add your handling code here:
+        clickcounter7 +=1;
+        if (clickcounter7%2==1){
+            checkBoxList.get(6).setSelected(true);
+        }
+        else {
+            checkBoxList.get(6).setSelected(false);
+        }
     }//GEN-LAST:event_Event7ActionPerformed
 
     private void Event8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Event8ActionPerformed
-        checkBoxList.get(7).setSelected(true);    // TODO add your handling code here:
+        clickcounter8 +=1;
+        if (clickcounter8%2==1){
+            checkBoxList.get(7).setSelected(true);
+        }
+        else {
+            checkBoxList.get(7).setSelected(false);
+        }
     }//GEN-LAST:event_Event8ActionPerformed
 
     private void Event9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Event9ActionPerformed
-        checkBoxList.get(8).setSelected(true);    // TODO add your handling code here:
+        clickcounter9 +=1;
+        if (clickcounter9==1){
+            checkBoxList.get(8).setSelected(true);
+        }
+        else {
+            checkBoxList.get(8).setSelected(false);
+        }
     }//GEN-LAST:event_Event9ActionPerformed
 
     private void Event10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Event10ActionPerformed
-        checkBoxList.get(9).setSelected(true);    // TODO add your handling code here:
+        clickcounter10 +=1;
+        if (clickcounter10%2==1){
+            checkBoxList.get(9).setSelected(true);
+        }
+        else {
+            checkBoxList.get(9).setSelected(false);
+        }
     }//GEN-LAST:event_Event10ActionPerformed
 
     private void Event19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Event19ActionPerformed
-        checkBoxList.get(10).setSelected(true);    // TODO add your handling code here:
+        clickcounter19 +=1;
+        if (clickcounter19%2==1){
+            checkBoxList.get(18).setSelected(true);
+        }
+        else {
+            checkBoxList.get(18).setSelected(false);
+        }
     }//GEN-LAST:event_Event19ActionPerformed
 
     private void Event20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Event20ActionPerformed
-        checkBoxList.get(11).setSelected(true);    // TODO add your handling code here:
+        clickcounter20 +=1;
+        if (clickcounter20%2==1){
+            checkBoxList.get(19).setSelected(true);
+        }
+        else {
+            checkBoxList.get(19).setSelected(false);
+        }
     }//GEN-LAST:event_Event20ActionPerformed
 
     private void Event12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Event12ActionPerformed
-        checkBoxList.get(12).setSelected(true);    // TODO add your handling code here:
+        clickcounter12 +=1;
+        if (clickcounter12%2==1){
+            checkBoxList.get(11).setSelected(true);
+        }
+        else {
+            checkBoxList.get(11).setSelected(false);
+        }
     }//GEN-LAST:event_Event12ActionPerformed
 
     private void Event11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Event11ActionPerformed
-        checkBoxList.get(13).setSelected(true);    // TODO add your handling code here:
+        clickcounter11 +=1;
+        if (clickcounter11%2==1){
+            checkBoxList.get(10).setSelected(true);
+        }
+        else {
+            checkBoxList.get(10).setSelected(false);
+        }
     }//GEN-LAST:event_Event11ActionPerformed
 
     private void Event13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Event13ActionPerformed
-        checkBoxList.get(14).setSelected(true);    // TODO add your handling code here:
+        clickcounter13 +=1;
+        if (clickcounter13%2==1){
+            checkBoxList.get(12).setSelected(true);
+        }
+        else {
+            checkBoxList.get(12).setSelected(false);
+        }
     }//GEN-LAST:event_Event13ActionPerformed
 
     private void Event14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Event14ActionPerformed
-        checkBoxList.get(15).setSelected(true);    // TODO add your handling code here:
+        clickcounter14 +=1;
+        if (clickcounter14%2==1){
+            checkBoxList.get(13).setSelected(true);
+        }
+        else {
+            checkBoxList.get(13).setSelected(false);
+        }
     }//GEN-LAST:event_Event14ActionPerformed
 
     private void Event15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Event15ActionPerformed
-        checkBoxList.get(16).setSelected(true);    // TODO add your handling code here:
+        clickcounter15 +=1;
+        if (clickcounter15==1){
+            checkBoxList.get(14).setSelected(true);
+        }
+        else {
+            checkBoxList.get(14).setSelected(false);
+        }
     }//GEN-LAST:event_Event15ActionPerformed
 
     private void Event16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Event16ActionPerformed
-        checkBoxList.get(17).setSelected(true);    // TODO add your handling code here:
+        clickcounter16 +=1;
+        if (clickcounter16%2==1){
+            checkBoxList.get(15).setSelected(true);
+        }
+        else {
+            checkBoxList.get(15).setSelected(false);
+        }
     }//GEN-LAST:event_Event16ActionPerformed
 
     private void Event17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Event17ActionPerformed
-        checkBoxList.get(18).setSelected(true);    // TODO add your handling code here:
+        clickcounter17 +=1;
+        if (clickcounter17%2==1){
+            checkBoxList.get(16).setSelected(true);
+        }
+        else {
+            checkBoxList.get(16).setSelected(false);
+        }
     }//GEN-LAST:event_Event17ActionPerformed
 
     private void Event18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Event18ActionPerformed
-        checkBoxList.get(19).setSelected(true);    // TODO add your handling code here:
+        clickcounter18 +=1;
+        if (clickcounter18%2==1){
+            checkBoxList.get(17).setSelected(true);
+        }
+        else {
+            checkBoxList.get(17).setSelected(false);
+        }
     }//GEN-LAST:event_Event18ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         colorBtnClicked = false;
+        for (int i=0; i<numOfEvents;i++){
+            checkBoxList.get(i).setSelected(false);
+        }
         this.dispose();
         
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void Event2MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Event2MouseReleased
+    }//GEN-LAST:event_Event2MouseReleased
+
+    private void Event3MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Event3MouseReleased
+    }//GEN-LAST:event_Event3MouseReleased
+
+    private void Event4MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Event4MouseReleased
+    }//GEN-LAST:event_Event4MouseReleased
+
+    private void Event5MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Event5MouseReleased
+    }//GEN-LAST:event_Event5MouseReleased
+
+    private void Event6MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Event6MouseReleased
+    }//GEN-LAST:event_Event6MouseReleased
+
+    private void Event7MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Event7MouseReleased
+    }//GEN-LAST:event_Event7MouseReleased
+
+    private void Event8MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Event8MouseReleased
+    }//GEN-LAST:event_Event8MouseReleased
+
+    private void Event9MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Event9MouseReleased
+    }//GEN-LAST:event_Event9MouseReleased
+
+    private void Event10MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Event10MouseReleased
+    }//GEN-LAST:event_Event10MouseReleased
+
+    private void Event11MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Event11MouseReleased
+    }//GEN-LAST:event_Event11MouseReleased
+
+    private void Event12MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Event12MouseReleased
+    }//GEN-LAST:event_Event12MouseReleased
+
+    private void Event13MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Event13MouseReleased
+    }//GEN-LAST:event_Event13MouseReleased
+
+    private void Event14MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Event14MouseReleased
+    }//GEN-LAST:event_Event14MouseReleased
+
+    private void Event15MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Event15MouseReleased
+    }//GEN-LAST:event_Event15MouseReleased
+
+    private void Event16MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Event16MouseReleased
+    }//GEN-LAST:event_Event16MouseReleased
+
+    private void Event17MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Event17MouseReleased
+    }//GEN-LAST:event_Event17MouseReleased
+
+    private void Event18MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Event18MouseReleased
+    }//GEN-LAST:event_Event18MouseReleased
+
+    private void Event19MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Event19MouseReleased
+    }//GEN-LAST:event_Event19MouseReleased
+
+    private void Event20MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Event20MouseReleased
+    }//GEN-LAST:event_Event20MouseReleased
+
+    private void Event1MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Event1MouseReleased
+
+    }//GEN-LAST:event_Event1MouseReleased
 
     /**
      * @param args the command line arguments
