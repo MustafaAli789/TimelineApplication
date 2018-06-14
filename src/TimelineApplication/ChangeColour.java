@@ -72,10 +72,11 @@ public class ChangeColour extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        SetColour = new javax.swing.JButton();
-        Event1 = new javax.swing.JCheckBox();
-        jLabel1 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
+        setColourBtn = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        Event1 = new javax.swing.JCheckBox();
         Event2 = new javax.swing.JCheckBox();
         Event3 = new javax.swing.JCheckBox();
         Event4 = new javax.swing.JCheckBox();
@@ -85,28 +86,58 @@ public class ChangeColour extends javax.swing.JFrame {
         Event8 = new javax.swing.JCheckBox();
         Event9 = new javax.swing.JCheckBox();
         Event10 = new javax.swing.JCheckBox();
-        Event19 = new javax.swing.JCheckBox();
-        Event20 = new javax.swing.JCheckBox();
-        Event12 = new javax.swing.JCheckBox();
+        jPanel3 = new javax.swing.JPanel();
         Event11 = new javax.swing.JCheckBox();
+        Event12 = new javax.swing.JCheckBox();
         Event13 = new javax.swing.JCheckBox();
         Event14 = new javax.swing.JCheckBox();
         Event15 = new javax.swing.JCheckBox();
-        Event16 = new javax.swing.JCheckBox();
         Event17 = new javax.swing.JCheckBox();
         Event18 = new javax.swing.JCheckBox();
-        jButton1 = new javax.swing.JButton();
+        Event19 = new javax.swing.JCheckBox();
+        Event20 = new javax.swing.JCheckBox();
+        Event16 = new javax.swing.JCheckBox();
+        cancelBtn = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        SetColour.setFont(new java.awt.Font(".SF NS Text", 1, 24)); // NOI18N
-        SetColour.setText("Set Colour");
-        SetColour.addActionListener(new java.awt.event.ActionListener() {
+        jPanel1.setBackground(new java.awt.Color(204, 255, 255));
+
+        jLabel2.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 24)); // NOI18N
+        jLabel2.setText("Select Events To Change Colour");
+
+        setColourBtn.setBackground(new java.awt.Color(255, 153, 0));
+        setColourBtn.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 18)); // NOI18N
+        setColourBtn.setForeground(new java.awt.Color(0, 158, 158));
+        setColourBtn.setText("Set Colour");
+        setColourBtn.setBorderPainted(false);
+        setColourBtn.setContentAreaFilled(false);
+        setColourBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        setColourBtn.setEnabled(false);
+        setColourBtn.setOpaque(true);
+        setColourBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                setColourBtnMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                setColourBtnMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                setColourBtnMouseExited(evt);
+            }
+        });
+        setColourBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SetColourActionPerformed(evt);
+                setColourBtnActionPerformed(evt);
             }
         });
 
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED), "Events", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Franklin Gothic Medium Cond", 0, 15))); // NOI18N
+        jPanel2.setOpaque(false);
+
+        Event1.setBackground(new java.awt.Color(0, 223, 223));
+        Event1.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 13)); // NOI18N
+        Event1.setForeground(new java.awt.Color(0, 223, 223));
         Event1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         Event1.setEnabled(false);
         Event1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -120,12 +151,9 @@ public class ChangeColour extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Copperplate Gothic Bold", 1, 18)); // NOI18N
-        jLabel1.setText("Tick the boxes for the corresponding events ");
-
-        jLabel2.setFont(new java.awt.Font("Copperplate Gothic Bold", 1, 18)); // NOI18N
-        jLabel2.setText("that you want to change the colours for");
-
+        Event2.setBackground(new java.awt.Color(0, 223, 223));
+        Event2.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 13)); // NOI18N
+        Event2.setForeground(new java.awt.Color(0, 223, 223));
         Event2.setEnabled(false);
         Event2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
@@ -138,6 +166,9 @@ public class ChangeColour extends javax.swing.JFrame {
             }
         });
 
+        Event3.setBackground(new java.awt.Color(0, 223, 223));
+        Event3.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 13)); // NOI18N
+        Event3.setForeground(new java.awt.Color(0, 223, 223));
         Event3.setEnabled(false);
         Event3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
@@ -150,6 +181,9 @@ public class ChangeColour extends javax.swing.JFrame {
             }
         });
 
+        Event4.setBackground(new java.awt.Color(0, 223, 223));
+        Event4.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 13)); // NOI18N
+        Event4.setForeground(new java.awt.Color(0, 223, 223));
         Event4.setEnabled(false);
         Event4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
@@ -162,6 +196,9 @@ public class ChangeColour extends javax.swing.JFrame {
             }
         });
 
+        Event5.setBackground(new java.awt.Color(0, 223, 223));
+        Event5.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 13)); // NOI18N
+        Event5.setForeground(new java.awt.Color(0, 223, 223));
         Event5.setEnabled(false);
         Event5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
@@ -174,6 +211,9 @@ public class ChangeColour extends javax.swing.JFrame {
             }
         });
 
+        Event6.setBackground(new java.awt.Color(0, 223, 223));
+        Event6.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 13)); // NOI18N
+        Event6.setForeground(new java.awt.Color(0, 223, 223));
         Event6.setEnabled(false);
         Event6.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
@@ -186,6 +226,9 @@ public class ChangeColour extends javax.swing.JFrame {
             }
         });
 
+        Event7.setBackground(new java.awt.Color(0, 223, 223));
+        Event7.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 13)); // NOI18N
+        Event7.setForeground(new java.awt.Color(0, 223, 223));
         Event7.setEnabled(false);
         Event7.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
@@ -198,6 +241,9 @@ public class ChangeColour extends javax.swing.JFrame {
             }
         });
 
+        Event8.setBackground(new java.awt.Color(0, 223, 223));
+        Event8.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 13)); // NOI18N
+        Event8.setForeground(new java.awt.Color(0, 223, 223));
         Event8.setEnabled(false);
         Event8.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
@@ -210,6 +256,9 @@ public class ChangeColour extends javax.swing.JFrame {
             }
         });
 
+        Event9.setBackground(new java.awt.Color(0, 223, 223));
+        Event9.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 13)); // NOI18N
+        Event9.setForeground(new java.awt.Color(0, 223, 223));
         Event9.setEnabled(false);
         Event9.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
@@ -222,6 +271,9 @@ public class ChangeColour extends javax.swing.JFrame {
             }
         });
 
+        Event10.setBackground(new java.awt.Color(0, 223, 223));
+        Event10.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 13)); // NOI18N
+        Event10.setForeground(new java.awt.Color(0, 223, 223));
         Event10.setEnabled(false);
         Event10.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
@@ -234,42 +286,59 @@ public class ChangeColour extends javax.swing.JFrame {
             }
         });
 
-        Event19.setEnabled(false);
-        Event19.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseReleased(java.awt.event.MouseEvent evt) {
-                Event19MouseReleased(evt);
-            }
-        });
-        Event19.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Event19ActionPerformed(evt);
-            }
-        });
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(Event10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Event9, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Event8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Event7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Event6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Event5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Event4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Event2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(Event3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Event1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Event1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Event2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Event3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Event4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Event5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Event6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Event7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Event8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Event9)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Event10)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
 
-        Event20.setEnabled(false);
-        Event20.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseReleased(java.awt.event.MouseEvent evt) {
-                Event20MouseReleased(evt);
-            }
-        });
-        Event20.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Event20ActionPerformed(evt);
-            }
-        });
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED), "Events", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Franklin Gothic Medium Cond", 0, 15))); // NOI18N
+        jPanel3.setOpaque(false);
 
-        Event12.setEnabled(false);
-        Event12.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseReleased(java.awt.event.MouseEvent evt) {
-                Event12MouseReleased(evt);
-            }
-        });
-        Event12.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Event12ActionPerformed(evt);
-            }
-        });
-
+        Event11.setBackground(new java.awt.Color(159, 243, 243));
+        Event11.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 13)); // NOI18N
         Event11.setEnabled(false);
         Event11.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
@@ -282,6 +351,22 @@ public class ChangeColour extends javax.swing.JFrame {
             }
         });
 
+        Event12.setBackground(new java.awt.Color(159, 243, 243));
+        Event12.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 13)); // NOI18N
+        Event12.setEnabled(false);
+        Event12.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                Event12MouseReleased(evt);
+            }
+        });
+        Event12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Event12ActionPerformed(evt);
+            }
+        });
+
+        Event13.setBackground(new java.awt.Color(159, 243, 243));
+        Event13.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 13)); // NOI18N
         Event13.setEnabled(false);
         Event13.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
@@ -294,6 +379,8 @@ public class ChangeColour extends javax.swing.JFrame {
             }
         });
 
+        Event14.setBackground(new java.awt.Color(159, 243, 243));
+        Event14.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 13)); // NOI18N
         Event14.setEnabled(false);
         Event14.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
@@ -306,6 +393,8 @@ public class ChangeColour extends javax.swing.JFrame {
             }
         });
 
+        Event15.setBackground(new java.awt.Color(159, 243, 243));
+        Event15.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 13)); // NOI18N
         Event15.setEnabled(false);
         Event15.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
@@ -318,18 +407,8 @@ public class ChangeColour extends javax.swing.JFrame {
             }
         });
 
-        Event16.setEnabled(false);
-        Event16.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseReleased(java.awt.event.MouseEvent evt) {
-                Event16MouseReleased(evt);
-            }
-        });
-        Event16.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Event16ActionPerformed(evt);
-            }
-        });
-
+        Event17.setBackground(new java.awt.Color(159, 243, 243));
+        Event17.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 13)); // NOI18N
         Event17.setEnabled(false);
         Event17.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
@@ -342,6 +421,8 @@ public class ChangeColour extends javax.swing.JFrame {
             }
         });
 
+        Event18.setBackground(new java.awt.Color(159, 243, 243));
+        Event18.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 13)); // NOI18N
         Event18.setEnabled(false);
         Event18.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
@@ -354,13 +435,158 @@ public class ChangeColour extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setFont(new java.awt.Font(".SF NS Text", 1, 24)); // NOI18N
-        jButton1.setText("Cancel");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+        Event19.setBackground(new java.awt.Color(159, 243, 243));
+        Event19.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 13)); // NOI18N
+        Event19.setEnabled(false);
+        Event19.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                Event19MouseReleased(evt);
             }
         });
+        Event19.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Event19ActionPerformed(evt);
+            }
+        });
+
+        Event20.setBackground(new java.awt.Color(159, 243, 243));
+        Event20.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 13)); // NOI18N
+        Event20.setEnabled(false);
+        Event20.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                Event20MouseReleased(evt);
+            }
+        });
+        Event20.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Event20ActionPerformed(evt);
+            }
+        });
+
+        Event16.setBackground(new java.awt.Color(159, 243, 243));
+        Event16.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 13)); // NOI18N
+        Event16.setEnabled(false);
+        Event16.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                Event16MouseReleased(evt);
+            }
+        });
+        Event16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Event16ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Event16, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
+                    .addComponent(Event11, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
+                    .addComponent(Event12, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
+                    .addComponent(Event13, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
+                    .addComponent(Event14, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
+                    .addComponent(Event15, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
+                    .addComponent(Event17, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
+                    .addComponent(Event18, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
+                    .addComponent(Event19, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
+                    .addComponent(Event20, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Event11)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Event12)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Event13)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Event14)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Event15)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Event16)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Event17)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Event18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 6, Short.MAX_VALUE)
+                .addComponent(Event19)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Event20)
+                .addGap(15, 15, 15))
+        );
+
+        cancelBtn.setBackground(new java.awt.Color(255, 153, 0));
+        cancelBtn.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 18)); // NOI18N
+        cancelBtn.setForeground(new java.awt.Color(0, 158, 158));
+        cancelBtn.setText("Cancel");
+        cancelBtn.setBorderPainted(false);
+        cancelBtn.setContentAreaFilled(false);
+        cancelBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.WAIT_CURSOR));
+        cancelBtn.setEnabled(false);
+        cancelBtn.setOpaque(true);
+        cancelBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                cancelBtnMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                cancelBtnMouseExited(evt);
+            }
+        });
+        cancelBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancelBtnActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(120, 120, 120)
+                        .addComponent(jLabel2)))
+                .addContainerGap(27, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(90, 90, 90)
+                .addComponent(setColourBtn)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(cancelBtn)
+                .addGap(101, 101, 101))
+        );
+
+        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jPanel2, jPanel3});
+
+        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {cancelBtn, setColourBtn});
+
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(setColourBtn)
+                    .addComponent(cancelBtn))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -368,107 +594,21 @@ public class ChangeColour extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(16, 16, 16)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(Event1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Event2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Event3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Event4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Event5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Event6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Event7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Event8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Event9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Event10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Event11)
-                    .addComponent(Event12)
-                    .addComponent(Event13)
-                    .addComponent(Event14)
-                    .addComponent(Event15)
-                    .addComponent(Event16)
-                    .addComponent(Event17)
-                    .addComponent(Event18)
-                    .addComponent(Event19)
-                    .addComponent(Event20))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(26, 26, 26)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(38, 38, 38)
-                            .addComponent(SetColour)
-                            .addGap(33, 33, 33)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                            .addGap(42, 42, 42)
-                            .addComponent(jLabel2))))
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(11, 11, 11)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(Event1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Event2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Event3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Event4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Event5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Event6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Event7)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Event8)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Event9)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Event10))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(Event11)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Event12)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Event13)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Event14)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Event15)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Event16)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Event17)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Event18)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Event19)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Event20)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(SetColour)
-                    .addComponent(jButton1))
-                .addGap(17, 17, 17))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void SetColourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SetColourActionPerformed
-
+    private void setColourBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_setColourBtnActionPerformed
         Color newColor = JColorChooser.showDialog(null, "Choose a color", Color.WHITE);
         int firstIndex = newColor.getRed();
         String ColorR = Integer.toString(firstIndex);
@@ -482,7 +622,8 @@ public class ChangeColour extends javax.swing.JFrame {
             checkBoxList.get(i).setSelected(false);
         }
         this.dispose();
-    }//GEN-LAST:event_SetColourActionPerformed
+        
+    }//GEN-LAST:event_setColourBtnActionPerformed
 
     private void Event1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Event1ActionPerformed
         clickcounter1 +=1;
@@ -683,15 +824,6 @@ public class ChangeColour extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_Event18ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        colorBtnClicked = false;
-        for (int i=0; i<numOfEvents;i++){
-            checkBoxList.get(i).setSelected(false);
-        }
-        this.dispose();
-        
-    }//GEN-LAST:event_jButton1ActionPerformed
-
     private void Event2MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Event2MouseReleased
     }//GEN-LAST:event_Event2MouseReleased
 
@@ -753,6 +885,35 @@ public class ChangeColour extends javax.swing.JFrame {
 
     }//GEN-LAST:event_Event1MouseReleased
 
+    private void setColourBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_setColourBtnMouseEntered
+        Color setColourBtnHover = new Color(255,228,188);
+        setColourBtn.setBackground(setColourBtnHover);
+    }//GEN-LAST:event_setColourBtnMouseEntered
+
+    private void setColourBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_setColourBtnMouseExited
+        Color setColourBtnNonHover = new Color(255,153,0);
+        setColourBtn.setBackground(setColourBtnNonHover);
+    }//GEN-LAST:event_setColourBtnMouseExited
+
+    private void cancelBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cancelBtnMouseEntered
+        Color cancelBtnHover = new Color(255,228,188);
+        cancelBtn.setBackground(cancelBtnHover);
+    }//GEN-LAST:event_cancelBtnMouseEntered
+
+    private void cancelBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cancelBtnMouseExited
+        Color cancelBtnNonHover = new Color(255,153,0);
+        cancelBtn.setBackground(cancelBtnNonHover);
+    }//GEN-LAST:event_cancelBtnMouseExited
+
+    private void cancelBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelBtnActionPerformed
+        colorBtnClicked = false;
+        this.dispose();
+    }//GEN-LAST:event_cancelBtnActionPerformed
+
+    private void setColourBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_setColourBtnMouseClicked
+
+    }//GEN-LAST:event_setColourBtnMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -809,9 +970,11 @@ public class ChangeColour extends javax.swing.JFrame {
     public static javax.swing.JCheckBox Event7;
     public static javax.swing.JCheckBox Event8;
     public static javax.swing.JCheckBox Event9;
-    private javax.swing.JButton SetColour;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton cancelBtn;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JButton setColourBtn;
     // End of variables declaration//GEN-END:variables
 }
