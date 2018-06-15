@@ -1809,7 +1809,7 @@ public class Maintimeline extends javax.swing.JFrame {
     private void AddBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddBtnActionPerformed
         
         if(!addBtnClicked){
-            AddEvent addEvent = new AddEvent();
+            Addevent addEvent = new Addevent();
             addEvent.setVisible(true);
         }
                 
