@@ -36,6 +36,8 @@ import java.net.URL;
 import static TimelineApplication.TitleEditForm.title;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Graphics2D;
+import java.awt.image.BufferedImage;
 import javax.swing.JPanel;
 import java.util.*;
 import java.util.logging.Level;
@@ -491,6 +493,7 @@ public class Maintimeline extends javax.swing.JFrame {
         Arrow17 = new javax.swing.JLabel();
         Arrow18 = new javax.swing.JLabel();
         Arrow19 = new javax.swing.JLabel();
+        exportBtn = new javax.swing.JButton();
         DeleteBtn = new javax.swing.JButton();
         SaveBtn = new javax.swing.JButton();
         EditBtn = new javax.swing.JButton();
@@ -499,6 +502,7 @@ public class Maintimeline extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Timeline");
         setBackground(new java.awt.Color(51, 255, 204));
         setMinimumSize(new java.awt.Dimension(1176, 720));
         setPreferredSize(new java.awt.Dimension(1176, 720));
@@ -1659,6 +1663,20 @@ public class Maintimeline extends javax.swing.JFrame {
 
         getContentPane().add(ScrollableAreaPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 96, 1146, 486));
 
+        exportBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/exportBtnNonHover.png"))); // NOI18N
+        exportBtn.setContentAreaFilled(false);
+        exportBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        exportBtn.setMaximumSize(new java.awt.Dimension(73, 73));
+        exportBtn.setMinimumSize(new java.awt.Dimension(73, 73));
+        exportBtn.setPreferredSize(new java.awt.Dimension(73, 73));
+        exportBtn.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/exportBtnHover.png"))); // NOI18N
+        exportBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exportBtnActionPerformed(evt);
+            }
+        });
+        getContentPane().add(exportBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 600, 73, 73));
+
         DeleteBtn.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
         DeleteBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/DeleteIconNonHover.png"))); // NOI18N
         DeleteBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -1748,7 +1766,7 @@ public class Maintimeline extends javax.swing.JFrame {
                 ChangeColourBtnActionPerformed(evt);
             }
         });
-        getContentPane().add(ChangeColourBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 600, 74, 73));
+        getContentPane().add(ChangeColourBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 600, 74, 73));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/Background.jpg"))); // NOI18N
         jLabel1.setMaximumSize(new java.awt.Dimension(1208, 705));
@@ -1809,7 +1827,7 @@ public class Maintimeline extends javax.swing.JFrame {
     private void AddBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddBtnActionPerformed
         
         if(!addBtnClicked){
-            AddEvent addEvent = new AddEvent();
+            Addevent addEvent = new Addevent();
             addEvent.setVisible(true);
         }
                 
@@ -1865,6 +1883,11 @@ public class Maintimeline extends javax.swing.JFrame {
         
         colorBtnClicked=true; 
     }//GEN-LAST:event_ChangeColourBtnActionPerformed
+
+    private void exportBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exportBtnActionPerformed
+        ExportTimeline exportScreen = new ExportTimeline();
+        exportScreen.setVisible(true);
+    }//GEN-LAST:event_exportBtnActionPerformed
 
     public static void setTheTitle (String a){
         timelineTitleLabel.setText(a);
@@ -2071,6 +2094,7 @@ public class Maintimeline extends javax.swing.JFrame {
     private javax.swing.JPanel SeperatorPaneTwelve;
     private javax.swing.JPanel SeperatorPaneTwenty;
     private javax.swing.JPanel SeperatorPaneTwo;
+    private javax.swing.JButton exportBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPaneEight;
     private javax.swing.JScrollPane jScrollPaneEighteen;
