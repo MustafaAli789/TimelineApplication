@@ -208,7 +208,7 @@ public class Maintimeline extends javax.swing.JFrame {
     public static void setEventInfo(JLabel title, JLabel date, JTextPane description, JLabel eventImage, int eventNum, JPanel coloured1, JPanel coloured2){
 
         eventNum+=1; //add 1 to take into account that title is first sublist
-        
+                
         title.setText(eventInformationList.get(eventNum).get(0)); //0th index is title
         date.setText(eventInformationList.get(eventNum).get(1)); //1sr index is date
         description.setText(eventInformationList.get(eventNum).get(2)); //2nd index is description
@@ -245,7 +245,7 @@ public class Maintimeline extends javax.swing.JFrame {
     public static void readFileContentsToList(){        
         
         //Add 21 sublists to main list, 1 for title and 20 for events
-        for(int i = 0; i<=21; i++){
+        for(int i = 0; i<21; i++){
             eventInformationList.add(new ArrayList<String>());
         }
         
