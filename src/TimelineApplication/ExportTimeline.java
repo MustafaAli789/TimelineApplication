@@ -13,6 +13,7 @@ import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import static TimelineApplication.TitleEditForm.title;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -33,6 +34,7 @@ public class ExportTimeline extends javax.swing.JFrame {
      */
     public ExportTimeline() {
         initComponents();
+        outputTitleTextField.setText(title);
     }
 
     /**
@@ -234,6 +236,8 @@ public class ExportTimeline extends javax.swing.JFrame {
             ImageIO.write(image, "png", new File(directoryAbsolutePath +"\\" + imageTitle + ".png"));
             exportBtnClicked = false; 
             this.dispose();
+            String output = "Your timeline ha been saved. File Path: " + directoryAbsolutePath +"\\" + imageTitle + ".png";
+            JOptionPane.showMessageDialog(null, output);
         } catch (IOException ex) {
             JOptionPane.showMessageDialog(null, "File path not found!");
         }
