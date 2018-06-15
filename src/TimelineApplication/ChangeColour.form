@@ -166,7 +166,7 @@
                       <Component id="Event9" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="Event10" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="16" max="32767" attributes="0"/>
+                      <EmptySpace pref="18" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -181,7 +181,7 @@
                   <Font name="Franklin Gothic Medium Cond" size="13" style="0"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="df" green="df" red="0" type="rgb"/>
+                  <Color blue="cc" green="0" red="0" type="rgb"/>
                 </Property>
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>
@@ -202,7 +202,7 @@
                   <Font name="Franklin Gothic Medium Cond" size="13" style="0"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="df" green="df" red="0" type="rgb"/>
+                  <Color blue="cc" green="0" red="0" type="rgb"/>
                 </Property>
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>
@@ -223,7 +223,7 @@
                   <Font name="Franklin Gothic Medium Cond" size="13" style="0"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="df" green="df" red="0" type="rgb"/>
+                  <Color blue="cc" green="0" red="0" type="rgb"/>
                 </Property>
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>
@@ -244,7 +244,7 @@
                   <Font name="Franklin Gothic Medium Cond" size="13" style="0"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="df" green="df" red="0" type="rgb"/>
+                  <Color blue="cc" green="0" red="0" type="rgb"/>
                 </Property>
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>
@@ -265,7 +265,7 @@
                   <Font name="Franklin Gothic Medium Cond" size="13" style="0"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="df" green="df" red="0" type="rgb"/>
+                  <Color blue="cc" green="0" red="0" type="rgb"/>
                 </Property>
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>
@@ -286,7 +286,7 @@
                   <Font name="Franklin Gothic Medium Cond" size="13" style="0"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="df" green="df" red="0" type="rgb"/>
+                  <Color blue="cc" green="0" red="0" type="rgb"/>
                 </Property>
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>
@@ -307,7 +307,7 @@
                   <Font name="Franklin Gothic Medium Cond" size="13" style="0"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="df" green="df" red="0" type="rgb"/>
+                  <Color blue="cc" green="0" red="0" type="rgb"/>
                 </Property>
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>
@@ -328,7 +328,7 @@
                   <Font name="Franklin Gothic Medium Cond" size="13" style="0"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="df" green="df" red="0" type="rgb"/>
+                  <Color blue="cc" green="0" red="0" type="rgb"/>
                 </Property>
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>
@@ -349,7 +349,7 @@
                   <Font name="Franklin Gothic Medium Cond" size="13" style="0"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="df" green="df" red="0" type="rgb"/>
+                  <Color blue="cc" green="0" red="0" type="rgb"/>
                 </Property>
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>
@@ -370,7 +370,7 @@
                   <Font name="Franklin Gothic Medium Cond" size="13" style="0"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="df" green="df" red="0" type="rgb"/>
+                  <Color blue="cc" green="0" red="0" type="rgb"/>
                 </Property>
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>
@@ -453,6 +453,9 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Franklin Gothic Medium Cond" size="13" style="0"/>
                 </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="cc" green="0" red="0" type="rgb"/>
+                </Property>
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>
               <Events>
@@ -470,6 +473,9 @@
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Franklin Gothic Medium Cond" size="13" style="0"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="cc" green="0" red="0" type="rgb"/>
                 </Property>
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>
@@ -489,6 +495,9 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Franklin Gothic Medium Cond" size="13" style="0"/>
                 </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="cc" green="0" red="0" type="rgb"/>
+                </Property>
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>
               <Events>
@@ -506,6 +515,9 @@
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Franklin Gothic Medium Cond" size="13" style="0"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="cc" green="0" red="0" type="rgb"/>
                 </Property>
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>
@@ -525,6 +537,9 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Franklin Gothic Medium Cond" size="13" style="0"/>
                 </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="cc" green="0" red="0" type="rgb"/>
+                </Property>
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>
               <Events>
@@ -542,6 +557,9 @@
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Franklin Gothic Medium Cond" size="13" style="0"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="cc" green="0" red="0" type="rgb"/>
                 </Property>
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>
@@ -561,6 +579,9 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Franklin Gothic Medium Cond" size="13" style="0"/>
                 </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="cc" green="0" red="0" type="rgb"/>
+                </Property>
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>
               <Events>
@@ -578,6 +599,9 @@
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Franklin Gothic Medium Cond" size="13" style="0"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="cc" green="0" red="0" type="rgb"/>
                 </Property>
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>
@@ -597,6 +621,9 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Franklin Gothic Medium Cond" size="13" style="0"/>
                 </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="cc" green="0" red="0" type="rgb"/>
+                </Property>
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>
               <Events>
@@ -614,6 +641,9 @@
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Franklin Gothic Medium Cond" size="13" style="0"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="cc" green="0" red="0" type="rgb"/>
                 </Property>
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>

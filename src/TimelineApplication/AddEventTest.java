@@ -153,8 +153,8 @@ public class AddEventTest extends javax.swing.JFrame {
         imgUrlPanel1.setLayout(new java.awt.GridBagLayout());
 
         imageUrlLabel1.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 18)); // NOI18N
-        imageUrlLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        imageUrlLabel1.setText("Google Search");
+        imageUrlLabel1.setForeground(new java.awt.Color(255, 0, 51));
+        imageUrlLabel1.setText("Search Google");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;

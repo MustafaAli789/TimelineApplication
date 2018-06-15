@@ -111,7 +111,7 @@ public class ChangeColour extends javax.swing.JFrame {
 
         Event2.setBackground(new java.awt.Color(0, 223, 223));
         Event2.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 13)); // NOI18N
-        Event2.setForeground(new java.awt.Color(0, 223, 223));
+        Event2.setForeground(new java.awt.Color(0, 0, 204));
         Event2.setEnabled(false);
         Event2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
@@ -126,7 +126,7 @@ public class ChangeColour extends javax.swing.JFrame {
 
         Event3.setBackground(new java.awt.Color(0, 223, 223));
         Event3.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 13)); // NOI18N
-        Event3.setForeground(new java.awt.Color(0, 223, 223));
+        Event3.setForeground(new java.awt.Color(0, 0, 204));
         Event3.setEnabled(false);
         Event3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
@@ -141,7 +141,7 @@ public class ChangeColour extends javax.swing.JFrame {
 
         Event4.setBackground(new java.awt.Color(0, 223, 223));
         Event4.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 13)); // NOI18N
-        Event4.setForeground(new java.awt.Color(0, 223, 223));
+        Event4.setForeground(new java.awt.Color(0, 0, 204));
         Event4.setEnabled(false);
         Event4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
@@ -156,7 +156,7 @@ public class ChangeColour extends javax.swing.JFrame {
 
         Event5.setBackground(new java.awt.Color(0, 223, 223));
         Event5.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 13)); // NOI18N
-        Event5.setForeground(new java.awt.Color(0, 223, 223));
+        Event5.setForeground(new java.awt.Color(0, 0, 204));
         Event5.setEnabled(false);
         Event5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
@@ -171,7 +171,7 @@ public class ChangeColour extends javax.swing.JFrame {
 
         Event6.setBackground(new java.awt.Color(0, 223, 223));
         Event6.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 13)); // NOI18N
-        Event6.setForeground(new java.awt.Color(0, 223, 223));
+        Event6.setForeground(new java.awt.Color(0, 0, 204));
         Event6.setEnabled(false);
         Event6.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
@@ -186,7 +186,7 @@ public class ChangeColour extends javax.swing.JFrame {
 
         Event7.setBackground(new java.awt.Color(0, 223, 223));
         Event7.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 13)); // NOI18N
-        Event7.setForeground(new java.awt.Color(0, 223, 223));
+        Event7.setForeground(new java.awt.Color(0, 0, 204));
         Event7.setEnabled(false);
         Event7.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
@@ -201,7 +201,7 @@ public class ChangeColour extends javax.swing.JFrame {
 
         Event8.setBackground(new java.awt.Color(0, 223, 223));
         Event8.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 13)); // NOI18N
-        Event8.setForeground(new java.awt.Color(0, 223, 223));
+        Event8.setForeground(new java.awt.Color(0, 0, 204));
         Event8.setEnabled(false);
         Event8.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
@@ -216,7 +216,7 @@ public class ChangeColour extends javax.swing.JFrame {
 
         Event9.setBackground(new java.awt.Color(0, 223, 223));
         Event9.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 13)); // NOI18N
-        Event9.setForeground(new java.awt.Color(0, 223, 223));
+        Event9.setForeground(new java.awt.Color(0, 0, 204));
         Event9.setEnabled(false);
         Event9.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
@@ -231,7 +231,7 @@ public class ChangeColour extends javax.swing.JFrame {
 
         Event10.setBackground(new java.awt.Color(0, 223, 223));
         Event10.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 13)); // NOI18N
-        Event10.setForeground(new java.awt.Color(0, 223, 223));
+        Event10.setForeground(new java.awt.Color(0, 0, 204));
         Event10.setEnabled(false);
         Event10.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
@@ -246,7 +246,7 @@ public class ChangeColour extends javax.swing.JFrame {
 
         jCheckBox1.setBackground(new java.awt.Color(0, 223, 223));
         jCheckBox1.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 13)); // NOI18N
-        jCheckBox1.setForeground(new java.awt.Color(0, 223, 223));
+        jCheckBox1.setForeground(new java.awt.Color(0, 0, 204));
         jCheckBox1.setEnabled(false);
         jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -298,7 +298,7 @@ public class ChangeColour extends javax.swing.JFrame {
                 .addComponent(Event9)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Event10)
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED), "Events", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Franklin Gothic Medium Cond", 0, 15))); // NOI18N
@@ -306,6 +306,7 @@ public class ChangeColour extends javax.swing.JFrame {
 
         Event11.setBackground(new java.awt.Color(159, 243, 243));
         Event11.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 13)); // NOI18N
+        Event11.setForeground(new java.awt.Color(0, 0, 204));
         Event11.setEnabled(false);
         Event11.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
@@ -320,6 +321,7 @@ public class ChangeColour extends javax.swing.JFrame {
 
         Event12.setBackground(new java.awt.Color(159, 243, 243));
         Event12.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 13)); // NOI18N
+        Event12.setForeground(new java.awt.Color(0, 0, 204));
         Event12.setEnabled(false);
         Event12.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
@@ -334,6 +336,7 @@ public class ChangeColour extends javax.swing.JFrame {
 
         Event13.setBackground(new java.awt.Color(159, 243, 243));
         Event13.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 13)); // NOI18N
+        Event13.setForeground(new java.awt.Color(0, 0, 204));
         Event13.setEnabled(false);
         Event13.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
@@ -348,6 +351,7 @@ public class ChangeColour extends javax.swing.JFrame {
 
         Event14.setBackground(new java.awt.Color(159, 243, 243));
         Event14.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 13)); // NOI18N
+        Event14.setForeground(new java.awt.Color(0, 0, 204));
         Event14.setEnabled(false);
         Event14.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
@@ -362,6 +366,7 @@ public class ChangeColour extends javax.swing.JFrame {
 
         Event15.setBackground(new java.awt.Color(159, 243, 243));
         Event15.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 13)); // NOI18N
+        Event15.setForeground(new java.awt.Color(0, 0, 204));
         Event15.setEnabled(false);
         Event15.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
@@ -376,6 +381,7 @@ public class ChangeColour extends javax.swing.JFrame {
 
         Event17.setBackground(new java.awt.Color(159, 243, 243));
         Event17.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 13)); // NOI18N
+        Event17.setForeground(new java.awt.Color(0, 0, 204));
         Event17.setEnabled(false);
         Event17.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
@@ -390,6 +396,7 @@ public class ChangeColour extends javax.swing.JFrame {
 
         Event18.setBackground(new java.awt.Color(159, 243, 243));
         Event18.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 13)); // NOI18N
+        Event18.setForeground(new java.awt.Color(0, 0, 204));
         Event18.setEnabled(false);
         Event18.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
@@ -404,6 +411,7 @@ public class ChangeColour extends javax.swing.JFrame {
 
         Event19.setBackground(new java.awt.Color(159, 243, 243));
         Event19.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 13)); // NOI18N
+        Event19.setForeground(new java.awt.Color(0, 0, 204));
         Event19.setEnabled(false);
         Event19.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
@@ -418,6 +426,7 @@ public class ChangeColour extends javax.swing.JFrame {
 
         Event20.setBackground(new java.awt.Color(159, 243, 243));
         Event20.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 13)); // NOI18N
+        Event20.setForeground(new java.awt.Color(0, 0, 204));
         Event20.setEnabled(false);
         Event20.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
@@ -432,6 +441,7 @@ public class ChangeColour extends javax.swing.JFrame {
 
         Event16.setBackground(new java.awt.Color(159, 243, 243));
         Event16.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 13)); // NOI18N
+        Event16.setForeground(new java.awt.Color(0, 0, 204));
         Event16.setEnabled(false);
         Event16.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
