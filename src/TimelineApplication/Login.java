@@ -4,12 +4,14 @@
  * and open the template in the editor.
  */
 package TimelineApplication;
+import static TimelineApplication.Maintimeline.eventInformationFile;
 import java.io.*;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 /**
  *
  * @author S199841769
@@ -24,6 +26,7 @@ public class Login extends javax.swing.JFrame {
     public Login() {
         initComponents();
         PasswordField.setText("");
+          
     }    
     /**
      * This method is called from within the constructor to initialize the form.
@@ -166,29 +169,44 @@ public class Login extends javax.swing.JFrame {
         }
         // TODO add your handling code here:
     }//GEN-LAST:event_SigninButtonActionPerformed
-    public static File UnamePW = new File("src/TimelineApplication/UnamePW.txt"); 
+    public static File UnamePW = new File("UnamePW.txt"); 
+    
     public static ArrayList<String> readUP(){
         String line = null;
         ArrayList<String> UPlist = new ArrayList<String>();
-        try{
-            FileReader fileReader = new FileReader(UnamePW);
-            BufferedReader bufferedReader = new BufferedReader(fileReader); 
-            while (true){
-                line = bufferedReader.readLine();
-                    if (line == null){
-                        break;
+        
+        if(UnamePW.exists()){
+            try{
+                FileReader fileReader = new FileReader(UnamePW);
+                BufferedReader bufferedReader = new BufferedReader(fileReader); 
+                while (true){
+                    try {
+                        line = bufferedReader.readLine();
+                    } catch (IOException ex) {
+                        Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
                     }
-                    else {
-                        UPlist.add(line);
-                    }
+                        if (line == null){
+                            break;
+                        }
+                        else {
+                            UPlist.add(line);
+                        }
+                }
+            }
+            catch (FileNotFoundException ex){
+                JOptionPane.showMessageDialog(null, "Cannot find file: " + UnamePW);
             }
         }
-        catch (FileNotFoundException ex){
-            System.out.println("Cannot find the file "+UnamePW);
+        else{
+            try {
+                UnamePW.createNewFile();
+            } catch (IOException ex) {
+                JOptionPane.showMessageDialog(null, "Attemped to create new database but path to file could not be found.");
+            }
         }
-        catch (IOException ex){
-            System.out.println("Error occured when reading file.");
-        }
+        
+        
+
         
         return (UPlist);
     }

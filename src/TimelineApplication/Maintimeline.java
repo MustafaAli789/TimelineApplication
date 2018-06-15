@@ -57,6 +57,7 @@ public class Maintimeline extends javax.swing.JFrame {
     public static boolean editBtnClicked = false;
     public static boolean colorBtnClicked = false;
     public static boolean EditTitleBtnClicked = false;
+    public static boolean exportBtnClicked = false;
     public static String Title;
     public static int numOfEvents;
     public static ArrayList<ArrayList<JLabel>> eventTitleDateImageNames = new ArrayList<ArrayList<JLabel>>();
@@ -64,7 +65,7 @@ public class Maintimeline extends javax.swing.JFrame {
     public static ArrayList<JPanel> eventPaneNames = new ArrayList<JPanel>();
     public static ArrayList<JLabel> arrowNames = new ArrayList<JLabel>();
     public static ArrayList<JPanel> eventTitlePanelNames = new ArrayList<JPanel>();
-    public static File eventInformationFile = new File("src/TimelineApplication/eventsInformation.txt"); 
+    public static File eventInformationFile = new File("eventsInformation.txt"); 
     public static ArrayList<ArrayList<String>> eventInformationList = new ArrayList<>(); //2d list of all event info
     
      
@@ -227,7 +228,7 @@ public class Maintimeline extends javax.swing.JFrame {
     }
     
     public static void setNumOfEvents(){
-        if(eventInformationFile.exists()){
+        if(eventInformationFile.exists() && eventInformationFile.length()!=0){
             Scanner sc1;
             try {
                 sc1 = new Scanner(eventInformationFile);
@@ -236,15 +237,19 @@ public class Maintimeline extends javax.swing.JFrame {
                 Logger.getLogger(Maintimeline.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
+        else{
+            numOfEvents = 0; //completely new or blank file
+        }
     }
     
     public static void readFileContentsToList(){        
-        //Add 17 sublists to main list, 1 for title and 16 for events
-        for(int i = 0; i<21; i++){
+        
+        //Add 21 sublists to main list, 1 for title and 20 for events
+        for(int i = 0; i<=21; i++){
             eventInformationList.add(new ArrayList<String>());
         }
         
-        if(eventInformationFile.exists()){
+        if(eventInformationFile.exists() && eventInformationFile.length()!=0){ //file exists ans is NOT blank
             try {   
                 Scanner sc2 = new Scanner(eventInformationFile);
                 sc2.nextLine(); //skipping first line as its number of events
@@ -262,12 +267,37 @@ public class Maintimeline extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Error for some reason!");
             }
         }
-        else{
+        else if (eventInformationFile.exists() && eventInformationFile.length()==0){ //file exists but is blank
+   
+            //If file is blank, put in first two lines (0 num of events and default title)
+            FileWriter writer;
+            try {
+                writer = new FileWriter(eventInformationFile, true);
+                writer.write("0\n");
+                writer.write("Timeline Title Here");
+                writer.close();
+                eventInformationList.get(0).add("Timeline Title Here"); //puttin title in event info list
+            } catch (IOException ex) {
+                Logger.getLogger(Maintimeline.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        else{ //file does not exist
             try {
                 eventInformationFile.createNewFile();
+                FileWriter writer;
+                try {
+                    writer = new FileWriter(eventInformationFile, true);
+                    writer.write("0\n");
+                    writer.write("Timeline Title Here");
+                    writer.close();
+                    eventInformationList.get(0).add("Timeline Title Here"); //puttin title in event info list
+                } catch (IOException ex) {
+                    Logger.getLogger(Maintimeline.class.getName()).log(Level.SEVERE, null, ex);
+                }
             } catch (IOException ex) {
                 JOptionPane.showMessageDialog(null, "Attemped to create new database but path to file could not be found.");
             }
+            
         }
         
     }
@@ -1827,7 +1857,7 @@ public class Maintimeline extends javax.swing.JFrame {
     private void AddBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddBtnActionPerformed
         
         if(!addBtnClicked){
-            Addevent addEvent = new Addevent();
+            AddEvent addEvent = new AddEvent();
             addEvent.setVisible(true);
         }
                 
@@ -1885,8 +1915,11 @@ public class Maintimeline extends javax.swing.JFrame {
     }//GEN-LAST:event_ChangeColourBtnActionPerformed
 
     private void exportBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exportBtnActionPerformed
-        ExportTimeline exportScreen = new ExportTimeline();
-        exportScreen.setVisible(true);
+        if(!exportBtnClicked){           
+            ExportTimeline exportScreen = new ExportTimeline();
+            exportScreen.setVisible(true);
+        }
+        exportBtnClicked = true; 
     }//GEN-LAST:event_exportBtnActionPerformed
 
     public static void setTheTitle (String a){
