@@ -5,7 +5,7 @@
  */
 package TimelineApplication;
 
-import static TimelineApplication.ChangeColour.Event1;
+
 import static TimelineApplication.ChangeColour.Event2;
 import static TimelineApplication.ChangeColour.checkBoxList;
 import static TimelineApplication.ChangeColour.clickcounter1;
@@ -1809,7 +1809,7 @@ public class Maintimeline extends javax.swing.JFrame {
     private void AddBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddBtnActionPerformed
         
         if(!addBtnClicked){
-            Addevent addEvent = new Addevent();
+            AddEventTest addEvent = new AddEventTest();
             addEvent.setVisible(true);
         }
                 

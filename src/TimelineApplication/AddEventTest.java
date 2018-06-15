@@ -1,42 +1,26 @@
 package TimelineApplication;
-import static TimelineApplication.EditEventNum.EditEventField;
-import static TimelineApplication.Maintimeline.editBtnClicked;
+import java.io.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import static TimelineApplication.Maintimeline.addBtnClicked;
 import static TimelineApplication.Maintimeline.eventInformationList;
 import static TimelineApplication.Maintimeline.numOfEvents;
 import static TimelineApplication.Maintimeline.updateScreen;
-import static java.lang.Integer.parseInt;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
-public class Editevent extends javax.swing.JFrame {
+
+public class AddEventTest extends javax.swing.JFrame {
 
     public static String oldColorR;
     public static String oldColorG;
     public static String oldColorB;
     public static int oldPosition;
     
-    public Editevent() {
+    public AddEventTest() {
         initComponents();
-        
-        //Getting all the info of chosen event and displaying it in text fields
-        String edit_pos = EditEventField.getText();
-        int edit_pos_num = parseInt(edit_pos);
-        posTextField.setText(edit_pos);
-        EditEventNameTextField.setText(eventInformationList.get(edit_pos_num).get(0).toString());
-        EditTimeTextField.setText(eventInformationList.get(edit_pos_num).get(1).toString());
-        EditDescriptionTextArea.setText(eventInformationList.get(edit_pos_num).get(2).toString());
-        EditImageUrlTextField.setText(eventInformationList.get(edit_pos_num).get(3).toString());
-        oldColorR = eventInformationList.get(edit_pos_num).get(4);
-        oldColorG = eventInformationList.get(edit_pos_num).get(5);
-        oldColorB = eventInformationList.get(edit_pos_num).get(6);
-        
-        setOldPosition();
-     
     }
 
-    public static void setOldPosition(){
-        oldPosition = parseInt(posTextField.getText());  
-    }
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -60,23 +44,25 @@ public class Editevent extends javax.swing.JFrame {
         descriptionLabel = new javax.swing.JLabel();
         imgUrlPanel = new javax.swing.JPanel();
         imageUrlLabel = new javax.swing.JLabel();
+        imgUrlPanel1 = new javax.swing.JPanel();
+        imageUrlLabel1 = new javax.swing.JLabel();
         rightPanel = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        EditDescriptionTextArea = new javax.swing.JTextArea();
-        posTextField = new javax.swing.JTextField();
-        EditTimeTextField = new javax.swing.JTextField();
-        EditEventNameTextField = new javax.swing.JTextField();
-        EditImageUrlTextField = new javax.swing.JTextField();
-        EditBtn = new javax.swing.JButton();
+        DescriptionTextField = new javax.swing.JTextArea();
+        EventPositionTextField = new javax.swing.JTextField();
+        TimeTextField = new javax.swing.JTextField();
+        EventNameTextField = new javax.swing.JTextField();
+        ImageUrlTextField = new javax.swing.JTextField();
+        addBtn = new javax.swing.JButton();
+        SearchInput = new javax.swing.JTextField();
         CancelBtn = new javax.swing.JButton();
         positionLabel1 = new javax.swing.JLabel();
+        SearchButton = new javax.swing.JButton();
         sidePanel1 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setBackground(new java.awt.Color(102, 204, 255));
-        setMaximumSize(new java.awt.Dimension(500, 535));
-        setMinimumSize(new java.awt.Dimension(430, 535));
-        setPreferredSize(new java.awt.Dimension(430, 535));
+        setMinimumSize(new java.awt.Dimension(430, 550));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -85,7 +71,7 @@ public class Editevent extends javax.swing.JFrame {
         middlePanel.setMinimumSize(new java.awt.Dimension(500, 535));
         middlePanel.setPreferredSize(new java.awt.Dimension(147, 535));
 
-        editImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/EditIconHover.png"))); // NOI18N
+        editImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/AddIconHover.png"))); // NOI18N
 
         positionPanel.setBackground(new java.awt.Color(0, 51, 153));
         positionPanel.setForeground(new java.awt.Color(255, 255, 255));
@@ -161,18 +147,37 @@ public class Editevent extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(13, 35, 13, 32);
         imgUrlPanel.add(imageUrlLabel, gridBagConstraints);
 
+        imgUrlPanel1.setBackground(new java.awt.Color(204, 255, 204));
+        imgUrlPanel1.setForeground(new java.awt.Color(255, 255, 255));
+        imgUrlPanel1.setToolTipText("");
+        imgUrlPanel1.setLayout(new java.awt.GridBagLayout());
+
+        imageUrlLabel1.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 18)); // NOI18N
+        imageUrlLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        imageUrlLabel1.setText("Google Search");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(13, 35, 13, 32);
+        imgUrlPanel1.add(imageUrlLabel1, gridBagConstraints);
+
         javax.swing.GroupLayout middlePanelLayout = new javax.swing.GroupLayout(middlePanel);
         middlePanel.setLayout(middlePanelLayout);
         middlePanelLayout.setHorizontalGroup(
             middlePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(middlePanelLayout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addComponent(editImage))
-            .addComponent(positionPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(titlePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(datePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(descriptionPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(imgUrlPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(middlePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(middlePanelLayout.createSequentialGroup()
+                        .addGap(31, 31, 31)
+                        .addComponent(editImage))
+                    .addComponent(titlePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(datePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(descriptionPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(imgUrlPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(positionPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(imgUrlPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addGap(353, 353, 353))
         );
         middlePanelLayout.setVerticalGroup(
             middlePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -189,10 +194,12 @@ public class Editevent extends javax.swing.JFrame {
                 .addComponent(descriptionPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(7, 7, 7)
                 .addComponent(imgUrlPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(imgUrlPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(81, 81, 81))
         );
 
-        getContentPane().add(middlePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(55, 0, -1, 510));
+        getContentPane().add(middlePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(55, 0, -1, 560));
 
         rightPanel.setBackground(new java.awt.Color(244, 249, 255));
         rightPanel.setMaximumSize(new java.awt.Dimension(500, 535));
@@ -200,69 +207,77 @@ public class Editevent extends javax.swing.JFrame {
         rightPanel.setPreferredSize(new java.awt.Dimension(1185, 535));
         rightPanel.setLayout(null);
 
-        EditDescriptionTextArea.setColumns(20);
-        EditDescriptionTextArea.setLineWrap(true);
-        EditDescriptionTextArea.setRows(5);
-        EditDescriptionTextArea.setToolTipText("");
-        EditDescriptionTextArea.setWrapStyleWord(true);
-        EditDescriptionTextArea.setBorder(null);
-        jScrollPane2.setViewportView(EditDescriptionTextArea);
+        DescriptionTextField.setColumns(20);
+        DescriptionTextField.setLineWrap(true);
+        DescriptionTextField.setRows(5);
+        DescriptionTextField.setToolTipText("");
+        DescriptionTextField.setWrapStyleWord(true);
+        DescriptionTextField.setBorder(null);
+        jScrollPane2.setViewportView(DescriptionTextField);
 
         rightPanel.add(jScrollPane2);
         jScrollPane2.setBounds(10, 288, 200, 110);
 
-        posTextField.setMinimumSize(new java.awt.Dimension(200, 47));
-        posTextField.setPreferredSize(new java.awt.Dimension(200, 47));
-        posTextField.addActionListener(new java.awt.event.ActionListener() {
+        EventPositionTextField.setMinimumSize(new java.awt.Dimension(200, 47));
+        EventPositionTextField.setPreferredSize(new java.awt.Dimension(200, 47));
+        EventPositionTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                posTextFieldActionPerformed(evt);
+                EventPositionTextFieldActionPerformed(evt);
             }
         });
-        rightPanel.add(posTextField);
-        posTextField.setBounds(10, 132, 200, 47);
+        rightPanel.add(EventPositionTextField);
+        EventPositionTextField.setBounds(10, 132, 200, 47);
 
-        EditTimeTextField.setMinimumSize(new java.awt.Dimension(200, 47));
-        EditTimeTextField.setPreferredSize(new java.awt.Dimension(200, 47));
-        EditTimeTextField.addActionListener(new java.awt.event.ActionListener() {
+        TimeTextField.setMinimumSize(new java.awt.Dimension(200, 47));
+        TimeTextField.setPreferredSize(new java.awt.Dimension(200, 47));
+        TimeTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EditTimeTextFieldActionPerformed(evt);
+                TimeTextFieldActionPerformed(evt);
             }
         });
-        rightPanel.add(EditTimeTextField);
-        EditTimeTextField.setBounds(10, 240, 200, 47);
+        rightPanel.add(TimeTextField);
+        TimeTextField.setBounds(10, 240, 200, 47);
 
-        EditEventNameTextField.setMinimumSize(new java.awt.Dimension(200, 47));
-        EditEventNameTextField.setPreferredSize(new java.awt.Dimension(200, 47));
-        EditEventNameTextField.addActionListener(new java.awt.event.ActionListener() {
+        EventNameTextField.setMinimumSize(new java.awt.Dimension(200, 47));
+        EventNameTextField.setPreferredSize(new java.awt.Dimension(200, 47));
+        EventNameTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EditEventNameTextFieldActionPerformed(evt);
+                EventNameTextFieldActionPerformed(evt);
             }
         });
-        rightPanel.add(EditEventNameTextField);
-        EditEventNameTextField.setBounds(10, 186, 200, 47);
+        rightPanel.add(EventNameTextField);
+        EventNameTextField.setBounds(10, 186, 200, 47);
 
-        EditImageUrlTextField.setMinimumSize(new java.awt.Dimension(6, 47));
-        EditImageUrlTextField.setPreferredSize(new java.awt.Dimension(6, 47));
-        EditImageUrlTextField.addActionListener(new java.awt.event.ActionListener() {
+        ImageUrlTextField.setMinimumSize(new java.awt.Dimension(6, 47));
+        ImageUrlTextField.setPreferredSize(new java.awt.Dimension(6, 47));
+        ImageUrlTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EditImageUrlTextFieldActionPerformed(evt);
+                ImageUrlTextFieldActionPerformed(evt);
             }
         });
-        rightPanel.add(EditImageUrlTextField);
-        EditImageUrlTextField.setBounds(10, 400, 200, 47);
+        rightPanel.add(ImageUrlTextField);
+        ImageUrlTextField.setBounds(10, 400, 200, 47);
 
-        EditBtn.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 13)); // NOI18N
-        EditBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/nextBtnNonHover.png"))); // NOI18N
-        EditBtn.setContentAreaFilled(false);
-        EditBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        EditBtn.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/nextBtnHover.png"))); // NOI18N
-        EditBtn.addActionListener(new java.awt.event.ActionListener() {
+        addBtn.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 13)); // NOI18N
+        addBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/nextBtnNonHover.png"))); // NOI18N
+        addBtn.setContentAreaFilled(false);
+        addBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        addBtn.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/nextBtnHover.png"))); // NOI18N
+        addBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EditBtnActionPerformed(evt);
+                addBtnActionPerformed(evt);
             }
         });
-        rightPanel.add(EditBtn);
-        EditBtn.setBounds(10, 450, 50, 49);
+        rightPanel.add(addBtn);
+        addBtn.setBounds(10, 490, 50, 49);
+
+        SearchInput.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SearchInputActionPerformed(evt);
+            }
+        });
+        rightPanel.add(SearchInput);
+        SearchInput.setBounds(10, 453, 140, 27);
 
         CancelBtn.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 13)); // NOI18N
         CancelBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/cancelBtnNonHover.png"))); // NOI18N
@@ -276,14 +291,28 @@ public class Editevent extends javax.swing.JFrame {
             }
         });
         rightPanel.add(CancelBtn);
-        CancelBtn.setBounds(160, 450, 50, 49);
+        CancelBtn.setBounds(160, 490, 50, 49);
 
         positionLabel1.setFont(new java.awt.Font("Franklin Gothic Heavy", 0, 80)); // NOI18N
-        positionLabel1.setText("EDIT");
+        positionLabel1.setText("ADD");
         rightPanel.add(positionLabel1);
-        positionLabel1.setBounds(30, 20, 165, 92);
+        positionLabel1.setBounds(30, 20, 159, 92);
 
-        getContentPane().add(rightPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 0, 240, 510));
+        SearchButton.setBackground(new java.awt.Color(204, 255, 204));
+        SearchButton.setText("✓");
+        SearchButton.setBorder(null);
+        SearchButton.setBorderPainted(false);
+        SearchButton.setContentAreaFilled(false);
+        SearchButton.setOpaque(true);
+        SearchButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SearchButtonActionPerformed(evt);
+            }
+        });
+        rightPanel.add(SearchButton);
+        SearchButton.setBounds(160, 453, 50, 27);
+
+        getContentPane().add(rightPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 0, 240, 560));
 
         sidePanel1.setBackground(new java.awt.Color(244, 249, 255));
         sidePanel1.setMaximumSize(new java.awt.Dimension(500, 535));
@@ -297,66 +326,82 @@ public class Editevent extends javax.swing.JFrame {
         );
         sidePanel1Layout.setVerticalGroup(
             sidePanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 535, Short.MAX_VALUE)
+            .addGap(0, 550, Short.MAX_VALUE)
         );
 
-        getContentPane().add(sidePanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 60, 510));
+        getContentPane().add(sidePanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 60, 550));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void posTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_posTextFieldActionPerformed
+    private void EventPositionTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EventPositionTextFieldActionPerformed
 
-    }//GEN-LAST:event_posTextFieldActionPerformed
+    }//GEN-LAST:event_EventPositionTextFieldActionPerformed
 
     private void CancelBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelBtnActionPerformed
-        editBtnClicked = false;
+        addBtnClicked = false;
         this.dispose();
     }//GEN-LAST:event_CancelBtnActionPerformed
 
-    private void EditBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditBtnActionPerformed
+    private void addBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBtnActionPerformed
+    int eventPos = Integer.parseInt(EventPositionTextField.getText());
+           String eventName = EventNameTextField.getText();
+           String eventDate = TimeTextField.getText();
+           String eventDesc = DescriptionTextField.getText();
+           String eventImg = ImageUrlTextField.getText();
+           
+           
+           
+           if(numOfEvents <= 20){
+               if(eventPos > 0 && eventPos <= (numOfEvents + 1)){
+                   eventInformationList.add(eventPos, new ArrayList<String>()); //inserting a new sublist to then add the new event info into
+                   eventInformationList.remove(eventInformationList.size()-1); //remove the 17th sublist that is now present
+                   eventInformationList.get(eventPos).add(eventName);
+                   eventInformationList.get(eventPos).add(eventDate); 
+                   eventInformationList.get(eventPos).add(eventDesc);
+                   eventInformationList.get(eventPos).add(eventImg);
+                   eventInformationList.get(eventPos).add("0");
+                   eventInformationList.get(eventPos).add("0");
+                   eventInformationList.get(eventPos).add("0");
+                   numOfEvents +=1;
+                   updateScreen(numOfEvents);
+               }
+               else{
+                   JOptionPane.showMessageDialog(null, "That is an invalid event position!");
+               }
+           }
+           else{
+               JOptionPane.showMessageDialog(null, "You have reached the maximum number of events!");
+           }
+           
+           addBtnClicked = false;
+           this.dispose();    
+    }//GEN-LAST:event_addBtnActionPerformed
 
-        //Getting text from text fields
-        String name = EditEventNameTextField.getText();
-        String time = EditTimeTextField.getText();
-        String desc = EditDescriptionTextArea.getText();
-        String URL = EditImageUrlTextField.getText();
+    private void ImageUrlTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ImageUrlTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ImageUrlTextFieldActionPerformed
 
-        int positionNew = parseInt(posTextField.getText());
+    private void EventNameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EventNameTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_EventNameTextFieldActionPerformed
 
-        //Verifying that the inputted position number is within the possible range
-        //and then removing sublsit at that pos, adding new sublist and inserting all relevant info into main event info list
-        if(positionNew <= numOfEvents && positionNew > 0){
-            eventInformationList.remove(oldPosition);
-            eventInformationList.add(positionNew, new ArrayList<String>());
-            eventInformationList.get(positionNew).add(name);
-            eventInformationList.get(positionNew).add(time);
-            eventInformationList.get(positionNew).add(desc);
-            eventInformationList.get(positionNew).add(URL);
-            eventInformationList.get(positionNew).add(oldColorR);
-            eventInformationList.get(positionNew).add(oldColorG);
-            eventInformationList.get(positionNew).add(oldColorB);
-            updateScreen(numOfEvents);
-            editBtnClicked = false;
-            this.dispose();
+    private void TimeTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TimeTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TimeTextFieldActionPerformed
+
+    private void SearchInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchInputActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SearchInputActionPerformed
+
+    private void SearchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchButtonActionPerformed
+        String searchedWord = SearchInput.getText().replace(" ","");
+        try{
+            java.awt.Desktop.getDesktop().browse(java.net.URI.create("https://www.google.com/search?hl=en&q=images+for+"+searchedWord+"&btnG=Google+Search"));
+        }catch(Exception e){
+            
         }
-        else{
-            JOptionPane.showMessageDialog(null, "That position is invalid.");
-        }
-
-    }//GEN-LAST:event_EditBtnActionPerformed
-
-    private void EditImageUrlTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditImageUrlTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_EditImageUrlTextFieldActionPerformed
-
-    private void EditEventNameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditEventNameTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_EditEventNameTextFieldActionPerformed
-
-    private void EditTimeTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditTimeTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_EditTimeTextFieldActionPerformed
+    }//GEN-LAST:event_SearchButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -375,14 +420,18 @@ public class Editevent extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Editevent.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AddEventTest.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Editevent.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AddEventTest.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Editevent.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AddEventTest.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Editevent.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AddEventTest.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -391,28 +440,32 @@ public class Editevent extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Editevent().setVisible(true);
+                new AddEventTest().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton CancelBtn;
-    public static javax.swing.JButton EditBtn;
-    private javax.swing.JTextArea EditDescriptionTextArea;
-    private javax.swing.JTextField EditEventNameTextField;
-    private javax.swing.JTextField EditImageUrlTextField;
-    private javax.swing.JTextField EditTimeTextField;
+    private javax.swing.JTextArea DescriptionTextField;
+    private javax.swing.JTextField EventNameTextField;
+    public static javax.swing.JTextField EventPositionTextField;
+    private javax.swing.JTextField ImageUrlTextField;
+    private javax.swing.JButton SearchButton;
+    private javax.swing.JTextField SearchInput;
+    private javax.swing.JTextField TimeTextField;
+    public static javax.swing.JButton addBtn;
     private javax.swing.JLabel dateLabel;
     private javax.swing.JPanel datePanel;
     private javax.swing.JLabel descriptionLabel;
     private javax.swing.JPanel descriptionPanel;
     private javax.swing.JLabel editImage;
     private javax.swing.JLabel imageUrlLabel;
+    private javax.swing.JLabel imageUrlLabel1;
     private javax.swing.JPanel imgUrlPanel;
+    private javax.swing.JPanel imgUrlPanel1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JPanel middlePanel;
-    public static javax.swing.JTextField posTextField;
     private javax.swing.JLabel positionLabel;
     private javax.swing.JLabel positionLabel1;
     private javax.swing.JPanel positionPanel;

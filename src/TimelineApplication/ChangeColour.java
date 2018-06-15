@@ -39,7 +39,7 @@ public class ChangeColour extends javax.swing.JFrame {
     
     public ChangeColour() {
         initComponents();
-        JCheckBox array6[]={Event1, Event2,Event3, Event4, Event5, Event6, Event7, Event8, Event9, Event10, Event11, Event12, Event13, Event14, Event15, Event16, Event17, Event18, Event19, Event20};
+        JCheckBox array6[]={jCheckBox1, Event2,Event3, Event4, Event5, Event6, Event7, Event8, Event9, Event10, Event11, Event12, Event13, Event14, Event15, Event16, Event17, Event18, Event19, Event20};
         int array7[]={clickcounter1, clickcounter2, clickcounter3, clickcounter4, clickcounter5, clickcounter6, clickcounter7, clickcounter8, clickcounter9, clickcounter10, clickcounter11, clickcounter12, clickcounter13, clickcounter14, clickcounter15, clickcounter16, clickcounter17, clickcounter18, clickcounter19, clickcounter20};
         for (int i =0; i<20;i++){
             array7[i]=0;    
@@ -74,9 +74,7 @@ public class ChangeColour extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        setColourBtn = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
-        Event1 = new javax.swing.JCheckBox();
         Event2 = new javax.swing.JCheckBox();
         Event3 = new javax.swing.JCheckBox();
         Event4 = new javax.swing.JCheckBox();
@@ -86,6 +84,7 @@ public class ChangeColour extends javax.swing.JFrame {
         Event8 = new javax.swing.JCheckBox();
         Event9 = new javax.swing.JCheckBox();
         Event10 = new javax.swing.JCheckBox();
+        jCheckBox1 = new javax.swing.JCheckBox();
         jPanel3 = new javax.swing.JPanel();
         Event11 = new javax.swing.JCheckBox();
         Event12 = new javax.swing.JCheckBox();
@@ -97,6 +96,7 @@ public class ChangeColour extends javax.swing.JFrame {
         Event19 = new javax.swing.JCheckBox();
         Event20 = new javax.swing.JCheckBox();
         Event16 = new javax.swing.JCheckBox();
+        setColourBtn = new javax.swing.JButton();
         cancelBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -106,50 +106,8 @@ public class ChangeColour extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 24)); // NOI18N
         jLabel2.setText("Select Events To Change Colour");
 
-        setColourBtn.setBackground(new java.awt.Color(255, 153, 0));
-        setColourBtn.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 18)); // NOI18N
-        setColourBtn.setForeground(new java.awt.Color(0, 158, 158));
-        setColourBtn.setText("Set Colour");
-        setColourBtn.setBorderPainted(false);
-        setColourBtn.setContentAreaFilled(false);
-        setColourBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        setColourBtn.setEnabled(false);
-        setColourBtn.setOpaque(true);
-        setColourBtn.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                setColourBtnMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                setColourBtnMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                setColourBtnMouseExited(evt);
-            }
-        });
-        setColourBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                setColourBtnActionPerformed(evt);
-            }
-        });
-
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED), "Events", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Franklin Gothic Medium Cond", 0, 15))); // NOI18N
         jPanel2.setOpaque(false);
-
-        Event1.setBackground(new java.awt.Color(0, 223, 223));
-        Event1.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 13)); // NOI18N
-        Event1.setForeground(new java.awt.Color(0, 223, 223));
-        Event1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        Event1.setEnabled(false);
-        Event1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseReleased(java.awt.event.MouseEvent evt) {
-                Event1MouseReleased(evt);
-            }
-        });
-        Event1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Event1ActionPerformed(evt);
-            }
-        });
 
         Event2.setBackground(new java.awt.Color(0, 223, 223));
         Event2.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 13)); // NOI18N
@@ -286,33 +244,42 @@ public class ChangeColour extends javax.swing.JFrame {
             }
         });
 
+        jCheckBox1.setBackground(new java.awt.Color(0, 223, 223));
+        jCheckBox1.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 13)); // NOI18N
+        jCheckBox1.setForeground(new java.awt.Color(0, 223, 223));
+        jCheckBox1.setEnabled(false);
+        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+            .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(Event10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Event9, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Event8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Event7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Event6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Event5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Event4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Event2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(Event3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Event1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Event10, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Event9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Event8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Event7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Event6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Event5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Event4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Event2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(Event3, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jCheckBox1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(Event1)
+                .addComponent(jCheckBox1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Event2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -331,7 +298,7 @@ public class ChangeColour extends javax.swing.JFrame {
                 .addComponent(Event9)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Event10)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED), "Events", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Franklin Gothic Medium Cond", 0, 15))); // NOI18N
@@ -522,14 +489,34 @@ public class ChangeColour extends javax.swing.JFrame {
                 .addGap(15, 15, 15))
         );
 
+        setColourBtn.setBackground(new java.awt.Color(255, 153, 0));
+        setColourBtn.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 18)); // NOI18N
+        setColourBtn.setForeground(new java.awt.Color(0, 158, 158));
+        setColourBtn.setText("Set Colour");
+        setColourBtn.setBorderPainted(false);
+        setColourBtn.setContentAreaFilled(false);
+        setColourBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        setColourBtn.setOpaque(true);
+        setColourBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                setColourBtnMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                setColourBtnMouseExited(evt);
+            }
+        });
+        setColourBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                setColourBtnActionPerformed(evt);
+            }
+        });
+
         cancelBtn.setBackground(new java.awt.Color(255, 153, 0));
         cancelBtn.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 18)); // NOI18N
         cancelBtn.setForeground(new java.awt.Color(0, 158, 158));
         cancelBtn.setText("Cancel");
-        cancelBtn.setBorderPainted(false);
         cancelBtn.setContentAreaFilled(false);
-        cancelBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.WAIT_CURSOR));
-        cancelBtn.setEnabled(false);
+        cancelBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cancelBtn.setOpaque(true);
         cancelBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -550,6 +537,12 @@ public class ChangeColour extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(91, 91, 91)
+                .addComponent(setColourBtn)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(cancelBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(116, 116, 116))
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(24, 24, 24)
@@ -560,12 +553,6 @@ public class ChangeColour extends javax.swing.JFrame {
                         .addGap(120, 120, 120)
                         .addComponent(jLabel2)))
                 .addContainerGap(27, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(90, 90, 90)
-                .addComponent(setColourBtn)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(cancelBtn)
-                .addGap(101, 101, 101))
         );
 
         jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jPanel2, jPanel3});
@@ -575,7 +562,7 @@ public class ChangeColour extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(29, 29, 29)
+                .addGap(45, 45, 45)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -587,6 +574,8 @@ public class ChangeColour extends javax.swing.JFrame {
                     .addComponent(cancelBtn))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {cancelBtn, setColourBtn});
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -607,33 +596,6 @@ public class ChangeColour extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void setColourBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_setColourBtnActionPerformed
-        Color newColor = JColorChooser.showDialog(null, "Choose a color", Color.WHITE);
-        int firstIndex = newColor.getRed();
-        String ColorR = Integer.toString(firstIndex);
-        int secIndex = newColor.getGreen();
-        String ColorG = Integer.toString(secIndex);
-        int thirdIndex = newColor.getBlue();
-        String ColorB = Integer.toString(thirdIndex);
-        updateColourToScreen(newColor, ColorR, ColorG, ColorB);
-        colorBtnClicked = false;
-        for (int i=0; i<numOfEvents;i++){
-            checkBoxList.get(i).setSelected(false);
-        }
-        this.dispose();
-        
-    }//GEN-LAST:event_setColourBtnActionPerformed
-
-    private void Event1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Event1ActionPerformed
-        clickcounter1 +=1;
-        if (clickcounter1%2==1){
-            checkBoxList.get(0).setSelected(true);
-        }
-        else {
-            checkBoxList.get(0).setSelected(false);
-        }
-    }//GEN-LAST:event_Event1ActionPerformed
 
     private void Event2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Event2ActionPerformed
         clickcounter2 +=1;
@@ -881,9 +843,21 @@ public class ChangeColour extends javax.swing.JFrame {
     private void Event20MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Event20MouseReleased
     }//GEN-LAST:event_Event20MouseReleased
 
-    private void Event1MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Event1MouseReleased
-
-    }//GEN-LAST:event_Event1MouseReleased
+    private void setColourBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_setColourBtnActionPerformed
+        Color newColor = JColorChooser.showDialog(null, "Choose a color", Color.WHITE);
+        int firstIndex = newColor.getRed();
+        String ColorR = Integer.toString(firstIndex);
+        int secIndex = newColor.getGreen();
+        String ColorG = Integer.toString(secIndex);
+        int thirdIndex = newColor.getBlue();
+        String ColorB = Integer.toString(thirdIndex);
+        updateColourToScreen(newColor, ColorR, ColorG, ColorB);
+        colorBtnClicked = false;
+        for (int i=0; i<numOfEvents;i++){
+            checkBoxList.get(i).setSelected(false);
+        }
+        this.dispose();
+    }//GEN-LAST:event_setColourBtnActionPerformed
 
     private void setColourBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_setColourBtnMouseEntered
         Color setColourBtnHover = new Color(255,228,188);
@@ -895,6 +869,11 @@ public class ChangeColour extends javax.swing.JFrame {
         setColourBtn.setBackground(setColourBtnNonHover);
     }//GEN-LAST:event_setColourBtnMouseExited
 
+    private void cancelBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelBtnActionPerformed
+        colorBtnClicked = false;
+        this.dispose();
+    }//GEN-LAST:event_cancelBtnActionPerformed
+
     private void cancelBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cancelBtnMouseEntered
         Color cancelBtnHover = new Color(255,228,188);
         cancelBtn.setBackground(cancelBtnHover);
@@ -905,14 +884,15 @@ public class ChangeColour extends javax.swing.JFrame {
         cancelBtn.setBackground(cancelBtnNonHover);
     }//GEN-LAST:event_cancelBtnMouseExited
 
-    private void cancelBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelBtnActionPerformed
-        colorBtnClicked = false;
-        this.dispose();
-    }//GEN-LAST:event_cancelBtnActionPerformed
-
-    private void setColourBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_setColourBtnMouseClicked
-
-    }//GEN-LAST:event_setColourBtnMouseClicked
+    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+        clickcounter1 +=1;
+        if (clickcounter1%2==1){
+            checkBoxList.get(0).setSelected(true);
+        }
+        else {
+            checkBoxList.get(0).setSelected(false);
+        }
+    }//GEN-LAST:event_jCheckBox1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -950,7 +930,6 @@ public class ChangeColour extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public static javax.swing.JCheckBox Event1;
     public static javax.swing.JCheckBox Event10;
     public static javax.swing.JCheckBox Event11;
     public static javax.swing.JCheckBox Event12;
@@ -971,6 +950,7 @@ public class ChangeColour extends javax.swing.JFrame {
     public static javax.swing.JCheckBox Event8;
     public static javax.swing.JCheckBox Event9;
     private javax.swing.JButton cancelBtn;
+    private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
