@@ -1,7 +1,6 @@
 package TimelineApplication;
 
 
-import static TimelineApplication.Maintimeline.exportBtnClicked;
 import static TimelineApplication.Maintimeline.mainPanel;
 import java.awt.Dimension;
 import java.awt.Graphics2D;
@@ -95,7 +94,7 @@ public class ExportTimeline extends javax.swing.JFrame {
                 .addComponent(outputTitleLabel)
                 .addGap(18, 18, 18)
                 .addComponent(outputTitleLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(49, Short.MAX_VALUE))
         );
 
         browseFileBtn.setText("Browse for Location");
@@ -171,6 +170,9 @@ public class ExportTimeline extends javax.swing.JFrame {
                         .addComponent(exportLabel)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(filePathLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(36, 36, 36)
                         .addComponent(outputTitleTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -180,12 +182,8 @@ public class ExportTimeline extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(nextBtn)
-                            .addComponent(cancelBtn))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(filePathLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap())
+                            .addComponent(cancelBtn))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -222,7 +220,6 @@ public class ExportTimeline extends javax.swing.JFrame {
     }//GEN-LAST:event_browseFileBtnActionPerformed
 
     private void cancelBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelBtnActionPerformed
-        exportBtnClicked = true; 
         this.dispose();
     }//GEN-LAST:event_cancelBtnActionPerformed
 
@@ -236,14 +233,10 @@ public class ExportTimeline extends javax.swing.JFrame {
         g2d.dispose();
         try {
             ImageIO.write(image, "png", new File(directoryAbsolutePath +"\\" + imageTitle + ".png"));
-            exportBtnClicked = false; 
-            this.dispose();
         } catch (IOException ex) {
             JOptionPane.showMessageDialog(null, "File path not found!");
         }
-        
-        
-        
+
     }//GEN-LAST:event_nextBtnActionPerformed
 
     /**
