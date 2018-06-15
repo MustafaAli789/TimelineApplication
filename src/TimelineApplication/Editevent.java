@@ -1,5 +1,5 @@
 package TimelineApplication;
-import static TimelineApplication.EditEventNum.EditEventField;
+import static TimelineApplication.EditEventNum.editPosNum;
 import static TimelineApplication.Maintimeline.editBtnClicked;
 import static TimelineApplication.Maintimeline.eventInformationList;
 import static TimelineApplication.Maintimeline.numOfEvents;
@@ -19,16 +19,15 @@ public class Editevent extends javax.swing.JFrame {
         initComponents();
         
         //Getting all the info of chosen event and displaying it in text fields
-        String edit_pos = EditEventField.getText();
-        int edit_pos_num = parseInt(edit_pos);
+        String edit_pos = Integer.toString(editPosNum);;
         posTextField.setText(edit_pos);
-        EditEventNameTextField.setText(eventInformationList.get(edit_pos_num).get(0).toString());
-        EditTimeTextField.setText(eventInformationList.get(edit_pos_num).get(1).toString());
-        EditDescriptionTextArea.setText(eventInformationList.get(edit_pos_num).get(2).toString());
-        EditImageUrlTextField.setText(eventInformationList.get(edit_pos_num).get(3).toString());
-        oldColorR = eventInformationList.get(edit_pos_num).get(4);
-        oldColorG = eventInformationList.get(edit_pos_num).get(5);
-        oldColorB = eventInformationList.get(edit_pos_num).get(6);
+        EditEventNameTextField.setText(eventInformationList.get(editPosNum).get(0).toString());
+        EditTimeTextField.setText(eventInformationList.get(editPosNum).get(1).toString());
+        EditDescriptionTextArea.setText(eventInformationList.get(editPosNum).get(2).toString());
+        EditImageUrlTextField.setText(eventInformationList.get(editPosNum).get(3).toString());
+        oldColorR = eventInformationList.get(editPosNum).get(4);
+        oldColorG = eventInformationList.get(editPosNum).get(5);
+        oldColorB = eventInformationList.get(editPosNum).get(6);
         
         setOldPosition();
      

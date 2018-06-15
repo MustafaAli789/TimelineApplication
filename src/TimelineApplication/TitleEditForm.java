@@ -132,40 +132,7 @@ public class TitleEditForm extends javax.swing.JFrame {
         updateScreen(numOfEvents); 
         EditTitleBtnClicked = false;
         this.dispose();
-        /*
         
-        String EventFile = "src/TimelineApplication/eventsInformation.txt";
-        title = TimelineTitleEdited.getText();        
-        Title = title;
-        String line = null;
-        System.out.println(title);
-        setTheTitle(title);
-        ArrayList<String> allEvent = new ArrayList<String>();
-        //Write to text file by shifting.
-        try{
-            Scanner sc = new Scanner(eventInformationFile);
-                skipLines(sc, 1);
-                System.out.println(numOfEvents*5);
-                for(int i = 0; i <numOfEvents*5; i++){
-                    allEvent.add(sc.nextLine());
-                }
-                allEvent.add(0,title);
-            Writer fileWriter;
-            fileWriter = new BufferedWriter(new FileWriter(EventFile, false));
-            for (int j=0; j<allEvent.size();j++){
-                fileWriter.write(allEvent.get(j));
-                fileWriter.write("\n");
-            }
-            fileWriter.close();
-        }
-        catch (FileNotFoundException ex){
-                System.out.println("Cannot find the file "+EventFile);
-            }
-        catch (IOException e) {
-            System.out.println("Error when trying to read"+EventFile);
-            }
-        super.dispose();
-        */
     }//GEN-LAST:event_UpdateBtnActionPerformed
 
     private void CancelBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelBtnActionPerformed

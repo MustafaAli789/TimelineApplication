@@ -8,14 +8,20 @@ import static java.lang.Integer.parseInt;
 import javax.swing.JOptionPane;
 
 public class EditEventNum extends javax.swing.JFrame {
+
+    public static int editPosNum;
+    
     public EditEventNum() {
         initComponents();
         
         //Code below simply gets each event name and appends it to the list GUI list
         for (int i = 0; i < numOfEvents ; i++){
-            String event = eventInformationList.get(i+1).get(0).toString();
-            EditEventList.append(i+1 + " (Event Position)" + ": " + event + "\n");
+            String eventInfo = eventInformationList.get(i+1).get(0).toString();
+            listOfEvents.addItem((i+1) + ": " + eventInfo);
         }
+        
+        listOfEvents.setSelectedIndex(0);
+        
     }
     
     @SuppressWarnings("unchecked")
@@ -24,116 +30,99 @@ public class EditEventNum extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         InstructionLabel = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        EditEventList = new javax.swing.JTextArea();
-        EditEventField = new javax.swing.JTextField();
         ContinueBtn = new javax.swing.JButton();
         CancelBtn = new javax.swing.JButton();
+        listOfEvents = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(330, 250));
+        setMinimumSize(new java.awt.Dimension(330, 250));
+        setPreferredSize(new java.awt.Dimension(330, 250));
+        setResizable(false);
 
-        jPanel1.setBackground(new java.awt.Color(255, 0, 51));
+        jPanel1.setBackground(new java.awt.Color(153, 204, 255));
         jPanel1.setPreferredSize(new java.awt.Dimension(412, 494));
 
-        InstructionLabel.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
-        InstructionLabel.setText("Enter the position # of the event you want to edit:");
+        InstructionLabel.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 32)); // NOI18N
+        InstructionLabel.setText("Select Event to Edit");
 
-        EditEventList.setEditable(false);
-        EditEventList.setColumns(20);
-        EditEventList.setRows(5);
-        jScrollPane1.setViewportView(EditEventList);
-
-        EditEventField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EditEventFieldActionPerformed(evt);
-            }
-        });
-
-        ContinueBtn.setText("CONTINUE");
+        ContinueBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/nextBtnNonHover.png"))); // NOI18N
+        ContinueBtn.setContentAreaFilled(false);
+        ContinueBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        ContinueBtn.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/nextBtnHover.png"))); // NOI18N
         ContinueBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ContinueBtnActionPerformed(evt);
             }
         });
 
-        CancelBtn.setText("CANCEL");
+        CancelBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/cancelBtnNonHover.png"))); // NOI18N
+        CancelBtn.setContentAreaFilled(false);
+        CancelBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        CancelBtn.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/cancelBtnHover.png"))); // NOI18N
         CancelBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CancelBtnActionPerformed(evt);
             }
         });
 
+        listOfEvents.setBackground(new java.awt.Color(0, 153, 204));
+        listOfEvents.setMaximumRowCount(4);
+        listOfEvents.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        listOfEvents.setOpaque(false);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(ContinueBtn)
-                .addGap(86, 86, 86)
-                .addComponent(CancelBtn)
-                .addGap(89, 89, 89))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(5, 5, 5)
-                .addComponent(InstructionLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(EditEventField, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
-                .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(ContinueBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(CancelBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(12, 12, 12)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(InstructionLabel)
+                            .addComponent(listOfEvents, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 13, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(EditEventField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(InstructionLabel))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 366, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(25, 25, 25)
+                .addComponent(InstructionLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(listOfEvents, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(ContinueBtn)
                     .addComponent(CancelBtn))
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addContainerGap(39, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 319, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 247, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void EditEventFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditEventFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_EditEventFieldActionPerformed
-
     private void ContinueBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ContinueBtnActionPerformed
-        String edit_pos = EditEventField.getText();
-        int edit_pos_num = parseInt(edit_pos);
-        if (edit_pos_num <= numOfEvents && edit_pos_num > 0){
-            Editevent editevent = new Editevent();
-            editevent.setVisible(true);
-        } else{
-            JOptionPane.showMessageDialog(null, "No event at the position entered");
-        }
         
+        editPosNum = listOfEvents.getSelectedIndex() + 1;
+        Editevent editevent = new Editevent();
+        editevent.setVisible(true);       
         editBtnClicked = false;
         this.dispose();
 
@@ -182,10 +171,8 @@ public class EditEventNum extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton CancelBtn;
     public static javax.swing.JButton ContinueBtn;
-    public static javax.swing.JTextField EditEventField;
-    private javax.swing.JTextArea EditEventList;
     private javax.swing.JLabel InstructionLabel;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JComboBox<String> listOfEvents;
     // End of variables declaration//GEN-END:variables
 }
