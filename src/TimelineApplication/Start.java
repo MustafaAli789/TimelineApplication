@@ -31,46 +31,57 @@ public class Start extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel2 = new javax.swing.JLabel();
-        TitleLabel = new javax.swing.JLabel();
-        Start = new javax.swing.JButton();
+        jSeparator1 = new javax.swing.JSeparator();
         TimelineBuilderLabel = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        sloganLabel = new javax.swing.JLabel();
+        logoLabel = new javax.swing.JLabel();
+        Start = new javax.swing.JButton();
+        backgroundLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setLocationByPlatform(true);
-        setMaximumSize(new java.awt.Dimension(665, 454));
-        setMinimumSize(new java.awt.Dimension(665, 454));
-        setPreferredSize(new java.awt.Dimension(665, 454));
+        setMaximumSize(new java.awt.Dimension(1000, 650));
+        setMinimumSize(new java.awt.Dimension(1000, 650));
+        setPreferredSize(new java.awt.Dimension(1000, 650));
         setResizable(false);
         getContentPane().setLayout(null);
 
-        TitleLabel.setFont(new java.awt.Font("Comic Sans MS", 1, 48)); // NOI18N
-        TitleLabel.setForeground(new java.awt.Color(255, 102, 51));
-        TitleLabel.setText("HISTORICAL");
-        getContentPane().add(TitleLabel);
-        TitleLabel.setBounds(170, 80, 350, 120);
+        TimelineBuilderLabel.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 110)); // NOI18N
+        TimelineBuilderLabel.setText("Timeless");
+        getContentPane().add(TimelineBuilderLabel);
+        TimelineBuilderLabel.setBounds(430, 150, 360, 90);
+
+        sloganLabel.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 24)); // NOI18N
+        sloganLabel.setText("Create the future, relive the past");
+        getContentPane().add(sloganLabel);
+        sloganLabel.setBounds(510, 250, 310, 21);
+
+        logoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/logo.png"))); // NOI18N
+        getContentPane().add(logoLabel);
+        logoLabel.setBounds(-30, 20, 680, 600);
 
         Start.setBackground(new java.awt.Color(238, 119, 25));
         Start.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
         Start.setForeground(new java.awt.Color(0, 51, 255));
-        Start.setText("START");
+        Start.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/startArrowNonHover.png"))); // NOI18N
+        Start.setToolTipText("");
+        Start.setBorderPainted(false);
+        Start.setContentAreaFilled(false);
+        Start.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Start.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/startArrowHover.png"))); // NOI18N
+        Start.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/startArrowHover.png"))); // NOI18N
         Start.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 StartActionPerformed(evt);
             }
         });
         getContentPane().add(Start);
-        Start.setBounds(230, 320, 214, 60);
+        Start.setBounds(610, 350, 230, 159);
 
-        TimelineBuilderLabel.setFont(new java.awt.Font("Comic Sans MS", 1, 48)); // NOI18N
-        TimelineBuilderLabel.setText("TIMELINE BUILDER");
-        getContentPane().add(TimelineBuilderLabel);
-        TimelineBuilderLabel.setBounds(80, 170, 510, 90);
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/startScreenBackground.jpg"))); // NOI18N
-        jLabel1.setText("jLabel1");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 0, 670, 460);
+        backgroundLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TimelineApplication/blueWallpaper.jpg"))); // NOI18N
+        backgroundLabel.setText("jLabel1");
+        getContentPane().add(backgroundLabel);
+        backgroundLabel.setBounds(0, 0, 1030, 630);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -79,9 +90,9 @@ public class Start extends javax.swing.JFrame {
         Maintimeline mainscreen = new Maintimeline();
         mainscreen.setVisible(true);
         super.dispose();
-        
+
         Start.setBackground(Color.blue);
-        
+
     }//GEN-LAST:event_StartActionPerformed
 
     /**
@@ -125,8 +136,10 @@ public class Start extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Start;
     private javax.swing.JLabel TimelineBuilderLabel;
-    private javax.swing.JLabel TitleLabel;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel backgroundLabel;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JLabel logoLabel;
+    private javax.swing.JLabel sloganLabel;
     // End of variables declaration//GEN-END:variables
 }
